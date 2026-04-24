@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>お花見 Shadowing 練習</title>
+<style>
+  :root{
+    --bg:#fff7ed;
+    --panel:#ffffff;
+    --panel2:#fffaf5;
+    --text:#172033;
+    --muted:#64748b;
+    --line:#f1d7bd;
+    --red:#e11d48;
+    --orange:#f97316;
+    --green:#16a34a;
+    --blue:#2563eb;
+    --yellow:#fff176;
+    --shadow:0 14px 34px rgba(120,53,15,.14);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at top left, #ffe4e6 0, transparent 30%),
+      radial-gradient(circle at top right, #dbeafe 0, transparent 28%),
+      var(--bg);
+    color:var(--text);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans TC","Noto Sans JP",sans-serif;
+  }
+  .wrap{max-width:1100px;margin:0 auto;padding:18px 14px 36px}
+  .hero{
+    background:rgba(255,255,255,.9);
+    border:1px solid var(--line);
+    border-radius:28px;
+    box-shadow:var(--shadow);
+    padding:20px;
+    margin-bottom:14px;
+  }
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#ffe4e6;
+    color:#9f1239;
+    border:1px solid #fecdd3;
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:800;
+  }
+  h1{margin:12px 0 6px;font-size:30px;line-height:1.2}
+  .lead{margin:0;color:var(--muted);line-height:1.7;font-size:15px}
+  .grid{display:grid;grid-template-columns:1fr 1.3fr;gap:14px}
+  .card{
+    background:rgba(255,255,255,.92);
+    border:1px solid var(--line);
+    border-radius:24px;
+    box-shadow:var(--shadow);
+    padding:16px;
+  }
+  h2{margin:0 0 12px;font-size:18px}
+  .guide{
+    display:grid;
+    gap:10px;
+    margin-bottom:14px;
+  }
+  .guide div{
+    background:var(--panel2);
+    border:1px solid #fed7aa;
+    border-radius:16px;
+    padding:12px;
+    color:#7c2d12;
+    font-weight:700;
+  }
+  .player audio{width:100%;margin:4px 0 12px}
+  .btns{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  button{
+    border:none;
+    border-radius:16px;
+    padding:12px 10px;
+    font-size:15px;
+    font-weight:900;
+    cursor:pointer;
+    color:#fff;
+    background:#334155;
+  }
+  button:hover{filter:brightness(1.06)}
+  .primary{background:linear-gradient(135deg,#2563eb,#06b6d4)}
+  .ok{background:linear-gradient(135deg,#16a34a,#22c55e)}
+  .soft{background:#475569}
+  .speed-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin-top:10px;
+  }
+  .speed-row button{
+    background:#fff;
+    color:#1e293b;
+    border:1px solid var(--line);
+  }
+  .speed-row button.active{
+    background:#2563eb;
+    color:#fff;
+    border-color:#2563eb;
+  }
+
+  .now{
+    background:#fff;
+    border:2px solid #fecdd3;
+    border-radius:24px;
+    padding:18px;
+    min-height:210px;
+  }
+  .now-label{
+    color:#9f1239;
+    font-size:13px;
+    font-weight:900;
+    margin-bottom:8px;
+  }
+  .now .jp{
+    font-size:30px;
+    line-height:1.55;
+    color:var(--red);
+    font-weight:900;
+    letter-spacing:.02em;
+  }
+  .now .kana{
+    margin-top:12px;
+    font-size:20px;
+    line-height:1.6;
+    color:var(--orange);
+    font-weight:800;
+  }
+  .now .romaji{
+    margin-top:6px;
+    font-size:17px;
+    line-height:1.55;
+    color:#475569;
+    font-weight:700;
+  }
+  .now .zh{
+    margin-top:10px;
+    font-size:20px;
+    line-height:1.6;
+    color:var(--green);
+    font-weight:800;
+  }
+  .now .time{
+    margin-top:10px;
+    color:var(--muted);
+    font-size:13px;
+  }
+  .progress{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    color:var(--muted);
+    font-size:13px;
+    margin-top:12px;
+  }
+  .bar{
+    flex:1;
+    height:10px;
+    border-radius:999px;
+    background:#ffedd5;
+    overflow:hidden;
+    border:1px solid #fed7aa;
+  }
+  .bar span{
+    display:block;
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#fb7185,#f97316);
+    border-radius:999px;
+  }
+  .tblwrap{
+    max-height:52vh;
+    overflow:auto;
+    border:1px solid var(--line);
+    border-radius:18px;
+    background:#fff;
+  }
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{border-bottom:1px solid #f1e3d5;padding:10px 8px;vertical-align:top;text-align:left}
+  th{position:sticky;top:0;background:#fff7ed;z-index:2;color:#7c2d12}
+  tr.active{background:var(--yellow)!important}
+  tr.active td{color:#111827!important;font-weight:900}
+  tr.done{opacity:.58}
+  tr:hover{background:#fff7ed}
+  .timecell{width:88px;color:#64748b;font-size:12px;white-space:nowrap}
+  .hint{font-size:13px;color:var(--muted);line-height:1.7;margin-top:10px}
+  .teacher-only{display:none!important}
+  @media(max-width:900px){
+    .grid{grid-template-columns:1fr}
+    .btns{grid-template-columns:repeat(2,1fr)}
+    .now .jp{font-size:26px}
+  }
+  @media(max-width:560px){
+    .wrap{padding:12px 10px 28px}
+    h1{font-size:25px}
+    .now .jp{font-size:24px}
+    .now .kana,.now .zh{font-size:18px}
+    table{font-size:13px}
+  }
+
+  /* ===== Mobile layout fix v2 ===== */
+  .table-note{
+    display:none;
+    color:#64748b;
+    font-size:13px;
+    margin:0 0 8px;
+  }
+  html,body{
+    min-height:100%;
+    overflow-x:hidden;
+  }
+  body{
+    padding-bottom:calc(28px + env(safe-area-inset-bottom, 0px));
+  }
+  .tblwrap{
+    -webkit-overflow-scrolling:touch;
+  }
+  table{
+    min-width:720px;
+  }
+  td,th{
+    word-break:normal;
+    overflow-wrap:break-word;
+  }
+  @media(max-width:900px){
+    .wrap{
+      padding-bottom:calc(110px + env(safe-area-inset-bottom, 0px));
+    }
+    .grid{
+      grid-template-columns:1fr;
+    }
+    .now{
+      min-height:0;
+      padding:16px;
+    }
+    .tblwrap{
+      max-height:38vh;
+      overflow:auto;
+    }
+    .table-note{
+      display:block;
+    }
+  }
+  @media(max-width:560px){
+    .hero{
+      padding:16px;
+      border-radius:22px;
+      margin-bottom:10px;
+    }
+    .card{
+      padding:14px;
+      border-radius:22px;
+    }
+    .now{
+      border-radius:22px;
+      max-height:none;
+    }
+    .now .jp{
+      font-size:clamp(24px, 7.2vw, 30px);
+      line-height:1.5;
+    }
+    .now .kana{
+      font-size:clamp(20px, 5.8vw, 24px);
+      line-height:1.55;
+    }
+    .now .romaji{
+      font-size:clamp(17px, 4.8vw, 20px);
+      line-height:1.5;
+    }
+    .now .zh{
+      font-size:clamp(20px, 5.8vw, 24px);
+      line-height:1.55;
+    }
+    .progress{
+      position:relative;
+      z-index:1;
+      background:rgba(255,255,255,.86);
+      border-radius:16px;
+      padding:6px 0;
+    }
+    .tblwrap{
+      max-height:34vh;
+      overflow:auto;
+    }
+    table{
+      min-width:760px;
+      font-size:14px;
+    }
+    th,td{
+      padding:10px 8px;
+    }
+    .timecell{
+      width:96px;
+    }
+  }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <div class="badge">🌸 N5 Shadowing 課程</div>
+    <h1>お花見に行きませんか</h1>
+    <p class="lead">學生版：教材已固定載入。請先聽一句，再跟讀一句，最後試著不看中文說出來。</p>
+  </section>
+
+  <div class="grid">
+    <section class="card">
+      <h2>練習步驟</h2>
+      <div class="guide">
+        <div>① 先聽：注意日文節奏與停頓</div>
+        <div>② 跟讀：模仿同樣速度與語氣</div>
+        <div>③ 重播：不順的句子按「單句重播」</div>
+      </div>
+
+      <div class="player">
+        <audio id="audio" controls preload="metadata"></audio>
+        <div class="btns">
+          <button id="prevBtn" class="soft">上一句</button>
+          <button id="playPauseBtn" class="primary">播放 / 暫停</button>
+          <button id="nextBtn" class="soft">下一句</button>
+          <button id="repeatBtn" class="ok">單句重播</button>
+        </div>
+        <div class="speed-row">
+          <button id="slowBtn">慢速 0.8x</button>
+          <button id="normalBtn" class="active">正常 1.0x</button>
+        </div>
+      </div>
+
+      <p class="hint">建議：第一次用正常速度，第二次改 0.8x 跟讀，第三次再回到正常速度。</p>
+    </section>
+
+    <section class="card">
+      <h2>目前句子</h2>
+      <div id="now" class="now">
+        <div class="now-label">準備中</div>
+        <div class="jp">教材載入中…</div>
+      </div>
+      <div class="progress">
+        <span id="counter">0 / 0</span>
+        <div class="bar"><span id="bar"></span></div>
+        <span id="timeNow">00:00.00</span>
+      </div>
+    </section>
+  </div>
+
+  <div style="height:14px"></div>
+
+  <section class="card">
+    <h2>句子列表</h2>
+    <p class="table-note">手機版：句子列表可左右滑動，上下捲動不會遮住目前句子。</p>
+    <div class="tblwrap">
+      <table>
+        <thead>
+          <tr>
+            <th class="timecell">時間</th>
+            <th>日文</th>
+            <th>平假名 / 羅馬拼音</th>
+            <th>中文</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <div id="status" class="teacher-only"></div>
+</div>
+
+<script>
+const LESSON_JSON_PATH = './cherry_blossom_shadowing_v11.json';
+const LESSON_AUDIO_PATH = './Let’s_go_for_CherryBlossom_viewing.mp3';
+
+const $ = (id)=>document.getElementById(id);
+const audio = $('audio');
+const state = {
+  items: [],
+  idx: 0,
+  objectUrls: [],
+  ready: false
+};
+
+function escapeHtml(str=''){
+  return String(str).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
+}
+function fmtTime(sec){
+  sec = Math.max(0, sec || 0);
+  const m = Math.floor(sec/60);
+  const s = (sec%60).toFixed(2).padStart(5,'0');
+  return `${String(m).padStart(2,'0')}:${s}`;
+}
+function normalizeItems(arr){
+  return arr.map((x,i)=>({
+    _i:i,
+    start:Number(x.start ?? 0),
+    end:Number(x.end ?? x.start ?? 0),
+    jp:String(x.jp ?? x.text ?? ''),
+    kana:String(x.kana ?? '').trim(),
+    romaji:String(x.romaji ?? '').trim(),
+    zh:String(x.zh ?? x.cn ?? x.translation ?? '').trim()
+  })).filter(x=>!Number.isNaN(x.start)).sort((a,b)=>a.start-b.start);
+}
+function renderNow(){
+  const item = state.items[state.idx];
+  if(!item){
+    $('now').innerHTML = `<div class="now-label">尚未載入</div><div class="jp">沒有句子資料</div>`;
+    $('counter').textContent = `0 / 0`;
+    $('bar').style.width = `0%`;
+    return;
+  }
+  $('now').innerHTML = `
+    <div class="now-label">目前句子</div>
+    <div class="jp">${escapeHtml(item.jp)}</div>
+    <div class="kana">${escapeHtml(item.kana)}</div>
+    <div class="romaji">${escapeHtml(item.romaji)}</div>
+    <div class="zh">${escapeHtml(item.zh)}</div>
+    <div class="time">${fmtTime(item.start)} - ${fmtTime(item.end)}</div>
+  `;
+  $('counter').textContent = `${state.idx + 1} / ${state.items.length}`;
+  $('bar').style.width = `${((state.idx + 1) / Math.max(1,state.items.length)) * 100}%`;
+}
+function renderTable(){
+  const tbody = $('tbody');
+  tbody.innerHTML = state.items.map((x,idx)=>`
+    <tr data-idx="${idx}" class="${idx===state.idx?'active':''} ${idx<state.idx?'done':''}">
+      <td class="timecell">${fmtTime(x.start)}<br>${fmtTime(x.end)}</td>
+      <td>${escapeHtml(x.jp)}</td>
+      <td>${escapeHtml([x.kana,x.romaji].filter(Boolean).join(' / '))}</td>
+      <td>${escapeHtml(x.zh)}</td>
+    </tr>
+  `).join('');
+  [...tbody.querySelectorAll('tr')].forEach(tr=>tr.onclick=()=>jumpTo(+tr.dataset.idx,true));
+}
+function updateActive(){
+  [...$('tbody').querySelectorAll('tr')].forEach((tr,i)=>{
+    tr.classList.toggle('active',i===state.idx);
+    tr.classList.toggle('done',i<state.idx);
+  });
+  const active = $('tbody').querySelector('tr.active');
+  if(active) active.scrollIntoView({block:'center',behavior:'smooth'});
+  renderNow();
+}
+function jumpTo(idx, play=false){
+  if(!state.items.length) return;
+  state.idx = Math.max(0, Math.min(idx, state.items.length-1));
+  audio.currentTime = Math.max(0, state.items[state.idx].start);
+  updateActive();
+  if(play) audio.play();
+}
+function syncByTime(){
+  $('timeNow').textContent = fmtTime(audio.currentTime);
+  const t = audio.currentTime;
+  const idx = state.items.findIndex(x => t >= x.start && t < x.end + 0.03);
+  if(idx !== -1 && idx !== state.idx){
+    state.idx = idx;
+    updateActive();
+  }
+}
+async function loadLesson(){
+  try{
+    const res = await fetch(LESSON_JSON_PATH,{cache:'no-store'});
+    if(!res.ok) throw new Error(`JSON 載入失敗：${res.status}`);
+    const data = await res.json();
+    state.items = normalizeItems(data);
+    state.idx = 0;
+    audio.src = LESSON_AUDIO_PATH;
+    audio.load();
+    renderTable();
+    renderNow();
+    state.ready = true;
+  }catch(err){
+    $('now').innerHTML = `<div class="now-label">載入失敗</div><div class="jp">請確認 JSON / MP3 檔案路徑</div><div class="zh">${escapeHtml(err.message)}</div>`;
+  }
+}
+
+$('playPauseBtn').onclick = ()=> audio.paused ? audio.play() : audio.pause();
+$('prevBtn').onclick = ()=> jumpTo(state.idx<=0?0:state.idx-1,true);
+$('nextBtn').onclick = ()=> jumpTo(Math.min(state.items.length-1,state.idx+1),true);
+$('repeatBtn').onclick = ()=> jumpTo(state.idx,true);
+$('slowBtn').onclick = ()=>{
+  audio.playbackRate = .8;
+  $('slowBtn').classList.add('active');
+  $('normalBtn').classList.remove('active');
+};
+$('normalBtn').onclick = ()=>{
+  audio.playbackRate = 1;
+  $('normalBtn').classList.add('active');
+  $('slowBtn').classList.remove('active');
+};
+audio.addEventListener('timeupdate',syncByTime);
+audio.addEventListener('ended',()=>{ if(state.idx < state.items.length-1) jumpTo(state.idx+1,false); });
+
+window.addEventListener('DOMContentLoaded',loadLesson);
+</script>
+</body>
+</html>
