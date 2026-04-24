@@ -1,0 +1,442 @@
+[
+  {
+    "start": 0.0,
+    "end": 3.5,
+    "text": "日本地図の歌",
+    "kana": "にほんちずのうた",
+    "romaji": "nihon chizu no uta",
+    "zh": "日本地圖之歌"
+  },
+  {
+    "start": 3.5,
+    "end": 7.0,
+    "text": "北から順番に覚えましょう。",
+    "kana": "きたからじゅんばんにおぼえましょう。",
+    "romaji": "kita kara junban ni oboemashou",
+    "zh": "從北開始依序記吧。"
+  },
+  {
+    "start": 7.0,
+    "end": 10.0,
+    "text": "札幌ラーメン、北海道。",
+    "kana": "さっぽろラーメン、ほっかいどう。",
+    "romaji": "sapporo raamen, hokkaidou",
+    "zh": "札幌拉麵，北海道。"
+  },
+  {
+    "start": 10.0,
+    "end": 14.0,
+    "text": "りんごがおいしい、青森県。",
+    "kana": "りんごがおいしい、あおもりけん。",
+    "romaji": "ringo ga oishii, aomori ken",
+    "zh": "蘋果很好吃，青森縣。"
+  },
+  {
+    "start": 14.0,
+    "end": 17.0,
+    "text": "わんこの盛岡、岩手県。",
+    "kana": "わんこのもりおか、いわてけん。",
+    "romaji": "wanko no morioka, iwate ken",
+    "zh": "碗子蕎麥麵盛岡，岩手縣。"
+  },
+  {
+    "start": 17.0,
+    "end": 21.0,
+    "text": "牛タン仙台、宮城県。",
+    "kana": "ぎゅうたんせんだい、みやぎけん。",
+    "romaji": "gyuutan sendai, miyagi ken",
+    "zh": "牛舌仙台，宮城縣。"
+  },
+  {
+    "start": 21.0,
+    "end": 24.0,
+    "text": "なまはげ怖いよ、秋田県。",
+    "kana": "なまはげこわいよ、あきたけん。",
+    "romaji": "namahage kowai yo, akita ken",
+    "zh": "生剝鬼很可怕喔，秋田縣。"
+  },
+  {
+    "start": 24.0,
+    "end": 28.0,
+    "text": "サクランボおいしい、山形県。",
+    "kana": "サクランボおいしい、やまがたけん。",
+    "romaji": "sakuranbo oishii, yamagata ken",
+    "zh": "櫻桃好吃，山形縣。"
+  },
+  {
+    "start": 28.0,
+    "end": 31.0,
+    "text": "新選組だぞ、福島県。",
+    "kana": "しんせんぐみだぞ、ふくしまけん。",
+    "romaji": "shinsengumi da zo, fukushima ken",
+    "zh": "是新選組喔，福島縣。"
+  },
+  {
+    "start": 31.0,
+    "end": 35.0,
+    "text": "お次は関東地方です。",
+    "kana": "おつぎはかんとうちほうです。",
+    "romaji": "otsugi wa kantou chihou desu",
+    "zh": "接著是關東地方。"
+  },
+  {
+    "start": 35.0,
+    "end": 38.0,
+    "text": "水戸納豆、茨城県。",
+    "kana": "みとなっとう、いばらきけん。",
+    "romaji": "mito nattou, ibaraki ken",
+    "zh": "水戶納豆，茨城縣。"
+  },
+  {
+    "start": 38.0,
+    "end": 42.0,
+    "text": "餃子宇都宮、栃木県。",
+    "kana": "ぎょうざうつのみや、とちぎけん。",
+    "romaji": "gyouza utsunomiya, tochigi ken",
+    "zh": "餃子宇都宮，栃木縣。"
+  },
+  {
+    "start": 42.0,
+    "end": 45.0,
+    "text": "利根川前橋、群馬県。",
+    "kana": "とねがわまえばし、ぐんまけん。",
+    "romaji": "tonegawa maebashi, gunma ken",
+    "zh": "利根川前橋，群馬縣。"
+  },
+  {
+    "start": 45.0,
+    "end": 49.0,
+    "text": "ひらがな さいたま、埼玉県。",
+    "kana": "ひらがな さいたま、さいたまけん。",
+    "romaji": "hiragana saitama, saitama ken",
+    "zh": "平假名的さいたま，埼玉縣。"
+  },
+  {
+    "start": 49.0,
+    "end": 52.0,
+    "text": "九十九里浜、千葉県です。",
+    "kana": "くじゅうくりはま、ちばけんです。",
+    "romaji": "kujuukuri hama, chiba ken desu",
+    "zh": "九十九里濱，千葉縣。"
+  },
+  {
+    "start": 52.0,
+    "end": 56.0,
+    "text": "日本の首都だよ、東京都。",
+    "kana": "にほんのしゅとだよ、とうきょうと。",
+    "romaji": "nihon no shuto da yo, toukyou to",
+    "zh": "日本的首都喔，東京都。"
+  },
+  {
+    "start": 56.0,
+    "end": 60.0,
+    "text": "横浜中華街、神奈川県。",
+    "kana": "よこはまちゅうかがい、かながわけん。",
+    "romaji": "yokohama chuukagai, kanagawa ken",
+    "zh": "橫濱中華街，神奈川縣。"
+  },
+  {
+    "start": 60.0,
+    "end": 63.0,
+    "text": "中部地方に行きましょう。",
+    "kana": "ちゅうぶちほうにいきましょう。",
+    "romaji": "chuubu chihou ni ikimashou",
+    "zh": "我們去中部地方吧。"
+  },
+  {
+    "start": 63.0,
+    "end": 67.0,
+    "text": "上杉謙信、新潟県。",
+    "kana": "うえすぎけんしん、にいがたけん。",
+    "romaji": "uesugi kenshin, niigata ken",
+    "zh": "上杉謙信，新潟縣。"
+  },
+  {
+    "start": 67.0,
+    "end": 70.0,
+    "text": "黒部ダムがある、富山県。",
+    "kana": "くろべダムがある、とやまけん。",
+    "romaji": "kurobe damu ga aru, toyama ken",
+    "zh": "有黑部水壩，富山縣。"
+  },
+  {
+    "start": 70.0,
+    "end": 74.0,
+    "text": "輪島塗り、金沢、石川県。",
+    "kana": "わじまぬり、かなざわ、いしかわけん。",
+    "romaji": "wajimanuri, kanazawa, ishikawa ken",
+    "zh": "輪島塗、金澤，石川縣。"
+  },
+  {
+    "start": 74.0,
+    "end": 77.0,
+    "text": "メガネが日本一、福井県。",
+    "kana": "メガネがにほんいち、ふくいけん。",
+    "romaji": "megane ga nihon ichi, fukui ken",
+    "zh": "眼鏡日本第一，福井縣。"
+  },
+  {
+    "start": 77.0,
+    "end": 81.0,
+    "text": "甲府のぶどう、山梨県。",
+    "kana": "こうふのぶどう、やまなしけん。",
+    "romaji": "koufu no budou, yamanashi ken",
+    "zh": "甲府的葡萄，山梨縣。"
+  },
+  {
+    "start": 81.0,
+    "end": 84.0,
+    "text": "日本アルプス、長野県。",
+    "kana": "にほんアルプス、ながのけん。",
+    "romaji": "nihon arupusu, nagano ken",
+    "zh": "日本阿爾卑斯，長野縣。"
+  },
+  {
+    "start": 84.0,
+    "end": 88.0,
+    "text": "白川郷の岐阜県。",
+    "kana": "しらかわごうのぎふけん。",
+    "romaji": "shirakawagou no gifu ken",
+    "zh": "白川鄉，岐阜縣。"
+  },
+  {
+    "start": 88.0,
+    "end": 91.0,
+    "text": "富士山きれいな、静岡県。",
+    "kana": "ふじさんきれいな、しずおかけん。",
+    "romaji": "fujisan kirei na, shizuoka ken",
+    "zh": "富士山很美，靜岡縣。"
+  },
+  {
+    "start": 91.0,
+    "end": 95.0,
+    "text": "名古屋コーチン、愛知県。",
+    "kana": "なごやコーチン、あいちけん。",
+    "romaji": "nagoya koochin, aichi ken",
+    "zh": "名古屋交趾雞，愛知縣。"
+  },
+  {
+    "start": 95.0,
+    "end": 98.0,
+    "text": "近畿地方に行きましょう。",
+    "kana": "きんきちほうにいきましょう。",
+    "romaji": "kinki chihou ni ikimashou",
+    "zh": "我們去近畿地方吧。"
+  },
+  {
+    "start": 98.0,
+    "end": 102.0,
+    "text": "一文字漢字の津市、三重県。",
+    "kana": "ひともじかんじの つし、みえけん。",
+    "romaji": "hitomoji kanji no tsu shi, mie ken",
+    "zh": "單一漢字的津市，三重縣。"
+  },
+  {
+    "start": 102.0,
+    "end": 105.0,
+    "text": "大津延暦寺、滋賀県。",
+    "kana": "おおつえんりゃくじ、しがけん。",
+    "romaji": "ootsu enryakuji, shiga ken",
+    "zh": "大津延曆寺，滋賀縣。"
+  },
+  {
+    "start": 105.0,
+    "end": 109.0,
+    "text": "清水金閣、京都府。",
+    "kana": "きよみずきんかく、きょうとふ。",
+    "romaji": "kiyomizu kinkaku, kyouto fu",
+    "zh": "清水、金閣，京都府。"
+  },
+  {
+    "start": 109.0,
+    "end": 112.0,
+    "text": "たこ焼きお笑い、大阪府。",
+    "kana": "たこやきおわらい、おおさかふ。",
+    "romaji": "takoyaki owarai, oosaka fu",
+    "zh": "章魚燒搞笑，大阪府。"
+  },
+  {
+    "start": 112.0,
+    "end": 116.0,
+    "text": "神戸異人館、兵庫県。",
+    "kana": "こうべいじんかん、ひょうごけん。",
+    "romaji": "koube ijinkan, hyougo ken",
+    "zh": "神戶異人館，兵庫縣。"
+  },
+  {
+    "start": 116.0,
+    "end": 119.0,
+    "text": "鹿と大仏、奈良県。",
+    "kana": "しかとだいぶつ、ならけん。",
+    "romaji": "shika to daibutsu, nara ken",
+    "zh": "鹿和大佛，奈良縣。"
+  },
+  {
+    "start": 119.0,
+    "end": 123.0,
+    "text": "パンダと梅干し、和歌山県。",
+    "kana": "パンダとうめぼし、わかやまけん。",
+    "romaji": "panda to umeboshi, wakayama ken",
+    "zh": "熊貓和梅干，和歌山縣。"
+  },
+  {
+    "start": 123.0,
+    "end": 126.0,
+    "text": "次は中国四国地方。",
+    "kana": "つぎはちゅうごくしこくちほう。",
+    "romaji": "tsugi wa chuugoku shikoku chihou",
+    "zh": "接著是中國四國地方。"
+  },
+  {
+    "start": 126.0,
+    "end": 130.0,
+    "text": "大きな砂丘だ、鳥取県。",
+    "kana": "おおきなさきゅうだ、とっとりけん。",
+    "romaji": "ookina sakyuu da, tottori ken",
+    "zh": "有很大的砂丘，鳥取縣。"
+  },
+  {
+    "start": 130.0,
+    "end": 133.0,
+    "text": "松江は宍道湖、島根県。",
+    "kana": "まつえはしんじこ、しまねけん。",
+    "romaji": "matsue wa shinjiko, shimane ken",
+    "zh": "松江有宍(ㄖㄡˋ)道湖，島根縣。"
+  },
+  {
+    "start": 133.0,
+    "end": 137.0,
+    "text": "桃太郎さん、岡山県。",
+    "kana": "ももたろうさん、おかやまけん。",
+    "romaji": "momotarou san, okayama ken",
+    "zh": "桃太郎，岡山縣。"
+  },
+  {
+    "start": 137.0,
+    "end": 140.0,
+    "text": "生ガキお好み、広島県。",
+    "kana": "なまがきおこのみ、ひろしまけん。",
+    "romaji": "namagaki okonomi, hiroshima ken",
+    "zh": "生蠔、廣島燒，廣島縣。"
+  },
+  {
+    "start": 140.0,
+    "end": 143.0,
+    "text": "ふぐちりてっさの、山口県。",
+    "kana": "ふぐちりてっさの、やまぐちけん。",
+    "romaji": "fuguchiri tessa no, yamaguchi ken",
+    "zh": "河豚火鍋、河豚生魚片，山口縣。"
+  },
+  {
+    "start": 143.0,
+    "end": 147.0,
+    "text": "阿波踊りをする、徳島県。",
+    "kana": "あわおどりをする、とくしまけん。",
+    "romaji": "awa odori o suru, tokushima ken",
+    "zh": "會跳阿波舞，德島縣。"
+  },
+  {
+    "start": 147.0,
+    "end": 150.0,
+    "text": "うどんと高松、香川県。",
+    "kana": "うどんとたかまつ、かがわけん。",
+    "romaji": "udon to takamatsu, kagawa ken",
+    "zh": "烏龍麵和高松，香川縣。"
+  },
+  {
+    "start": 150.0,
+    "end": 154.0,
+    "text": "みかんだ松山、愛媛県。",
+    "kana": "みかんだまつやま、えひめけん。",
+    "romaji": "mikan da matsuyama, ehime ken",
+    "zh": "蜜柑的松山，愛媛縣。"
+  },
+  {
+    "start": 154.0,
+    "end": 157.0,
+    "text": "坂本龍馬の、高知県。",
+    "kana": "さかもとりょうまの、こうちけん。",
+    "romaji": "sakamoto ryouma no, kochi ken",
+    "zh": "坂本龍馬的高知縣。"
+  },
+  {
+    "start": 157.0,
+    "end": 161.0,
+    "text": "九州地方に行きますよ。",
+    "kana": "きゅうしゅうちほうにいきますよ。",
+    "romaji": "kyuushuu chihou ni ikimasu yo",
+    "zh": "接著要去九州地方囉。"
+  },
+  {
+    "start": 161.0,
+    "end": 164.0,
+    "text": "明太子大好き、福岡県。",
+    "kana": "めんたいこだいすき、ふくおかけん。",
+    "romaji": "mentaiko daisuki, fukuoka ken",
+    "zh": "最喜歡明太子，福岡縣。"
+  },
+  {
+    "start": 164.0,
+    "end": 168.0,
+    "text": "有田と伊万里焼き、佐賀県。",
+    "kana": "ありたといまりやき、さがけん。",
+    "romaji": "arita to imariyaki, saga ken",
+    "zh": "有田燒與伊萬里燒，佐賀縣。"
+  },
+  {
+    "start": 168.0,
+    "end": 172.0,
+    "text": "カステラちゃんぽん、長崎県。",
+    "kana": "カステラちゃんぽん、ながさきけん。",
+    "romaji": "kasutera chanpon, nagasaki ken",
+    "zh": "蛋糕、強棒麵，長崎縣。"
+  },
+  {
+    "start": 172.0,
+    "end": 175.0,
+    "text": "ラーメン阿蘇山、熊本県。",
+    "kana": "ラーメンあそさん、くまもとけん。",
+    "romaji": "raamen asosan, kumamoto ken",
+    "zh": "拉麵、阿蘇山，熊本縣。"
+  },
+  {
+    "start": 175.0,
+    "end": 179.0,
+    "text": "温泉行きたい、大分県。",
+    "kana": "おんせんいきたい、おおいたけん。",
+    "romaji": "onsen ikitai, ooita ken",
+    "zh": "想去泡溫泉，大分縣。"
+  },
+  {
+    "start": 179.0,
+    "end": 182.0,
+    "text": "マンゴー輝く、宮崎県。",
+    "kana": "マンゴーかがやく、みやざきけん。",
+    "romaji": "mangoo kagayaku, miyazaki ken",
+    "zh": "芒果閃耀，宮崎縣。"
+  },
+  {
+    "start": 182.0,
+    "end": 186.0,
+    "text": "桜島もくもく、鹿児島県。",
+    "kana": "さくらじまもくもく、かごしまけん。",
+    "romaji": "sakurajima mokumoku, kagoshima ken",
+    "zh": "櫻島煙霧滾滾，鹿兒島縣。"
+  },
+  {
+    "start": 186.0,
+    "end": 189.0,
+    "text": "那覇は南国、沖縄県。",
+    "kana": "なははなんごく、おきなわけん。",
+    "romaji": "naha wa nangoku, okinawa ken",
+    "zh": "那霸是南國，沖繩縣。"
+  },
+  {
+    "start": 189.0,
+    "end": 195.2,
+    "text": "四十七個の都道府県。",
+    "kana": "よんじゅうななこのとどうふけん。",
+    "romaji": "yonjuu nana ko no todoufuken",
+    "zh": "四十七個都道府縣。"
+  }
+]
