@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>日語 Shadowing 課程</title>
+<style>
+  :root{
+    --bg:#f6f8fc;
+    --card:#ffffff;
+    --text:#172033;
+    --muted:#667085;
+    --line:#d9e2ef;
+    --accent:#2563eb;
+    --accent2:#06b6d4;
+    --soft:#eef6ff;
+    --good:#16a34a;
+    --warn:#f59e0b;
+    --shadow:0 12px 30px rgba(15,23,42,.10);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 10% 0%, #e0f2fe 0, transparent 34%),
+      radial-gradient(circle at 90% 10%, #fce7f3 0, transparent 30%),
+      var(--bg);
+    color:var(--text);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans TC","Noto Sans JP",sans-serif;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:28px 18px 48px}
+  .hero{
+    display:grid;
+    grid-template-columns:1.25fr .75fr;
+    gap:20px;
+    align-items:stretch;
+    margin-bottom:24px;
+  }
+  .hero-main,.hero-side,.card{
+    background:rgba(255,255,255,.86);
+    border:1px solid rgba(217,226,239,.95);
+    border-radius:28px;
+    box-shadow:var(--shadow);
+    backdrop-filter:blur(10px);
+  }
+  .hero-main{padding:30px}
+  .eyebrow{
+    display:inline-flex;
+    gap:8px;
+    align-items:center;
+    color:#075985;
+    background:#e0f2fe;
+    border:1px solid #bae6fd;
+    padding:7px 12px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:13px;
+  }
+  h1{font-size:40px;line-height:1.12;margin:18px 0 12px;letter-spacing:-.03em}
+  .lead{font-size:17px;color:var(--muted);line-height:1.8;margin:0;max-width:720px}
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:12px 16px;
+    border-radius:16px;
+    border:1px solid var(--line);
+    color:var(--text);
+    text-decoration:none;
+    font-weight:800;
+    background:#fff;
+  }
+  .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none}
+  .hero-side{padding:22px;display:grid;gap:12px}
+  .stat{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 16px;
+    border-radius:18px;
+    background:#fff;
+    border:1px solid var(--line);
+  }
+  .stat b{font-size:24px}
+  .section-head{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    gap:14px;
+    margin:24px 0 14px;
+  }
+  .section-head h2{margin:0;font-size:24px}
+  .tools{
+    display:grid;
+    grid-template-columns:1fr 160px 160px;
+    gap:10px;
+    margin:14px 0 18px;
+  }
+  input,select{
+    width:100%;
+    border:1px solid var(--line);
+    background:#fff;
+    border-radius:16px;
+    padding:12px 14px;
+    font-size:15px;
+    color:var(--text);
+    outline:none;
+  }
+  input:focus,select:focus{border-color:#60a5fa;box-shadow:0 0 0 4px rgba(96,165,250,.18)}
+  .course-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+  }
+  .course-card{
+    position:relative;
+    overflow:hidden;
+    padding:18px;
+    min-height:250px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .course-card:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(15,23,42,.14)}
+  .badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+  .badge{
+    font-size:12px;
+    font-weight:800;
+    color:#075985;
+    background:#e0f2fe;
+    border:1px solid #bae6fd;
+    padding:5px 9px;
+    border-radius:999px;
+  }
+  .badge.green{color:#166534;background:#dcfce7;border-color:#bbf7d0}
+  .badge.orange{color:#92400e;background:#ffedd5;border-color:#fed7aa}
+  .icon{
+    width:58px;height:58px;
+    display:grid;place-items:center;
+    border-radius:20px;
+    background:linear-gradient(135deg,#dbeafe,#cffafe);
+    font-size:30px;
+    margin-bottom:12px;
+  }
+  .course-card h3{font-size:21px;line-height:1.35;margin:0 0 8px}
+  .course-card p{margin:0;color:var(--muted);line-height:1.65;font-size:14px}
+  .meta{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin:14px 0 16px;
+  }
+  .meta div{
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:14px;
+    padding:9px 10px;
+    font-size:13px;
+    color:#475569;
+  }
+  .start{
+    width:100%;
+    margin-top:auto;
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+    color:#fff;
+    border:none;
+    text-decoration:none;
+    display:flex;
+    justify-content:center;
+    padding:12px 14px;
+    border-radius:16px;
+    font-weight:900;
+  }
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    margin-top:16px;
+  }
+  .step{
+    padding:16px;
+    border-radius:20px;
+    background:#fff;
+    border:1px solid var(--line);
+  }
+  .step b{display:block;font-size:15px;margin-bottom:6px}
+  .step span{color:var(--muted);font-size:13px;line-height:1.55}
+  .footer{
+    margin-top:24px;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.7;
+    text-align:center;
+  }
+  .hidden{display:none!important}
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr}
+    .course-grid{grid-template-columns:1fr 1fr}
+    .tools{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    h1{font-size:34px}
+  }
+  @media (max-width:640px){
+    .wrap{padding:18px 12px 36px}
+    .hero-main{padding:22px}
+    .course-grid,.steps{grid-template-columns:1fr}
+    h1{font-size:30px}
+    .actions{display:grid}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <div class="hero-main">
+      <div class="eyebrow">🌸 日語初級會話・Shadowing</div>
+      <h1>選一課，開始聽、跟讀、模仿語氣。</h1>
+      <p class="lead">這裡是學生用課程首頁。每一課都已固定載入對應的 JSON 與 MP3，學生只需要點「開始練習」，不需要自行選檔。</p>
+      <div class="actions">
+        <a class="btn primary" href="#courses">開始選課</a>
+        <a class="btn" href="#how">使用方式</a>
+      </div>
+    </div>
+    <aside class="hero-side">
+      <div class="stat"><span>目前課程</span><b id="courseCount">1</b></div>
+      <div class="stat"><span>練習模式</span><b>跟讀</b></div>
+      <div class="stat"><span>建議速度</span><b>0.8x</b></div>
+    </aside>
+  </section>
+
+  <div class="section-head" id="courses">
+    <div>
+      <h2>課程列表</h2>
+      <p class="lead" style="font-size:14px;margin-top:4px">可依難度、主題搜尋。之後新增課程，只要在 courses.json 加一筆資料。</p>
+    </div>
+  </div>
+
+  <div class="tools">
+    <input id="search" type="text" placeholder="搜尋：櫻花 / 大阪 / N5 / 會話" />
+    <select id="levelFilter">
+      <option value="all">全部難度</option>
+      <option value="N5">N5</option>
+      <option value="N4">N4</option>
+      <option value="N3">N3</option>
+    </select>
+    <select id="topicFilter">
+      <option value="all">全部主題</option>
+      <option value="daily">日常會話</option>
+      <option value="travel">旅遊</option>
+      <option value="listening">聽力</option>
+    </select>
+  </div>
+
+  <div class="course-grid" id="courseGrid"></div>
+
+  <section id="how">
+    <div class="section-head">
+      <h2>學生使用方式</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><b>1. 選課</b><span>從課程卡片點「開始練習」。</span></div>
+      <div class="step"><b>2. 先聽</b><span>先聽整句，觀察日文與中文意思。</span></div>
+      <div class="step"><b>3. 跟讀</b><span>用 A-B 跟讀或單句重播，模仿節奏。</span></div>
+      <div class="step"><b>4. 降字幕</b><span>熟了之後只看假名或只聽音檔。</span></div>
+    </div>
+  </section>
+
+  <div class="footer">
+    © Shadowing Courses. 建議使用 Chrome / Edge 開啟。手機可直接點課程進入練習。
+  </div>
+</div>
+
+<script>
+let LESSONS = [];
+
+const grid = document.getElementById("courseGrid");
+const search = document.getElementById("search");
+const levelFilter = document.getElementById("levelFilter");
+const topicFilter = document.getElementById("topicFilter");
+
+async function loadCourses(){
+  try {
+    const res = await fetch("./courses.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("courses.json 載入失敗");
+    LESSONS = await res.json();
+    document.getElementById("courseCount").textContent = LESSONS.length;
+    renderLessons();
+  } catch (err) {
+    grid.innerHTML = `<div class="card" style="grid-column:1/-1;padding:24px;color:#667085">
+      無法載入課程清單，請確認根目錄有 courses.json。
+    </div>`;
+  }
+}
+
+function renderLessons(){
+  const q = search.value.trim().toLowerCase();
+  const level = levelFilter.value;
+  const topic = topicFilter.value;
+
+  const items = LESSONS.filter(x => {
+    const hay = [x.title, x.subtitle, x.level, x.topicLabel, x.desc].join(" ").toLowerCase();
+    return (!q || hay.includes(q)) &&
+           (level === "all" || x.level === level) &&
+           (topic === "all" || x.topic === topic);
+  });
+
+  grid.innerHTML = items.map(x => `
+    <article class="card course-card">
+      <div class="badge-row">
+        <span class="badge">${x.level}</span>
+        <span class="badge green">${x.topicLabel}</span>
+        <span class="badge orange">${x.duration}</span>
+      </div>
+      <div class="icon">${x.icon}</div>
+      <h3>${x.title}</h3>
+      <p><strong>${x.subtitle}</strong></p>
+      <p>${x.desc}</p>
+      <div class="meta">
+        <div>句數：${x.sentences} 句</div>
+        <div>模式：Shadowing</div>
+      </div>
+      <a class="start" href="${x.href}">開始練習 →</a>
+    </article>
+  `).join("");
+
+  if (!items.length) {
+    grid.innerHTML = `<div class="card" style="grid-column:1/-1;padding:24px;text-align:center;color:#667085">找不到符合條件的課程。</div>`;
+  }
+}
+
+[search, levelFilter, topicFilter].forEach(el => el.addEventListener("input", renderLessons));
+loadCourses();
+</script>
+</body>
+</html>

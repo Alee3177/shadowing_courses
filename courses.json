@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Let’s go for Cherry Blossom Viewing",
+    "subtitle": "お花見に行きませんか",
+    "level": "N5",
+    "topicLabel": "日常會話",
+    "duration": "約 22 秒",
+    "sentences": 10,
+    "icon": "🌸",
+    "href": "lessons/cherry-blossom/",
+    "desc": "練習邀約、地點、時間約定：大阪城、十時、大阪駅。"
+  },
+  {
+    "title": "日本地図の歌",
+    "subtitle": "47都道府県を歌で覚える",
+    "level": "N5",
+    "topicLabel": "聽力 / 歌唱",
+    "duration": "約 3分15秒",
+    "sentences": 55,
+    "icon": "🗾",
+    "href": "lessons/japan47/",
+    "desc": "用歌曲練習日本47都道府県名稱與順序。"
+  }
+]
