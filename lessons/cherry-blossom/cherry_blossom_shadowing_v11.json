@@ -1,0 +1,82 @@
+[
+  {
+    "start": 0.05,
+    "end": 2.10,
+    "jp": "ミラーさん。",
+    "kana": "みらーさん。",
+    "romaji": "miraa-san.",
+    "zh": "米勒先生／小姐。"
+  },
+  {
+    "start": 2.10,
+    "end": 4.15,
+    "jp": "何ですか。",
+    "kana": "なんですか。",
+    "romaji": "nan desu ka.",
+    "zh": "什麼事？"
+  },
+  {
+    "start": 4.20,
+    "end": 7.15,
+    "jp": "あした友達とお花見をします。",
+    "kana": "あした ともだちと おはなみを します。",
+    "romaji": "ashita tomodachi to ohanami o shimasu.",
+    "zh": "明天要和朋友去賞花。"
+  },
+  {
+    "start": 7.20,
+    "end": 9.20,
+    "jp": "ミラーさんも一緒に行きませんか。",
+    "kana": "みらーさんも いっしょに いきませんか。",
+    "romaji": "miraa-san mo issho ni ikimasen ka.",
+    "zh": "米勒先生／小姐也一起去嗎？"
+  },
+  {
+    "start": 9.25,
+    "end": 11.60,
+    "jp": "いいですね。どこへ行きますか。",
+    "kana": "いいですね。どこへ いきますか。",
+    "romaji": "ii desu ne. doko e ikimasu ka.",
+    "zh": "不錯呢。要去哪裡？"
+  },
+  {
+    "start": 11.65,
+    "end": 13.65,
+    "jp": "大阪城です。",
+    "kana": "おおさかじょうです。",
+    "romaji": "oosaka-jou desu.",
+    "zh": "是大阪城。"
+  },
+  {
+    "start": 13.70,
+    "end": 15.70,
+    "jp": "何時に行きますか。",
+    "kana": "なんじに いきますか。",
+    "romaji": "nanji ni ikimasu ka.",
+    "zh": "幾點去？"
+  },
+  {
+    "start": 15.75,
+    "end": 18.20,
+    "jp": "十時に大阪駅で会いましょう。",
+    "kana": "じゅうじに おおさかえきで あいましょう。",
+    "romaji": "juuji ni oosaka-eki de aimashou.",
+    "zh": "十點在大阪站見面吧。"
+  },
+  {
+    "start": 18.25,
+    "end": 19.60,
+    "jp": "わかりました。",
+    "kana": "わかりました。",
+    "romaji": "wakarimashita.",
+    "zh": "知道了。"
+  },
+  {
+    "start": 19.65,
+    "end": 21.70,
+    "jp": "じゃあ、また明日。",
+    "kana": "じゃあ、また あした。",
+    "romaji": "jaa, mata ashita.",
+    "zh": "那麼，明天見。"
+  }
+]
