@@ -21,5 +21,17 @@
     "icon": "🗾",
     "href": "lessons/japan47/",
     "desc": "用歌曲練習日本47都道府県名稱與順序。"
-  }
+   },
+  {
+  "title": "片假名外來語串燒",
+  "subtitle": "單字組合練習",
+  "level": "N5",
+  "topic": "katakana",
+  "topicLabel": "片假名",
+  "duration": "約 20 秒",
+  "sentences": 23,
+  "icon": "🔤",
+  "href": "lessons/katakana/",
+  "desc": "片假名單字快速記憶與發音訓練。"
+}
 ]
