@@ -1,37 +1,36 @@
 [
   {
     "start": 0.0,
-    "end": 0.8,
+    "end": 6.4,
     "type": "katakana",
-    "title": "片假名外來語串燒｜單字組合練習",
-    "jp": "バスで",
-    "kana": "ばすで",
-    "romaji": "basu de",
-    "zh": "搭巴士"
+    "title": "片假名外來語串燒｜整句練習",
+    "jp": "バスでコンビニ、デパート、スーパー、ホテルのレストランでハンバーガー、サラダ、アイスクリームを食べる。",
+    "kana": "ばすで こんびに、でぱーと、すーぱー、ほてる の れすとらん で はんばーがー、さらだ、あいすくりーむ を たべる",
+    "romaji": "basu de konbini, depaato, suupaa, hoteru no resutoran de hanbaagaa, sarada, aisukuriimu o taberu",
+    "zh": "搭巴士到便利商店、百貨公司、超市，在飯店餐廳吃漢堡、沙拉和冰淇淋。"
   },
-  {"start":0.8,"end":1.6,"jp":"コンビニ","kana":"こんびに","romaji":"konbini","zh":"便利商店"},
-  {"start":1.6,"end":2.4,"jp":"デパート","kana":"でぱーと","romaji":"depaato","zh":"百貨公司"},
-  {"start":2.4,"end":3.2,"jp":"スーパー","kana":"すーぱー","romaji":"suupaa","zh":"超市"},
-  {"start":3.2,"end":4.0,"jp":"ホテル","kana":"ほてる","romaji":"hoteru","zh":"飯店"},
-  {"start":4.0,"end":4.8,"jp":"レストラン","kana":"れすとらん","romaji":"resutoran","zh":"餐廳"},
-  {"start":4.8,"end":5.6,"jp":"ハンバーガー","kana":"はんばーがー","romaji":"hanbaagaa","zh":"漢堡"},
-  {"start":5.6,"end":6.0,"jp":"サラダ","kana":"さらだ","romaji":"sarada","zh":"沙拉"},
-  {"start":6.0,"end":6.4,"jp":"アイスクリーム","kana":"あいすくりーむ","romaji":"aisukuriimu","zh":"冰淇淋"},
-
-  {"start":6.4,"end":7.3,"jp":"テレビ","kana":"てれび","romaji":"terebi","zh":"電視"},
-  {"start":7.3,"end":8.2,"jp":"ニュース","kana":"にゅーす","romaji":"nyuusu","zh":"新聞"},
-  {"start":8.2,"end":9.1,"jp":"メール","kana":"めーる","romaji":"meeru","zh":"郵件"},
-
-  {"start":9.1,"end":10.2,"jp":"コピー","kana":"こぴー","romaji":"kopii","zh":"影印"},
-  {"start":10.2,"end":11.3,"jp":"プリント","kana":"ぷりんと","romaji":"purinto","zh":"列印"},
-  {"start":11.3,"end":12.2,"jp":"ペン","kana":"ぺん","romaji":"pen","zh":"筆"},
-  {"start":12.2,"end":13.1,"jp":"インク","kana":"いんく","romaji":"inku","zh":"墨水"},
-  {"start":13.1,"end":13.7,"jp":"チェック","kana":"ちぇっく","romaji":"chekku","zh":"檢查"},
-  {"start":13.7,"end":14.3,"jp":"パーティー","kana":"ぱーてぃー","romaji":"paatii","zh":"派對"},
-
-  {"start":14.3,"end":15.2,"jp":"コーヒー","kana":"こーひー","romaji":"koohii","zh":"咖啡"},
-  {"start":15.2,"end":16.1,"jp":"ケーキ","kana":"けーき","romaji":"keeki","zh":"蛋糕"},
-  {"start":16.1,"end":17.2,"jp":"スマートフォン","kana":"すまーとふぉん","romaji":"sumaato fon","zh":"智慧型手機"},
-  {"start":17.2,"end":18.3,"jp":"カメラ","kana":"かめら","romaji":"kamera","zh":"相機"},
-  {"start":18.3,"end":19.3,"jp":"グループ","kana":"ぐるーぷ","romaji":"guruupu","zh":"群組"}
+  {
+    "start": 6.4,
+    "end": 9.1,
+    "jp": "テレビのニュースでテストのメールがわかる。",
+    "kana": "てれび の にゅーす で てすと の めーる が わかる",
+    "romaji": "terebi no nyuusu de tesuto no meeru ga wakaru",
+    "zh": "透過電視新聞可以了解測試郵件內容。"
+  },
+  {
+    "start": 9.1,
+    "end": 14.3,
+    "jp": "コピー、プリント、ペンとインク、チェック、パーティーのメニュー、スープ、カレー。",
+    "kana": "こぴー、ぷりんと、ぺん と いんく、ちぇっく、ぱーてぃー の めにゅー、すーぷ、かれー",
+    "romaji": "kopii, purinto, pen to inku, chekku, paatii no menyuu, suupu, karee",
+    "zh": "影印、列印、筆和墨水、檢查、派對菜單、湯、咖哩。"
+  },
+  {
+    "start": 14.3,
+    "end": 19.3,
+    "jp": "コーヒーとケーキ、スマートフォンのカメラでクラスのグループ分ける。",
+    "kana": "こーひー と けーき、すまーとふぉん の かめら で くらす の ぐるーぷ わける",
+    "romaji": "koohii to keeki, sumaato fon no kamera de kurasu no guruupu wakeru",
+    "zh": "用手機相機將班級分組，一邊喝咖啡和吃蛋糕。"
+  }
 ]
