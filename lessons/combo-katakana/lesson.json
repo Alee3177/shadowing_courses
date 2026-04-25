@@ -1,13 +1,21 @@
 [
   {
     "start": 0.0,
-    "end": 6.4,
+    "end": 3.2,
     "type": "katakana",
     "title": "片假名外來語串燒｜整句練習",
-    "jp": "バスでコンビニ、デパート、スーパー、ホテルのレストランでハンバーガー、サラダ、アイスクリームを食べる。",
-    "kana": "ばすで こんびに、でぱーと、すーぱー、ほてる の れすとらん で はんばーがー、さらだ、あいすくりーむ を たべる",
-    "romaji": "basu de konbini, depaato, suupaa, hoteru no resutoran de hanbaagaa, sarada, aisukuriimu o taberu",
-    "zh": "搭巴士到便利商店、百貨公司、超市，在飯店餐廳吃漢堡、沙拉和冰淇淋。"
+    "jp": "バスでコンビニ、デパート、スーパー行く。",
+    "kana": "ばすで こんびに、でぱーと、すーぱー いく",
+    "romaji": "basu de konbini, depaato, suupaa iku",
+    "zh": "搭巴士去便利商店、百貨公司、超市。"
+  },
+  {
+    "start": 3.2,
+    "end": 6.4,
+    "jp": "ホテルのレストランでハンバーガー、サラダ、アイスクリームを食べる。",
+    "kana": "ほてる の れすとらん で はんばーがー、さらだ、あいすくりーむ を たべる",
+    "romaji": "hoteru no resutoran de hanbaagaa, sarada, aisukuriimu o taberu",
+    "zh": "在飯店的餐廳吃漢堡、沙拉和冰淇淋。"
   },
   {
     "start": 6.4,
@@ -15,22 +23,30 @@
     "jp": "テレビのニュースでテストのメールがわかる。",
     "kana": "てれび の にゅーす で てすと の めーる が わかる",
     "romaji": "terebi no nyuusu de tesuto no meeru ga wakaru",
-    "zh": "透過電視新聞可以了解測試郵件內容。"
+    "zh": "透過電視新聞可以了解測試郵件。"
   },
   {
     "start": 9.1,
-    "end": 14.3,
-    "jp": "コピー、プリント、ペンとインク、チェック、パーティーのメニュー、スープ、カレー。",
-    "kana": "こぴー、ぷりんと、ぺん と いんく、ちぇっく、ぱーてぃー の めにゅー、すーぷ、かれー",
-    "romaji": "kopii, purinto, pen to inku, chekku, paatii no menyuu, suupu, karee",
-    "zh": "影印、列印、筆和墨水、檢查、派對菜單、湯、咖哩。"
+    "end": 12.7,
+    "jp": "コピー、プリント、ペンとインク、チェック。",
+    "kana": "こぴー、ぷりんと、ぺん と いんく、ちぇっく",
+    "romaji": "kopii, purinto, pen to inku, chekku",
+    "zh": "影印、列印、筆和墨水、檢查。"
   },
   {
-    "start": 14.3,
+    "start": 12.7,
+    "end": 16.1,
+    "jp": "パーティーのメニュー、スープ、カレー、コーヒーとケーキ。",
+    "kana": "ぱーてぃー の めにゅー、すーぷ、かれー、こーひー と けーき",
+    "romaji": "paatii no menyuu, suupu, karee, koohii to keeki",
+    "zh": "派對的菜單、湯、咖哩、咖啡和蛋糕。"
+  },
+  {
+    "start": 16.1,
     "end": 19.3,
-    "jp": "コーヒーとケーキ、スマートフォンのカメラでクラスのグループ分ける。",
-    "kana": "こーひー と けーき、すまーとふぉん の かめら で くらす の ぐるーぷ わける",
-    "romaji": "koohii to keeki, sumaato fon no kamera de kurasu no guruupu wakeru",
-    "zh": "用手機相機將班級分組，一邊喝咖啡和吃蛋糕。"
+    "jp": "スマートフォンのカメラでクラスのグループ分ける。",
+    "kana": "すまーとふぉん の かめら で くらす の ぐるーぷ わける",
+    "romaji": "sumaato fon no kamera de kurasu no guruupu wakeru",
+    "zh": "用智慧型手機的相機將班級分組。"
   }
 ]
