@@ -319,7 +319,7 @@ function renderLessons(){
         <div>句數：${x.sentences} 句</div>
         <div>模式：Shadowing</div>
       </div>
-      <a class="start" href="${x.href}">開始練習 →</a>
+      <a class="start" href="${x.href}${x.href.includes('?') ? '&' : '?'}v=${Date.now()}">開始練習 →</a>
     </article>
   `).join("");
 
