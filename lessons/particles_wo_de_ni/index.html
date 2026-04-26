@@ -1,1 +1,540 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>助詞を・で・に Shadowing 雙模式</title>
+<style>
+:root{
+  --bg:#fffaf2;--card:#fff;--ink:#172033;--muted:#6b7280;--line:#eadfcd;
+  --wo:#2f9e44;--de:#1f77b4;--ni:#f47c20;--gold:#fff2a8;--red:#dc2626;--blue:#1d4ed8;
+}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","Noto Sans JP",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.wrap{max-width:1080px;margin:0 auto;padding:14px 12px 36px}header{background:linear-gradient(135deg,#fff,#fff4dc);border:1px solid var(--line);border-radius:24px;padding:18px;box-shadow:0 8px 22px rgba(0,0,0,.06)}h1{text-align:center;margin:0 0 8px;font-size:clamp(25px,5vw,44px)}.sub{text-align:center;color:var(--muted);font-weight:900}.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;margin-top:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:16px;box-shadow:0 8px 22px rgba(0,0,0,.05)}.main{text-align:center}.idx{font-weight:950;color:var(--muted)}.jp{font-size:clamp(32px,7vw,64px);font-weight:950;line-height:1.2;margin:10px 0}.kana{font-size:20px;color:#374151;font-weight:850}.zh{font-size:22px;font-weight:950;margin-top:6px}.status{font-weight:950;color:var(--red);min-height:28px;margin-top:10px}.bar{height:10px;background:#f1eadf;border-radius:999px;overflow:hidden;margin-top:12px}.bar>div{height:100%;width:0%;background:#111827}.controls{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:14px}button{border:0;border-radius:999px;padding:11px 16px;font-size:16px;font-weight:950;cursor:pointer;background:#edf2f7;color:#111827}button.primary{background:#111827;color:#fff}button.warn{background:#fff3cd;color:#7a4b00}button.active{background:var(--blue);color:white}button:disabled{opacity:.45;cursor:not-allowed}.settings{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.setting{background:#fffdf8;border:1px solid var(--line);border-radius:16px;padding:10px;font-weight:850}.setting label{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}select,input{width:100%;padding:9px;border-radius:12px;border:1px solid var(--line);font-weight:850;background:white}.note{font-size:14px;color:var(--muted);line-height:1.7}.list{display:grid;gap:8px;max-height:680px;overflow:auto;padding-right:3px}.row{display:grid;grid-template-columns:48px 1fr auto;gap:10px;align-items:center;border:1px solid var(--line);border-radius:16px;background:#fff;padding:10px;cursor:pointer}.row.active{background:var(--gold);border-color:#d8b400}.no{font-weight:950;color:var(--muted)}.rjp{font-weight:950;font-size:18px}.rkana{color:#4b5563;font-size:14px}.rzh{color:#111827;font-size:14px}.tag{display:inline-block;border-radius:999px;padding:2px 8px;margin-left:6px;color:#fff;font-size:12px}.tag.wo{background:var(--wo)}.tag.de{background:var(--de)}.tag.ni{background:var(--ni)}.smallPlay{padding:8px 10px;background:#111827;color:#fff}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}.error{background:#fff1f2;border-color:#fecdd3;color:#991b1b}.okmsg{color:#15803d}.footer{margin-top:14px}.filebox{display:grid;grid-template-columns:1fr 1fr;gap:10px}.hintbox{background:#fffdf8;border:1px dashed var(--line);border-radius:16px;padding:12px}.modeLabel{font-weight:950;color:#111827;margin:10px 0 0}.particleHint{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px}.particleHint span{border-radius:999px;padding:7px 11px;background:#fff;border:1px solid var(--line);font-weight:950}.particleHint .wo{color:var(--wo)}.particleHint .de{color:var(--de)}.particleHint .ni{color:var(--ni)}@media(max-width:860px){.grid{grid-template-columns:1fr}.settings,.filebox{grid-template-columns:1fr 1fr}.row{grid-template-columns:38px 1fr auto}.controls button{flex:1 1 40%}}@media(max-width:520px){.settings,.filebox{grid-template-columns:1fr}.jp{font-size:36px}}
 
+/* UI final adjustments */
+#modeFull{background:var(--blue)!important;color:#000!important;border:2px solid #111827;}
+#modeSingle{background:#7ed957!important;color:#000!important;border:2px solid transparent;}
+#shadowBtn{background:var(--blue)!important;color:#000!important;}
+#unlockBtn{color:#dc2626!important;}
+#playCurrentBtn{background:#dc2626!important;color:#fff!important;}
+.filebox,.offline-controls,.placement-section{display:none!important;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>助詞を・で・に Shadowing 雙模式</h1>
+  <div class="sub">MP3 + JSON 自動時間軸｜整段 Shadowing + 逐句播放雙模式</div>
+</header>
+
+<div class="grid">
+  <section class="card main">
+    <div class="tabs">
+      <button id="modeFull" class="active" onclick="setMode('full')">模式A：整段 Shadowing</button>
+      <button id="modeSingle" onclick="setMode('single')">模式B：逐句學習</button>
+    </div>
+
+    <div class="idx" id="idx">載入中...</div>
+    <div class="jp" id="jp">---</div>
+    <div class="kana" id="kana">---</div>
+    <div class="zh" id="zh">---</div>
+    <div class="particleHint">
+      <span class="wo">を＝做什麼</span>
+      <span class="de">で＝在哪裡做</span>
+      <span class="ni">に＝到哪裡／給誰／幾點</span>
+    </div>
+    <div class="status" id="status">請先載入 JSON</div>
+    <div class="bar"><div id="prog"></div></div>
+
+    <div class="controls">
+      <button class="warn" id="unlockBtn" onclick="unlockAudio()">🔓 解鎖音訊</button>
+      <button id="playCurrentBtn" class="primary" onclick="playOneFromFull()">▶ 播放目前句</button>
+      <button id="shadowBtn" class="primary" onclick="startShadowing()">🎧 Shadowing連播</button>
+      <button onclick="pauseResume()">暫停/繼續</button>
+      <button onclick="stopAll()">停止</button>
+      <button onclick="prevSentence()">上一句</button>
+      <button onclick="nextSentence()">下一句</button>
+    </div>
+
+    <div class="settings">
+      <div class="setting"><label>速度</label><select id="rate"><option value="0.8">0.8x</option><option value="0.9">0.9x</option><option value="1" selected>1.0x</option><option value="1.1">1.1x</option><option value="1.2">1.2x</option></select></div>
+      <div class="setting"><label>每句總播放次數</label><select id="repeat"><option value="1">1次</option><option value="2" selected>2次</option><option value="3">3次</option></select></div>
+      <div class="setting"><label>跟讀延遲</label><select id="delay"><option value="800">0.8秒</option><option value="1200" selected>1.2秒</option><option value="1600">1.6秒</option><option value="2000">2.0秒</option></select></div>
+      <div class="setting"><label>句間停頓</label><select id="gap"><option value="300">0.3秒</option><option value="600" selected>0.6秒</option><option value="1000">1.0秒</option></select></div>
+    </div>
+
+    <div class="footer filebox">
+      <div class="setting"><label>整段 MP3</label><input id="mp3src" value="particles_24.mp3" /></div>
+      <div class="setting"><label>JSON</label><input id="jsonsrc" value="particles_24.json" /></div>
+    </div>
+    <div class="controls offline-controls">
+      <button onclick="loadLesson()">使用內建離線資料</button>
+      <label style="display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:11px 16px;font-size:16px;font-weight:950;cursor:pointer;background:#edf2f7;color:#111827;">
+        載入本機 particles_24.json
+        <input type="file" accept=".json,application/json" onchange="loadLocalJsonFile(event)" style="display:none">
+      </label>
+    </div>
+
+    <audio id="player" preload="auto" playsinline></audio>
+  </section>
+
+  <aside class="card">
+    <h2 style="margin-top:0">24句列表</h2>
+    <div class="note">點任一句可切換。模式B建議用來逐句聽、逐句跟讀；模式A適合整段自動訓練。</div>
+    <div class="list" id="list"></div>
+  </aside>
+</div>
+
+<section class="card footer placement-section">
+  <h2 style="margin-top:0">檔案放置方式</h2>
+  <div class="hintbox note">
+    請把以下檔案放在同一層：<br>
+    1. <b>shadowing_particles_final_dual_mode.html</b><br>
+    2. <b>particles_24.mp3</b><br>
+    3. <b>particles_24.json</b><br><br>
+    若你用 GitHub Pages，建議直接放在 repo 根目錄或同一個資料夾中。LINE / 手機環境請先按「解鎖音訊」。
+  </div>
+</section>
+</div>
+
+<script>
+// 離線版：不再用 fetch() 讀 particles_24.json，避免本機 file:// 被瀏覽器擋掉。
+// 只要同資料夾有 particles_24.mp3，本 HTML 雙擊就能用。
+const EMBED_DATA = [
+  {
+    "id": 1,
+    "particle": "を",
+    "start": 0.0,
+    "end": 1.29,
+    "text": "ご飯を食べる",
+    "kana": "ごはんをたべる",
+    "romaji": "gohan o taberu",
+    "zh": "吃飯"
+  },
+  {
+    "id": 2,
+    "particle": "を",
+    "start": 1.59,
+    "end": 2.79,
+    "text": "テレビを見る",
+    "kana": "テレビをみる",
+    "romaji": "terebi o miru",
+    "zh": "看電視"
+  },
+  {
+    "id": 3,
+    "particle": "を",
+    "start": 3.09,
+    "end": 4.29,
+    "text": "本を読む",
+    "kana": "ほんをよむ",
+    "romaji": "hon o yomu",
+    "zh": "讀書"
+  },
+  {
+    "id": 4,
+    "particle": "を",
+    "start": 4.59,
+    "end": 5.798,
+    "text": "手紙を書く",
+    "kana": "てがみをかく",
+    "romaji": "tegami o kaku",
+    "zh": "寫信"
+  },
+  {
+    "id": 5,
+    "particle": "を",
+    "start": 6.098,
+    "end": 7.402,
+    "text": "音楽を聞く",
+    "kana": "おんがくをきく",
+    "romaji": "ongaku o kiku",
+    "zh": "聽音樂"
+  },
+  {
+    "id": 6,
+    "particle": "を",
+    "start": 7.702,
+    "end": 8.902,
+    "text": "水を飲む",
+    "kana": "みずをのむ",
+    "romaji": "mizu o nomu",
+    "zh": "喝水"
+  },
+  {
+    "id": 7,
+    "particle": "を",
+    "start": 9.202,
+    "end": 10.448,
+    "text": "写真を撮る",
+    "kana": "しゃしんをとる",
+    "romaji": "shashin o toru",
+    "zh": "拍照"
+  },
+  {
+    "id": 8,
+    "particle": "を",
+    "start": 10.748,
+    "end": 11.948,
+    "text": "映画を見る",
+    "kana": "えいがをみる",
+    "romaji": "eiga o miru",
+    "zh": "看電影"
+  },
+  {
+    "id": 9,
+    "particle": "で",
+    "start": 12.248,
+    "end": 13.644,
+    "text": "公園で遊ぶ",
+    "kana": "こうえんであそぶ",
+    "romaji": "kouen de asobu",
+    "zh": "在公園玩"
+  },
+  {
+    "id": 10,
+    "particle": "で",
+    "start": 13.944,
+    "end": 15.144,
+    "text": "店で食べる",
+    "kana": "みせでたべる",
+    "romaji": "mise de taberu",
+    "zh": "在店裡吃"
+  },
+  {
+    "id": 11,
+    "particle": "で",
+    "start": 15.444,
+    "end": 17.16,
+    "text": "教室で勉強する",
+    "kana": "きょうしつでべんきょうする",
+    "romaji": "kyoushitsu de benkyou suru",
+    "zh": "在教室讀書"
+  },
+  {
+    "id": 12,
+    "particle": "で",
+    "start": 17.46,
+    "end": 18.66,
+    "text": "駅で待つ",
+    "kana": "えきでまつ",
+    "romaji": "eki de matsu",
+    "zh": "在車站等"
+  },
+  {
+    "id": 13,
+    "particle": "で",
+    "start": 18.96,
+    "end": 20.16,
+    "text": "家で休む",
+    "kana": "いえでやすむ",
+    "romaji": "ie de yasumu",
+    "zh": "在家休息"
+  },
+  {
+    "id": 14,
+    "particle": "で",
+    "start": 20.46,
+    "end": 21.75,
+    "text": "図書館で読む",
+    "kana": "としょかんでよむ",
+    "romaji": "toshokan de yomu",
+    "zh": "在圖書館讀書"
+  },
+  {
+    "id": 15,
+    "particle": "で",
+    "start": 22.05,
+    "end": 23.498,
+    "text": "会社で働く",
+    "kana": "かいしゃではたらく",
+    "romaji": "kaisha de hataraku",
+    "zh": "在公司工作"
+  },
+  {
+    "id": 16,
+    "particle": "で",
+    "start": 23.798,
+    "end": 24.998,
+    "text": "車で行く",
+    "kana": "くるまでいく",
+    "romaji": "kuruma de iku",
+    "zh": "開車去"
+  },
+  {
+    "id": 17,
+    "particle": "に",
+    "start": 25.298,
+    "end": 26.664,
+    "text": "7時に起きる",
+    "kana": "しちじにおきる",
+    "romaji": "shichiji ni okiru",
+    "zh": "7點起床"
+  },
+  {
+    "id": 18,
+    "particle": "に",
+    "start": 26.964,
+    "end": 28.182,
+    "text": "日本に行く",
+    "kana": "にほんにいく",
+    "romaji": "nihon ni iku",
+    "zh": "去日本"
+  },
+  {
+    "id": 19,
+    "particle": "に",
+    "start": 28.482,
+    "end": 29.682,
+    "text": "家に帰る",
+    "kana": "いえにかえる",
+    "romaji": "ie ni kaeru",
+    "zh": "回家"
+  },
+  {
+    "id": 20,
+    "particle": "に",
+    "start": 29.982,
+    "end": 31.2,
+    "text": "椅子に座る",
+    "kana": "いすにすわる",
+    "romaji": "isu ni suwaru",
+    "zh": "坐在椅子上"
+  },
+  {
+    "id": 21,
+    "particle": "に",
+    "start": 31.5,
+    "end": 32.7,
+    "text": "駅に着く",
+    "kana": "えきにつく",
+    "romaji": "eki ni tsuku",
+    "zh": "到車站"
+  },
+  {
+    "id": 22,
+    "particle": "に",
+    "start": 33.0,
+    "end": 34.29,
+    "text": "学校に行く",
+    "kana": "がっこうにいく",
+    "romaji": "gakkou ni iku",
+    "zh": "去學校"
+  },
+  {
+    "id": 23,
+    "particle": "に",
+    "start": 34.59,
+    "end": 35.836,
+    "text": "先生に会う",
+    "kana": "せんせいにあう",
+    "romaji": "sensei ni au",
+    "zh": "見老師"
+  },
+  {
+    "id": 24,
+    "particle": "に",
+    "start": 36.136,
+    "end": 37.742,
+    "text": "友達に電話する",
+    "kana": "ともだちにでんわする",
+    "romaji": "tomodachi ni denwa suru",
+    "zh": "打電話給朋友"
+  }
+];
+
+let DATA=[];
+let i=0;
+let mode='full';
+let timer=null;
+let shadowing=false;
+let unlocked=false;
+let playToken=0;
+const $=id=>document.getElementById(id);
+const player=$('player');
+
+function normalizeLesson(raw){
+  const arr = Array.isArray(raw) ? raw : (raw.items && Array.isArray(raw.items) ? raw.items : null);
+  if(!arr) throw new Error('JSON格式不正確：需要陣列或 items 陣列');
+  return arr.map((x,k)=>({
+    id:x.id ?? k+1,
+    particle:x.particle ?? x.p ?? '',
+    start:Number(x.start),
+    end:Number(x.end),
+    text:x.text ?? x.jp ?? '',
+    kana:x.kana ?? '',
+    romaji:x.romaji ?? '',
+    zh:x.zh ?? '',
+    audio:x.audio ?? `tmp_particles/tmp_${String(k).padStart(2,'0')}.mp3`
+  })).filter(x=>!Number.isNaN(x.start)&&!Number.isNaN(x.end));
+}
+
+function loadLocalJsonFile(event){
+  const file = event.target.files && event.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try{
+      stopAll(false);
+      const raw = JSON.parse(reader.result);
+      DATA = normalizeLesson(raw);
+      if(!DATA.length) throw new Error('JSON沒有可用資料');
+      i=0;
+      makeList();
+      render();
+      $('status').innerHTML='<span class="okmsg">本機 particles_24.json 已載入，時間軸已更新</span>';
+    }catch(e){
+      $('status').textContent='本機 JSON 載入失敗：' + e.message;
+    }
+  };
+  reader.readAsText(file, 'utf-8');
+}
+
+function setMode(m){
+  mode=m;
+  $('modeFull').classList.toggle('active',m==='full');
+  $('modeSingle').classList.toggle('active',m==='single');
+  stopAll(false);
+  $('status').textContent = m==='full' ? '模式A：整段MP3時間軸播放' : '模式B：逐句學習，可點列表單句播放';
+}
+
+function render(){
+  if(!DATA.length){$('idx').textContent='尚未載入';return;}
+  const d=DATA[i];
+  $('idx').textContent=`第 ${i+1} / ${DATA.length} 句 ｜ 助詞：${d.particle || '-'}`;
+  $('jp').textContent=d.text;
+  $('kana').textContent=`${d.kana}${d.romaji ? ' / ' + d.romaji : ''}`;
+  $('zh').textContent=d.zh;
+  $('prog').style.width='0%';
+  document.querySelectorAll('.row').forEach((r,k)=>r.classList.toggle('active',k===i));
+  const active=document.querySelector('.row.active');
+  if(active) active.scrollIntoView({block:'nearest'});
+}
+
+function tagClass(p){return p==='を'?'wo':p==='で'?'de':'ni'}
+function makeList(){
+  $('list').innerHTML=DATA.map((d,k)=>`<div class="row ${k===i?'active':''}" onclick="selectSentence(${k})"><div class="no">${String(k+1).padStart(2,'0')}</div><div><div class="rjp">${d.text}<span class="tag ${tagClass(d.particle)}">${d.particle}</span></div><div class="rkana">${d.kana}${d.romaji?' / '+d.romaji:''}</div><div class="rzh">${d.zh}</div></div><button class="smallPlay" onclick="event.stopPropagation(); selectSentence(${k}); playOneFromFull();">▶</button></div>`).join('');
+}
+function selectSentence(k){stopAll(false);i=k;render();}
+
+async function unlockAudio(){
+  try{
+    player.src=$('mp3src').value.trim();
+    player.currentTime=0;
+    player.muted=true;
+    await player.play();
+    player.pause();
+    player.muted=false;
+    unlocked=true;
+    $('unlockBtn').disabled=true;
+    $('status').textContent='音訊已解鎖，可以開始播放';
+  }catch(e){
+    $('status').textContent='音訊解鎖失敗：請再點一次，或確認 particles_24.mp3 與 HTML 在同一層';
+  }
+}
+
+function wait(ms){return new Promise(r=>setTimeout(r,ms));}
+function clearTimers(){if(timer){clearInterval(timer);timer=null;}}
+
+async function playSliceFromFull(d,label, token=++playToken){
+  return new Promise(async(resolve,reject)=>{
+    clearTimers();
+    player.onended = null;
+    try{
+      player.src=$('mp3src').value.trim();
+      player.playbackRate=parseFloat($('rate').value);
+      player.currentTime=d.start;
+      $('status').textContent=label;
+      await player.play();
+      timer=setInterval(()=>{
+        if(token !== playToken){
+          player.pause();
+          clearTimers();
+          resolve();
+          return;
+        }
+        const pct=Math.max(0,Math.min(100,((player.currentTime-d.start)/(d.end-d.start))*100));
+        $('prog').style.width=pct+'%';
+        if(player.currentTime>=d.end){
+          player.pause();
+          player.currentTime=d.end;
+          clearTimers();
+          $('prog').style.width='100%';
+          resolve();
+        }
+      },40);
+    }catch(e){
+      clearTimers();
+      $('status').textContent='播放失敗：請確認 particles_24.mp3 與 HTML 在同一層，手機請先解鎖音訊';
+      reject(e);
+    }
+  });
+}
+
+async function playSingleFile(d,label, token=++playToken){
+  // 模式B改為「整段MP3精準切片」播放目前句，避免沒有 tmp_particles 時被瀏覽器誤觸連播。
+  return playSliceFromFull(d,label,token);
+}
+
+async function playOneFromFull(){
+  if(!DATA.length) return;
+  shadowing=false;
+  playToken++;
+  clearTimers();
+  player.pause();
+  player.onended = null;
+  render();
+  const d=DATA[i];
+  const token=++playToken;
+  if(mode==='single') await playSliceFromFull(d,`模式B：逐句播放 第 ${i+1} 句`,token);
+  else await playSliceFromFull(d,`模式A：整段切段播放 第 ${i+1} 句`,token);
+}
+
+async function startShadowing(){
+  if(!DATA.length) return;
+  stopAll(false);
+  shadowing=true;
+  const runToken=++playToken;
+  const totalPlays=parseInt($('repeat').value,10);
+  const delay=parseInt($('delay').value,10);
+  const gap=parseInt($('gap').value,10);
+  for(;i<DATA.length && shadowing;i++){
+    render();
+    const d=DATA[i];
+    if(mode==='single') await playSliceFromFull(d,`第 ${i+1} 句：第 1/${totalPlays} 次播放`,runToken);
+    else await playSliceFromFull(d,`第 ${i+1} 句：第 1/${totalPlays} 次播放`,runToken);
+    if(!shadowing) break;
+    await wait(delay);
+    for(let r=2;r<=totalPlays && shadowing;r++){
+      if(mode==='single') await playSliceFromFull(d,`第 ${i+1} 句：第 ${r}/${totalPlays} 次播放`,runToken);
+      else await playSliceFromFull(d,`第 ${i+1} 句：第 ${r}/${totalPlays} 次播放`,runToken);
+      await wait(gap);
+    }
+  }
+  if(shadowing){
+    $('status').textContent='全部播放完成，3秒後回到第一句';
+    await wait(3000);
+    i=0;render();
+  }
+  shadowing=false;
+}
+
+function pauseResume(){
+  if(player.paused){player.play();$('status').textContent='繼續播放';}
+  else{player.pause();$('status').textContent='已暫停';}
+}
+function stopAll(show=true){
+  shadowing=false;
+  playToken++;
+  if(player){ player.pause(); player.onended=null; }
+  clearTimers();
+  const prog=$('prog'); if(prog) prog.style.width='0%';
+  if(show && $('status')) $('status').textContent='已停止';
+}
+function nextSentence(){stopAll(false);if(DATA.length){i=(i+1)%DATA.length;render();}}
+function prevSentence(){stopAll(false);if(DATA.length){i=(i-1+DATA.length)%DATA.length;render();}}
+
+window.addEventListener('DOMContentLoaded', loadLesson);
+</script>
+</body>
+</html>
