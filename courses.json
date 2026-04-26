@@ -33,5 +33,17 @@
   "icon": "🔤",
   "href": "lessons/combo-katakana/",
   "desc": "片假名單字快速記憶與發音訓練。"
+},
+{
+  "title": "日文助詞 を・で・に",
+  "subtitle": "3個助詞搞懂日文句子結構",
+  "level": "N5",
+  "topic": "particles",
+  "topicLabel": "助詞",
+  "duration": "約 38 秒",
+  "sentences": 24,
+  "icon": "🔰",
+  "href": "lessons/particles_wo_de_ni/",
+  "desc": "練習 を＝動作對象、で＝動作發生地、に＝時間／目的地／接受者。"
 }
 ]
