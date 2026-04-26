@@ -43,7 +43,7 @@
       <span class="de">で＝在哪裡做</span>
       <span class="ni">に＝到哪裡／給誰／幾點</span>
     </div>
-    <div class="status" id="status">請先載入 JSON</div>
+    <div class="status" id="status"></div>
     <div class="bar"><div id="prog"></div></div>
 
     <div class="controls">
@@ -353,41 +353,12 @@ let playToken=0;
 const $=id=>document.getElementById(id);
 const player=$('player');
 
-function normalizeLesson(raw){
-  const arr = Array.isArray(raw) ? raw : (raw.items && Array.isArray(raw.items) ? raw.items : null);
-  if(!arr) throw new Error('JSON格式不正確：需要陣列或 items 陣列');
-  return arr.map((x,k)=>({
-    id:x.id ?? k+1,
-    particle:x.particle ?? x.p ?? '',
-    start:Number(x.start),
-    end:Number(x.end),
-    text:x.text ?? x.jp ?? '',
-    kana:x.kana ?? '',
-    romaji:x.romaji ?? '',
-    zh:x.zh ?? '',
-    audio:x.audio ?? `tmp_particles/tmp_${String(k).padStart(2,'0')}.mp3`
-  })).filter(x=>!Number.isNaN(x.start)&&!Number.isNaN(x.end));
-}
-
-function loadLocalJsonFile(event){
-  const file = event.target.files && event.target.files[0];
-  if(!file) return;
-  const reader = new FileReader();
-  reader.onload = () => {
-    try{
-      stopAll(false);
-      const raw = JSON.parse(reader.result);
-      DATA = normalizeLesson(raw);
-      if(!DATA.length) throw new Error('JSON沒有可用資料');
-      i=0;
-      makeList();
-      render();
-      $('status').innerHTML='<span class="okmsg">本機 particles_24.json 已載入，時間軸已更新</span>';
-    }catch(e){
-      $('status').textContent='本機 JSON 載入失敗：' + e.message;
-    }
-  };
-  reader.readAsText(file, 'utf-8');
+function loadLesson(){
+  DATA = EMBED_DATA;
+  i = 0;
+  makeList();
+  render();
+  $('status').textContent = '';
 }
 
 function setMode(m){
