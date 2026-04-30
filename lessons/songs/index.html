@@ -4,238 +4,137 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shadowing Player</title>
+
 <style>
 body{font-family:sans-serif;background:#0f172a;color:#e2e8f0;margin:0;padding:20px}
 .container{max-width:900px;margin:auto}
-h1{text-align:center}
-.controls{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:15px 0}
-button,select{padding:10px 14px;border:none;border-radius:8px;font-weight:bold}
-button{cursor:pointer;background:#38bdf8;color:#000}
-button:hover{background:#0ea5e9}
-.main-card{background:#1e293b;padding:22px;border-radius:14px;text-align:center;margin-bottom:15px;border:2px solid transparent}
-.main-card.listen{border-color:#38bdf8}
-.main-card.prepare{border-color:#facc15}
-.main-card.speak{border-color:#fb7185;box-shadow:0 0 18px rgba(251,113,133,.45)}
-.hint{font-size:18px;font-weight:bold;margin-bottom:10px;color:#facc15}
-.jp{font-size:26px;margin-bottom:8px}
-.kana{color:#93c5fd;margin-bottom:4px}
-.romaji{color:#fca5a5;margin-bottom:4px}
-.zh{color:#86efac}
-.progress-wrap{height:10px;background:#334155;border-radius:99px;overflow:hidden;margin:16px 0}
-.progress-bar{height:100%;width:0%;background:#38bdf8;transition:width .08s linear}
-.list{max-height:420px;overflow:auto;background:#020617;padding:10px;border-radius:10px;scroll-behavior:smooth}
-.row{padding:10px;border-bottom:1px solid #1e293b;border-radius:8px}
-.row.active{background:#334155;outline:2px solid #38bdf8}
-.row .small{font-size:13px;color:#94a3b8}
+.controls{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:10px 0}
+
+button,select,input{
+  padding:8px;
+  border-radius:8px;
+  border:none;
+}
+
+.main-card{
+  background:#1e293b;
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+}
+
+.progress{
+  height:10px;
+  background:#334155;
+  margin-top:10px;
+  border-radius:999px;
+  overflow:hidden;
+}
+.bar{
+  height:100%;
+  width:0%;
+  background:#38bdf8;
+}
 </style>
 </head>
 
 <body>
 <div class="container">
-<h1>🎧 Shadowing Player</h1>
+
+<h2>🎧 Shadowing（Offset校正版）</h2>
 
 <div class="controls">
-  <button onclick="unlockAudio()">🔓 解鎖音訊</button>
-  <button onclick="start()">▶️ 開始</button>
-  <button onclick="pauseToggle()">⏸️ 暫停 / 繼續</button>
-  <button onclick="stopAll()">⏹️ 停止</button>
+  <button onclick="unlock()">🔓解鎖</button>
+  <button onclick="start()">▶開始</button>
+  <button onclick="pause()">⏸暫停</button>
 
-  <select id="repeat">
-    <option value="1">每句 1 次</option>
-    <option value="2" selected>每句 2 次</option>
-    <option value="3">每句 3 次</option>
-  </select>
-
-  <select id="delay">
-    <option value="500">跟讀延遲 0.5 秒</option>
-    <option value="800" selected>跟讀延遲 0.8 秒</option>
-    <option value="1200">跟讀延遲 1.2 秒</option>
-    <option value="1500">跟讀延遲 1.5 秒</option>
-  </select>
-
-  <select id="rate" onchange="audio.playbackRate=parseFloat(this.value)">
-    <option value="0.75">速度 0.75x</option>
-    <option value="0.85">速度 0.85x</option>
-    <option value="1" selected>速度 1.00x</option>
-    <option value="1.1">速度 1.10x</option>
-  </select>
+  <label>Offset：
+    <input type="range" min="-20" max="20" step="0.1" value="0" id="offset">
+  </label>
+  <span id="offsetVal">0.0s</span>
 </div>
 
-<div class="main-card" id="card">
-  <div class="hint" id="hint">請先解鎖音訊</div>
-  <div class="jp" id="jp">準備開始</div>
-  <div class="kana" id="kana"></div>
-  <div class="romaji" id="romaji"></div>
-  <div class="zh" id="zh"></div>
-  <div class="progress-wrap"><div class="progress-bar" id="bar"></div></div>
+<div class="main-card">
+  <div id="jp">準備</div>
+  <div id="kana"></div>
+  <div id="romaji"></div>
+  <div id="zh"></div>
+
+  <div class="progress"><div class="bar" id="bar"></div></div>
 </div>
 
-<div class="list" id="list"></div>
 </div>
 
 <script>
 let audio = new Audio("input.mp3");
 let data = [];
-let current = 0;
-let repeatNow = 1;
-let timer = null;
-let playing = false;
-let paused = false;
+let i = 0;
+let timer;
 
-const FOLLOW_MS_DEFAULT = 800;
+const offsetEl = document.getElementById("offset");
+const offsetVal = document.getElementById("offsetVal");
+
+offsetEl.oninput = () => {
+  offsetVal.innerText = offsetEl.value + "s";
+};
 
 async function load(){
-  const res = await fetch("song.json?v=" + Date.now());
+  const res = await fetch("song.json?v="+Date.now());
   data = await res.json();
-  renderList();
 }
 
-function renderList(){
-  const list = document.getElementById("list");
-  list.innerHTML = data.map((d,i)=>`
-    <div class="row ${i===current?'active':''}" id="row-${i}">
-      <b>${i+1}. ${d.text}</b>
-      <div class="small">${d.kana || ""}</div>
-      <div class="small">${d.romaji || ""}</div>
-      <div class="small">${d.zh || ""}</div>
-    </div>
-  `).join("");
-
-  const active = document.getElementById(`row-${current}`);
-  if(active){
-    active.scrollIntoView({behavior:"smooth", block:"center"});
-  }
+function show(d){
+  jp.innerText = d.text;
+  kana.innerText = d.kana;
+  romaji.innerText = d.romaji;
+  zh.innerText = d.zh;
 }
 
-function show(i){
-  const d = data[i];
-  jp.innerText = d.text || "";
-  kana.innerText = d.kana || "";
-  romaji.innerText = d.romaji || "";
-  zh.innerText = d.zh || "";
-  renderList();
+function start(){
+  i = 0;
+  play();
 }
 
-function setPhase(phase, text){
-  card.className = "main-card " + phase;
-  hint.innerText = text;
-}
+function play(){
+  if(i >= data.length) return;
 
-function updateProgress(seg){
-  const total = seg.end - seg.start;
-  const now = audio.currentTime - seg.start;
-  const pct = Math.max(0, Math.min(100, (now / total) * 100));
-  bar.style.width = pct + "%";
-}
+  let d = data[i];
+  let offset = parseFloat(offsetEl.value);
 
-function sleep(ms){
-  return new Promise(resolve=>setTimeout(resolve, ms));
-}
+  let start = d.start + offset;
+  let end = d.end + offset;
 
-async function start(){
-  if(!data.length) return;
-  stopAll(false);
-  current = 0;
-  repeatNow = 1;
-  playing = true;
-  paused = false;
-  await playCurrent();
-}
+  audio.currentTime = start;
+  audio.play();
 
-async function playCurrent(){
-  if(!playing || current >= data.length){
-    setPhase("", "完成");
-    bar.style.width = "100%";
-    setTimeout(()=>{ current = 0; renderList(); }, 3000);
-    return;
-  }
-
-  const seg = data[current];
-  const repeatTotal = parseInt(document.getElementById("repeat").value,10);
-  const followDelay = parseInt(document.getElementById("delay").value,10);
-
-  show(current);
-  setPhase("listen", `🎧 先聽原音：第 ${current+1} 句 / 第 ${repeatNow} 次`);
-
-  audio.pause();
-  audio.currentTime = seg.start;
-  audio.playbackRate = parseFloat(document.getElementById("rate").value);
-  await audio.play().catch(()=>{});
+  show(d);
 
   clearInterval(timer);
   timer = setInterval(()=>{
-    if(!paused) updateProgress(seg);
+    let p = (audio.currentTime - start)/(end-start)*100;
+    bar.style.width = Math.max(0, Math.min(100, p)) + "%";
 
-    if(audio.currentTime >= seg.end){
-      audio.pause();
-      clearInterval(timer);
-      bar.style.width = "100%";
-      afterListen(repeatTotal, followDelay);
+    if(audio.currentTime >= end){
+      i++;
+      play();
     }
   },80);
 }
 
-async function afterListen(repeatTotal, followDelay){
-  if(!playing) return;
-
-  setPhase("prepare", `⏱ 準備跟讀：${followDelay/1000} 秒`);
-  await sleep(followDelay);
-
-  if(!playing) return;
-  setPhase("speak", "🗣️ 請開口跟讀");
-  await sleep(Math.max(1200, followDelay));
-
-  if(repeatNow < repeatTotal){
-    repeatNow++;
-    bar.style.width = "0%";
-    await playCurrent();
-  }else{
-    current++;
-    repeatNow = 1;
-    bar.style.width = "0%";
-    await playCurrent();
-  }
-}
-
-function pauseToggle(){
-  if(!playing) return;
-
-  if(audio.paused){
-    paused = false;
-    audio.play().catch(()=>{});
-    setPhase("listen", "▶️ 繼續播放");
-  }else{
-    paused = true;
-    audio.pause();
-    setPhase("prepare", "⏸️ 已暫停");
-  }
-}
-
-function stopAll(reset=true){
-  playing = false;
-  paused = false;
+function pause(){
   audio.pause();
-  clearInterval(timer);
-  bar.style.width = "0%";
-  if(reset){
-    current = 0;
-    repeatNow = 1;
-    setPhase("", "已停止");
-    renderList();
-  }
 }
 
-function unlockAudio(){
+function unlock(){
   audio.play().then(()=>{
     audio.pause();
     audio.currentTime = 0;
-    setPhase("", "音訊已解鎖，可以開始");
-  }).catch(()=>{
-    alert("音訊解鎖失敗，請再點一次");
-  });
+    alert("已解鎖");
+  }).catch(()=>alert("再點一次"));
 }
 
 load();
 </script>
+
 </body>
 </html>
