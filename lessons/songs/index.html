@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shadowing Text｜純文字練習版</title>
+<style>
+:root{
+  --bg:#0f172a;--panel:#1e293b;--panel2:#020617;--line:#334155;
+  --text:#e2e8f0;--muted:#94a3b8;--blue:#38bdf8;--yellow:#facc15;
+  --green:#86efac;--red:#fca5a5;
+}
+*{box-sizing:border-box}
+body{
+  font-family:system-ui,-apple-system,"Noto Sans TC","Microsoft JhengHei",sans-serif;
+  background:var(--bg);color:var(--text);margin:0;padding:18px;
+}
+.container{max-width:960px;margin:auto}
+h1{text-align:center;margin:8px 0 6px;font-size:24px}
+.note{text-align:center;color:var(--muted);font-size:14px;margin-bottom:14px}
+.controls{
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;margin:14px 0;
+}
+button,select{
+  padding:10px 14px;border:none;border-radius:10px;font-weight:700;cursor:pointer;
+}
+button{background:var(--blue);color:#00111a}
+button.secondary{background:#cbd5e1;color:#0f172a}
+button.danger{background:#f87171;color:#111827}
+select{background:#e2e8f0;color:#0f172a}
+.main-card{
+  background:var(--panel);padding:22px;border-radius:16px;text-align:center;margin-bottom:14px;
+  border:2px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.25);
+}
+.hint{font-size:18px;font-weight:800;margin-bottom:12px;color:var(--yellow)}
+.jp{font-size:30px;line-height:1.35;margin-bottom:10px;font-weight:800}
+.kana{color:#93c5fd;font-size:18px;margin-bottom:5px}
+.romaji{color:var(--red);font-size:16px;margin-bottom:5px}
+.zh{color:var(--green);font-size:18px}
+.progress-wrap{height:11px;background:var(--line);border-radius:99px;overflow:hidden;margin:18px 0 4px}
+.progress-bar{height:100%;width:0%;background:var(--blue);transition:width .1s linear}
+.counter{text-align:center;color:var(--muted);font-size:14px;margin:8px 0}
+.list{max-height:430px;overflow:auto;background:var(--panel2);padding:10px;border-radius:14px;scroll-behavior:smooth}
+.row{padding:11px 12px;border-bottom:1px solid #1e293b;border-radius:10px;cursor:pointer}
+.row:hover{background:#1e293b}
+.row.active{background:#334155;outline:2px solid var(--blue)}
+.row .small{font-size:13px;color:var(--muted);line-height:1.45}
+.row .zhsmall{font-size:13px;color:#86efac;line-height:1.45}
+.timer{
+  display:inline-block;min-width:70px;padding:4px 10px;border-radius:999px;background:#334155;color:#e2e8f0;
+}
+@media(max-width:640px){
+  body{padding:12px}
+  .jp{font-size:23px}
+  .kana{font-size:16px}
+  .controls{gap:8px}
+  button,select{padding:9px 10px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>📖 Shadowing 純文字練習版</h1>
+<div class="note">本頁不播放音頻。請學生另外播放 input.mp3，搭配文字逐句跟讀。</div>
+
+<div class="controls">
+  <button onclick="prevLine()">⬅️ 上一句</button>
+  <button onclick="nextLine()">➡️ 下一句</button>
+  <button class="secondary" onclick="autoText()">▶️ 自動走文字</button>
+  <button class="danger" onclick="stopAuto()">⏹️ 停止</button>
+  <select id="pace">
+    <option value="3000">每句 3 秒</option>
+    <option value="4000" selected>每句 4 秒</option>
+    <option value="5000">每句 5 秒</option>
+    <option value="6000">每句 6 秒</option>
+    <option value="8000">每句 8 秒</option>
+  </select>
+</div>
+
+<div class="main-card">
+  <div class="hint" id="hint">請按「下一句」或點選下方句子</div>
+  <div class="jp" id="jp">載入中...</div>
+  <div class="kana" id="kana"></div>
+  <div class="romaji" id="romaji"></div>
+  <div class="zh" id="zh"></div>
+  <div class="progress-wrap"><div class="progress-bar" id="bar"></div></div>
+</div>
+
+<div class="counter">
+  <span id="counter">0 / 0</span>
+  ｜自動文字節奏：<span class="timer" id="timerText">停止</span>
+</div>
+
+<div class="list" id="list"></div>
+</div>
+
+<script>
+const JSON_FILE = "song.json";
+let data = [];
+let current = 0;
+let autoTimer = null;
+let progressTimer = null;
+let autoRunning = false;
+
+async function load(){
+  try{
+    const res = await fetch(JSON_FILE + "?v=" + Date.now());
+    if(!res.ok) throw new Error("song.json 載入失敗");
+    data = await res.json();
+    current = 0;
+    show(0);
+    renderList();
+  }catch(e){
+    jp.innerText = "song.json 載入失敗";
+    kana.innerText = "請確認 index.html 與 song.json 放在同一層。";
+  }
+}
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, m => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
+  }[m]));
+}
+
+function renderList(){
+  list.innerHTML = data.map((d,i)=>`
+    <div class="row ${i===current?'active':''}" id="row-${i}" onclick="goLine(${i})">
+      <b>${String(i+1).padStart(2,"0")}. ${escapeHtml(d.text || "")}</b>
+      <div class="small">${escapeHtml(d.kana || "")}</div>
+      <div class="small">${escapeHtml(d.romaji || "")}</div>
+      <div class="zhsmall">${escapeHtml(d.zh || "")}</div>
+    </div>
+  `).join("");
+
+  const active = document.getElementById("row-" + current);
+  if(active) active.scrollIntoView({behavior:"smooth", block:"center"});
+}
+
+function show(i){
+  if(!data.length) return;
+  current = Math.max(0, Math.min(i, data.length - 1));
+  const d = data[current];
+
+  jp.innerText = d.text || "";
+  kana.innerText = d.kana || "";
+  romaji.innerText = d.romaji || "";
+  zh.innerText = d.zh || "";
+  counter.innerText = `${current + 1} / ${data.length}`;
+  hint.innerText = "看文字 → 聽 MP3 → 開口跟讀";
+  bar.style.width = "0%";
+  renderList();
+}
+
+function goLine(i){
+  stopProgressOnly();
+  show(i);
+}
+
+function nextLine(){
+  stopProgressOnly();
+  if(current < data.length - 1) show(current + 1);
+}
+
+function prevLine(){
+  stopProgressOnly();
+  if(current > 0) show(current - 1);
+}
+
+function autoText(){
+  if(!data.length) return;
+  stopAuto(false);
+  autoRunning = true;
+  timerText.innerText = "進行中";
+  runOneAutoStep();
+}
+
+function runOneAutoStep(){
+  if(!autoRunning) return;
+
+  const duration = parseInt(pace.value, 10);
+  let start = Date.now();
+
+  hint.innerText = "🗣️ 請跟讀目前句子";
+  clearInterval(progressTimer);
+  progressTimer = setInterval(()=>{
+    const pct = Math.min(100, ((Date.now() - start) / duration) * 100);
+    bar.style.width = pct + "%";
+  }, 80);
+
+  clearTimeout(autoTimer);
+  autoTimer = setTimeout(()=>{
+    clearInterval(progressTimer);
+    bar.style.width = "100%";
+
+    if(current < data.length - 1){
+      show(current + 1);
+      runOneAutoStep();
+    }else{
+      stopAuto(false);
+      hint.innerText = "完成";
+      timerText.innerText = "完成";
+    }
+  }, duration);
+}
+
+function stopProgressOnly(){
+  clearInterval(progressTimer);
+  clearTimeout(autoTimer);
+  autoRunning = false;
+  timerText.innerText = "停止";
+  bar.style.width = "0%";
+}
+
+function stopAuto(resetText=true){
+  clearInterval(progressTimer);
+  clearTimeout(autoTimer);
+  autoRunning = false;
+  timerText.innerText = "停止";
+  if(resetText) hint.innerText = "已停止";
+}
+
+load();
+</script>
+</body>
+</html>
