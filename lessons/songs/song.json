@@ -1,7 +1,7 @@
 [
   {
     "start": 11.4,
-    "end": 17.9,
+    "end": 17.1,
     "text": "庭のシャベルが一日濡れて",
     "kana": "にわのしゃべるがいちにちぬれて",
     "romaji": "niwa no shaberu ga ichinichi nurete",
@@ -9,7 +9,7 @@
   },
   {
     "start": 17.9,
-    "end": 23.9,
+    "end": 23.1,
     "text": "雨が上がってくしゃみをひとつ",
     "kana": "あめがあがってくしゃみをひとつ",
     "romaji": "ame ga agatte kushami o hitotsu",
@@ -17,7 +17,7 @@
   },
   {
     "start": 23.9,
-    "end": 29.9,
+    "end": 29.1,
     "text": "雲が流れて光が射して",
     "kana": "くもがながれてひかりがさして",
     "romaji": "kumo ga nagarete hikari ga sashite",
@@ -25,7 +25,7 @@
   },
   {
     "start": 29.9,
-    "end": 37.4,
+    "end": 36.6,
     "text": "見上げてみれば",
     "kana": "みあげてみれば",
     "romaji": "miagete mireba",
@@ -33,7 +33,7 @@
   },
   {
     "start": 37.4,
-    "end": 45.4,
+    "end": 44.6,
     "text": "ラララ 虹が空にかかって",
     "kana": "ららら にじがそらにかかって",
     "romaji": "rarara niji ga sora ni kakatte",
@@ -41,7 +41,7 @@
   },
   {
     "start": 45.4,
-    "end": 57.4,
+    "end": 56.6,
     "text": "君の気分も晴れて",
     "kana": "きみのきぶんもはれて",
     "romaji": "kimi no kibun mo harete",
@@ -49,7 +49,7 @@
   },
   {
     "start": 57.4,
-    "end": 69.4,
+    "end": 68.6,
     "text": "きっと明日はいい天気",
     "kana": "きっとあしたはいいてんき",
     "romaji": "kitto ashita wa ii tenki",
@@ -57,7 +57,7 @@
   },
   {
     "start": 69.4,
-    "end": 81.4,
+    "end": 80.6,
     "text": "洗濯物が一日濡れて",
     "kana": "せんたくものがいちにちぬれて",
     "romaji": "sentakumono ga ichinichi nurete",
@@ -65,7 +65,7 @@
   },
   {
     "start": 81.4,
-    "end": 98.4,
+    "end": 97.6,
     "text": "風に吹かれて",
     "kana": "かぜにふかれて",
     "romaji": "kaze ni fukarete",
@@ -73,7 +73,7 @@
   },
   {
     "start": 98.4,
-    "end": 116.4,
+    "end": 115.6,
     "text": "君の気分も晴れて きっと明日はいい天気",
     "kana": "きみのきぶんもはれて きっとあしたはいいてんき",
     "romaji": "kimi no kibun mo harete kitto ashita wa ii tenki",
