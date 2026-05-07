@@ -25,14 +25,14 @@
   },
   {
     "start": 29.6,
-    "end": 31.7,
+    "end": 32.0,
     "text": "見上げてみれば",
     "kana": "みあげてみれば",
     "romaji": "miagete mireba",
     "zh": "抬頭一看"
   },
   {
-    "start": 32.0,
+    "start": 32.3,
     "end": 40.5,
     "text": "ラララ 虹が空にかかって",
     "kana": "ららら にじがそらにかかって",
@@ -72,8 +72,8 @@
     "zh": "被風吹動"
   },
   {
-    "start": 97.0,
-    "end": 117.6,
+    "start": 95.0,
+    "end": 120.6,
     "text": "君の気分も晴れて きっと明日はいい天気",
     "kana": "きみのきぶんもはれて きっとあしたはいいてんき",
     "romaji": "kimi no kibun mo harete kitto ashita wa ii tenki",
