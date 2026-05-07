@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shadowing 教學循環版</title>
+<style>
+body{font-family:sans-serif;background:#0f172a;color:#e2e8f0;margin:0;padding:18px}
+.container{max-width:960px;margin:auto}
+h1{text-align:center}
+.controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+button,select{padding:10px 14px;border:none;border-radius:10px;font-weight:700;cursor:pointer}
+button{background:#38bdf8;color:#00111a}
+.main-card{background:#1e293b;padding:22px;border-radius:16px;text-align:center;margin-bottom:14px}
+.jp{font-size:28px;font-weight:800}
+.kana{color:#93c5fd}
+.romaji{color:#fca5a5}
+.zh{color:#86efac}
+.progress-wrap{height:11px;background:#334155;border-radius:99px;overflow:hidden;margin-top:14px}
+.progress-bar{height:100%;width:0%;background:#38bdf8}
+.list{max-height:420px;overflow:auto;background:#020617;padding:10px;border-radius:14px}
+.row{padding:10px;border-bottom:1px solid #1e293b}
+.row.active{background:#334155;outline:2px solid #38bdf8}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🎧 Shadowing 教學循環版</h1>
+
+<div class="controls">
+<button onclick="unlockAudio()">🔓 解鎖音訊</button>
+<button onclick="start()">▶️ 開始</button>
+<button onclick="pauseToggle()">⏸️ 暫停 / 繼續</button>
+<button onclick="stopAll()">⏹️ 停止</button>
+
+<select id="rate" onchange="audio.playbackRate=parseFloat(this.value)">
+<option value="0.75">0.75x</option>
+<option value="0.85">0.85x</option>
+<option value="1" selected>1.00x</option>
+</select>
+</div>
+
+<div class="main-card">
+<div id="hint">請先解鎖音訊</div>
+<div class="jp" id="jp">準備開始</div>
+<div class="kana" id="kana"></div>
+<div class="romaji" id="romaji"></div>
+<div class="zh" id="zh"></div>
+
+<div class="progress-wrap">
+<div class="progress-bar" id="bar"></div>
+</div>
+</div>
+
+<div class="list" id="list"></div>
+
+</div>
+
+<script>
+const AUDIO_FILE="input.mp3";
+const JSON_FILE="song.json";
+
+const PLAY_SEQUENCE=[
+0,1,2,3,4,5,6,
+0,1,2,3,4,5,6,
+4,5,6,
+6
+];
+
+let audio=new Audio(AUDIO_FILE);
+audio.preload="auto";
+audio.setAttribute("playsinline","");
+audio.setAttribute("webkit-playsinline","");
+
+let data=[];
+let seqIndex=0;
+let timer=null;
+let playing=false;
+
+async function load(){
+  const res=await fetch(JSON_FILE+"?v="+Date.now());
+  data=await res.json();
+  renderList();
+}
+
+function renderList(active=-1){
+  list.innerHTML=data.map((d,i)=>`
+    <div class="row ${i===active?'active':''}">
+      <b>${String(i+1).padStart(2,"0")}. ${d.text}</b>
+      <div>${d.kana}</div>
+      <div>${d.romaji}</div>
+      <div>${d.zh}</div>
+    </div>
+  `).join("");
+
+  if(active>=0){
+    const row=document.querySelectorAll(".row")[active];
+    if(row) row.scrollIntoView({behavior:"smooth",block:"center"});
+  }
+}
+
+function show(i){
+  const d=data[i];
+  jp.innerText=d.text;
+  kana.innerText=d.kana;
+  romaji.innerText=d.romaji;
+  zh.innerText=d.zh;
+  renderList(i);
+}
+
+async function start(){
+  stopAll(false);
+  seqIndex=0;
+  playing=true;
+  await playNext();
+}
+
+async function playNext(){
+
+  if(!playing) return;
+
+  if(seqIndex>=PLAY_SEQUENCE.length){
+    hint.innerText="✅ 完成";
+    return;
+  }
+
+  const i=PLAY_SEQUENCE[seqIndex];
+  const seg=data[i];
+
+  show(i);
+
+  hint.innerText=`播放句子 ${String(i+1).padStart(2,"0")}`;
+
+  audio.pause();
+  audio.currentTime=seg.start;
+  audio.playbackRate=parseFloat(rate.value);
+
+  await audio.play().catch(()=>{});
+
+  clearInterval(timer);
+
+  timer=setInterval(()=>{
+
+    let total=seg.end-seg.start;
+    let now=audio.currentTime-seg.start;
+    let pct=Math.max(0,Math.min(100,(now/total)*100));
+
+    bar.style.width=pct+"%";
+
+    if(audio.currentTime>=seg.end){
+
+      audio.pause();
+      clearInterval(timer);
+
+      seqIndex++;
+
+      setTimeout(()=>{
+        bar.style.width="0%";
+        playNext();
+      },250);
+
+    }
+
+  },50);
+
+}
+
+function pauseToggle(){
+
+  if(audio.paused){
+    audio.play().catch(()=>{});
+  }else{
+    audio.pause();
+  }
+
+}
+
+function stopAll(reset=true){
+
+  playing=false;
+
+  audio.pause();
+
+  clearInterval(timer);
+
+  bar.style.width="0%";
+
+  if(reset){
+    seqIndex=0;
+  }
+
+}
+
+function unlockAudio(){
+
+  audio.play().then(()=>{
+    audio.pause();
+    audio.currentTime=0;
+    hint.innerText="音訊已解鎖";
+  }).catch(()=>{
+    alert("請再點一次");
+  });
+
+}
+
+load();
+</script>
+
+</body>
+</html>
