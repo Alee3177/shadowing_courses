@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shadowing 教學循環版｜尾音拆字</title>
+<style>
+:root{
+  --bg:#0f172a;--panel:#1e293b;--panel2:#020617;--line:#334155;
+  --text:#e2e8f0;--muted:#94a3b8;--blue:#38bdf8;--yellow:#facc15;
+  --green:#86efac;--red:#fca5a5;--pink:#fb7185;
+}
+*{box-sizing:border-box}
+body{
+  font-family:system-ui,-apple-system,"Noto Sans TC","Microsoft JhengHei",sans-serif;
+  background:var(--bg);color:var(--text);margin:0;padding:18px;
+}
+.container{max-width:960px;margin:auto}
+h1{text-align:center;margin:8px 0 14px;font-size:24px}
+.controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+button,select{
+  padding:10px 14px;border:none;border-radius:10px;font-weight:700;cursor:pointer
+}
+button{background:var(--blue);color:#00111a}
+button.secondary{background:#cbd5e1;color:#0f172a}
+button.danger{background:#f87171;color:#111827}
+select{background:#e2e8f0;color:#0f172a}
+.status{text-align:center;color:var(--muted);font-size:14px;margin:8px 0 12px}
+.main-card{
+  background:var(--panel);padding:22px;border-radius:16px;text-align:center;
+  margin-bottom:14px;border:2px solid transparent;
+  box-shadow:0 8px 24px rgba(0,0,0,.25)
+}
+.main-card.listen{border-color:var(--blue)}
+.main-card.ending{border-color:var(--pink);box-shadow:0 0 22px rgba(251,113,133,.38)}
+.main-card.done{border-color:var(--green)}
+.hint{font-size:18px;font-weight:800;margin-bottom:12px;color:var(--yellow)}
+.jp{font-size:28px;line-height:1.35;margin-bottom:10px;font-weight:800}
+.jp.big-ending{font-size:68px;letter-spacing:.08em;color:#fff}
+.kana{color:#93c5fd;font-size:18px;margin-bottom:5px}
+.romaji{color:var(--red);font-size:16px;margin-bottom:5px}
+.zh{color:var(--green);font-size:18px}
+.progress-wrap{
+  height:11px;background:var(--line);border-radius:99px;overflow:hidden;
+  margin:18px 0 4px
+}
+.progress-bar{height:100%;width:0%;background:var(--blue);transition:width .04s linear}
+.list{
+  max-height:430px;overflow:auto;background:var(--panel2);
+  padding:10px;border-radius:14px;scroll-behavior:smooth
+}
+.row{padding:11px 12px;border-bottom:1px solid #1e293b;border-radius:10px}
+.row.active{background:#334155;outline:2px solid var(--blue)}
+.row .small{font-size:13px;color:var(--muted);line-height:1.45}
+.row .zhsmall{font-size:13px;color:#86efac;line-height:1.45}
+@media(max-width:640px){
+  body{padding:12px}
+  .jp{font-size:23px}
+  .jp.big-ending{font-size:54px}
+  .kana{font-size:16px}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>🎧 Shadowing 教學循環版</h1>
+
+<div class="controls">
+  <button onclick="unlockAudio()">🔓 解鎖音訊</button>
+  <button onclick="start()">▶️ 開始完整循環</button>
+  <button class="secondary" onclick="pauseToggle()">⏸️ 暫停 / 繼續</button>
+  <button class="danger" onclick="stopAll()">⏹️ 停止</button>
+
+  <select id="rate" onchange="audio.playbackRate=parseFloat(this.value)">
+    <option value="0.75">速度 0.75x</option>
+    <option value="0.85">速度 0.85x</option>
+    <option value="1" selected>速度 1.00x</option>
+    <option value="1.1">速度 1.10x</option>
+  </select>
+</div>
+
+<div class="status" id="status">01-07 → 01-07 → 05-07 → 07 → い・い・天・気</div>
+
+<div class="main-card" id="card">
+  <div class="hint" id="hint">請先解鎖音訊</div>
+
+  <div class="jp" id="jp">準備開始</div>
+  <div class="kana" id="kana"></div>
+  <div class="romaji" id="romaji"></div>
+  <div class="zh" id="zh"></div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar" id="bar"></div>
+  </div>
+</div>
+
+<div class="list" id="list"></div>
+
+</div>
+
+<script>
+const AUDIO_FILE="input.mp3";
+const JSON_FILE="song.json";
+
+// 固定循環：01-07 → 01-07 → 05-07 → 07
+const PLAY_SEQUENCE=[
+0,1,2,3,4,5,6,
+0,1,2,3,4,5,6,
+4,5,6,
+6
+];
+
+// 最後尾音拆字：い（0.3秒）い（0.3秒）天（0.3秒）気
+const ENDING_TRAINER=[
+  {jp:"い", kana:"い", romaji:"i", zh:"好天氣的「い」"},
+  {jp:"い", kana:"い", romaji:"i", zh:"再一次「い」"},
+  {jp:"天", kana:"てん", romaji:"ten", zh:"天"},
+  {jp:"気", kana:"き", romaji:"ki", zh:"氣"}
+];
+
+const ENDING_GAP_MS=300;
+// 最後一句播放到 song.json 的 end 後，讓尾音音樂再保留這麼久才停。
+// 若你想尾奏更久，可改成 2500 或 3000。
+const TAIL_MUSIC_MS=2200;
+
+let audio=new Audio(AUDIO_FILE);
+audio.preload="auto";
+audio.setAttribute("playsinline","");
+audio.setAttribute("webkit-playsinline","");
+
+let data=[];
+let seqIndex=0;
+let timer=null;
+let playing=false;
+let paused=false;
+let endingMode=false;
+
+async function load(){
+  try{
+    const res=await fetch(JSON_FILE+"?v="+Date.now());
+    if(!res.ok) throw new Error("json failed");
+    data=await res.json();
+    renderList(-1);
+  }catch(e){
+    jp.innerText="song.json 載入失敗";
+    status.innerText="請確認 index.html / input.mp3 / song.json 在同一層。";
+  }
+}
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g,m=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[m]));
+}
+
+function renderList(active){
+  list.innerHTML=data.map((d,i)=>`
+    <div class="row ${i===active?'active':''}" id="row-${i}">
+      <b>${String(i+1).padStart(2,"0")}. ${escapeHtml(d.text||"")}</b>
+      <div class="small">${escapeHtml(d.kana||"")}</div>
+      <div class="small">${escapeHtml(d.romaji||"")}</div>
+      <div class="zhsmall">${escapeHtml(d.zh||"")}</div>
+    </div>
+  `).join("");
+
+  if(active>=0){
+    const row=document.getElementById("row-"+active);
+    if(row) row.scrollIntoView({behavior:"smooth",block:"center"});
+  }
+}
+
+function showLine(i){
+  const d=data[i];
+
+  jp.className="jp";
+  jp.innerText=d.text||"";
+  kana.innerText=d.kana||"";
+  romaji.innerText=d.romaji||"";
+  zh.innerText=d.zh||"";
+
+  renderList(i);
+}
+
+function showEnding(item,index){
+  card.className="main-card ending";
+  jp.className="jp big-ending";
+  jp.innerText=item.jp;
+  kana.innerText=item.kana;
+  romaji.innerText=item.romaji;
+  zh.innerText=item.zh;
+  hint.innerText=`🎵 尾音拆字 ${index+1}/4`;
+  status.innerText="跟讀：い → い → 天 → 気";
+}
+
+function sleep(ms){
+  return new Promise(resolve=>setTimeout(resolve,ms));
+}
+
+async function unlockAudio(){
+  try{
+    audio.currentTime=0;
+    await audio.play();
+    audio.pause();
+    audio.currentTime=0;
+    hint.innerText="音訊已解鎖，可以開始";
+    status.innerText="音訊已解鎖。01-07 → 01-07 → 05-07 → 07 → い・い・天・気";
+  }catch(e){
+    alert("音訊解鎖失敗，請再點一次");
+  }
+}
+
+async function start(){
+  stopAll(false);
+  seqIndex=0;
+  playing=true;
+  paused=false;
+  endingMode=false;
+  await playCurrent();
+}
+
+async function playCurrent(){
+  if(!playing) return;
+
+  if(seqIndex>=PLAY_SEQUENCE.length){
+    await runEndingTrainer();
+    return;
+  }
+
+  const i=PLAY_SEQUENCE[seqIndex];
+  const seg=data[i];
+
+  showLine(i);
+
+  card.className="main-card listen";
+  hint.innerText=`🎧 播放句子 ${String(i+1).padStart(2,"0")}`;
+  status.innerText=`進度 ${seqIndex+1}/${PLAY_SEQUENCE.length}`;
+
+  clearInterval(timer);
+
+  audio.pause();
+  audio.currentTime=Number(seg.start);
+  audio.playbackRate=parseFloat(rate.value);
+
+  try{
+    await audio.play();
+  }catch(e){
+    hint.innerText="請先按「解鎖音訊」";
+    return;
+  }
+
+  timer=setInterval(()=>{
+
+    if(paused) return;
+
+    const total=Number(seg.end)-Number(seg.start);
+    const now=audio.currentTime-Number(seg.start);
+    const pct=Math.max(0,Math.min(100,(now/total)*100));
+
+    bar.style.width=pct+"%";
+
+    if(audio.currentTime>=Number(seg.end)){
+
+      clearInterval(timer);
+
+      // 如果是整個 sequence 的最後一段，不要立刻 pause，保留尾音音樂。
+      if(seqIndex===PLAY_SEQUENCE.length-1){
+        seqIndex++;
+        bar.style.width="100%";
+        runEndingTrainer();
+        return;
+      }
+
+      audio.pause();
+
+      seqIndex++;
+
+      setTimeout(()=>{
+        bar.style.width="0%";
+        playCurrent();
+      },180);
+
+    }
+
+  },30);
+}
+
+async function runEndingTrainer(){
+  if(!playing || endingMode) return;
+  endingMode=true;
+
+  // 不 pause 音頻，讓最後尾音音樂繼續當背景。
+  for(let i=0;i<ENDING_TRAINER.length;i++){
+    if(!playing) return;
+    showEnding(ENDING_TRAINER[i],i);
+    await sleep(ENDING_GAP_MS);
+  }
+
+  // 額外保留尾音音樂
+  const remain=Math.max(0,TAIL_MUSIC_MS-(ENDING_TRAINER.length*ENDING_GAP_MS));
+  if(remain>0) await sleep(remain);
+
+  audio.pause();
+  playing=false;
+  paused=false;
+  card.className="main-card done";
+  jp.className="jp";
+  jp.innerText="いい天気";
+  kana.innerText="いいてんき";
+  romaji.innerText="ii tenki";
+  zh.innerText="好天氣";
+  hint.innerText="✅ 完整循環完成";
+  status.innerText="完成：01-07 → 01-07 → 05-07 → 07 → い・い・天・気";
+}
+
+function pauseToggle(){
+  if(!playing) return;
+
+  if(audio.paused){
+    paused=false;
+    audio.play().catch(()=>{});
+    hint.innerText="▶️ 繼續播放";
+  }else{
+    paused=true;
+    audio.pause();
+    hint.innerText="⏸️ 已暫停";
+  }
+}
+
+function stopAll(reset=true){
+  playing=false;
+  paused=false;
+  endingMode=false;
+  clearInterval(timer);
+  audio.pause();
+  bar.style.width="0%";
+
+  if(reset){
+    seqIndex=0;
+    card.className="main-card";
+    jp.className="jp";
+    hint.innerText="已停止";
+    status.innerText="01-07 → 01-07 → 05-07 → 07 → い・い・天・気";
+  }
+}
+
+load();
+</script>
+
+</body>
+</html>
