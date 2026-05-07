@@ -54,29 +54,5 @@
     "kana": "きっとあしたはいいてんき",
     "romaji": "kitto ashita wa ii tenki",
     "zh": "明天一定是好天氣"
-  },
-  {
-    "start": 58.3,
-    "end": 63.9,
-    "text": "洗濯物が一日濡れて",
-    "kana": "せんたくものがいちにちぬれて",
-    "romaji": "sentakumono ga ichinichi nurete",
-    "zh": "洗衣物整天被淋濕"
-  },
-  {
-    "start": 64.1,
-    "end": 66.6,
-    "text": "風に吹かれて",
-    "kana": "かぜにふかれて",
-    "romaji": "kaze ni fukarete",
-    "zh": "被風吹動"
-  },
-  {
-    "start": 95.0,
-    "end": 120.6,
-    "text": "君の気分も晴れて きっと明日はいい天気",
-    "kana": "きみのきぶんもはれて きっとあしたはいいてんき",
-    "romaji": "kimi no kibun mo harete kitto ashita wa ii tenki",
-    "zh": "你的心情放晴了 明天一定是好天氣"
   }
 ]
