@@ -34,10 +34,10 @@
   {
     "start": 32.3,
     "end": 40.5,
-    "text": "ラララ 虹が空にかかって",
-    "kana": "ららら にじがそらにかかって",
-    "romaji": "rarara niji ga sora ni kakatte",
-    "zh": "啦啦啦 彩虹掛在天空"
+    "text": "ラララ 虹が虹が空にかかって",
+    "kana": "ららら にじがにじがそらにかかって",
+    "romaji": "rarara niji ga niji ga sora ni kakatte",
+    "zh": "啦啦啦 彩虹彩虹掛在天空"
   },
   {
     "start": 40.7,
