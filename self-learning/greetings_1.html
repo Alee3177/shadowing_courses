@@ -1,1 +1,740 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>日文招呼語 Shadowing 跟讀版</title>
+<style>
+  :root {
+    --bg: #f7f7fb;
+    --card: #ffffff;
+    --ink: #1f2937;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    --accent2: #f59e0b;
+    --line: #e5e7eb;
+    --active: #eaf2ff;
+    --shadow: 0 10px 30px rgba(15, 23, 42, .09);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Noto Sans JP", sans-serif;
+    color: var(--ink);
+    background: linear-gradient(180deg, #eef4ff 0, var(--bg) 220px);
+  }
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 14px 14px 90px;
+  }
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding-top: max(10px, env(safe-area-inset-top));
+    background: linear-gradient(180deg, rgba(238,244,255,.96), rgba(247,247,251,.92));
+    backdrop-filter: blur(10px);
+  }
+  .main-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+    padding: 16px;
+    overflow: hidden;
+  }
+  .topline {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+  h1 {
+    font-size: 20px;
+    margin: 0;
+    letter-spacing: .02em;
+  }
+  .status {
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .stage {
+    text-align: center;
+    border-radius: 18px;
+    padding: 14px 10px;
+    background: linear-gradient(180deg, #fbfdff, #f3f7ff);
+    border: 1px solid #dde8ff;
+    min-height: 190px;
+    display: grid;
+    align-content: center;
+    gap: 5px;
+  }
+  .role-pill {
+    display: inline-flex;
+    margin: 0 auto 4px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: #eef2ff;
+    color: #3730a3;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .role-mama { background: #111827; color: #ffffff; }
+  .role-brother { background: #2563eb; color: #ffffff; }
+  .role-sister { background: #16a34a; color: #ffffff; }
+  .role-clerk { background: #6b7280; color: #ffffff; }
+  .role-friend { background: #7c3aed; color: #ffffff; }
+  .jp {
+    font-size: clamp(22px, 4.9vw, 39px);
+    font-weight: 800;
+    line-height: 1.16;
+    letter-spacing: .03em;
+  }
+  .kana {
+    font-size: clamp(18px, 4vw, 26px);
+    color: #374151;
+  }
+  .romaji {
+    font-size: clamp(16px, 3.5vw, 22px);
+    color: #dc2626;
+    font-weight: 700;
+  }
+  .zh {
+    font-size: clamp(18px, 4vw, 24px);
+    font-weight: 800;
+  }
+  .en {
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .blink {
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  @keyframes glow {
+    from { box-shadow: inset 0 0 0 2px rgba(37,99,235,.18), 0 0 0 rgba(37,99,235,0); }
+    to { box-shadow: inset 0 0 0 3px rgba(245,158,11,.45), 0 0 28px rgba(245,158,11,.24); }
+  }
+  .controls {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  button, select {
+    border: 1px solid #d1d5db;
+    background: #fff;
+    color: var(--ink);
+    border-radius: 14px;
+    padding: 10px 13px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  button.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  button.warn {
+    background: #fff7ed;
+    border-color: #fed7aa;
+    color: #9a3412;
+  }
+  .settings {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .progress {
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .bar {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    transition: width .2s linear;
+  }
+  .list {
+    margin-top: 16px;
+    display: grid;
+    gap: 10px;
+  }
+  .row {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 12px;
+    display: grid;
+    gap: 3px;
+    cursor: pointer;
+  }
+  .row.active {
+    background: var(--active);
+    border-color: #93c5fd;
+    box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+  }
+  .row-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: baseline;
+  }
+  @media (max-width: 640px) {
+    .row-top {
+      display: block;
+    }
+    .idx {
+      margin-top: 2px;
+      text-align: left;
+    }
+  }
+  .idx {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 800;
+  }
+  .rjp {
+    font-size: 14px;
+    font-weight: 800;
+  }
+  .rkana, .rmeta {
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .rromaji {
+    color: #dc2626;
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .rzh {
+    font-size: 15px;
+    font-weight: 700;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 16px;
+    border: 1px solid var(--line);
+  }
+  th, td {
+    border-bottom: 1px solid var(--line);
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+    font-size: 14px;
+  }
+  th { background: #f9fafb; }
+  tr:last-child td { border-bottom: none; }
 
+  @media (min-width: 920px) {
+    .wrap {
+      max-width: 1280px;
+      display: grid;
+      grid-template-columns: minmax(430px, 1fr) minmax(420px, 560px);
+      gap: 16px;
+      align-items: start;
+      padding-top: 12px;
+    }
+    header {
+      grid-column: 1;
+      position: sticky;
+      top: 12px;
+      align-self: start;
+      padding-top: 0;
+      background: transparent;
+      backdrop-filter: none;
+    }
+    main {
+      grid-column: 2;
+      min-width: 0;
+    }
+    .list {
+      margin-top: 0;
+      max-height: calc(100vh - 24px);
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      padding-right: 4px;
+      scroll-padding-top: 12px;
+    }
+    .stage {
+      min-height: 245px;
+    }
+    .row {
+      scroll-margin-top: 12px;
+    }
+  }
+
+  @media (max-width: 919px) {
+    .row {
+      scroll-margin-top: 540px;
+    }
+  }
+
+
+  @media (max-width: 640px) {
+    .wrap {
+      padding: 10px 8px 70px;
+    }
+    .main-card {
+      padding: 12px;
+      border-radius: 20px;
+    }
+    h1 {
+      font-size: 23px;
+      line-height: 1.2;
+    }
+    .topline {
+      margin-bottom: 8px;
+    }
+    .status {
+      font-size: 13px;
+      width: 100%;
+    }
+    .stage {
+      min-height: 185px;
+      padding: 12px 8px;
+    }
+    .jp {
+      font-size: clamp(24px, 7.7vw, 34px);
+    }
+    .kana {
+      font-size: clamp(18px, 6vw, 24px);
+    }
+    .romaji {
+      font-size: clamp(18px, 5.5vw, 23px);
+    }
+    .zh {
+      font-size: clamp(19px, 5.8vw, 24px);
+    }
+    .en {
+      font-size: 14px;
+    }
+    .controls {
+      margin-top: 6px;
+      gap: 7px;
+    }
+    button, select {
+      padding: 9px 12px;
+      font-size: 15px;
+      border-radius: 13px;
+    }
+    .settings {
+      gap: 8px;
+    }
+    .list {
+      margin-top: 12px;
+    }
+    .row {
+      padding: 10px;
+    }
+  }
+
+
+  .rjp .role-pill {
+    font-size: 12px;
+    padding: 3px 8px;
+    margin-right: 4px;
+  }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <section class="main-card">
+      <div class="topline">
+        <h1>日文招呼語 Shadowing 跟讀版</h1>
+        <div class="status" id="status">請先按「解鎖／開始」</div>
+      </div>
+
+      <div class="stage" id="stage">
+        <div class="role-pill" id="role">角色</div>
+        <div class="jp" id="jp">行ってきます</div>
+        <div class="kana" id="kana">いってきます</div>
+        <div class="romaji" id="romaji">Ittekimasu</div>
+        <div class="zh" id="zh">我出門了</div>
+        <div class="en" id="en">I’m leaving.</div>
+      </div>
+
+      <div class="controls">
+        <div class="buttons">
+          <button class="primary" id="playBtn">解鎖／開始</button>
+          <button id="pauseBtn">暫停／繼續</button>
+        </div>
+        <div class="settings">
+          <label>速度：
+            <select id="rate">
+              <option value="0.8">0.8 慢速</option>
+              <option value="1" selected>1.0 標準</option>
+              <option value="1.2">1.2 快速</option>
+            </select>
+          </label>
+          <label>跟讀延遲：
+            <select id="delay">
+              <option value="700">0.7 秒</option>
+              <option value="1000" selected>1.0 秒</option>
+              <option value="1500">1.5 秒</option>
+            </select>
+          </label>
+          <label>每句播放：
+            <select id="repeat">
+              <option value="1">1 次</option>
+              <option value="2" selected>2 次：聽一次＋跟讀一次</option>
+              <option value="3">3 次</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <div class="list" id="list"></div>
+
+    <table>
+      <thead>
+        <tr><th>日文</th><th>平假名 / 羅馬拼音</th><th>中文 / 英文</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>いらっしゃいませ</td><td>いらっしゃいませ / irasshaimase</td><td>歡迎光臨 / Welcome</td></tr>
+        <tr><td>行ってきます</td><td>いってきます / ittekimasu</td><td>我出門了、我去去就回 / I’m leaving</td></tr>
+        <tr><td>行ってらっしゃい</td><td>いってらっしゃい / itterasshai</td><td>路上小心、慢走 / Take care</td></tr>
+        <tr><td>行ってまいります</td><td>いってまいります / itte mairimasu</td><td>我出門了，較謙虛正式 / I’m leaving, formal-humble</td></tr>
+        <tr><td>いらっしゃい</td><td>いらっしゃい / irasshai</td><td>歡迎、來啦 / Welcome, come in</td></tr>
+      </tbody>
+    </table>
+  </main>
+</div>
+
+<script>
+const SEGMENTS = [
+  {
+    "role": "媽媽",
+    "jp": "行ってらっしゃい。",
+    "kana": "いってらっしゃい。",
+    "romaji": "Itterasshai.",
+    "zh": "路上小心。",
+    "en": "Take care. See you later.",
+    "note": "回應出門的人"
+  },
+  {
+    "role": "哥哥",
+    "jp": "行ってきます。",
+    "kana": "いってきます。",
+    "romaji": "Ittekimasu.",
+    "zh": "我出門了。",
+    "en": "I’m leaving.",
+    "note": "出門的人說"
+  },
+  {
+    "role": "妹妹",
+    "jp": "行ってまいります。",
+    "kana": "いってまいります。",
+    "romaji": "Itte mairimasu.",
+    "zh": "我出門了。較正式謙虛。",
+    "en": "I’m leaving. Formal/humble.",
+    "note": "較正式／謙虛說法"
+  },
+  {
+    "role": "媽媽",
+    "jp": "行ってらっしゃい。気をつけてね。",
+    "kana": "いってらっしゃい。きをつけてね。",
+    "romaji": "Itterasshai. Ki o tsukete ne.",
+    "zh": "路上小心，注意安全喔。",
+    "en": "Take care. Be careful.",
+    "note": "回應出門的人"
+  },
+  {
+    "role": "店員",
+    "jp": "いらっしゃいませ。",
+    "kana": "いらっしゃいませ。",
+    "romaji": "Irasshaimase.",
+    "zh": "歡迎光臨。",
+    "en": "Welcome.",
+    "note": "店家對客人"
+  },
+  {
+    "role": "哥哥",
+    "jp": "こんにちは。二人です。",
+    "kana": "こんにちは。ふたりです。",
+    "romaji": "Konnichiwa. Futari desu.",
+    "zh": "你好，我們兩位。",
+    "en": "Hello. Table for two.",
+    "note": "補充自然對話"
+  },
+  {
+    "role": "店員",
+    "jp": "いらっしゃいませ。こちらへどうぞ。",
+    "kana": "いらっしゃいませ。こちらへどうぞ。",
+    "romaji": "Irasshaimase. Kochira e dōzo.",
+    "zh": "歡迎光臨，這邊請。",
+    "en": "Welcome. This way, please.",
+    "note": "店家正式接待"
+  },
+  {
+    "role": "朋友",
+    "jp": "いらっしゃい！待っていたよ。",
+    "kana": "いらっしゃい！まっていたよ。",
+    "romaji": "Irasshai! Matte ita yo.",
+    "zh": "歡迎！我一直在等你喔。",
+    "en": "Welcome! I was waiting for you.",
+    "note": "朋友／家裡較口語"
+  },
+  {
+    "role": "妹妹",
+    "jp": "おじゃまします。",
+    "kana": "おじゃまします。",
+    "romaji": "Ojama shimasu.",
+    "zh": "打擾了。",
+    "en": "Excuse me for coming in.",
+    "note": "補充自然對話"
+  },
+  {
+    "role": "朋友",
+    "jp": "いらっしゃい。どうぞ入って。",
+    "kana": "いらっしゃい。どうぞはいって。",
+    "romaji": "Irasshai. Dōzo haitte.",
+    "zh": "歡迎，請進。",
+    "en": "Welcome. Please come in.",
+    "note": "朋友／家裡較口語"
+  },
+  {
+    "role": "哥哥",
+    "jp": "そろそろ行ってきます。",
+    "kana": "そろそろいってきます。",
+    "romaji": "Sorosoro ittekimasu.",
+    "zh": "我差不多要出門了。",
+    "en": "I’m about to leave.",
+    "note": "出門的人說"
+  },
+  {
+    "role": "妹妹",
+    "jp": "では、行ってまいります。",
+    "kana": "では、いってまいります。",
+    "romaji": "Dewa, itte mairimasu.",
+    "zh": "那麼，我出門了。較正式謙虛。",
+    "en": "Well then, I’m leaving.",
+    "note": "較正式／謙虛說法"
+  }
+];
+
+let index = 0;
+let playing = false;
+let paused = false;
+let currentRepeat = 0;
+let timer = null;
+let utterance = null;
+
+const $ = id => document.getElementById(id);
+const list = $("list");
+const stage = $("stage");
+
+const ROLE_CLASS = {
+  "媽媽": "role-mama",
+  "哥哥": "role-brother",
+  "妹妹": "role-sister",
+  "店員": "role-clerk",
+  "朋友": "role-friend"
+};
+
+function renderList() {
+  list.innerHTML = "";
+  SEGMENTS.forEach((s, i) => {
+    const row = document.createElement("div");
+    row.className = "row";
+    row.id = "row-" + i;
+    row.innerHTML = `
+      <div class="row-top">
+        <div class="rjp"><span class="role-pill ${ROLE_CLASS[s.role] || ""}">${s.role}</span> ${i + 1}. ${s.jp}</div>
+        <div class="idx">${s.note}</div>
+      </div>
+      <div class="rkana">${s.kana}</div>
+      <div class="rromaji">${s.romaji}</div>
+      <div class="rzh">${s.zh}</div>
+      <div class="rmeta">${s.en}</div>
+    `;
+    row.addEventListener("click", () => jumpTo(i));
+    list.appendChild(row);
+  });
+}
+
+function setStage(i) {
+  const s = SEGMENTS[i];
+  $("role").textContent = s.role;
+  $("role").className = "role-pill " + (ROLE_CLASS[s.role] || "");
+  $("jp").textContent = s.jp;
+  $("kana").textContent = s.kana;
+  $("romaji").textContent = s.romaji;
+  $("zh").textContent = s.zh;
+  $("en").textContent = s.en;
+
+  document.querySelectorAll(".row").forEach(r => r.classList.remove("active"));
+  const active = $("row-" + i);
+  if (active) {
+    active.classList.add("active");
+    const isDesktop = window.matchMedia("(min-width: 920px)").matches;
+    if (isDesktop) {
+      const listBox = document.getElementById("list");
+      const top = active.offsetTop - listBox.clientHeight / 2 + active.clientHeight / 2;
+      listBox.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+    } else {
+      active.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }
+}
+
+function status(text) {
+  $("status").textContent = text;
+}
+
+function speak(text, onend) {
+  window.speechSynthesis.cancel();
+  utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = "ja-JP";
+  utterance.rate = parseFloat($("rate").value);
+  utterance.pitch = 1;
+  utterance.volume = 1;
+  utterance.onstart = () => {
+    stage.classList.add("blink");
+    status(`播放中：第 ${index + 1} 句，第 ${currentRepeat + 1} 次，速度 ${$("rate").value}x`);
+  };
+  utterance.onend = () => {
+    stage.classList.remove("blink");
+    if (typeof onend === "function") onend();
+  };
+  utterance.onerror = () => {
+    stage.classList.remove("blink");
+    if (typeof onend === "function") onend();
+  };
+  window.speechSynthesis.speak(utterance);
+}
+
+function clearTimer() {
+  if (timer) {
+    clearTimeout(timer);
+    timer = null;
+  }
+}
+
+function playCurrent() {
+  if (!playing || paused) return;
+  setStage(index);
+  const repeatMax = parseInt($("repeat").value, 10);
+  const delay = parseInt($("delay").value, 10);
+  speak(SEGMENTS[index].jp, () => {
+    if (!playing || paused) return;
+    currentRepeat += 1;
+    if (currentRepeat < repeatMax) {
+      status(`跟讀時間：請跟著唸「${SEGMENTS[index].jp}」`);
+      timer = setTimeout(playCurrent, delay);
+    } else {
+      currentRepeat = 0;
+      index += 1;
+      if (index >= SEGMENTS.length) {
+        index = 0;
+        playing = false;
+        paused = false;
+        status("");
+        return;
+      }
+      timer = setTimeout(playCurrent, 350);
+    }
+  });
+}
+
+function start() {
+  clearTimer();
+  window.speechSynthesis.cancel();
+  const isFreshStart = !playing;
+  if (!playing) {
+    playing = true;
+    paused = false;
+    currentRepeat = 0;
+  } else if (paused) {
+    paused = false;
+  }
+  if (isFreshStart && index === 0) {
+    status("準備中：0.5 秒後開始第一句");
+    setStage(index);
+    timer = setTimeout(playCurrent, 500);
+  } else {
+    playCurrent();
+  }
+}
+
+function pauseResume() {
+  if (!playing) return start();
+  if (!paused) {
+    paused = true;
+    clearTimer();
+    window.speechSynthesis.pause();
+    stage.classList.remove("blink");
+    status(`已暫停：第 ${index + 1} 句，可按同一鍵繼續`);
+  } else {
+    paused = false;
+    window.speechSynthesis.resume();
+    stage.classList.add("blink");
+    status(`繼續：第 ${index + 1} 句`);
+  }
+}
+
+function jumpTo(i) {
+  index = i;
+  currentRepeat = 0;
+  paused = false;
+  playing = true;
+  clearTimer();
+  window.speechSynthesis.cancel();
+  setStage(index);
+  playCurrent();
+}
+
+function next() {
+  jumpTo((index + 1) % SEGMENTS.length);
+}
+
+function prev() {
+  jumpTo((index - 1 + SEGMENTS.length) % SEGMENTS.length);
+}
+
+function reset() {
+  clearTimer();
+  window.speechSynthesis.cancel();
+  playing = false;
+  paused = false;
+  index = 0;
+  currentRepeat = 0;
+  stage.classList.remove("blink");
+  setStage(index);
+  status("已重置。請按「解鎖／開始」");
+}
+
+$("playBtn").addEventListener("click", start);
+$("pauseBtn").addEventListener("click", pauseResume);
+$("rate").addEventListener("change", () => {
+  if (playing) jumpTo(index);
+});
+renderList();
+setStage(0);
+</script>
+</body>
+</html>
