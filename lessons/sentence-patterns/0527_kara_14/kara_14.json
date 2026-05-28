@@ -1,0 +1,147 @@
+{
+  "title": "「から」句型｜MP3跟讀練習",
+  "version": "kara-14-mp3-v1",
+  "audioBase": "audio/",
+  "items": [
+    {
+      "id": 1,
+      "audio": "audio/001.mp3",
+      "jp": "汚いですから、掃除します。",
+      "kana_romaji": "きたないですから、そうじします。 / kitanai desu kara, souji shimasu.",
+      "zh": "因為很髒，所以打掃。",
+      "q_jp": "どうして掃除しますか。",
+      "q_kana_romaji": "どうしてそうじしますか。 / doushite souji shimasu ka.",
+      "q_zh": "為什麼要打掃？"
+    },
+    {
+      "id": 2,
+      "audio": "audio/002.mp3",
+      "jp": "暑いですから、エアコンをつけます。",
+      "kana_romaji": "あついですから、エアコンをつけます。 / atsui desu kara, eakon o tsukemasu.",
+      "zh": "因為很熱，所以開冷氣。",
+      "q_jp": "どうしてエアコンをつけますか。",
+      "q_kana_romaji": "どうしてエアコンをつけますか。 / doushite eakon o tsukemasu ka.",
+      "q_zh": "為什麼要開冷氣？"
+    },
+    {
+      "id": 3,
+      "audio": "audio/003.mp3",
+      "jp": "寒いですから、服を着ます。",
+      "kana_romaji": "さむいですから、ふくをきます。 / samui desu kara, fuku o kimasu.",
+      "zh": "因為很冷，所以穿衣服。",
+      "q_jp": "どうして服を着ますか。",
+      "q_kana_romaji": "どうしてふくをきますか。 / doushite fuku o kimasu ka.",
+      "q_zh": "為什麼要穿衣服？"
+    },
+    {
+      "id": 4,
+      "audio": "audio/004.mp3",
+      "jp": "おなかがすきましたから、ご飯を食べます。",
+      "kana_romaji": "おなかがすきましたから、ごはんをたべます。 / onaka ga sukimashita kara, gohan o tabemasu.",
+      "zh": "因為肚子餓了，所以吃飯。",
+      "q_jp": "どうしてご飯を食べますか。",
+      "q_kana_romaji": "どうしてごはんをたべますか。 / doushite gohan o tabemasu ka.",
+      "q_zh": "為什麼要吃飯？"
+    },
+    {
+      "id": 5,
+      "audio": "audio/005.mp3",
+      "jp": "おなかがいっぱいですから、何も食べません。",
+      "kana_romaji": "おなかがいっぱいですから、なにもたべません。 / onaka ga ippai desu kara, nani mo tabemasen.",
+      "zh": "因為肚子很飽，所以什麼都不吃。",
+      "q_jp": "どうして何も食べませんか。",
+      "q_kana_romaji": "どうしてなにもたべませんか。 / doushite nani mo tabemasen ka.",
+      "q_zh": "為什麼什麼都不吃？"
+    },
+    {
+      "id": 6,
+      "audio": "audio/006.mp3",
+      "jp": "頭が痛いですから、薬を飲みます。",
+      "kana_romaji": "あたまがいたいですから、くすりをのみます。 / atama ga itai desu kara, kusuri o nomimasu.",
+      "zh": "因為頭痛，所以吃藥。",
+      "q_jp": "どうして薬を飲みますか。",
+      "q_kana_romaji": "どうしてくすりをのみますか。 / doushite kusuri o nomimasu ka.",
+      "q_zh": "為什麼要吃藥？"
+    },
+    {
+      "id": 7,
+      "audio": "audio/007.mp3",
+      "jp": "風邪をひきましたから、薬を飲みます。",
+      "kana_romaji": "かぜをひきましたから、くすりをのみます。 / kaze o hikimashita kara, kusuri o nomimasu.",
+      "zh": "因為感冒了，所以吃藥。",
+      "q_jp": "どうして薬を飲みますか。",
+      "q_kana_romaji": "どうしてくすりをのみますか。 / doushite kusuri o nomimasu ka.",
+      "q_zh": "為什麼要吃藥？"
+    },
+    {
+      "id": 8,
+      "audio": "audio/008.mp3",
+      "jp": "おなかが痛いですから、何も食べません。",
+      "kana_romaji": "おなかがいたいですから、なにもたべません。 / onaka ga itai desu kara, nani mo tabemasen.",
+      "zh": "因為肚子痛，所以什麼都不吃。",
+      "q_jp": "どうして何も食べませんか。",
+      "q_kana_romaji": "どうしてなにもたべませんか。 / doushite nani mo tabemasen ka.",
+      "q_zh": "為什麼什麼都不吃？"
+    },
+    {
+      "id": 9,
+      "audio": "audio/009.mp3",
+      "jp": "のどが渇きましたから、水を飲みます。",
+      "kana_romaji": "のどがかわきましたから、みずをのみます。 / nodo ga kawakimashita kara, mizu o nomimasu.",
+      "zh": "因為口渴了，所以喝水。",
+      "q_jp": "どうして水を飲みますか。",
+      "q_kana_romaji": "どうしてみずをのみますか。 / doushite mizu o nomimasu ka.",
+      "q_zh": "為什麼要喝水？"
+    },
+    {
+      "id": 10,
+      "audio": "audio/010.mp3",
+      "jp": "眠いですから、コーヒーを飲みます。",
+      "kana_romaji": "ねむいですから、コーヒーをのみます。 / nemui desu kara, koohii o nomimasu.",
+      "zh": "因為想睡，所以喝咖啡。",
+      "q_jp": "どうしてコーヒーを飲みますか。",
+      "q_kana_romaji": "どうしてコーヒーをのみますか。 / doushite koohii o nomimasu ka.",
+      "q_zh": "為什麼要喝咖啡？"
+    },
+    {
+      "id": 11,
+      "audio": "audio/011.mp3",
+      "jp": "おいしいですから、たくさん食べます。",
+      "kana_romaji": "おいしいですから、たくさんたべます。 / oishii desu kara, takusan tabemasu.",
+      "zh": "因為很好吃，所以吃很多。",
+      "q_jp": "どうしてたくさん食べますか。",
+      "q_kana_romaji": "どうしてたくさんたべますか。 / doushite takusan tabemasu ka.",
+      "q_zh": "為什麼吃很多？"
+    },
+    {
+      "id": 12,
+      "audio": "audio/012.mp3",
+      "jp": "疲れましたから、寝ます。",
+      "kana_romaji": "つかれましたから、ねます。 / tsukaremashita kara, nemasu.",
+      "zh": "因為累了，所以睡覺。",
+      "q_jp": "どうして寝ますか。",
+      "q_kana_romaji": "どうしてねますか。 / doushite nemasu ka.",
+      "q_zh": "為什麼要睡覺？"
+    },
+    {
+      "id": 13,
+      "audio": "audio/013.mp3",
+      "jp": "雨ですから、傘をさします。",
+      "kana_romaji": "あめですから、かさをさします。 / ame desu kara, kasa o sashimasu.",
+      "zh": "因為下雨，所以撐傘。",
+      "q_jp": "どうして傘をさしますか。",
+      "q_kana_romaji": "どうしてかさをさしますか。 / doushite kasa o sashimasu ka.",
+      "q_zh": "為什麼要撐傘？"
+    },
+    {
+      "id": 14,
+      "audio": "audio/014.mp3",
+      "jp": "お金がありませんから、何も買いません。",
+      "kana_romaji": "おかねがありませんから、なにもかいません。 / okane ga arimasen kara, nani mo kaimasen.",
+      "zh": "因為沒有錢，所以什麼都不買。",
+      "q_jp": "どうして何も買いませんか。",
+      "q_kana_romaji": "どうしてなにもかいませんか。 / doushite nani mo kaimasen ka.",
+      "q_zh": "為什麼什麼都不買？"
+    }
+  ]
+}
