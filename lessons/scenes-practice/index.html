@@ -20,10 +20,10 @@
     <div class="grid">
       <div class="card main">
         <span class="badge" id="sceneBadge">場面</span>
-        <div class="jp" id="jp">讀取中...</div>
-        <div class="kana" id="kana"></div>
-        <div class="romaji" id="romaji"></div>
-        <div class="zh" id="zh"></div>
+        <div class="jp" id="jp">A：みなさん、私は日本へ旅行に行きたいです。</div>
+        <div class="kana" id="kana">みなさん、わたしはにほんへりょこうにいきたいです。</div>
+        <div class="romaji" id="romaji">minasan, watashi wa Nihon e ryokou ni ikitai desu.</div>
+        <div class="zh" id="zh">各位，我想去日本旅行。</div>
         <div class="controls">
           <button class="btn primary" id="playBtn">解鎖／開始跟讀</button>
           <button class="btn" id="pauseBtn">暫停</button>
@@ -33,7 +33,7 @@
           <select id="speed"><option value="0.75">0.75x</option><option value="0.85">0.85x</option><option value="1" selected>1.00x</option><option value="1.1">1.10x</option></select>
           <select id="delay"><option value="800">跟讀延遲 0.8秒</option><option value="1200" selected>跟讀延遲 1.2秒</option><option value="1600">跟讀延遲 1.6秒</option></select>
         </div>
-        <div class="status" id="status">模式：先聽日文 → 停頓 → 自己跟讀。</div>
+        <div class="status" id="status">內嵌JSON版 v20260528-06｜模式：先聽日文 → 停頓 → 自己跟讀。</div>
       </div>
       <div class="card list" id="list"></div>
     </div>
@@ -109,7 +109,7 @@ async function loadScenes(){
   try{
     scenes = EMBEDDED_SCENES.map((data,idx)=>ensureAudioPaths(normalizeScene(cloneData(data), sceneFiles[idx].name), idx));
     renderScene();
-    $('status').textContent='模式：先聽日文 → 停頓 → 自己跟讀。';
+    $('status').textContent='內嵌JSON版 v20260528-06｜模式：先聽日文 → 停頓 → 自己跟讀。';
   }catch(err){
     $('jp').textContent='課文資料載入失敗';
     $('kana').textContent='';
