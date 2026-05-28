@@ -1,0 +1,23 @@
+{
+  "id": "scene3_next_plan",
+  "title": "第三場面：次の計画",
+  "titleKana": "だいさんばめん：つぎのけいかく",
+  "titleRomaji": "daisan bamen: tsugi no keikaku",
+  "titleZh": "第三場面：下一次的計畫",
+  "items": [
+    {"speaker":"A","jp":"日本旅行は本当に楽しかったですね。","kana":"にほんりょこうはほんとうにたのしかったですね。","romaji":"Nihon ryokou wa hontou ni tanoshikatta desu ne.","zh":"日本旅行真的很開心呢。"},
+    {"speaker":"B","jp":"そうですね。いい旅行でした。","kana":"そうですね。いいりょこうでした。","romaji":"sou desu ne. ii ryokou deshita.","zh":"是啊。是一次很好的旅行。"},
+    {"speaker":"B","jp":"また日本へ旅行に行きたいです。","kana":"またにほんへりょこうにいきたいです。","romaji":"mata Nihon e ryokou ni ikitai desu.","zh":"還想再去日本旅行。"},
+    {"speaker":"C","jp":"次はどこへ行きたいですか。","kana":"つぎはどこへいきたいですか。","romaji":"tsugi wa doko e ikitai desu ka.","zh":"下一次想去哪裡？"},
+    {"speaker":"D","jp":"私は北海道へ行きたいです。","kana":"わたしはほっかいどうへいきたいです。","romaji":"watashi wa Hokkaidou e ikitai desu.","zh":"我想去北海道。"},
+    {"speaker":"E","jp":"私も北海道へ行きたいです。","kana":"わたしもほっかいどうへいきたいです。","romaji":"watashi mo Hokkaidou e ikitai desu.","zh":"我也想去北海道。"},
+    {"speaker":"E","jp":"またおいしいものを食べたいです。","kana":"またおいしいものをたべたいです。","romaji":"mata oishii mono o tabetai desu.","zh":"還想再吃好吃的東西。"},
+    {"speaker":"A","jp":"いいですね。","kana":"いいですね。","romaji":"ii desu ne.","zh":"好啊。"},
+    {"speaker":"A","jp":"私もおいしいカニを食べたいです。","kana":"わたしもおいしいカニをたべたいです。","romaji":"watashi mo oishii kani o tabetai desu.","zh":"我也想吃好吃的螃蟹。"},
+    {"speaker":"B","jp":"私はまた温泉に入りたいです。","kana":"わたしはまたおんせんにはいりたいです。","romaji":"watashi wa mata onsen ni hairitai desu.","zh":"我還想再泡溫泉。"},
+    {"speaker":"C","jp":"私は雪を見たいです。","kana":"わたしはゆきをみたいです。","romaji":"watashi wa yuki o mitai desu.","zh":"我想看雪。"},
+    {"speaker":"D","jp":"私はスキーをしたいです。","kana":"わたしはスキーをしたいです。","romaji":"watashi wa sukii o shitai desu.","zh":"我想滑雪。"},
+    {"speaker":"E","jp":"じゃあ、次は冬に北海道へ行きましょう。","kana":"じゃあ、つぎはふゆにほっかいどうへいきましょう。","romaji":"jaa, tsugi wa fuyu ni Hokkaidou e ikimashou.","zh":"那麼，下一次冬天去北海道吧。"},
+    {"speaker":"みんな","jp":"はい！冬の北海道、楽しみです！","kana":"はい！ふゆのほっかいどう、たのしみです！","romaji":"hai! fuyu no Hokkaidou, tanoshimi desu!","zh":"好！冬天的北海道，很期待！"}
+  ]
+}

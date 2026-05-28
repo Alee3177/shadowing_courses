@@ -1,0 +1,28 @@
+{
+  "id": "scene1_plan",
+  "title": "第一場面：旅行の計画",
+  "titleKana": "だいいちばめん：りょこうのけいかく",
+  "titleRomaji": "daiichi bamen: ryokou no keikaku",
+  "titleZh": "第一場面：旅行的計畫",
+  "items": [
+    {"speaker":"A","jp":"みなさん、私は日本へ旅行に行きたいです。","kana":"みなさん、わたしはにほんへりょこうにいきたいです。","romaji":"minasan, watashi wa Nihon e ryokou ni ikitai desu.","zh":"各位，我想去日本旅行。"},
+    {"speaker":"A","jp":"一緒に行きませんか。","kana":"いっしょにいきませんか。","romaji":"issho ni ikimasen ka.","zh":"要不要一起去呢？"},
+    {"speaker":"B","jp":"いいですね。私も行きたいです。","kana":"いいですね。わたしもいきたいです。","romaji":"ii desu ne. watashi mo ikitai desu.","zh":"好啊。我也想去。"},
+    {"speaker":"B","jp":"日本のどこへ行きたいですか。","kana":"にほんのどこへいきたいですか。","romaji":"Nihon no doko e ikitai desu ka.","zh":"想去日本的哪裡呢？"},
+    {"speaker":"C","jp":"京都と大阪はどうですか。","kana":"きょうととおおさかはどうですか。","romaji":"Kyouto to Oosaka wa dou desu ka.","zh":"京都和大阪怎麼樣？"},
+    {"speaker":"D","jp":"いいですね。京都はきれいな町です。","kana":"いいですね。きょうとはきれいなまちです。","romaji":"ii desu ne. Kyouto wa kirei na machi desu.","zh":"好啊。京都是漂亮的城市。"},
+    {"speaker":"E","jp":"私は日本でおいしい料理を食べたいです。","kana":"わたしはにほんでおいしいりょうりをたべたいです。","romaji":"watashi wa Nihon de oishii ryouri o tabetai desu.","zh":"我想在日本吃好吃的料理。"},
+    {"speaker":"A","jp":"私は買い物をしたいです。","kana":"わたしはかいものをしたいです。","romaji":"watashi wa kaimono o shitai desu.","zh":"我想買東西。"},
+    {"speaker":"B","jp":"私は温泉に入りたいです。","kana":"わたしはおんせんにはいりたいです。","romaji":"watashi wa onsen ni hairitai desu.","zh":"我想泡溫泉。"},
+    {"speaker":"C","jp":"私は桜を見たいです。","kana":"わたしはさくらをみたいです。","romaji":"watashi wa sakura o mitai desu.","zh":"我想看櫻花。"},
+    {"speaker":"D","jp":"私はきれいな景色を見たいです。","kana":"わたしはきれいなけしきをみたいです。","romaji":"watashi wa kirei na keshiki o mitai desu.","zh":"我想看漂亮的風景。"},
+    {"speaker":"A","jp":"いつ行きますか。","kana":"いついきますか。","romaji":"itsu ikimasu ka.","zh":"什麼時候去？"},
+    {"speaker":"B","jp":"5月20日はどうですか。","kana":"ごがつはつかはどうですか。","romaji":"gogatsu hatsuka wa dou desu ka.","zh":"5月20日怎麼樣？"},
+    {"speaker":"C","jp":"いいですよ。","kana":"いいですよ。","romaji":"ii desu yo.","zh":"可以啊。"},
+    {"speaker":"D","jp":"楽しみですね。","kana":"たのしみですね。","romaji":"tanoshimi desu ne.","zh":"真期待呢。"},
+    {"speaker":"E","jp":"私も大丈夫です。","kana":"わたしもだいじょうぶです。","romaji":"watashi mo daijoubu desu.","zh":"我也可以。"},
+    {"speaker":"A","jp":"じゃあ、5月20日のチケットを予約しましょう。","kana":"じゃあ、ごがつはつかのチケットをよやくしましょう。","romaji":"jaa, gogatsu hatsuka no chiketto o yoyaku shimashou.","zh":"那麼，就預約5月20日的票吧。"},
+    {"speaker":"みんな","jp":"はい、分かりました。","kana":"はい、わかりました。","romaji":"hai, wakarimashita.","zh":"好，知道了。"},
+    {"speaker":"みんな","jp":"楽しみですね！早く行きたいです。","kana":"たのしみですね！はやくいきたいです。","romaji":"tanoshimi desu ne! hayaku ikitai desu.","zh":"好期待啊！想快點去。"}
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "scene2_impressions",
+  "title": "第二場面：帰国後の感想",
+  "titleKana": "だいにばめん：きこくごのかんそう",
+  "titleRomaji": "daini bamen: kikokugo no kansou",
+  "titleZh": "第二場面：回國後的感想",
+  "items": [
+    {"speaker":"A","jp":"私たちは日本へ旅行に行きました。","kana":"わたしたちはにほんへりょこうにいきました。","romaji":"watashitachi wa Nihon e ryokou ni ikimashita.","zh":"我們去日本旅行了。"},
+    {"speaker":"A","jp":"そして、昨日帰ってきました。","kana":"そして、きのうかえってきました。","romaji":"soshite, kinou kaette kimashita.","zh":"然後，昨天回來了。"},
+    {"speaker":"A","jp":"みなさん、旅行はどうでしたか。","kana":"みなさん、りょこうはどうでしたか。","romaji":"minasan, ryokou wa dou deshita ka.","zh":"各位，旅行怎麼樣？"},
+    {"speaker":"B","jp":"私は温泉に入りました。","kana":"わたしはおんせんにはいりました。","romaji":"watashi wa onsen ni hairimashita.","zh":"我泡了溫泉。"},
+    {"speaker":"B","jp":"とても気持ち良かったです。","kana":"とてもきもちよかったです。","romaji":"totemo kimochi yokatta desu.","zh":"非常舒服。"},
+    {"speaker":"C","jp":"私は大阪城で桜を見ました。","kana":"わたしはおおさかじょうでさくらをみました。","romaji":"watashi wa Oosakajou de sakura o mimashita.","zh":"我在大阪城看了櫻花。"},
+    {"speaker":"C","jp":"とてもきれいでした。","kana":"とてもきれいでした。","romaji":"totemo kirei deshita.","zh":"非常漂亮。"},
+    {"speaker":"D","jp":"私は写真をたくさん撮りました。","kana":"わたしはしゃしんをたくさんとりました。","romaji":"watashi wa shashin o takusan torimashita.","zh":"我拍了很多照片。"},
+    {"speaker":"D","jp":"いい思い出になりました。","kana":"いいおもいでになりました。","romaji":"ii omoide ni narimashita.","zh":"成為了美好的回憶。"},
+    {"speaker":"E","jp":"私はお寿司を食べました。","kana":"わたしはおすしをたべました。","romaji":"watashi wa osushi o tabemashita.","zh":"我吃了壽司。"},
+    {"speaker":"E","jp":"少し高かったですが、とてもおいしかったです。","kana":"すこしたかかったですが、とてもおいしかったです。","romaji":"sukoshi takakatta desu ga, totemo oishikatta desu.","zh":"雖然有點貴，但是非常好吃。"}
+  ]
+}
