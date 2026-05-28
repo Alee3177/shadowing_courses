@@ -43,22 +43,37 @@ td {
     padding: 8px;
   }
 }
+
+
+/* 跟讀時：固定主畫面，文字高亮閃爍 */
+.bigcard.glow .jp,
+.bigcard.glow .kana,
+.bigcard.glow .zh {
+  animation: textPulse .8s ease-in-out infinite alternate;
+}
+@keyframes textPulse{
+  from{filter:brightness(1); transform:translateY(0)}
+  to{filter:brightness(1.18); transform:translateY(-1px)}
+}
+@media(max-width:900px){
+  .bigcard{
+    position:sticky;
+    top:calc(env(safe-area-inset-top,0px) + 142px);
+    z-index:12;
+  }
+}
+
 </style>
 </head><body>
 <header><h1>「から」句型｜跟讀練習</h1>
-<div class="toolbar"><button id="unlockBtn">解鎖／播放本句</button><button id="shadowBtn" class="green">跟讀模式</button><button id="pauseBtn" class="secondary">暫停</button><button id="prevBtn" class="light">上一句</button><button id="nextBtn" class="light">下一句</button>
-<select id="rateSel">
-  <option value="0.75">0.75x 慢速</option>
-  <option value="1" selected>1.0x 標準</option>
-</select>
-<select id="repeatSel"><option value="1">每句 1 次</option><option value="2" selected>每句 2 次</option><option value="3">每句 3 次</option></select></div></header>
+<div class="toolbar"><button id="unlockBtn">解鎖／播放本句</button><button id="shadowBtn" class="green">跟讀模式</button><button id="pauseBtn" class="secondary">暫停</button><button id="prevBtn" class="light">上一句</button><button id="nextBtn" class="light">下一句</button><select id="rateSel"><option value="0.75">0.75x 慢速</option><option value="0.85">0.85x 練習</option><option value="1" selected>1.00x 標準</option><option value="1.1">1.10x 稍快</option></select><select id="repeatSel"><option value="1">每句 1 次</option><option value="2" selected>每句 2 次</option><option value="3">每句 3 次</option></select></div></header>
 <main><section class="practice panel"><span class="status" id="status">請先按「解鎖／播放本句」</span><div class="bigcard" id="bigcard"><div class="jp" id="jp"></div><div class="kana" id="kana"></div><div class="zh" id="zh"></div><div class="note">句型：原因 ＋ から、結果。／ 因為……，所以……。</div></div>
 <div class="qa"><h3>同動詞問答練習</h3><p id="qJp"></p><p id="qKana"></p><p id="qZh"></p><hr style="border:0;border-top:1px solid #bbf7d0"><p id="aJp"></p><p id="aKana"></p><p id="aZh"></p></div>
 <div class="tabs"><button class="tab active" data-tab="shadow">跟讀流程</button><button class="tab" data-tab="qa">問答句型</button><button class="tab" data-tab="tense">時態替換</button><button class="tab" data-tab="table">14句總表</button></div>
 <div class="appbox active" id="tab-shadow"><h2>跟讀方式</h2><div class="grid2"><div class="mini"><b>1. 看日文</b><br>先看第一欄日文，聽一次。</div><div class="mini"><b>2. 看平假名 / 羅馬拼音</b><br>確認發音，再跟讀一次。</div><div class="mini"><b>3. 看中文</b><br>理解意思：因為……所以……。</div><div class="mini"><b>4. 問答練習</b><br>用「どうして＋動詞＋か」問原因。</div></div></div>
 <div class="appbox" id="tab-qa"><h2>問答句型：以動詞為主</h2><table><tr><th>日文</th><th>平假名 / 羅馬拼音</th><th>中文</th></tr><tr><td>どうして掃除しますか。<br>汚いですから、掃除します。</td><td>どうしてそうじしますか。 / doushite souji shimasu ka.<br>きたないですから、そうじします。 / kitanai desu kara, souji shimasu.</td><td>為什麼要打掃？<br>因為很髒，所以打掃。</td></tr><tr><td>どうして薬を飲みますか。<br>頭が痛いですから、薬を飲みます。</td><td>どうしてくすりをのみますか。 / doushite kusuri o nomimasu ka.<br>あたまがいたいですから、くすりをのみます。 / atama ga itai desu kara, kusuri o nomimasu.</td><td>為什麼吃藥？<br>因為頭痛，所以吃藥。</td></tr><tr><td>どうして何も買いませんか。<br>お金がありませんから、何も買いません。</td><td>どうしてなにもかいませんか。 / doushite nani mo kaimasen ka.<br>おかねがありませんから、なにもかいません。 / okane ga arimasen kara, nani mo kaimasen.</td><td>為什麼什麼都不買？<br>因為沒有錢，所以什麼都不買。</td></tr></table></div>
 <div class="appbox" id="tab-tense"><h2>可替換時態應用</h2><table><tr><th>日文</th><th>平假名 / 羅馬拼音</th><th>中文</th></tr><tr><td>汚いですから、掃除します。</td><td>きたないですから、そうじします。 / kitanai desu kara, souji shimasu.</td><td>因為很髒，所以打掃／會打掃。</td></tr><tr><td>汚かったですから、掃除しました。</td><td>きたなかったですから、そうじしました。 / kitanakatta desu kara, souji shimashita.</td><td>因為之前很髒，所以打掃了。</td></tr><tr><td>汚くありませんから、掃除しません。</td><td>きたなくありませんから、そうじしません。 / kitanaku arimasen kara, souji shimasen.</td><td>因為不髒，所以不打掃。</td></tr><tr><td>汚くありませんでしたから、掃除しませんでした。</td><td>きたなくありませんでしたから、そうじしませんでした。 / kitanaku arimasen deshita kara, souji shimasen deshita.</td><td>因為當時不髒，所以沒有打掃。</td></tr></table></div>
-<div class="appbox" id="tab-table"><h2>14句總表</h2><div id="fullTable"></div></div></section><aside class="panel"><div class="layout-title">句子列表 </div><div class="list" id="list"></div></aside></main>
+<div class="appbox" id="tab-table"><h2>14句總表</h2><div id="fullTable"></div></div></section><aside class="panel"><div class="layout-title">句子列表（三欄順序）</div><div class="list" id="list"></div></aside></main>
 <script>
 const DATA=[
 {jp:"汚いですから、掃除します。",kana:"きたないですから、そうじします。 / kitanai desu kara, souji shimasu.",zh:"因為很髒，所以打掃。",qjp:"どうして掃除しますか。",qkana:"どうしてそうじしますか。 / doushite souji shimasu ka.",qzh:"為什麼要打掃？"},
@@ -75,7 +90,22 @@ const DATA=[
 {jp:"疲れましたから、寝ます。",kana:"つかれましたから、ねます。 / tsukaremashita kara, nemasu.",zh:"因為累了，所以睡覺。",qjp:"どうして寝ますか。",qkana:"どうしてねますか。 / doushite nemasu ka.",qzh:"為什麼要睡覺？"},
 {jp:"雨ですから、傘をさします。",kana:"あめですから、かさをさします。 / ame desu kara, kasa o sashimasu.",zh:"因為下雨，所以撐傘。",qjp:"どうして傘をさしますか。",qkana:"どうしてかさをさしますか。 / doushite kasa o sashimasu ka.",qzh:"為什麼要撐傘？"},
 {jp:"お金がありませんから、何も買いません。",kana:"おかねがありませんから、なにもかいません。 / okane ga arimasen kara, nani mo kaimasen.",zh:"因為沒有錢，所以什麼都不買。",qjp:"どうして何も買いませんか。",qkana:"どうしてなにもかいませんか。 / doushite nani mo kaimasen ka.",qzh:"為什麼什麼都不買？"}];
-let current=0,playing=false,paused=false;const $=id=>document.getElementById(id);function voice(){const vs=speechSynthesis.getVoices();return vs.find(v=>/Nanami|Kyoko|Haruka|Google 日本語|Japanese|日本語/i.test(v.name))||vs.find(v=>v.lang&&v.lang.startsWith("ja"))||vs[0]}function speak(text){return new Promise(resolve=>{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang="ja-JP";u.rate=parseFloat($("rateSel").value||"1");u.pitch=1.05;const v=voice();if(v)u.voice=v;u.onend=resolve;u.onerror=resolve;speechSynthesis.speak(u)})}function wait(ms){return new Promise(r=>setTimeout(r,ms))}function render(){const x=DATA[current];$("jp").textContent=x.jp;$("kana").textContent=x.kana;$("zh").textContent=x.zh;$("qJp").innerHTML="<b>日文 Q：</b>"+x.qjp;$("qKana").innerHTML="<b>平假名 / 羅馬拼音：</b>"+x.qkana;$("qZh").innerHTML="<b>中文：</b>"+x.qzh;$("aJp").innerHTML="<b>日文 A：</b>"+x.jp;$("aKana").innerHTML="<b>平假名 / 羅馬拼音：</b>"+x.kana;$("aZh").innerHTML="<b>中文：</b>"+x.zh;document.querySelectorAll(".item").forEach((el,i)=>{el.classList.toggle("active",i===current);if(i===current)el.scrollIntoView({block:"center",behavior:"smooth"})})}function renderList(){$("list").innerHTML=DATA.map((x,i)=>`<div class="item ${i===current?"active":""}" onclick="jumpTo(${i})"><div class="num">${i+1}</div><div><div class="smalljp">${x.jp}</div><div class="smallkana">${x.kana}</div><div class="smallzh">${x.zh}</div></div></div>`).join("")}function renderTable(){$("fullTable").innerHTML=`<table><tr><th>#</th><th>日文</th><th>平假名 / 羅馬拼音</th><th>中文</th></tr>${DATA.map((x,i)=>`<tr><td>${i+1}</td><td>${x.jp}</td><td>${x.kana}</td><td>${x.zh}</td></tr>`).join("")}</table>`}
+let current=0,playing=false,paused=false;const $=id=>document.getElementById(id);function voice(){const vs=speechSynthesis.getVoices();return vs.find(v=>/Nanami|Kyoko|Haruka|Google 日本語|Japanese|日本語/i.test(v.name))||vs.find(v=>v.lang&&v.lang.startsWith("ja"))||vs[0]}function unlockSpeech(){
+  if(!("speechSynthesis" in window)){
+    alert("此瀏覽器不支援語音朗讀。請改用 Chrome 或 Samsung Internet 開啟。");
+    return false;
+  }
+  speechSynthesis.cancel();
+  speechSynthesis.resume();
+  const u=new SpeechSynthesisUtterance("あ");
+  u.lang="ja-JP";
+  u.volume=0.01;
+  u.rate=1;
+  const v=voice();if(v)u.voice=v;
+  speechSynthesis.speak(u);
+  return true;
+}
+function speak(text){return new Promise(resolve=>{speechSynthesis.cancel();speechSynthesis.resume();const u=new SpeechSynthesisUtterance(text);u.lang="ja-JP";u.rate=parseFloat($("rateSel").value||"1");u.pitch=1.05;const v=voice();if(v)u.voice=v;u.onend=resolve;u.onerror=resolve;speechSynthesis.speak(u)})}function wait(ms){return new Promise(r=>setTimeout(r,ms))}function render(){const x=DATA[current];$("jp").textContent=x.jp;$("kana").textContent=x.kana;$("zh").textContent=x.zh;$("qJp").innerHTML="<b>日文 Q：</b>"+x.qjp;$("qKana").innerHTML="<b>平假名 / 羅馬拼音：</b>"+x.qkana;$("qZh").innerHTML="<b>中文：</b>"+x.qzh;$("aJp").innerHTML="<b>日文 A：</b>"+x.jp;$("aKana").innerHTML="<b>平假名 / 羅馬拼音：</b>"+x.kana;$("aZh").innerHTML="<b>中文：</b>"+x.zh;document.querySelectorAll(".item").forEach((el,i)=>{el.classList.toggle("active",i===current)})}function renderList(){$("list").innerHTML=DATA.map((x,i)=>`<div class="item ${i===current?"active":""}" onclick="jumpTo(${i})"><div class="num">${i+1}</div><div><div class="smalljp">${x.jp}</div><div class="smallkana">${x.kana}</div><div class="smallzh">${x.zh}</div></div></div>`).join("")}function renderTable(){$("fullTable").innerHTML=`<table><tr><th>#</th><th>日文</th><th>平假名 / 羅馬拼音</th><th>中文</th></tr>${DATA.map((x,i)=>`<tr><td>${i+1}</td><td>${x.jp}</td><td>${x.kana}</td><td>${x.zh}</td></tr>`).join("")}</table>`}
 async function playCurrent(){
   const repeat=parseInt($("repeatSel").value||"2",10);
   $("bigcard").classList.add("glow");
@@ -93,5 +123,5 @@ async function playCurrent(){
   $("bigcard").classList.remove("glow")
 }
 
-async function playAll(){playing=true;paused=false;$("pauseBtn").textContent="暫停";for(;current<DATA.length&&playing;current++){render();renderList();await playCurrent();await wait(450);while(paused&&playing){await wait(200)}}if(current>=DATA.length){current=0;render();renderList();$("status").textContent="完成一輪。"}playing=false;$("bigcard").classList.remove("glow")}window.jumpTo=function(i){speechSynthesis.cancel();playing=false;paused=false;current=i;render();renderList();$("status").textContent=`已切換到第 ${current+1} 句`};$("unlockBtn").onclick=async()=>{playing=true;await playCurrent();playing=false};$("shadowBtn").onclick=()=>{speechSynthesis.cancel();if(!playing)playAll()};$("pauseBtn").onclick=()=>{if(!speechSynthesis.speaking&&!playing)return;if(!paused){paused=true;speechSynthesis.pause();$("pauseBtn").textContent="繼續";$("status").textContent="已暫停";$("bigcard").classList.remove("glow")}else{paused=false;speechSynthesis.resume();$("pauseBtn").textContent="暫停";$("status").textContent="繼續播放";$("bigcard").classList.add("glow")}};$("prevBtn").onclick=()=>{speechSynthesis.cancel();playing=false;current=Math.max(0,current-1);render();renderList()};$("nextBtn").onclick=()=>{speechSynthesis.cancel();playing=false;current=Math.min(DATA.length-1,current+1);render();renderList()};document.querySelectorAll(".tab").forEach(btn=>{btn.onclick=()=>{document.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));document.querySelectorAll(".appbox").forEach(b=>b.classList.remove("active"));btn.classList.add("active");$("tab-"+btn.dataset.tab).classList.add("active")}});if("speechSynthesis" in window)speechSynthesis.onvoiceschanged=()=>voice();renderList();renderTable();render();
+async function playAll(){playing=true;paused=false;$("pauseBtn").textContent="暫停";for(;current<DATA.length&&playing;current++){render();renderList();await playCurrent();await wait(450);while(paused&&playing){await wait(200)}}if(current>=DATA.length){current=0;render();renderList();$("status").textContent="完成一輪。"}playing=false;$("bigcard").classList.remove("glow")}window.jumpTo=function(i){speechSynthesis.cancel();playing=false;paused=false;current=i;render();renderList();$("status").textContent=`已切換到第 ${current+1} 句`};$("unlockBtn").onclick=async()=>{if(!unlockSpeech())return;playing=true;await wait(350);await playCurrent();playing=false};$("shadowBtn").onclick=async()=>{if(!unlockSpeech())return;if(!playing){await wait(350);playAll()}};$("pauseBtn").onclick=()=>{if(!speechSynthesis.speaking&&!playing)return;if(!paused){paused=true;speechSynthesis.pause();$("pauseBtn").textContent="繼續";$("status").textContent="已暫停";$("bigcard").classList.remove("glow")}else{paused=false;speechSynthesis.resume();$("pauseBtn").textContent="暫停";$("status").textContent="繼續播放";$("bigcard").classList.add("glow")}};$("prevBtn").onclick=()=>{speechSynthesis.cancel();playing=false;current=Math.max(0,current-1);render();renderList()};$("nextBtn").onclick=()=>{speechSynthesis.cancel();playing=false;current=Math.min(DATA.length-1,current+1);render();renderList()};document.querySelectorAll(".tab").forEach(btn=>{btn.onclick=()=>{document.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));document.querySelectorAll(".appbox").forEach(b=>b.classList.remove("active"));btn.classList.add("active");$("tab-"+btn.dataset.tab).classList.add("active")}});if("speechSynthesis" in window)speechSynthesis.onvoiceschanged=()=>voice();renderList();renderTable();render();
 </script></body></html>
