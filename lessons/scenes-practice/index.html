@@ -33,7 +33,7 @@
           <select id="speed"><option value="0.75">0.75x</option><option value="0.85">0.85x</option><option value="1" selected>1.00x</option><option value="1.1">1.10x</option></select>
           <select id="delay"><option value="800">跟讀延遲 0.8秒</option><option value="1200" selected>跟讀延遲 1.2秒</option><option value="1600">跟讀延遲 1.6秒</option></select>
         </div>
-        <div class="status" id="status">內嵌JSON版 v20260528-06｜模式：先聽日文 → 停頓 → 自己跟讀。</div>
+        <div class="status" id="status">內嵌JSON版 v20260528-07｜模式：先聽日文 → 停頓 → 自己跟讀。</div>
       </div>
       <div class="card list" id="list"></div>
     </div>
@@ -109,7 +109,7 @@ async function loadScenes(){
   try{
     scenes = EMBEDDED_SCENES.map((data,idx)=>ensureAudioPaths(normalizeScene(cloneData(data), sceneFiles[idx].name), idx));
     renderScene();
-    $('status').textContent='內嵌JSON版 v20260528-06｜模式：先聽日文 → 停頓 → 自己跟讀。';
+    $('status').textContent='內嵌JSON版 v20260528-07｜模式：先聽日文 → 停頓 → 自己跟讀。';
   }catch(err){
     $('jp').textContent='課文資料載入失敗';
     $('kana').textContent='';
@@ -156,22 +156,55 @@ function speakText(text){
     speechSynthesis.speak(u);
   });
 }
+function audioUrl(src){
+  // LINE 內建瀏覽器對 GitHub Pages 的 mp3?query 有時會靜音或拒播。
+  // 音訊檔直接使用乾淨 URL；HTML 本身用 ?v= 來更新即可。
+  return new URL(src, window.location.href).href;
+}
 function playMp3(src){
   return new Promise((resolve,reject)=>{
     const token=++playToken;
     activeAudioResolve=resolve;
     speechSynthesis.cancel();
     audioPlayer.pause();
-    audioPlayer.currentTime=0;
+    try{ audioPlayer.currentTime=0; }catch(e){}
+    audioPlayer.muted=false;
+    audioPlayer.volume=1;
     audioPlayer.playbackRate=parseFloat($('speed')?.value||'1');
     audioPlayer.onended=()=>{ if(token===playToken){ activeAudioResolve=null; resolve(); } };
-    audioPlayer.onerror=()=>{ if(token===playToken){ activeAudioResolve=null; reject(new Error('MP3播放失敗：'+src)); } };
-    audioPlayer.src = addVersion(src);
+    audioPlayer.onerror=()=>{ if(token===playToken){ activeAudioResolve=null; reject(new Error('MP3播放失敗：'+audioUrl(src))); } };
+    audioPlayer.src = audioUrl(src);
     audioPlayer.load();
-    audioPlayer.play().catch(err=>{
-      if(token===playToken){ activeAudioResolve=null; reject(err); }
-    });
+    const p = audioPlayer.play();
+    if(p && typeof p.catch === 'function'){
+      p.catch(err=>{
+        if(token===playToken){ activeAudioResolve=null; reject(err); }
+      });
+    }
   });
+}
+async function unlockLineAudio(){
+  // Android / LINE WebView：先用同一個 audio 元件在點擊事件內解鎖。
+  const first = scenes?.[currentScene]?.items?.[current]?.audio || scenes?.[0]?.items?.[0]?.audio;
+  if(!first) return;
+  try{
+    speechSynthesis.cancel();
+    audioPlayer.pause();
+    audioPlayer.muted=true;
+    audioPlayer.volume=0;
+    audioPlayer.src=audioUrl(first);
+    audioPlayer.load();
+    await audioPlayer.play();
+    await sleep(120);
+    audioPlayer.pause();
+    try{ audioPlayer.currentTime=0; }catch(e){}
+    audioPlayer.muted=false;
+    audioPlayer.volume=1;
+  }catch(e){
+    audioPlayer.muted=false;
+    audioPlayer.volume=1;
+    console.warn('unlockLineAudio failed', e);
+  }
 }
 async function playVoice(item){
   const text = `${item.speaker || ''}${item.speaker ? '：' : ''}${item.jp || item.text || ''}`;
@@ -184,7 +217,7 @@ async function playVoice(item){
     }catch(err){
       console.warn(err);
       if(stopFlag) return;
-      $('status').textContent=`第 ${current+1} 句：改用 TTS。`;
+      $('status').textContent=`第 ${current+1} 句：MP3未能播放，改用 TTS。${err?.name || ''}`;
       await sleep(250);
     }
   }else{
@@ -223,7 +256,11 @@ function stopAll(){
   $('pauseBtn').textContent='暫停';
 }
 function jumpTo(i){current=i; renderCurrent(); if(playing){stopAll(); setTimeout(startShadow,120)}}
-$('playBtn').onclick=startShadow;
+$('playBtn').onclick=async()=>{
+  $('status').textContent='音訊解鎖中...';
+  await unlockLineAudio();
+  await startShadow();
+};
 $('pauseBtn').onclick=()=>{
   paused=!paused;
   if(paused){
