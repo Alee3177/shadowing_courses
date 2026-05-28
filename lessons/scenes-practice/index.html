@@ -65,13 +65,14 @@
   </section>
 </div>
 <script>
-const APP_VERSION = '20260528-04-line';
+const APP_VERSION = '20260528-05-embed-json';
 const sceneFiles = [
   {name:'第一場面：旅行の計画', file:'scene1_plan.json'},
   {name:'第二場面：帰国後の感想', file:'scene2_impressions.json'},
   {name:'第三場面：次の計画', file:'scene3_next_plan.json'},
   {name:'綜合問答句型', drill:true}
 ];
+const EMBEDDED_SCENES = [{"id":"scene1_plan","title":"第一場面：旅行の計画","titleKana":"だいいちばめん：りょこうのけいかく","titleRomaji":"daiichi bamen: ryokou no keikaku","titleZh":"第一場面：旅行的計畫","items":[{"speaker":"A","jp":"みなさん、私は日本へ旅行に行きたいです。","kana":"みなさん、わたしはにほんへりょこうにいきたいです。","romaji":"minasan, watashi wa Nihon e ryokou ni ikitai desu.","zh":"各位，我想去日本旅行。","audio":"audio/scene1_001.mp3"},{"speaker":"A","jp":"一緒に行きませんか。","kana":"いっしょにいきませんか。","romaji":"issho ni ikimasen ka.","zh":"要不要一起去呢？","audio":"audio/scene1_002.mp3"},{"speaker":"B","jp":"いいですね。私も行きたいです。","kana":"いいですね。わたしもいきたいです。","romaji":"ii desu ne. watashi mo ikitai desu.","zh":"好啊。我也想去。","audio":"audio/scene1_003.mp3"},{"speaker":"B","jp":"日本のどこへ行きたいですか。","kana":"にほんのどこへいきたいですか。","romaji":"Nihon no doko e ikitai desu ka.","zh":"想去日本的哪裡呢？","audio":"audio/scene1_004.mp3"},{"speaker":"C","jp":"京都と大阪はどうですか。","kana":"きょうととおおさかはどうですか。","romaji":"Kyouto to Oosaka wa dou desu ka.","zh":"京都和大阪怎麼樣？","audio":"audio/scene1_005.mp3"},{"speaker":"D","jp":"いいですね。京都はきれいな町です。","kana":"いいですね。きょうとはきれいなまちです。","romaji":"ii desu ne. Kyouto wa kirei na machi desu.","zh":"好啊。京都是漂亮的城市。","audio":"audio/scene1_006.mp3"},{"speaker":"E","jp":"私は日本でおいしい料理を食べたいです。","kana":"わたしはにほんでおいしいりょうりをたべたいです。","romaji":"watashi wa Nihon de oishii ryouri o tabetai desu.","zh":"我想在日本吃好吃的料理。","audio":"audio/scene1_007.mp3"},{"speaker":"A","jp":"私は買い物をしたいです。","kana":"わたしはかいものをしたいです。","romaji":"watashi wa kaimono o shitai desu.","zh":"我想買東西。","audio":"audio/scene1_008.mp3"},{"speaker":"B","jp":"私は温泉に入りたいです。","kana":"わたしはおんせんにはいりたいです。","romaji":"watashi wa onsen ni hairitai desu.","zh":"我想泡溫泉。","audio":"audio/scene1_009.mp3"},{"speaker":"C","jp":"私は桜を見たいです。","kana":"わたしはさくらをみたいです。","romaji":"watashi wa sakura o mitai desu.","zh":"我想看櫻花。","audio":"audio/scene1_010.mp3"},{"speaker":"D","jp":"私はきれいな景色を見たいです。","kana":"わたしはきれいなけしきをみたいです。","romaji":"watashi wa kirei na keshiki o mitai desu.","zh":"我想看漂亮的風景。","audio":"audio/scene1_011.mp3"},{"speaker":"A","jp":"いつ行きますか。","kana":"いついきますか。","romaji":"itsu ikimasu ka.","zh":"什麼時候去？","audio":"audio/scene1_012.mp3"},{"speaker":"B","jp":"5月20日はどうですか。","kana":"ごがつはつかはどうですか。","romaji":"gogatsu hatsuka wa dou desu ka.","zh":"5月20日怎麼樣？","audio":"audio/scene1_013.mp3"},{"speaker":"C","jp":"いいですよ。","kana":"いいですよ。","romaji":"ii desu yo.","zh":"可以啊。","audio":"audio/scene1_014.mp3"},{"speaker":"D","jp":"楽しみですね。","kana":"たのしみですね。","romaji":"tanoshimi desu ne.","zh":"真期待呢。","audio":"audio/scene1_015.mp3"},{"speaker":"E","jp":"私も大丈夫です。","kana":"わたしもだいじょうぶです。","romaji":"watashi mo daijoubu desu.","zh":"我也可以。","audio":"audio/scene1_016.mp3"},{"speaker":"A","jp":"じゃあ、5月20日のチケットを予約しましょう。","kana":"じゃあ、ごがつはつかのチケットをよやくしましょう。","romaji":"jaa, gogatsu hatsuka no chiketto o yoyaku shimashou.","zh":"那麼，就預約5月20日的票吧。","audio":"audio/scene1_017.mp3"},{"speaker":"みんな","jp":"はい、分かりました。","kana":"はい、わかりました。","romaji":"hai, wakarimashita.","zh":"好，知道了。","audio":"audio/scene1_018.mp3"},{"speaker":"みんな","jp":"楽しみですね！早く行きたいです。","kana":"たのしみですね！はやくいきたいです。","romaji":"tanoshimi desu ne! hayaku ikitai desu.","zh":"好期待啊！想快點去。","audio":"audio/scene1_019.mp3"}]},{"id":"scene2_impressions","title":"第二場面：帰国後の感想","titleKana":"だいにばめん：きこくごのかんそう","titleRomaji":"daini bamen: kikokugo no kansou","titleZh":"第二場面：回國後的感想","items":[{"speaker":"A","jp":"私たちは日本へ旅行に行きました。","kana":"わたしたちはにほんへりょこうにいきました。","romaji":"watashitachi wa Nihon e ryokou ni ikimashita.","zh":"我們去日本旅行了。","audio":"audio/scene2_001.mp3"},{"speaker":"A","jp":"そして、昨日帰ってきました。","kana":"そして、きのうかえってきました。","romaji":"soshite, kinou kaette kimashita.","zh":"然後，昨天回來了。","audio":"audio/scene2_002.mp3"},{"speaker":"A","jp":"みなさん、旅行はどうでしたか。","kana":"みなさん、りょこうはどうでしたか。","romaji":"minasan, ryokou wa dou deshita ka.","zh":"各位，旅行怎麼樣？","audio":"audio/scene2_003.mp3"},{"speaker":"B","jp":"私は温泉に入りました。","kana":"わたしはおんせんにはいりました。","romaji":"watashi wa onsen ni hairimashita.","zh":"我泡了溫泉。","audio":"audio/scene2_004.mp3"},{"speaker":"B","jp":"とても気持ち良かったです。","kana":"とてもきもちよかったです。","romaji":"totemo kimochi yokatta desu.","zh":"非常舒服。","audio":"audio/scene2_005.mp3"},{"speaker":"C","jp":"私は大阪城で桜を見ました。","kana":"わたしはおおさかじょうでさくらをみました。","romaji":"watashi wa Oosakajou de sakura o mimashita.","zh":"我在大阪城看了櫻花。","audio":"audio/scene2_006.mp3"},{"speaker":"C","jp":"とてもきれいでした。","kana":"とてもきれいでした。","romaji":"totemo kirei deshita.","zh":"非常漂亮。","audio":"audio/scene2_007.mp3"},{"speaker":"D","jp":"私は写真をたくさん撮りました。","kana":"わたしはしゃしんをたくさんとりました。","romaji":"watashi wa shashin o takusan torimashita.","zh":"我拍了很多照片。","audio":"audio/scene2_008.mp3"},{"speaker":"D","jp":"いい思い出になりました。","kana":"いいおもいでになりました。","romaji":"ii omoide ni narimashita.","zh":"成為了美好的回憶。","audio":"audio/scene2_009.mp3"},{"speaker":"E","jp":"私はお寿司を食べました。","kana":"わたしはおすしをたべました。","romaji":"watashi wa osushi o tabemashita.","zh":"我吃了壽司。","audio":"audio/scene2_010.mp3"},{"speaker":"E","jp":"少し高かったですが、とてもおいしかったです。","kana":"すこしたかかったですが、とてもおいしかったです。","romaji":"sukoshi takakatta desu ga, totemo oishikatta desu.","zh":"雖然有點貴，但是非常好吃。","audio":"audio/scene2_011.mp3"}]},{"id":"scene3_next_plan","title":"第三場面：次の計画","titleKana":"だいさんばめん：つぎのけいかく","titleRomaji":"daisan bamen: tsugi no keikaku","titleZh":"第三場面：下一次的計畫","items":[{"speaker":"A","jp":"日本旅行は本当に楽しかったですね。","kana":"にほんりょこうはほんとうにたのしかったですね。","romaji":"Nihon ryokou wa hontou ni tanoshikatta desu ne.","zh":"日本旅行真的很開心呢。","audio":"audio/scene3_001.mp3"},{"speaker":"B","jp":"そうですね。いい旅行でした。","kana":"そうですね。いいりょこうでした。","romaji":"sou desu ne. ii ryokou deshita.","zh":"是啊。是一次很好的旅行。","audio":"audio/scene3_002.mp3"},{"speaker":"B","jp":"また日本へ旅行に行きたいです。","kana":"またにほんへりょこうにいきたいです。","romaji":"mata Nihon e ryokou ni ikitai desu.","zh":"還想再去日本旅行。","audio":"audio/scene3_003.mp3"},{"speaker":"C","jp":"次はどこへ行きたいですか。","kana":"つぎはどこへいきたいですか。","romaji":"tsugi wa doko e ikitai desu ka.","zh":"下一次想去哪裡？","audio":"audio/scene3_004.mp3"},{"speaker":"D","jp":"私は北海道へ行きたいです。","kana":"わたしはほっかいどうへいきたいです。","romaji":"watashi wa Hokkaidou e ikitai desu.","zh":"我想去北海道。","audio":"audio/scene3_005.mp3"},{"speaker":"E","jp":"私も北海道へ行きたいです。","kana":"わたしもほっかいどうへいきたいです。","romaji":"watashi mo Hokkaidou e ikitai desu.","zh":"我也想去北海道。","audio":"audio/scene3_006.mp3"},{"speaker":"E","jp":"またおいしいものを食べたいです。","kana":"またおいしいものをたべたいです。","romaji":"mata oishii mono o tabetai desu.","zh":"還想再吃好吃的東西。","audio":"audio/scene3_007.mp3"},{"speaker":"A","jp":"いいですね。","kana":"いいですね。","romaji":"ii desu ne.","zh":"好啊。","audio":"audio/scene3_008.mp3"},{"speaker":"A","jp":"私もおいしいカニを食べたいです。","kana":"わたしもおいしいカニをたべたいです。","romaji":"watashi mo oishii kani o tabetai desu.","zh":"我也想吃好吃的螃蟹。","audio":"audio/scene3_009.mp3"},{"speaker":"B","jp":"私はまた温泉に入りたいです。","kana":"わたしはまたおんせんにはいりたいです。","romaji":"watashi wa mata onsen ni hairitai desu.","zh":"我還想再泡溫泉。","audio":"audio/scene3_010.mp3"},{"speaker":"C","jp":"私は雪を見たいです。","kana":"わたしはゆきをみたいです。","romaji":"watashi wa yuki o mitai desu.","zh":"我想看雪。","audio":"audio/scene3_011.mp3"},{"speaker":"D","jp":"私はスキーをしたいです。","kana":"わたしはスキーをしたいです。","romaji":"watashi wa sukii o shitai desu.","zh":"我想滑雪。","audio":"audio/scene3_012.mp3"},{"speaker":"E","jp":"じゃあ、次は冬に北海道へ行きましょう。","kana":"じゃあ、つぎはふゆにほっかいどうへいきましょう。","romaji":"jaa, tsugi wa fuyu ni Hokkaidou e ikimashou.","zh":"那麼，下一次冬天去北海道吧。","audio":"audio/scene3_013.mp3"},{"speaker":"みんな","jp":"はい！冬の北海道、楽しみです！","kana":"はい！ふゆのほっかいどう、たのしみです！","romaji":"hai! fuyu no Hokkaidou, tanoshimi desu!","zh":"好！冬天的北海道，很期待！","audio":"audio/scene3_014.mp3"}]}];
 let scenes=[], currentScene=0, current=0, playing=false, paused=false, stopFlag=false;
 let playToken=0, activeAudioResolve=null;
 const audioPlayer = new Audio();
@@ -85,77 +86,32 @@ function initTabs(){
 }
 function addVersion(url){
   const sep = url.includes('?') ? '&' : '?';
-  return `${url}${sep}v=${APP_VERSION}&t=${Date.now()}`;
+  return `${url}${sep}v=${APP_VERSION}`;
 }
-function fetchJsonWithTimeout(url, ms=7000){
-  return new Promise((resolve,reject)=>{
-    const controller = new AbortController();
-    const timer = setTimeout(()=>{
-      try{ controller.abort(); }catch(e){}
-      reject(new Error(`${url} 載入逾時`));
-    }, ms);
-    fetch(addVersion(url), {
-      cache:'no-store',
-      signal: controller.signal,
-      headers:{'Accept':'application/json,text/plain,*/*'}
-    }).then(res=>{
-      clearTimeout(timer);
-      if(!res.ok) throw new Error(`${url} 載入失敗：${res.status}`);
-      return res.text();
-    }).then(text=>{
-      try{ resolve(JSON.parse(text)); }
-      catch(e){ reject(new Error(`${url} JSON 格式錯誤：${e.message}`)); }
-    }).catch(err=>{
-      clearTimeout(timer);
-      reject(err);
-    });
-  });
-}
-function xhrJson(url, ms=7000){
-  return new Promise((resolve,reject)=>{
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', addVersion(url), true);
-    xhr.timeout = ms;
-    xhr.overrideMimeType && xhr.overrideMimeType('application/json; charset=utf-8');
-    xhr.onreadystatechange = ()=>{
-      if(xhr.readyState !== 4) return;
-      if(xhr.status >= 200 && xhr.status < 300){
-        try{ resolve(JSON.parse(xhr.responseText)); }
-        catch(e){ reject(new Error(`${url} JSON 格式錯誤：${e.message}`)); }
-      }else{
-        reject(new Error(`${url} XHR 載入失敗：${xhr.status}`));
-      }
-    };
-    xhr.ontimeout = ()=>reject(new Error(`${url} XHR 載入逾時`));
-    xhr.onerror = ()=>reject(new Error(`${url} XHR 網路錯誤`));
-    xhr.send(null);
-  });
-}
-async function loadJson(file){
-  try{
-    return await fetchJsonWithTimeout(file, 7000);
-  }catch(fetchErr){
-    console.warn('fetch failed, fallback to XHR:', fetchErr);
-    return await xhrJson(file, 7000);
-  }
+function cloneData(obj){
+  return JSON.parse(JSON.stringify(obj));
 }
 function normalizeScene(data, fallbackName){
   if(Array.isArray(data)) return {title:fallbackName, titleZh:'', items:data};
   if(data && Array.isArray(data.items)) return data;
-  throw new Error(`${fallbackName} JSON 內找不到 items 陣列`);
+  throw new Error(`${fallbackName} 內嵌資料內找不到 items 陣列`);
+}
+function ensureAudioPaths(scene, sceneIndex){
+  const prefix = `scene${sceneIndex + 1}`;
+  scene.items.forEach((item, idx)=>{
+    if(!item.audio && !item.file && !item.mp3){
+      item.audio = `audio/${prefix}_${String(idx+1).padStart(3,'0')}.mp3`;
+    }
+  });
+  return scene;
 }
 async function loadScenes(){
   try{
-    scenes=[];
-    $('status').textContent='正在載入課文資料…';
-    for(const s of sceneFiles.filter(x=>!x.drill)){
-      const data = await loadJson(s.file);
-      scenes.push(normalizeScene(data, s.name));
-    }
+    scenes = EMBEDDED_SCENES.map((data,idx)=>ensureAudioPaths(normalizeScene(cloneData(data), sceneFiles[idx].name), idx));
     renderScene();
     $('status').textContent='模式：先聽日文 → 停頓 → 自己跟讀。';
   }catch(err){
-    $('jp').textContent='JSON 載入失敗';
+    $('jp').textContent='課文資料載入失敗';
     $('kana').textContent='';
     $('romaji').textContent=err.message || String(err);
     $('zh').textContent='';
