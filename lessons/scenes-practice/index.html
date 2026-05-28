@@ -65,7 +65,7 @@
   </section>
 </div>
 <script>
-const APP_VERSION = '20260528-03';
+const APP_VERSION = '20260528-04-line';
 const sceneFiles = [
   {name:'第一場面：旅行の計画', file:'scene1_plan.json'},
   {name:'第二場面：帰国後の感想', file:'scene2_impressions.json'},
@@ -83,16 +83,74 @@ function $(id){return document.getElementById(id)}
 function initTabs(){
   $('tabs').innerHTML = sceneFiles.map((x,i)=>`<button class="tab ${i===0?'active':''}" onclick="switchTab(${i})">${x.name}</button>`).join('');
 }
+function addVersion(url){
+  const sep = url.includes('?') ? '&' : '?';
+  return `${url}${sep}v=${APP_VERSION}&t=${Date.now()}`;
+}
+function fetchJsonWithTimeout(url, ms=7000){
+  return new Promise((resolve,reject)=>{
+    const controller = new AbortController();
+    const timer = setTimeout(()=>{
+      try{ controller.abort(); }catch(e){}
+      reject(new Error(`${url} 載入逾時`));
+    }, ms);
+    fetch(addVersion(url), {
+      cache:'no-store',
+      signal: controller.signal,
+      headers:{'Accept':'application/json,text/plain,*/*'}
+    }).then(res=>{
+      clearTimeout(timer);
+      if(!res.ok) throw new Error(`${url} 載入失敗：${res.status}`);
+      return res.text();
+    }).then(text=>{
+      try{ resolve(JSON.parse(text)); }
+      catch(e){ reject(new Error(`${url} JSON 格式錯誤：${e.message}`)); }
+    }).catch(err=>{
+      clearTimeout(timer);
+      reject(err);
+    });
+  });
+}
+function xhrJson(url, ms=7000){
+  return new Promise((resolve,reject)=>{
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', addVersion(url), true);
+    xhr.timeout = ms;
+    xhr.overrideMimeType && xhr.overrideMimeType('application/json; charset=utf-8');
+    xhr.onreadystatechange = ()=>{
+      if(xhr.readyState !== 4) return;
+      if(xhr.status >= 200 && xhr.status < 300){
+        try{ resolve(JSON.parse(xhr.responseText)); }
+        catch(e){ reject(new Error(`${url} JSON 格式錯誤：${e.message}`)); }
+      }else{
+        reject(new Error(`${url} XHR 載入失敗：${xhr.status}`));
+      }
+    };
+    xhr.ontimeout = ()=>reject(new Error(`${url} XHR 載入逾時`));
+    xhr.onerror = ()=>reject(new Error(`${url} XHR 網路錯誤`));
+    xhr.send(null);
+  });
+}
 async function loadJson(file){
-  const res = await fetch(`${file}?v=${APP_VERSION}`, { cache:'no-store' });
-  if(!res.ok) throw new Error(`${file} 載入失敗：${res.status}`);
-  return await res.json();
+  try{
+    return await fetchJsonWithTimeout(file, 7000);
+  }catch(fetchErr){
+    console.warn('fetch failed, fallback to XHR:', fetchErr);
+    return await xhrJson(file, 7000);
+  }
+}
+function normalizeScene(data, fallbackName){
+  if(Array.isArray(data)) return {title:fallbackName, titleZh:'', items:data};
+  if(data && Array.isArray(data.items)) return data;
+  throw new Error(`${fallbackName} JSON 內找不到 items 陣列`);
 }
 async function loadScenes(){
   try{
     scenes=[];
+    $('status').textContent='正在載入課文資料…';
     for(const s of sceneFiles.filter(x=>!x.drill)){
-      scenes.push(await loadJson(s.file));
+      const data = await loadJson(s.file);
+      scenes.push(normalizeScene(data, s.name));
     }
     renderScene();
     $('status').textContent='模式：先聽日文 → 停頓 → 自己跟讀。';
@@ -152,7 +210,7 @@ function playMp3(src){
     audioPlayer.playbackRate=parseFloat($('speed')?.value||'1');
     audioPlayer.onended=()=>{ if(token===playToken){ activeAudioResolve=null; resolve(); } };
     audioPlayer.onerror=()=>{ if(token===playToken){ activeAudioResolve=null; reject(new Error('MP3播放失敗：'+src)); } };
-    audioPlayer.src = `${src}?v=${APP_VERSION}`;
+    audioPlayer.src = addVersion(src);
     audioPlayer.load();
     audioPlayer.play().catch(err=>{
       if(token===playToken){ activeAudioResolve=null; reject(err); }
