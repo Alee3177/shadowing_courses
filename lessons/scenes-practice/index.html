@@ -13,7 +13,6 @@
 <div class="wrap">
   <div class="hero">
     <h1>日本旅行三場面跟讀＋綜合問答句型練習</h1>
-    <div class="subtitle">三個場景 JSON 分開載入；綜合題支援替換地點、動作、食物、季節與時態。</div>
     <div class="tabs" id="tabs"></div>
   </div>
 
@@ -73,17 +72,32 @@ const sceneFiles = [
   {name:'綜合問答句型', drill:true}
 ];
 let scenes=[], currentScene=0, current=0, playing=false, paused=false, stopFlag=false;
+let playToken=0, activeAudioResolve=null;
+const audioPlayer = new Audio();
+audioPlayer.preload = 'auto';
+audioPlayer.setAttribute('playsinline','');
+audioPlayer.setAttribute('webkit-playsinline','');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 function $(id){return document.getElementById(id)}
 function initTabs(){
   $('tabs').innerHTML = sceneFiles.map((x,i)=>`<button class="tab ${i===0?'active':''}" onclick="switchTab(${i})">${x.name}</button>`).join('');
 }
 async function loadScenes(){
-  for(const s of sceneFiles.filter(x=>!x.drill)){
-    const res = await fetch(s.file + '?v=' + Date.now());
-    scenes.push(await res.json());
-  }
-  renderScene();
+  try{
+    for(const s of sceneFiles.filter(x=>!x.drill)){
+      const res = await fetch(s.file + '?v=' + Date.now());
+      if(!res.ok) throw new Error(`${s.file} 載入失敗：${res.status}`);
+      scenes.push(await res.json());
+    }
+    renderScene();
+    $('status').textContent='已載入 JSON。若 JSON 內有 audio 欄位，會優先播放 MP3；失敗時自動改用 TTS。';
+  }catch(err){
+  $('jp').textContent='JSON 載入失敗';
+  $('kana').textContent='';
+  $('romaji').textContent=err.message || String(err);
+  $('status').textContent='';
+  console.error(err);
+}
 }
 function switchTab(i){
   document.querySelectorAll('.tab').forEach((b,idx)=>b.classList.toggle('active',idx===i));
@@ -106,21 +120,64 @@ function pickVoice(){
   const voices=speechSynthesis.getVoices();
   return voices.find(v=>v.lang==='ja-JP' && /Nanami|Female|Kyoko|Google/.test(v.name)) || voices.find(v=>v.lang==='ja-JP') || null;
 }
+function cleanSpeakText(text){
+  return String(text || '').replace(/^[A-Zみんな]+：/,'');
+}
 function speakText(text){
   return new Promise(resolve=>{
+    const token=++playToken;
+    audioPlayer.pause();
     speechSynthesis.cancel();
-    const u=new SpeechSynthesisUtterance(text.replace(/^[A-Zみんな]+：/,''));
+    const u=new SpeechSynthesisUtterance(cleanSpeakText(text));
     u.lang='ja-JP'; u.rate=parseFloat($('speed')?.value||'1'); u.pitch=1.02; u.voice=pickVoice();
-    u.onend=()=>resolve(); u.onerror=()=>resolve(); speechSynthesis.speak(u);
+    u.onend=()=>{ if(token===playToken) resolve(); };
+    u.onerror=()=>{ if(token===playToken) resolve(); };
+    speechSynthesis.speak(u);
   });
+}
+function playMp3(src){
+  return new Promise((resolve,reject)=>{
+    const token=++playToken;
+    activeAudioResolve=resolve;
+    speechSynthesis.cancel();
+    audioPlayer.pause();
+    audioPlayer.currentTime=0;
+    audioPlayer.playbackRate=parseFloat($('speed')?.value||'1');
+    audioPlayer.onended=()=>{ if(token===playToken){ activeAudioResolve=null; resolve(); } };
+    audioPlayer.onerror=()=>{ if(token===playToken){ activeAudioResolve=null; reject(new Error('MP3播放失敗：'+src)); } };
+    audioPlayer.src=src;
+    audioPlayer.load();
+    audioPlayer.play().catch(err=>{
+      if(token===playToken){ activeAudioResolve=null; reject(err); }
+    });
+  });
+}
+async function playVoice(item){
+  const text = `${item.speaker || ''}：${item.jp || item.text || ''}`;
+  const src = item.audio || item.file || item.mp3 || '';
+  if(src){
+    try{
+      $('status').textContent=`第 ${current+1} 句：播放 MP3 原音。`;
+      await playMp3(src);
+      return;
+    }catch(err){
+      console.warn(err);
+      if(stopFlag) return;
+      $('status').textContent=`MP3 失敗，改用 TTS：${src}`;
+      await sleep(250);
+    }
+  }else{
+    $('status').textContent=`第 ${current+1} 句：此句沒有 audio 欄位，使用 TTS。`;
+  }
+  await speakText(text);
 }
 async function startShadow(){
   if(playing){ stopAll(); await sleep(100); }
-  playing=true; paused=false; stopFlag=false; $('status').textContent='跟讀中：先聽原音，停頓後請開口跟讀。';
+  playing=true; paused=false; stopFlag=false; $('status').textContent='跟讀中：先聽 MP3 原音，停頓後請開口跟讀。';
   while(current < scenes[currentScene].items.length && !stopFlag){
     renderCurrent();
     const item=scenes[currentScene].items[current];
-    await speakText(`${item.speaker}：${item.jp}`);
+    await playVoice(item);
     await waitPauseOrDelay(parseInt($('delay').value,10));
     if(stopFlag) break;
     $('status').textContent=`第 ${current+1} 句：請跟讀 → ${item.jp}`;
@@ -134,9 +191,31 @@ async function waitPauseOrDelay(ms){
   const step=100; let t=0;
   while(t<ms && !stopFlag){ if(!paused){t+=step;} await sleep(step); }
 }
-function stopAll(){stopFlag=true; playing=false; paused=false; speechSynthesis.cancel(); $('pauseBtn').textContent='暫停';}
+function stopAll(){
+  stopFlag=true; playing=false; paused=false; playToken++;
+  speechSynthesis.cancel();
+  audioPlayer.pause();
+  audioPlayer.removeAttribute('src');
+  try{ audioPlayer.load(); }catch(e){}
+  if(activeAudioResolve){ activeAudioResolve(); activeAudioResolve=null; }
+  $('pauseBtn').textContent='暫停';
+}
 function jumpTo(i){current=i; renderCurrent(); if(playing){stopAll(); setTimeout(startShadow,120)}}
-$('playBtn').onclick=startShadow;$('pauseBtn').onclick=()=>{paused=!paused; if(paused){speechSynthesis.pause();$('pauseBtn').textContent='繼續';$('status').textContent='已暫停。';}else{speechSynthesis.resume();$('pauseBtn').textContent='暫停';$('status').textContent='繼續跟讀。';}};
+$('playBtn').onclick=startShadow;
+$('pauseBtn').onclick=()=>{
+  paused=!paused;
+  if(paused){
+    audioPlayer.pause();
+    speechSynthesis.pause();
+    $('pauseBtn').textContent='繼續';
+    $('status').textContent='已暫停。';
+  }else{
+    if(audioPlayer.src && audioPlayer.paused) audioPlayer.play().catch(()=>{});
+    speechSynthesis.resume();
+    $('pauseBtn').textContent='暫停';
+    $('status').textContent='繼續跟讀。';
+  }
+};
 $('prevBtn').onclick=()=>{current=Math.max(0,current-1);renderCurrent()};$('nextBtn').onclick=()=>{current=Math.min(scenes[currentScene].items.length-1,current+1);renderCurrent()};$('resetBtn').onclick=()=>{stopAll();current=0;renderCurrent();$('status').textContent='已重置。'};
 
 const vocab = {
