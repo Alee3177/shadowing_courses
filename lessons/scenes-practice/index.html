@@ -65,6 +65,7 @@
   </section>
 </div>
 <script>
+const APP_VERSION = '20260528-03';
 const sceneFiles = [
   {name:'第一場面：旅行の計画', file:'scene1_plan.json'},
   {name:'第二場面：帰国後の感想', file:'scene2_impressions.json'},
@@ -82,22 +83,27 @@ function $(id){return document.getElementById(id)}
 function initTabs(){
   $('tabs').innerHTML = sceneFiles.map((x,i)=>`<button class="tab ${i===0?'active':''}" onclick="switchTab(${i})">${x.name}</button>`).join('');
 }
+async function loadJson(file){
+  const res = await fetch(`${file}?v=${APP_VERSION}`, { cache:'no-store' });
+  if(!res.ok) throw new Error(`${file} 載入失敗：${res.status}`);
+  return await res.json();
+}
 async function loadScenes(){
   try{
+    scenes=[];
     for(const s of sceneFiles.filter(x=>!x.drill)){
-      const res = await fetch(s.file + '?v=' + Date.now());
-      if(!res.ok) throw new Error(`${s.file} 載入失敗：${res.status}`);
-      scenes.push(await res.json());
+      scenes.push(await loadJson(s.file));
     }
     renderScene();
-    $('status').textContent='已載入 JSON。若 JSON 內有 audio 欄位，會優先播放 MP3；失敗時自動改用 TTS。';
+    $('status').textContent='模式：先聽日文 → 停頓 → 自己跟讀。';
   }catch(err){
-  $('jp').textContent='JSON 載入失敗';
-  $('kana').textContent='';
-  $('romaji').textContent=err.message || String(err);
-  $('status').textContent='';
-  console.error(err);
-}
+    $('jp').textContent='JSON 載入失敗';
+    $('kana').textContent='';
+    $('romaji').textContent=err.message || String(err);
+    $('zh').textContent='';
+    $('status').textContent='';
+    console.error(err);
+  }
 }
 function switchTab(i){
   document.querySelectorAll('.tab').forEach((b,idx)=>b.classList.toggle('active',idx===i));
@@ -106,13 +112,14 @@ function switchTab(i){
 }
 function renderScene(){
   const scene=scenes[currentScene]; if(!scene) return;
-  $('sceneBadge').textContent=`${scene.title}｜${scene.titleZh}`;
+  $('sceneBadge').textContent=`${scene.title || sceneFiles[currentScene].name}｜${scene.titleZh || ''}`;
   renderCurrent();
-  $('list').innerHTML=scene.items.map((x,i)=>`<div class="row ${i===current?'active':''}" id="row${i}" onclick="jumpTo(${i})"><div class="rmeta">${i+1}. ${x.speaker}</div><div class="rjp">${x.jp}</div><div class="rmeta">${x.kana}<br>${x.romaji}<br>${x.zh}</div></div>`).join('');
+  $('list').innerHTML=scene.items.map((x,i)=>`<div class="row ${i===current?'active':''}" id="row${i}" onclick="jumpTo(${i})"><div class="rmeta">${i+1}. ${x.speaker || ''}</div><div class="rjp">${x.jp || x.text || ''}</div><div class="rmeta">${x.kana || ''}<br>${x.romaji || ''}<br>${x.zh || ''}</div></div>`).join('');
 }
 function renderCurrent(){
   const item=scenes[currentScene].items[current];
-  $('jp').textContent=`${item.speaker}：${item.jp}`;$('kana').textContent=item.kana;$('romaji').textContent=item.romaji;$('zh').textContent=item.zh;
+  $('jp').textContent=`${item.speaker || ''}${item.speaker ? '：' : ''}${item.jp || item.text || ''}`;
+  $('kana').textContent=item.kana || '';$('romaji').textContent=item.romaji || '';$('zh').textContent=item.zh || '';
   document.querySelectorAll('.row').forEach((r,i)=>r.classList.toggle('active',i===current));
   const row=$('row'+current); if(row) row.scrollIntoView({block:'center',behavior:'smooth'});
 }
@@ -145,7 +152,7 @@ function playMp3(src){
     audioPlayer.playbackRate=parseFloat($('speed')?.value||'1');
     audioPlayer.onended=()=>{ if(token===playToken){ activeAudioResolve=null; resolve(); } };
     audioPlayer.onerror=()=>{ if(token===playToken){ activeAudioResolve=null; reject(new Error('MP3播放失敗：'+src)); } };
-    audioPlayer.src=src;
+    audioPlayer.src = `${src}?v=${APP_VERSION}`;
     audioPlayer.load();
     audioPlayer.play().catch(err=>{
       if(token===playToken){ activeAudioResolve=null; reject(err); }
@@ -153,7 +160,7 @@ function playMp3(src){
   });
 }
 async function playVoice(item){
-  const text = `${item.speaker || ''}：${item.jp || item.text || ''}`;
+  const text = `${item.speaker || ''}${item.speaker ? '：' : ''}${item.jp || item.text || ''}`;
   const src = item.audio || item.file || item.mp3 || '';
   if(src){
     try{
@@ -163,24 +170,25 @@ async function playVoice(item){
     }catch(err){
       console.warn(err);
       if(stopFlag) return;
-      $('status').textContent=`MP3 失敗，改用 TTS：${src}`;
+      $('status').textContent=`第 ${current+1} 句：改用 TTS。`;
       await sleep(250);
     }
   }else{
-    $('status').textContent=`第 ${current+1} 句：此句沒有 audio 欄位，使用 TTS。`;
+    $('status').textContent=`第 ${current+1} 句：使用 TTS。`;
   }
   await speakText(text);
 }
 async function startShadow(){
   if(playing){ stopAll(); await sleep(100); }
-  playing=true; paused=false; stopFlag=false; $('status').textContent='跟讀中：先聽 MP3 原音，停頓後請開口跟讀。';
+  if(!scenes[currentScene] || !scenes[currentScene].items) return;
+  playing=true; paused=false; stopFlag=false; $('status').textContent='跟讀中：先聽原音，停頓後請開口跟讀。';
   while(current < scenes[currentScene].items.length && !stopFlag){
     renderCurrent();
     const item=scenes[currentScene].items[current];
     await playVoice(item);
     await waitPauseOrDelay(parseInt($('delay').value,10));
     if(stopFlag) break;
-    $('status').textContent=`第 ${current+1} 句：請跟讀 → ${item.jp}`;
+    $('status').textContent=`第 ${current+1} 句：請跟讀 → ${item.jp || item.text || ''}`;
     await waitPauseOrDelay(1800);
     current++;
   }
