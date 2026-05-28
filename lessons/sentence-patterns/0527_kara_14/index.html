@@ -22,9 +22,13 @@ main{display:grid;grid-template-columns:minmax(0,1fr) 430px;gap:18px;padding:18p
 @media(max-width:600px){.kana{font-size:17px;line-height:1.5}.smallkana{font-size:13px;line-height:1.45}th,td{font-size:14px;padding:8px}}
 </style></head><body>
 <header><h1>「から」句型｜跟讀練習</h1><div class="toolbar"><button id="unlockBtn">解鎖／播放本句</button><button id="shadowBtn" class="green">跟讀模式</button><button id="pauseBtn" class="secondary">暫停</button><button id="prevBtn" class="light">上句</button><button id="nextBtn" class="light">下句</button>
-<button id="rate075Btn" class="light">0.75x 練習</button>
-<button id="rate10Btn" class="light activeRate">1.0x 標準</button>
-<select id="repeatSel"><option value="1">每句 1 次</option><option value="2" selected>每句 2 次</option><option value="3">每句 3 次</option></select></div><div class="unlock-tip">LINE 內建瀏覽器請先按「解鎖／播放本句」。若仍無聲，請改用 Chrome / Samsung Internet 開啟。</div></header>
+<button id="rate10Btn" class="light activeRate">1.0x標準</button>
+<button id="rate075Btn" class="light">0.75x</button>
+<select id="repeatSel">
+  <option value="1">每句1次</option>
+  <option value="2" selected>每句2次</option>
+  <option value="3">每句3次</option>
+</select></div><div class="unlock-tip">LINE 內建瀏覽器請先按「解鎖／播放本句」。若仍無聲，請改用 Chrome / Samsung Internet 開啟。</div></header>
 <main><section class="practice panel"><span class="status" id="status">載入 kara_14.json 中...</span><div class="bigcard" id="bigcard"><div class="jp" id="jp"></div><div class="kana" id="kana"></div><div class="zh" id="zh"></div><div class="note">句型：原因 ＋ から、結果。／ 因為……，所以……。</div></div><div class="qa"><h3>同動詞問答練習</h3><p id="qJp"></p><p id="qKana"></p><p id="qZh"></p><hr style="border:0;border-top:1px solid #bbf7d0"><p id="aJp"></p><p id="aKana"></p><p id="aZh"></p></div><div class="tabs"><button class="tab active" data-tab="shadow">跟讀流程</button><button class="tab" data-tab="qa">問答句型</button><button class="tab" data-tab="tense">時態替換</button><button class="tab" data-tab="table">14句總表</button></div>
 <div class="appbox active" id="tab-shadow"><h2>跟讀方式</h2><div class="grid2"><div class="mini"><b>1. 看日文</b><br>主畫面固定顯示目前句子。</div><div class="mini"><b>2. 聽 MP3</b><br>改播 audio/001.mp3～014.mp3。</div><div class="mini"><b>3. 跟讀</b><br>每句可選 1～3 次重播，預設每句 2 次。</div><div class="mini"><b>4. 問答練習</b><br>用「どうして＋動詞＋か」問原因。</div></div></div>
 <div class="appbox" id="tab-qa"><h2>問答句型：以動詞為主</h2><table><tr><th>日文</th><th>平假名 / 羅馬拼音</th><th>中文</th></tr><tr><td>どうして掃除しますか。<br>汚いですから、掃除します。</td><td>どうしてそうじしますか。 / doushite souji shimasu ka.<br>きたないですから、そうじします。 / kitanai desu kara, souji shimasu.</td><td>為什麼要打掃？<br>因為很髒，所以打掃。</td></tr><tr><td>どうして薬を飲みますか。<br>頭が痛いですから、薬を飲みます。</td><td>どうしてくすりをのみますか。 / doushite kusuri o nomimasu ka.<br>あたまがいたいですから、くすりをのみます。 / atama ga itai desu kara, kusuri o nomimasu.</td><td>為什麼吃藥？<br>因為頭痛，所以吃藥。</td></tr><tr><td>どうして何も買いませんか。<br>お金がありませんから、何も買いません。</td><td>どうしてなにもかいませんか。 / doushite nani mo kaimasen ka.<br>おかねがありませんから、なにもかいません。 / okane ga arimasen kara, nani mo kaimasen.</td><td>為什麼什麼都不買？<br>因為沒有錢，所以什麼都不買。</td></tr></table></div>
