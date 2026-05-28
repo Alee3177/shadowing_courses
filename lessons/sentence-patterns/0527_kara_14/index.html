@@ -18,7 +18,19 @@ main{display:grid;grid-template-columns:minmax(0,1fr) 430px;gap:18px;padding:18p
 .qa{margin-top:14px;padding:14px;border-radius:18px;background:#f0fdf4;border:1px solid #bbf7d0}.qa h3{margin:0 0 10px;color:#166534}.qa p{margin:8px 0;font-size:18px;line-height:1.55}.layout-title{padding:14px 16px;border-bottom:1px solid var(--line);font-weight:900;color:#12336b;font-size:20px}.list{max-height:calc(100vh - 150px);overflow:auto;padding:10px}
 .item{display:grid;grid-template-columns:42px 1fr;gap:8px;padding:10px;border-radius:16px;margin-bottom:8px;border:1px solid #e5edf7;background:#fff;cursor:pointer}.item.active{background:#eff6ff;border-color:#93c5fd;box-shadow:0 0 0 2px rgba(37,99,235,.12) inset}.num{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;font-weight:900}.smalljp{font-weight:900;font-size:17px;line-height:1.35}.smallkana{font-size:13px;color:#475569;margin-top:3px;line-height:1.35}.smallzh{font-size:14px;color:#0f766e;margin-top:3px;line-height:1.35;font-weight:700}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.tab{background:#eef2ff;color:#1e3a8a;box-shadow:none}.tab.active{background:var(--blue);color:#fff}.appbox{display:none;margin-top:16px;padding:16px;border:1px solid var(--line);border-radius:20px;background:#fff}.appbox.active{display:block}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mini{padding:12px;border-radius:16px;background:#f8fafc;border:1px solid #e2e8f0;font-size:16px;line-height:1.55}.mini b{color:#12336b}table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden}th,td{border:1px solid #e2e8f0;padding:10px;vertical-align:top;text-align:left;line-height:1.5}th{background:#eff6ff;color:#12336b}.unlock-tip{margin-top:10px;color:#64748b;font-size:13px;line-height:1.45}.kana,.smallkana,td{white-space:normal;overflow-wrap:anywhere;word-break:break-word;line-height:1.45}
-@media(max-width:900px){main{grid-template-columns:1fr;padding:10px}.list{max-height:none}.grid2{grid-template-columns:1fr}.toolbar button,.toolbar select{font-size:14px;padding:9px 11px}.bigcard{top:calc(env(safe-area-inset-top,0px) + 178px);padding:16px}}
+@media(max-width:900px){
+  main{grid-template-columns:1fr;padding:10px}
+  .list{max-height:none}
+  .grid2{grid-template-columns:1fr}
+  .toolbar button,.toolbar select{font-size:14px;padding:9px 11px}
+
+  /* 手機版取消主畫面固定，避免切換內容時被卡住 */
+  .bigcard{
+    position:relative;
+    top:auto;
+    padding:16px;
+  }
+}
 @media(max-width:600px){.kana{font-size:17px;line-height:1.5}.smallkana{font-size:13px;line-height:1.45}th,td{font-size:14px;padding:8px}}
 </style></head><body>
 <header><h1>「から」句型｜跟讀練習</h1><div class="toolbar"><button id="unlockBtn">解鎖／播放本句</button><button id="shadowBtn" class="green">跟讀模式</button><button id="pauseBtn" class="secondary">暫停</button><button id="prevBtn" class="light">上句</button><button id="nextBtn" class="light">下句</button>
