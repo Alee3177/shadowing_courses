@@ -50,7 +50,7 @@
           <select id="speed"><option value="0.75">0.75x</option><option value="0.85">0.85x</option><option value="1" selected>1.00x</option><option value="1.1">1.10x</option></select>
           <select id="delay"><option value="800">跟讀延遲 0.8秒</option><option value="1200" selected>跟讀延遲 1.2秒</option><option value="1600">跟讀延遲 1.6秒</option></select>
         </div>
-        <div class="status warn" id="status">若 LINE 內無法播放，請點右上角或右下角 ⋮，選擇「以瀏覽器開啟」。外部瀏覽器可直接按「解鎖／開始跟讀」。</div>
+        <div class="status warn" id="status">若 LINE 內無法播放，請點右上角或右下角的 ⋮，選擇「以瀏覽器開啟」。外部瀏覽器可直接按「解鎖／開始跟讀」。</div>
       </div>
       <div class="card list" id="list"></div>
     </div>
@@ -127,7 +127,7 @@ async function loadScenes(){
     scenes = EMBEDDED_SCENES.map((data,idx)=>ensureAudioPaths(normalizeScene(cloneData(data), sceneFiles[idx].name), idx));
     renderScene();
     $('status').classList.add('warn');
-    $('status').textContent='若 LINE 內無法播放，請點右上角或右下角 ⋮，選擇「以瀏覽器開啟」。外部瀏覽器可直接按「解鎖／開始跟讀」。';
+    $('status').textContent='若 LINE 內無法播放，請點右上角或右下角的 ⋮，選擇「以瀏覽器開啟」。外部瀏覽器可直接按「解鎖／開始跟讀」。';
   }catch(err){
     $('jp').textContent='課文資料載入失敗';
     $('kana').textContent='';
