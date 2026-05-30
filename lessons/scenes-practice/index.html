@@ -170,7 +170,7 @@ function highlightJpKana(text){
     // は / も：主題、對比、也
     ['私たちは','私たち'+markParticle('は')],['私も','私'+markParticle('も')],['私は','私'+markParticle('は')],
     ['日本旅行は','日本旅行'+markParticle('は')],['旅行は','旅行'+markParticle('は')],['日本は','日本'+markParticle('は')],
-    ['5月20日は','5月20日'+markParticle('は')],['次は','次'+markParticle('は')],['京都は','京都'+markParticle('は')],
+    ['5月20日は','5月20日'+markParticle('は')],['次は','次'+markParticle('は')],['京都は','京都'+markParticle('は')],['大阪は','大阪'+markParticle('は')],
     // へ：方向
     ['日本へ','日本'+markParticle('へ')],['北海道へ','北海道'+markParticle('へ')],['京都へ','京都'+markParticle('へ')],['大阪へ','大阪'+markParticle('へ')],['どこへ','どこ'+markParticle('へ')],
     // の：所屬 / 修飾
@@ -182,13 +182,13 @@ function highlightJpKana(text){
     ['何を','何'+markParticle('を')],['チケットを','チケット'+markParticle('を')],['料理を','料理'+markParticle('を')],['買い物を','買い物'+markParticle('を')],['桜を','桜'+markParticle('を')],['景色を','景色'+markParticle('を')],['写真を','写真'+markParticle('を')],['お寿司を','お寿司'+markParticle('を')],['カニを','カニ'+markParticle('を')],['雪を','雪'+markParticle('を')],['スキーを','スキー'+markParticle('を')],['おいしいものを','おいしいもの'+markParticle('を')],
     // 句尾 / 接續助詞
     ['どうですか。','どうです'+markParticle('か')+'。'],['どうでしたか。','どうでした'+markParticle('か')+'。'],['たいですか。','たいです'+markParticle('か')+'。'],['行きますか。','行きます'+markParticle('か')+'。'],['行きませんか。','行きません'+markParticle('か')+'。'],
-    ['ですね。','です'+markParticle('ね')+'。'],['ですよ。','です'+markParticle('よ')+'。'],['ですが、','です'+markParticle('が')+'、'],['です！','です'+markParticle('！')]
+    ['ですね！','です'+markParticle('ね')+'！'],['ですね。','です'+markParticle('ね')+'。'],['ですよ。','です'+markParticle('よ')+'。'],['ですが、','です'+markParticle('が')+'、']
   ];
   const kanaPairs = [
     // は / も
     ['わたしたちは','わたしたち'+markParticle('は')],['わたしも','わたし'+markParticle('も')],['わたしは','わたし'+markParticle('は')],
     ['にほんりょこうは','にほんりょこう'+markParticle('は')],['りょこうは','りょこう'+markParticle('は')],['にほんは','にほん'+markParticle('は')],
-    ['ごがつはつかは','ごがつはつか'+markParticle('は')],['つぎは','つぎ'+markParticle('は')],['きょうとは','きょうと'+markParticle('は')],
+    ['ごがつはつかは','ごがつはつか'+markParticle('は')],['つぎは','つぎ'+markParticle('は')],['きょうとは','きょうと'+markParticle('は')],['おおさかは','おおさか'+markParticle('は')],
     // へ
     ['にほんへ','にほん'+markParticle('へ')],['ほっかいどうへ','ほっかいどう'+markParticle('へ')],['きょうとへ','きょうと'+markParticle('へ')],['おおさかへ','おおさか'+markParticle('へ')],['どこへ','どこ'+markParticle('へ')],
     // の
@@ -200,7 +200,7 @@ function highlightJpKana(text){
     ['なにを','なに'+markParticle('を')],['チケットを','チケット'+markParticle('を')],['りょうりを','りょうり'+markParticle('を')],['かいものを','かいもの'+markParticle('を')],['さくらを','さくら'+markParticle('を')],['けしきを','けしき'+markParticle('を')],['しゃしんを','しゃしん'+markParticle('を')],['おすしを','おすし'+markParticle('を')],['カニを','カニ'+markParticle('を')],['ゆきを','ゆき'+markParticle('を')],['スキーを','スキー'+markParticle('を')],['おいしいものを','おいしいもの'+markParticle('を')],
     // 句尾 / 接續助詞
     ['どうですか。','どうです'+markParticle('か')+'。'],['どうでしたか。','どうでした'+markParticle('か')+'。'],['たいですか。','たいです'+markParticle('か')+'。'],['いきますか。','いきます'+markParticle('か')+'。'],['いきませんか。','いきません'+markParticle('か')+'。'],
-    ['ですね。','です'+markParticle('ね')+'。'],['ですよ。','です'+markParticle('よ')+'。'],['ですが、','です'+markParticle('が')+'、'],['です！','です'+markParticle('！')]
+    ['ですね！','です'+markParticle('ね')+'！'],['ですね。','です'+markParticle('ね')+'。'],['ですよ。','です'+markParticle('よ')+'。'],['ですが、','です'+markParticle('が')+'、']
   ];
   h = applyReplacements(h, jpPairs);
   h = applyReplacements(h, kanaPairs);
@@ -211,7 +211,7 @@ function highlightRomaji(text){
   const pairs = [
     // wa / mo
     ['watashitachi wa','watashitachi '+markParticle('wa')],['watashi wa','watashi '+markParticle('wa')],['watashi mo','watashi '+markParticle('mo')],
-    ['Nihon ryokou wa','Nihon ryokou '+markParticle('wa')],['ryokou wa','ryokou '+markParticle('wa')],['Nihon wa','Nihon '+markParticle('wa')],['Kyouto wa','Kyouto '+markParticle('wa')],['gogatsu hatsuka wa','gogatsu hatsuka '+markParticle('wa')],['tsugi wa','tsugi '+markParticle('wa')],
+    ['Nihon ryokou wa','Nihon ryokou '+markParticle('wa')],['ryokou wa','ryokou '+markParticle('wa')],['Nihon wa','Nihon '+markParticle('wa')],['Kyouto wa','Kyouto '+markParticle('wa')],['Oosaka wa','Oosaka '+markParticle('wa')],['gogatsu hatsuka wa','gogatsu hatsuka '+markParticle('wa')],['tsugi wa','tsugi '+markParticle('wa')],
     // e / no
     ['Nihon e','Nihon '+markParticle('e')],['Hokkaidou e','Hokkaidou '+markParticle('e')],['Kyouto e','Kyouto '+markParticle('e')],['Oosaka e','Oosaka '+markParticle('e')],['doko e','doko '+markParticle('e')],
     ['Nihon no','Nihon '+markParticle('no')],['gogatsu hatsuka no','gogatsu hatsuka '+markParticle('no')],['fuyu no Hokkaidou','fuyu '+markParticle('no')+' Hokkaidou'],
@@ -222,7 +222,7 @@ function highlightRomaji(text){
     ['nani o','nani '+markParticle('o')],['chiketto o','chiketto '+markParticle('o')],['ryouri o','ryouri '+markParticle('o')],['kaimono o','kaimono '+markParticle('o')],['sakura o','sakura '+markParticle('o')],['keshiki o','keshiki '+markParticle('o')],['shashin o','shashin '+markParticle('o')],['osushi o','osushi '+markParticle('o')],['kani o','kani '+markParticle('o')],['yuki o','yuki '+markParticle('o')],['sukii o','sukii '+markParticle('o')],['oishii mono o','oishii mono '+markParticle('o')],
     // sentence ending / conjunction particles
     ['dou desu ka.','dou desu '+markParticle('ka')+'.'],['dou deshita ka.','dou deshita '+markParticle('ka')+'.'],['tai desu ka.','tai desu '+markParticle('ka')+'.'],['ikimasu ka.','ikimasu '+markParticle('ka')+'.'],['ikimasen ka.','ikimasen '+markParticle('ka')+'.'],
-    ['desu ne.','desu '+markParticle('ne')+'.'],['desu yo.','desu '+markParticle('yo')+'.'],['desu ga,','desu '+markParticle('ga')+','],['desu!','desu'+markParticle('!')]
+    ['desu ne!','desu '+markParticle('ne')+'!'],['desu ne.','desu '+markParticle('ne')+'.'],['desu yo.','desu '+markParticle('yo')+'.'],['desu ga,','desu '+markParticle('ga')+',']
   ];
   return applyReplacements(h, pairs);
 }
