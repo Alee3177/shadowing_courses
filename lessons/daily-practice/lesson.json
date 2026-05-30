@@ -1,0 +1,191 @@
+{
+  "title": "日文疑問詞 × 日常會話跟讀版",
+  "voice": {
+    "lang": "ja-JP",
+    "preferredNames": [
+      "Sayaka",
+      "Haruka",
+      "Ayumi",
+      "Ichiro"
+    ],
+    "rate": 0.86,
+    "pitch": 1.08,
+    "volume": 1.0,
+    "defaultVoiceName": "Microsoft Sayaka"
+  },
+  "settings": {
+    "repeat": 2,
+    "gapMs": 650,
+    "showRomaji": false
+  },
+  "items": [
+    {
+      "jp": "これは何ですか。",
+      "kana": "これはなんですか。",
+      "romaji": "Kore wa nan desu ka.",
+      "zh": "這是什麼？",
+      "scene": "購物 / 基礎問句"
+    },
+    {
+      "jp": "これはいくらですか。",
+      "kana": "これはいくらですか。",
+      "romaji": "Kore wa ikura desu ka.",
+      "zh": "這個多少錢？",
+      "scene": "購物"
+    },
+    {
+      "jp": "どれがいいですか。",
+      "kana": "どれがいいですか。",
+      "romaji": "Dore ga ii desu ka.",
+      "zh": "哪一個比較好？",
+      "scene": "選擇"
+    },
+    {
+      "jp": "これをください。",
+      "kana": "これをください。",
+      "romaji": "Kore o kudasai.",
+      "zh": "請給我這個。",
+      "scene": "購物"
+    },
+    {
+      "jp": "トイレはどこですか。",
+      "kana": "トイレはどこですか。",
+      "romaji": "Toire wa doko desu ka.",
+      "zh": "廁所在哪裡？",
+      "scene": "問路"
+    },
+    {
+      "jp": "駅までどのくらいかかりますか。",
+      "kana": "えきまでどのくらいかかりますか。",
+      "romaji": "Eki made dono kurai kakarimasu ka.",
+      "zh": "到車站要多久？",
+      "scene": "交通"
+    },
+    {
+      "jp": "いつ来ますか。",
+      "kana": "いつきますか。",
+      "romaji": "Itsu kimasu ka.",
+      "zh": "什麼時候來？",
+      "scene": "約時間"
+    },
+    {
+      "jp": "どうしたんですか。",
+      "kana": "どうしたんですか。",
+      "romaji": "Dou shitan desu ka.",
+      "zh": "你怎麼了？",
+      "scene": "關心"
+    },
+    {
+      "jp": "あの人はだれですか。",
+      "kana": "あのひとはだれですか。",
+      "romaji": "Ano hito wa dare desu ka.",
+      "zh": "那個人是誰？",
+      "scene": "人物"
+    },
+    {
+      "jp": "どこに行きますか。",
+      "kana": "どこにいきますか。",
+      "romaji": "Doko ni ikimasu ka.",
+      "zh": "要去哪裡？",
+      "scene": "出門"
+    },
+    {
+      "jp": "だれと行きますか。",
+      "kana": "だれといきますか。",
+      "romaji": "Dare to ikimasu ka.",
+      "zh": "要跟誰去？",
+      "scene": "約朋友"
+    },
+    {
+      "jp": "いつ行きますか。",
+      "kana": "いついきますか。",
+      "romaji": "Itsu ikimasu ka.",
+      "zh": "什麼時候去？",
+      "scene": "約時間"
+    },
+    {
+      "jp": "どの店に行きますか。",
+      "kana": "どのみせにいきますか。",
+      "romaji": "Dono mise ni ikimasu ka.",
+      "zh": "要去哪一家店？",
+      "scene": "出門"
+    },
+    {
+      "jp": "おすすめは何ですか。",
+      "kana": "おすすめはなんですか。",
+      "romaji": "Osusume wa nan desu ka.",
+      "zh": "推薦的是什麼？",
+      "scene": "餐廳"
+    },
+    {
+      "jp": "どんな食べ物が好きですか。",
+      "kana": "どんなたべものがすきですか。",
+      "romaji": "Donna tabemono ga suki desu ka.",
+      "zh": "你喜歡什麼樣的食物？",
+      "scene": "聊天"
+    },
+    {
+      "jp": "何を食べますか。",
+      "kana": "なにをたべますか。",
+      "romaji": "Nani o tabemasu ka.",
+      "zh": "要吃什麼？",
+      "scene": "餐廳"
+    },
+    {
+      "jp": "何を飲みますか。",
+      "kana": "なにをのみますか。",
+      "romaji": "Nani o nomimasu ka.",
+      "zh": "要喝什麼？",
+      "scene": "餐廳"
+    },
+    {
+      "jp": "これはだれにあげますか。",
+      "kana": "これはだれにあげますか。",
+      "romaji": "Kore wa dare ni agemasu ka.",
+      "zh": "這個要送給誰？",
+      "scene": "送禮"
+    },
+    {
+      "jp": "なぜこれを選びましたか。",
+      "kana": "なぜこれをえらびましたか。",
+      "romaji": "Naze kore o erabimashita ka.",
+      "zh": "為什麼選這個？",
+      "scene": "理由"
+    },
+    {
+      "jp": "どんなプレゼントがいいですか。",
+      "kana": "どんなプレゼントがいいですか。",
+      "romaji": "Donna purezento ga ii desu ka.",
+      "zh": "什麼樣的禮物比較好？",
+      "scene": "送禮"
+    },
+    {
+      "jp": "りんごはいくつありますか。",
+      "kana": "りんごはいくつありますか。",
+      "romaji": "Ringo wa ikutsu arimasu ka.",
+      "zh": "蘋果有幾個？",
+      "scene": "數量"
+    },
+    {
+      "jp": "今どこにいますか。",
+      "kana": "いまどこにいますか。",
+      "romaji": "Ima doko ni imasu ka.",
+      "zh": "你現在在哪裡？",
+      "scene": "聯絡"
+    },
+    {
+      "jp": "会議はいつですか。",
+      "kana": "かいぎはいつですか。",
+      "romaji": "Kaigi wa itsu desu ka.",
+      "zh": "會議是什麼時候？",
+      "scene": "工作"
+    },
+    {
+      "jp": "日本料理で何が好きですか。",
+      "kana": "にほんりょうりでなにがすきですか。",
+      "romaji": "Nihon ryouri de nani ga suki desu ka.",
+      "zh": "日本料理裡你喜歡什麼？",
+      "scene": "聊天"
+    }
+  ]
+}
