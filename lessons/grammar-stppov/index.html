@@ -1,1 +1,438 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>STPPOV 助詞替換句型積木練習 v6</title>
+<style>
+:root{
+  --line:#e5e7eb;--ink:#111827;--muted:#6b7280;--card:#fff;--shadow:0 8px 24px rgba(15,23,42,.10);
+  --s:#f59e0b;--t:#38bdf8;--p1:#22c55e;--p2:#a855f7;--o:#ef4444;--v:#2563eb;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC","Noto Sans JP",sans-serif;background:linear-gradient(180deg,#f8fafc,#eef2ff);color:var(--ink)}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px 16px}
+h1{font-size:20px;margin:0 0 6px;font-weight:950}
+.pattern{font-size:14px;color:var(--muted);line-height:1.5}
+main{max-width:1180px;margin:0 auto;padding:16px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 16px}
+button,select{border:0;border-radius:999px;padding:10px 14px;font-weight:850;background:#fff;box-shadow:var(--shadow);font-size:15px;color:var(--ink)}
+button{cursor:pointer}
+.primary{background:#111827;color:white}
+.light{background:#e8f1ff;color:#173b7a}
+.warn{background:#fff7ed;color:#9a3412}
+.layout{display:grid;grid-template-columns:1fr 390px;gap:16px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:16px}
+.formula{background:#111827;color:white;border-radius:16px;padding:12px 14px;font-weight:950;line-height:1.65;margin-bottom:12px;text-align:center}
+.red{color:#fca5a5;font-weight:950}
+.blocks{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:12px 0}
+@media(max-width:720px){.blocks{grid-template-columns:repeat(2,1fr)}}
+.block{border-radius:16px;padding:10px 8px;color:white;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.35);min-height:104px;display:flex;flex-direction:column;justify-content:center}
+.label{font-size:13px;font-weight:950}
+.bjp{font-size:23px;font-weight:950}
+.bkana,.bzh{font-size:13px;font-weight:850}
+.s{background:var(--s)}.t{background:var(--t)}.p1{background:var(--p1)}.p2{background:var(--p2)}.o{background:var(--o)}.v{background:var(--v)}.empty{opacity:.42}
+.jp{font-size:clamp(30px,6vw,56px);font-weight:950;line-height:1.25;text-align:center;margin:14px 0 8px}
+.kana{font-size:clamp(18px,3.6vw,28px);font-weight:850;text-align:center;color:#374151;margin:8px 0}
+.romaji{font-size:clamp(16px,3vw,22px);text-align:center;color:#4b5563;margin:8px 0}
+.zh{font-size:clamp(18px,3.3vw,24px);font-weight:850;text-align:center;margin:10px 0;color:#111827}
+.note{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:14px;padding:10px 12px;font-size:14px;line-height:1.6;margin-top:12px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.tab{box-shadow:none;border:1px solid var(--line);background:white}
+.tab.active{background:#111827;color:white}
+.panel{display:none}.panel.active{display:block}
+.list{display:flex;flex-direction:column;gap:8px;max-height:540px;overflow:auto;padding-right:4px}
+.item{text-align:left;border:1px solid var(--line);background:white;border-radius:16px;padding:10px 12px;box-shadow:none;cursor:pointer}
+.item.active{outline:3px solid #111827}
+.small{font-size:13px;color:var(--muted);margin-top:3px}
+.builder{display:grid;grid-template-columns:1fr;gap:10px}
+.row2{display:grid;grid-template-columns:1fr 86px;gap:8px}
+.field label{display:block;font-size:13px;font-weight:950;color:#374151;margin-bottom:4px}
+.field select{width:100%;border-radius:14px;box-shadow:none;border:1px solid var(--line);background:#f9fafb}
+table{width:100%;border-collapse:collapse;font-size:14px;background:white}
+th,td{border:1px solid var(--line);padding:8px;vertical-align:top}
+th{background:#f3f4f6;text-align:left}
+.tablewrap{overflow:auto;max-height:570px}
+.countBox{background:#f8fafc;border:1px solid var(--line);border-radius:16px;padding:12px;line-height:1.8;font-size:14px}
+.footer{margin:18px 0 32px;text-align:center;color:var(--muted);font-size:13px}
+.particleMark{color:#dc2626;font-weight:950}
+.block .particleMark{color:#fff;background:#dc2626;border-radius:8px;padding:0 4px;text-shadow:none}
+.jp .particleMark{color:#dc2626;font-weight:950}
+.kana .particleMark,.romaji .particleMark{color:#dc2626;font-weight:950}
 
+.shadowBox{margin-top:12px;background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;border-radius:14px;padding:10px 12px;font-size:14px;line-height:1.65;text-align:left}
+.shadowBox b{color:#111827}
+
+</style>
+</head>
+<body>
+<header>
+  <h1 id="title">STPPOV 助詞替換句型積木練習 v6</h1>
+  <div class="pattern" id="pattern">主詞＋助詞 → 時間 → 地點＋助詞 → 人＋助詞 → 受詞＋助詞 → 動詞</div>
+</header>
+
+<main>
+  <div class="toolbar">
+    <button class="primary" id="speakBtn">朗讀</button>
+    <button class="light" id="prevBtn">上一句</button>
+    <button class="light" id="nextBtn">下一句</button>
+    <button class="warn" id="shadowBtn">Shadowing 練習</button>
+    <select id="shadowMode" title="Shadowing 模式">
+      <option value="listen_repeat">聽一句→跟讀 3 回</option>
+      <option value="block">積木慢練：S→T→P→P→O→V</option>
+      <option value="speed">三段速度：0.75→0.9→1.0</option>
+      <option value="challenge">挑戰：中文→停頓→日文</option>
+    </select>
+    <button class="light" id="randomBtn">隨機自然句</button>
+    <button class="light" id="autoSpeakBtn">自動朗讀：開</button>
+    <select id="voiceSelect"></select>
+    <select id="rateSelect">
+      <option value="0.75">0.75x 慢速</option>
+      <option value="0.9">0.9x 練習</option>
+      <option value="1" selected>1.0x 標準</option>
+    </select>
+  </div>
+
+  <div class="layout">
+    <section class="card">
+      <div class="formula">
+        S + T + P + P + O + V<br>
+        主詞<span class="red">は / が</span> → 時間<span class="red">∅ / に</span> → 地點<span class="red">で / に / へ</span> → 人<span class="red">と / に</span> → 受詞<span class="red">を / が / に</span> → 動詞
+      </div>
+      <div class="blocks" id="blocks"></div>
+      <div class="jp" id="jp"></div>
+      <div class="kana" id="kana"></div>
+      <div class="romaji" id="romaji"></div>
+      <div class="zh" id="zh"></div>
+      <div class="note" id="note"></div>
+      <div class="shadowBox" id="shadowGuide"></div>
+    </section>
+
+    <aside class="card">
+      <div class="tabs">
+        <button class="tab active" data-tab="listPanel">句子</button>
+        <button class="tab" data-tab="builderPanel">自選積木</button>
+        <button class="tab" data-tab="particlePanel">助詞表</button>
+        <button class="tab" data-tab="countPanel">組合數</button>
+      </div>
+
+      <div class="panel active" id="listPanel"><div class="list" id="sentenceList"></div></div>
+      <div class="panel" id="builderPanel"><div class="builder" id="builder"></div></div>
+      <div class="panel" id="particlePanel"><div class="tablewrap"><table id="particleTable"></table></div></div>
+      <div class="panel" id="countPanel"><div class="countBox" id="countBox"></div></div>
+    </aside>
+  </div>
+
+  <div class="footer">v6：每個句型助詞以紅色標示，方便視覺學習。</div>
+</main>
+
+<script id="embeddedLesson" type="application/json">{"title": "STPPOV 助詞替換句型積木練習 v6", "pattern": "主詞＋助詞 → 時間 → 地點＋助詞 → 人＋助詞 → 受詞＋助詞 → 動詞", "particles": {"subject": [{"jp": "は", "kana": "は", "romaji": "wa", "zh": "主題：我是／他是"}, {"jp": "が", "kana": "が", "romaji": "ga", "zh": "強調主詞：是我／是他"}], "time": [{"jp": "", "kana": "", "romaji": "", "zh": "今日、昨日、明日、毎日通常不加助詞"}, {"jp": "に", "kana": "に", "romaji": "ni", "zh": "明確時間點：7時に、月曜日に"}], "place": [{"jp": "で", "kana": "で", "romaji": "de", "zh": "動作發生地點：在～做"}, {"jp": "に", "kana": "に", "romaji": "ni", "zh": "存在／到達點：在～、到～"}, {"jp": "へ", "kana": "へ", "romaji": "e", "zh": "方向：往～去"}], "person": [{"jp": "", "kana": "", "romaji": "", "zh": "不加人物"}, {"jp": "と", "kana": "と", "romaji": "to", "zh": "和～一起"}, {"jp": "に", "kana": "に", "romaji": "ni", "zh": "向～、給～、對～"}], "object": [{"jp": "を", "kana": "を", "romaji": "o", "zh": "受詞：把～做某動作"}, {"jp": "が", "kana": "が", "romaji": "ga", "zh": "能力／喜好／存在的對象"}, {"jp": "に", "kana": "に", "romaji": "ni", "zh": "目標、結果、對象"}]}, "blocks": {"subjects": [{"word": "私", "kana": "わたし", "romaji": "watashi", "zh": "我"}, {"word": "あなた", "kana": "あなた", "romaji": "anata", "zh": "你"}, {"word": "彼", "kana": "かれ", "romaji": "kare", "zh": "他"}, {"word": "彼女", "kana": "かのじょ", "romaji": "kanojo", "zh": "她"}, {"word": "私たち", "kana": "わたしたち", "romaji": "watashitachi", "zh": "我們"}], "times": [{"word": "今日", "kana": "きょう", "romaji": "kyou", "zh": "今天", "tense": "present", "defaultParticle": ""}, {"word": "明日", "kana": "あした", "romaji": "ashita", "zh": "明天", "tense": "future", "defaultParticle": ""}, {"word": "毎日", "kana": "まいにち", "romaji": "mainichi", "zh": "每天", "tense": "present", "defaultParticle": ""}, {"word": "今週", "kana": "こんしゅう", "romaji": "konshuu", "zh": "這週", "tense": "present", "defaultParticle": ""}, {"word": "来週", "kana": "らいしゅう", "romaji": "raishuu", "zh": "下週", "tense": "future", "defaultParticle": ""}, {"word": "昨日", "kana": "きのう", "romaji": "kinou", "zh": "昨天", "tense": "past", "defaultParticle": ""}, {"word": "先週", "kana": "せんしゅう", "romaji": "senshuu", "zh": "上週", "tense": "past", "defaultParticle": ""}, {"word": "さっき", "kana": "さっき", "romaji": "sakki", "zh": "剛剛", "tense": "past", "defaultParticle": ""}, {"word": "7時", "kana": "しちじ", "romaji": "shichiji", "zh": "七點", "tense": "future", "defaultParticle": "に"}, {"word": "月曜日", "kana": "げつようび", "romaji": "getsuyoubi", "zh": "星期一", "tense": "future", "defaultParticle": "に"}], "places": [{"word": "うち", "kana": "うち", "romaji": "uchi", "zh": "家裡"}, {"word": "家", "kana": "いえ", "romaji": "ie", "zh": "家、房子"}, {"word": "学校", "kana": "がっこう", "romaji": "gakkou", "zh": "學校"}, {"word": "会社", "kana": "かいしゃ", "romaji": "kaisha", "zh": "公司"}, {"word": "カフェ", "kana": "カフェ", "romaji": "kafe", "zh": "咖啡店"}, {"word": "コンビニ", "kana": "コンビニ", "romaji": "konbini", "zh": "便利商店"}, {"word": "公園", "kana": "こうえん", "romaji": "kouen", "zh": "公園"}, {"word": "図書館", "kana": "としょかん", "romaji": "toshokan", "zh": "圖書館"}, {"word": "日本", "kana": "にほん", "romaji": "nihon", "zh": "日本"}, {"word": "友だちの家", "kana": "ともだちの いえ", "romaji": "tomodachi no ie", "zh": "朋友家"}, {"word": "先生の家", "kana": "せんせいの いえ", "romaji": "sensei no ie", "zh": "老師家"}], "people": [{"word": "", "kana": "", "romaji": "", "zh": "不加人物"}, {"word": "友だち", "kana": "ともだち", "romaji": "tomodachi", "zh": "朋友"}, {"word": "家族", "kana": "かぞく", "romaji": "kazoku", "zh": "家人"}, {"word": "先生", "kana": "せんせい", "romaji": "sensei", "zh": "老師"}, {"word": "母", "kana": "はは", "romaji": "haha", "zh": "媽媽"}], "objects": [{"word": "すし", "kana": "すし", "romaji": "sushi", "zh": "壽司"}, {"word": "水", "kana": "みず", "romaji": "mizu", "zh": "水"}, {"word": "パン", "kana": "パン", "romaji": "pan", "zh": "麵包"}, {"word": "映画", "kana": "えいが", "romaji": "eiga", "zh": "電影"}, {"word": "本", "kana": "ほん", "romaji": "hon", "zh": "書"}, {"word": "音楽", "kana": "おんがく", "romaji": "ongaku", "zh": "音樂"}, {"word": "写真", "kana": "しゃしん", "romaji": "shashin", "zh": "照片"}, {"word": "日本語", "kana": "にほんご", "romaji": "nihongo", "zh": "日文"}], "verbs": [{"key": "eat", "zh": "吃", "jp": "食べます", "kana": "たべます", "romaji": "tabemasu", "past_jp": "食べました", "past_kana": "たべました", "past_romaji": "tabemashita", "naturalObjects": ["すし", "パン"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と"]}, {"key": "drink", "zh": "喝", "jp": "飲みます", "kana": "のみます", "romaji": "nomimasu", "past_jp": "飲みました", "past_kana": "のみました", "past_romaji": "nomimashita", "naturalObjects": ["水"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と"]}, {"key": "buy", "zh": "買", "jp": "買います", "kana": "かいます", "romaji": "kaimasu", "past_jp": "買いました", "past_kana": "かいました", "past_romaji": "kaimashita", "naturalObjects": ["パン", "本", "水"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と", "に"]}, {"key": "watch", "zh": "看", "jp": "見ます", "kana": "みます", "romaji": "mimasu", "past_jp": "見ました", "past_kana": "みました", "past_romaji": "mimashita", "naturalObjects": ["映画"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と"]}, {"key": "read", "zh": "讀", "jp": "読みます", "kana": "よみます", "romaji": "yomimasu", "past_jp": "読みました", "past_kana": "よみました", "past_romaji": "yomimashita", "naturalObjects": ["本"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と"]}, {"key": "listen", "zh": "聽", "jp": "聞きます", "kana": "ききます", "romaji": "kikimasu", "past_jp": "聞きました", "past_kana": "ききました", "past_romaji": "kikimashita", "naturalObjects": ["音楽"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と", "に"]}, {"key": "take_photo", "zh": "拍", "jp": "撮ります", "kana": "とります", "romaji": "torimasu", "past_jp": "撮りました", "past_kana": "とりました", "past_romaji": "torimashita", "naturalObjects": ["写真"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と"]}, {"key": "study", "zh": "學習", "jp": "勉強します", "kana": "べんきょうします", "romaji": "benkyou shimasu", "past_jp": "勉強しました", "past_kana": "べんきょうしました", "past_romaji": "benkyou shimashita", "naturalObjects": ["日本語"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と", "に"]}]}, "sentences": [{"subject": "私", "subjectParticle": "は", "time": "今日", "timeParticle": "", "place": "うち", "placeParticle": "で", "person": "", "personParticle": "", "object": "すし", "objectParticle": "を", "verb": "eat"}, {"subject": "私", "subjectParticle": "は", "time": "明日", "timeParticle": "", "place": "カフェ", "placeParticle": "で", "person": "友だち", "personParticle": "と", "object": "パン", "objectParticle": "を", "verb": "eat"}, {"subject": "彼", "subjectParticle": "は", "time": "毎日", "timeParticle": "", "place": "会社", "placeParticle": "で", "person": "", "personParticle": "", "object": "水", "objectParticle": "を", "verb": "drink"}, {"subject": "彼女", "subjectParticle": "は", "time": "昨日", "timeParticle": "", "place": "コンビニ", "placeParticle": "で", "person": "", "personParticle": "", "object": "パン", "objectParticle": "を", "verb": "buy"}, {"subject": "私たち", "subjectParticle": "は", "time": "今週", "timeParticle": "", "place": "うち", "placeParticle": "で", "person": "家族", "personParticle": "と", "object": "映画", "objectParticle": "を", "verb": "watch"}, {"subject": "あなた", "subjectParticle": "は", "time": "今日", "timeParticle": "", "place": "図書館", "placeParticle": "で", "person": "", "personParticle": "", "object": "本", "objectParticle": "を", "verb": "read"}, {"subject": "私", "subjectParticle": "は", "time": "さっき", "timeParticle": "", "place": "カフェ", "placeParticle": "で", "person": "友だち", "personParticle": "と", "object": "音楽", "objectParticle": "を", "verb": "listen"}, {"subject": "彼女", "subjectParticle": "は", "time": "先週", "timeParticle": "", "place": "公園", "placeParticle": "で", "person": "友だち", "personParticle": "と", "object": "写真", "objectParticle": "を", "verb": "take_photo"}, {"subject": "私", "subjectParticle": "は", "time": "来週", "timeParticle": "", "place": "学校", "placeParticle": "で", "person": "先生", "personParticle": "と", "object": "日本語", "objectParticle": "を", "verb": "study"}, {"subject": "私", "subjectParticle": "が", "time": "今日", "timeParticle": "", "place": "うち", "placeParticle": "で", "person": "", "personParticle": "", "object": "本", "objectParticle": "を", "verb": "read"}, {"subject": "私", "subjectParticle": "は", "time": "7時", "timeParticle": "に", "place": "学校", "placeParticle": "へ", "person": "", "personParticle": "", "object": "日本語", "objectParticle": "を", "verb": "study"}, {"subject": "あなた", "subjectParticle": "は", "time": "月曜日", "timeParticle": "に", "place": "図書館", "placeParticle": "で", "person": "先生", "personParticle": "に", "object": "日本語", "objectParticle": "を", "verb": "study"}, {"subject": "私", "subjectParticle": "は", "time": "今日", "timeParticle": "", "place": "家", "placeParticle": "で", "person": "", "personParticle": "", "object": "本", "objectParticle": "を", "verb": "read"}, {"subject": "彼", "subjectParticle": "は", "time": "毎日", "timeParticle": "", "place": "家", "placeParticle": "で", "person": "", "personParticle": "", "object": "水", "objectParticle": "を", "verb": "drink"}, {"subject": "彼女", "subjectParticle": "は", "time": "昨日", "timeParticle": "", "place": "家", "placeParticle": "で", "person": "", "personParticle": "", "object": "映画", "objectParticle": "を", "verb": "watch"}, {"subject": "私たち", "subjectParticle": "は", "time": "先週", "timeParticle": "", "place": "友だちの家", "placeParticle": "で", "person": "友だち", "personParticle": "と", "object": "映画", "objectParticle": "を", "verb": "watch"}, {"subject": "あなた", "subjectParticle": "は", "time": "来週", "timeParticle": "", "place": "先生の家", "placeParticle": "で", "person": "先生", "personParticle": "と", "object": "日本語", "objectParticle": "を", "verb": "study"}, {"subject": "私", "subjectParticle": "は", "time": "さっき", "timeParticle": "", "place": "家", "placeParticle": "で", "person": "", "personParticle": "", "object": "写真", "objectParticle": "を", "verb": "take_photo"}], "note": "v6：每個句型助詞在主句與積木中以紅色標示，方便視覺學習。"}</script>
+<script>
+let DATA=null,current=0,voices=[],autoSpeak=true;
+const $=id=>document.getElementById(id);
+const clean=s=>(s||"").trim();
+
+function esc(s){
+  return String(s ?? "").replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+function markParticleText(word, particle){
+  if(!particle) return esc(word);
+  const w=String(word || "");
+  const p=String(particle || "");
+  if(w.endsWith(p)){
+    return esc(w.slice(0, -p.length)) + '<span class="particleMark">' + esc(p) + '</span>';
+  }
+  return esc(w);
+}
+function renderMarkedSentence(b){
+  const parts=[
+    [b.units.su.word,b.units.su.particle],
+    [b.units.tu.word,b.units.tu.particle],
+    [b.units.pu.word,b.units.pu.particle],
+    [b.units.hu.word,b.units.hu.particle],
+    [b.units.ou.word,b.units.ou.particle],
+    [b.verb.word,""]
+  ].filter(x=>clean(x[0]));
+  return parts.map(x=>markParticleText(x[0],x[1])).join("") + "。";
+}
+function markReadingUnit(text, particle){
+  if(!particle) return esc(text);
+  const tokens = String(text || "").split(" ");
+  if(tokens.length && tokens[tokens.length-1] === particle){
+    tokens[tokens.length-1] = '<span class="particleMark">' + esc(tokens[tokens.length-1]) + '</span>';
+    return tokens.join(" ");
+  }
+  return esc(text);
+}
+function renderMarkedKana(b){
+  const parts=[
+    [b.units.su.kana,b.units.su.particle],
+    [b.units.tu.kana,b.units.tu.particle],
+    [b.units.pu.kana,b.units.pu.particle],
+    [b.units.hu.kana,b.units.hu.particle],
+    [b.units.ou.kana,b.units.ou.particle],
+    [b.verb.kana,""]
+  ].filter(x=>clean(x[0]));
+  return parts.map(x=>markReadingUnit(x[0],x[1])).join(" ") + "。";
+}
+function renderMarkedRomaji(b){
+  const parts=[
+    [b.units.su.romaji,b.units.su.particle==="は"?"wa":b.units.su.particle],
+    [b.units.tu.romaji,b.units.tu.particle],
+    [b.units.pu.romaji,b.units.pu.particle==="へ"?"e":b.units.pu.particle],
+    [b.units.hu.romaji,b.units.hu.particle],
+    [b.units.ou.romaji,b.units.ou.particle==="を"?"o":b.units.ou.particle],
+    [b.verb.romaji,""]
+  ].filter(x=>clean(x[0]));
+  return parts.map(x=>markReadingUnit(x[0],x[1])).join(" ") + ".";
+}
+
+
+async function loadLesson(){
+  const embedded=JSON.parse($("embeddedLesson").textContent);
+  try{
+    const res=await fetch("./lesson.json",{cache:"no-store"});
+    const text=await res.text();
+    if(!res.ok)throw new Error("HTTP "+res.status);
+    if(text.trim().startsWith("<"))throw new Error("讀到 HTML，不是 JSON");
+    return JSON.parse(text);
+  }catch(e){console.warn("使用內建 JSON：",e);return embedded;}
+}
+function findByWord(group, word){return DATA.blocks[group].find(x=>x.word===word)||DATA.blocks[group][0];}
+function findVerb(key){return DATA.blocks.verbs.find(v=>v.key===key)||DATA.blocks.verbs[0];}
+function pInfo(type,p){return DATA.particles[type].find(x=>x.jp===p)||DATA.particles[type][0];}
+function isPast(t){return t && t.tense==="past";}
+function verbForm(v,past){return {word:past?v.past_jp:v.jp,kana:past?v.past_kana:v.kana,romaji:past?v.past_romaji:v.romaji,zh:v.zh};}
+function unit(word,kana,romaji,particle,type){
+  const p=pInfo(type,particle);
+  return {
+    word: clean(word+particle),
+    kana: clean(kana+(p.kana?(" "+p.kana):"")),
+    romaji: clean(romaji+(p.romaji?(" "+p.romaji):"")),
+    particle,
+    pzh:p.zh
+  };
+}
+function buildSentence(s){
+  const subj=findByWord("subjects",s.subject), time=findByWord("times",s.time), place=findByWord("places",s.place);
+  const person=findByWord("people",s.person||""), obj=findByWord("objects",s.object), verb=findVerb(s.verb);
+  const vf=verbForm(verb,isPast(time));
+  const su=unit(subj.word,subj.kana,subj.romaji,s.subjectParticle,"subject");
+  const tu=unit(time.word,time.kana,time.romaji,s.timeParticle,"time");
+  const pu=unit(place.word,place.kana,place.romaji,s.placeParticle,"place");
+  const hu=person.word ? unit(person.word,person.kana,person.romaji,s.personParticle,"person") : {word:"",kana:"",romaji:"",particle:"",pzh:"不加人物"};
+  const ou=unit(obj.word,obj.kana,obj.romaji,s.objectParticle,"object");
+  const jp=[su.word,tu.word,pu.word,hu.word,ou.word,vf.word].filter(clean).join("");
+  const kana=[su.kana,tu.kana,pu.kana,hu.kana,ou.kana,vf.kana].filter(clean).join(" ");
+  const romaji=[su.romaji,tu.romaji,pu.romaji,hu.romaji,ou.romaji,vf.romaji].filter(clean).join(" ");
+  const zh=[subj.zh,time.zh,place.zh,person.zh,obj.zh,vf.zh].filter(x=>x&&x!=="不加人物").join(" / ");
+  const warnings=[];
+  if(!verb.naturalObjects.includes(obj.word))warnings.push("受詞＋動詞不自然：例如「"+obj.word+"」不一定適合「"+verb.jp+"」。");
+  if(!verb.naturalPlaceParticles.includes(s.placeParticle))warnings.push("地點助詞可替換，但這個動詞最常用："+verb.naturalPlaceParticles.join(" / "));
+  if(person.word && !verb.naturalPersonParticles.includes(s.personParticle))warnings.push("人物助詞可替換，但這個動詞最常用："+verb.naturalPersonParticles.filter(clean).join(" / "));
+  if(s.objectParticle!==verb.defaultObjectParticle)warnings.push("受詞助詞已替換；初學肯定句多先用「"+verb.defaultObjectParticle+"」。");
+  return {subj,time,place,person,obj,verb:vf,jp,kana,romaji,zh,warnings,units:{su,tu,pu,hu,ou}};
+}
+function renderBlocks(b){
+  const arr=[
+    ["S 主詞",b.units.su,"s"],["T 時間",b.units.tu,"t"],["P 地點",b.units.pu,"p1"],["P 人物",b.units.hu,"p2"],["O 受詞",b.units.ou,"o"],["V 動詞",b.verb,"v"]
+  ];
+  $("blocks").innerHTML=arr.map(([label,x,cls])=>`<div class="block ${cls} ${!clean(x.word)?"empty":""}"><div class="label">${label}</div><div class="bjp">${markParticleText(x.word||"—",x.particle||"")}</div><div class="bkana">${markReadingUnit(x.kana||"",x.particle||"")}</div><div class="bzh">${esc(x.pzh||x.zh||"")}</div></div>`).join("");
+}
+function renderSentence(){
+  const b=buildSentence(DATA.sentences[current]);
+  renderBlocks(b);
+  renderShadowGuide(b);
+  $("jp").innerHTML=renderMarkedSentence(b);
+  $("kana").innerHTML=renderMarkedKana(b);
+  $("romaji").innerHTML=renderMarkedRomaji(b);
+  $("zh").textContent=b.zh;
+  $("note").innerHTML=b.warnings.length ? "提醒：<br>"+b.warnings.map(x=>"・"+x).join("<br>") : "自然句型：這句適合直接做 shadowing。";
+  [...document.querySelectorAll(".item")].forEach((el,i)=>el.classList.toggle("active",i===current));
+}
+function renderList(){
+  $("sentenceList").innerHTML=DATA.sentences.map((s,i)=>{const b=buildSentence(s);return `<button class="item" data-idx="${i}"><b>${String(i+1).padStart(2,"0")}. ${renderMarkedSentence(b)}</b><div class="small">${b.kana}</div><div class="small">${b.zh}</div></button>`;}).join("");
+  document.querySelectorAll(".item").forEach(btn=>btn.onclick=()=>goSentence(Number(btn.dataset.idx), true));
+}
+function optionWord(group){return DATA.blocks[group].map(x=>`<option value="${x.word}">${x.word||"—"}｜${x.kana||""}｜${x.zh}</option>`).join("");}
+function optionParticle(type){return DATA.particles[type].map(x=>`<option value="${x.jp}">${x.jp||"∅"}｜${x.zh}</option>`).join("");}
+function fieldPair(label, group, particleType){
+  const div=document.createElement("div");div.className="field";
+  div.innerHTML=`<label>${label}</label><div class="row2"><select data-role="${group}">${optionWord(group)}</select><select data-role="${particleType}">${optionParticle(particleType)}</select></div>`;
+  return div;
+}
+function renderBuilder(){
+  const b=$("builder");b.innerHTML="";
+  b.appendChild(fieldPair("S 主詞 + 助詞", "subjects", "subject"));
+  b.appendChild(fieldPair("T 時間 + 助詞", "times", "time"));
+  b.appendChild(fieldPair("P 地點 + 助詞", "places", "place"));
+  b.appendChild(fieldPair("P 人物 + 助詞", "people", "person"));
+  b.appendChild(fieldPair("O 受詞 + 助詞", "objects", "object"));
+  const v=document.createElement("div");v.className="field";
+  v.innerHTML=`<label>V 動詞</label><select data-role="verb">${DATA.blocks.verbs.map(x=>`<option value="${x.key}">${x.jp}｜${x.kana}｜${x.zh}</option>`).join("")}</select>`;
+  b.appendChild(v);
+  const btn=document.createElement("button");btn.className="primary";btn.textContent="產生句子";
+  btn.onclick=()=>{
+    const val=r=>b.querySelector(`[data-role="${r}"]`).value;
+    const time=findByWord("times",val("times"));
+    const person=val("people");
+    const item={subject:val("subjects"),subjectParticle:val("subject"),time:val("times"),timeParticle:val("time")||time.defaultParticle||"",place:val("places"),placeParticle:val("place"),person:person,personParticle:person?val("person"):"",object:val("objects"),objectParticle:val("object"),verb:val("verb")};
+    DATA.sentences.push(item);current=DATA.sentences.length-1;renderList();renderSentence();document.querySelector('[data-tab="listPanel"]').click();
+  };
+  b.appendChild(btn);
+  b.querySelector('[data-role="subject"]').value="は";
+  b.querySelector('[data-role="time"]').value="";
+  b.querySelector('[data-role="place"]').value="で";
+  b.querySelector('[data-role="person"]').value="";
+  b.querySelector('[data-role="object"]').value="を";
+}
+function renderParticleTable(){
+  const rows=[];
+  Object.entries(DATA.particles).forEach(([type,arr])=>arr.forEach(x=>rows.push([type,x.jp||"∅",x.kana||"",x.romaji||"",x.zh])));
+  $("particleTable").innerHTML=`<thead><tr><th>位置</th><th>助詞</th><th>平假名</th><th>羅馬拼音</th><th>中文說明</th></tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")}</tbody>`;
+}
+function renderCount(){
+  const S=DATA.blocks.subjects.length, SP=DATA.particles.subject.length, T=DATA.blocks.times.length, TP=DATA.particles.time.length;
+  const P=DATA.blocks.places.length, PP=DATA.particles.place.length, H=DATA.blocks.people.length, HP=DATA.particles.person.length;
+  const O=DATA.blocks.objects.length, OP=DATA.particles.object.length, V=DATA.blocks.verbs.length;
+  const free=S*SP*T*TP*P*PP*H*HP*O*OP*V;
+  const naturalOV=DATA.blocks.verbs.reduce((sum,v)=>sum+v.naturalObjects.length,0);
+  const natural=S*SP*T*P*H*naturalOV;
+  $("countBox").innerHTML=`<b>完全自由交叉：</b><br>${S}主詞 × ${SP}主詞助詞 × ${T}時間 × ${TP}時間助詞 × ${P}地點 × ${PP}地點助詞 × ${H}人物 × ${HP}人物助詞 × ${O}受詞 × ${OP}受詞助詞 × ${V}動詞<br>= <b>${free.toLocaleString()}</b> 句<br><br><b>較自然的基本句：</b><br>限制「受詞＋動詞」自然搭配，且使用預設常用助詞<br>= <b>${natural.toLocaleString()}</b> 句<br><br>注意：助詞全部自由替換會產生很多文法上可分析、但語意不自然的句子，所以練習時建議先用「隨機自然句」。`;
+}
+
+function goSentence(nextIndex, shouldSpeak=true){
+  current=(nextIndex+DATA.sentences.length)%DATA.sentences.length;
+  renderSentence();
+  if(shouldSpeak && autoSpeak){
+    setTimeout(()=>speak(buildSentence(DATA.sentences[current]).jp), 180);
+  }
+}
+function toggleAutoSpeak(){
+  autoSpeak=!autoSpeak;
+  $("autoSpeakBtn").textContent=autoSpeak ? "自動朗讀：開" : "自動朗讀：關";
+  $("autoSpeakBtn").className=autoSpeak ? "light" : "warn";
+}
+
+function randomNatural(){
+  const subj=DATA.blocks.subjects[Math.floor(Math.random()*DATA.blocks.subjects.length)];
+  const time=DATA.blocks.times[Math.floor(Math.random()*DATA.blocks.times.length)];
+  const place=DATA.blocks.places[Math.floor(Math.random()*DATA.blocks.places.length)];
+  const verb=DATA.blocks.verbs[Math.floor(Math.random()*DATA.blocks.verbs.length)];
+  const objWord=verb.naturalObjects[Math.floor(Math.random()*verb.naturalObjects.length)];
+  const people=DATA.blocks.people;
+  const person=people[Math.floor(Math.random()*people.length)];
+  const naturalPersons=verb.naturalPersonParticles;
+  const pp=person.word ? naturalPersons.filter(clean)[0] || "と" : "";
+  DATA.sentences.push({subject:subj.word,subjectParticle:"は",time:time.word,timeParticle:time.defaultParticle||"",place:place.word,placeParticle:verb.naturalPlaceParticles[0]||"で",person:person.word,personParticle:pp,object:objWord,objectParticle:verb.defaultObjectParticle,verb:verb.key});
+  current=DATA.sentences.length-1;renderList();renderSentence();
+}
+function loadVoices(){
+  voices=speechSynthesis.getVoices();
+  const ja=voices.filter(v=>/ja|Japan|Japanese|日本/i.test(v.lang+v.name));
+  const list=ja.length?ja:voices;
+  $("voiceSelect").innerHTML=list.map(v=>`<option value="${voices.indexOf(v)}">${v.name} (${v.lang})</option>`).join("");
+}
+
+function getBlockSpeechParts(b){
+  const parts=[
+    ["S 主詞", b.units.su.word],
+    ["T 時間", b.units.tu.word],
+    ["P 地點", b.units.pu.word],
+    ["P 人物", b.units.hu.word],
+    ["O 受詞", b.units.ou.word],
+    ["V 動詞", b.verb.word]
+  ].filter(x=>clean(x[1]));
+  return parts;
+}
+function renderShadowGuide(b){
+  const parts=getBlockSpeechParts(b);
+  const blockLine=parts.map(x=>x[1]).join("｜");
+  $("shadowGuide").innerHTML=
+    "<b>Shadowing 建議：</b><br>" +
+    "1. 先聽完整句。<br>" +
+    "2. 再跟著積木節奏念：<b>"+blockLine+"</b><br>" +
+    "3. 最後不看羅馬拼音，只看日文念一次。";
+}
+function speakUtterance(text, rate=1, after=null){
+  const vi=Number($("voiceSelect").value);
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang="ja-JP";
+  u.rate=rate;
+  if(voices[vi])u.voice=voices[vi];
+  u.onend=()=>{ if(after) setTimeout(after, 450); };
+  speechSynthesis.speak(u);
+}
+function speakSequence(items){
+  speechSynthesis.cancel();
+  let i=0;
+  const next=()=>{
+    if(i>=items.length)return;
+    const item=items[i++];
+    if(item.pause){ setTimeout(next, item.pause); return; }
+    speakUtterance(item.text, item.rate || Number($("rateSelect").value||1), next);
+  };
+  next();
+}
+function shadowPractice(){
+  const b=buildSentence(DATA.sentences[current]);
+  const mode=$("shadowMode") ? $("shadowMode").value : "listen_repeat";
+  const normal=Number($("rateSelect").value||1);
+  if(mode==="listen_repeat"){
+    speakSequence([
+      {text:b.jp, rate:normal},
+      {pause:900},
+      {text:b.jp, rate:0.85},
+      {text:b.jp, rate:0.85},
+      {text:b.jp, rate:normal}
+    ]);
+  }else if(mode==="block"){
+    const items=[];
+    getBlockSpeechParts(b).forEach(([label,text])=>{
+      items.push({text:text, rate:0.75});
+      items.push({pause:500});
+    });
+    items.push({text:b.jp, rate:0.85});
+    items.push({text:b.jp, rate:1.0});
+    speakSequence(items);
+  }else if(mode==="speed"){
+    speakSequence([
+      {text:b.jp, rate:0.75},
+      {pause:700},
+      {text:b.jp, rate:0.9},
+      {pause:700},
+      {text:b.jp, rate:1.0}
+    ]);
+  }else if(mode==="challenge"){
+    const msg="中文意思："+b.zh+"。請自己先說日文。";
+    const u=new SpeechSynthesisUtterance(msg);
+    // browsers may read Chinese voices; use default
+    speechSynthesis.cancel();
+    u.lang="zh-TW";
+    u.rate=0.9;
+    u.onend=()=>setTimeout(()=>speakUtterance(b.jp, 0.9), 2500);
+    speechSynthesis.speak(u);
+  }
+}
+
+function speak(text,times=1){
+  speechSynthesis.cancel();let count=0;const rate=Number($("rateSelect").value||1), vi=Number($("voiceSelect").value);
+  const run=()=>{if(count>=times)return;const u=new SpeechSynthesisUtterance(text);u.lang="ja-JP";u.rate=rate;if(voices[vi])u.voice=voices[vi];u.onend=()=>{count++;setTimeout(run,450)};speechSynthesis.speak(u);};
+  run();
+}
+async function init(){
+  DATA=await loadLesson();$("title").textContent=DATA.title;$("pattern").textContent=DATA.pattern;
+  renderList();renderBuilder();renderParticleTable();renderCount();renderSentence();loadVoices();speechSynthesis.onvoiceschanged=loadVoices;
+  $("speakBtn").onclick=()=>speak(buildSentence(DATA.sentences[current]).jp);
+  $("shadowBtn").onclick=shadowPractice;
+  $("prevBtn").onclick=()=>goSentence(current-1,true);
+  $("nextBtn").onclick=()=>goSentence(current+1,true);
+  $("randomBtn").onclick=()=>{randomNatural(); if(autoSpeak) setTimeout(()=>speak(buildSentence(DATA.sentences[current]).jp),180);};
+  $("autoSpeakBtn").onclick=toggleAutoSpeak;
+  document.querySelectorAll(".tab").forEach(tab=>tab.onclick=()=>{document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));tab.classList.add("active");$(tab.dataset.tab).classList.add("active");});
+}
+init();
+</script>
+</body>
+</html>
