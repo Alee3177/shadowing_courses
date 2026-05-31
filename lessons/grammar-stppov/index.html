@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>STPPOV 助詞替換句型積木練習 v7</title>
+<title>日文語法(STPPOV)含助詞替換句型練習</title>
 <style>
 :root{
   --line:#e5e7eb;--ink:#111827;--muted:#6b7280;--card:#fff;--shadow:0 8px 24px rgba(15,23,42,.10);
@@ -110,11 +110,18 @@ header h1{margin-bottom:0}
   .sentenceControls #shadowBtn{grid-column:1/-1}
 }
 
+
+@media(max-width:520px){
+  .sentenceControls{grid-template-columns:1fr 1fr}
+  .sentenceControls #shadowBtn{grid-column:1/2}
+  .sentenceControls #stopShadowBtn{grid-column:2/3}
+}
+
 </style>
 </head>
 <body>
 <header>
-  <h1 id="title">STPPOV 助詞替換句型積木練習 v7</h1>
+  <h1 id="title">日文語法(STPPOV)含助詞替換句型練習</h1>
 </header>
 
 <main>
@@ -123,7 +130,6 @@ header h1{margin-bottom:0}
       <option value="listen_repeat">聽一句→跟讀 3 回</option>
       <option value="block">積木慢練：S→T→P→P→O→V</option>
       <option value="speed" selected>三段速度：0.75→0.9→1.0</option>
-      <option value="challenge">挑戰：中文→停頓→日文</option>
     </select>
     <button class="light" id="randomBtn">隨機自然句</button>
     <button class="light" id="autoSpeakBtn">自動朗讀：開</button>
@@ -151,7 +157,8 @@ header h1{margin-bottom:0}
       <div class="sentenceControls">
           <button class="light" id="prevBtn">上一句</button>
           <button class="light" id="nextBtn">下一句</button>
-          <button class="warn" id="shadowBtn">Shadowing 練習</button>
+          <button class="warn" id="shadowBtn">Shadowing 順播</button>
+          <button class="light" id="stopShadowBtn">停止</button>
         </div>
     </section>
 
@@ -170,12 +177,11 @@ header h1{margin-bottom:0}
     </aside>
   </div>
 
-  <div class="footer">v7：精簡排版；橘框句子區點擊即可朗讀。</div>
 </main>
 
-<script id="embeddedLesson" type="application/json">{"title": "STPPOV 助詞替換句型積木練習 v7", "pattern": "主詞＋助詞 → 時間 → 地點＋助詞 → 人＋助詞 → 受詞＋助詞 → 動詞", "particles": {"subject": [{"jp": "は", "kana": "は", "romaji": "wa", "zh": "主題：我是／他是"}, {"jp": "が", "kana": "が", "romaji": "ga", "zh": "強調主詞：是我／是他"}], "time": [{"jp": "", "kana": "", "romaji": "", "zh": "今日、昨日、明日、毎日通常不加助詞"}, {"jp": "に", "kana": "に", "romaji": "ni", "zh": "明確時間點：7時に、月曜日に"}], "place": [{"jp": "で", "kana": "で", "romaji": "de", "zh": "動作發生地點：在～做"}, {"jp": "に", "kana": "に", "romaji": "ni", "zh": "存在／到達點：在～、到～"}, {"jp": "へ", "kana": "へ", "romaji": "e", "zh": "方向：往～去"}], "person": [{"jp": "", "kana": "", "romaji": "", "zh": "不加人物"}, {"jp": "と", "kana": "と", "romaji": "to", "zh": "和～一起"}, {"jp": "に", "kana": "に", "romaji": "ni", "zh": "向～、給～、對～"}], "object": [{"jp": "を", "kana": "を", "romaji": "o", "zh": "受詞：把～做某動作"}, {"jp": "が", "kana": "が", "romaji": "ga", "zh": "能力／喜好／存在的對象"}, {"jp": "に", "kana": "に", "romaji": "ni", "zh": "目標、結果、對象"}]}, "blocks": {"subjects": [{"word": "私", "kana": "わたし", "romaji": "watashi", "zh": "我"}, {"word": "あなた", "kana": "あなた", "romaji": "anata", "zh": "你"}, {"word": "彼", "kana": "かれ", "romaji": "kare", "zh": "他"}, {"word": "彼女", "kana": "かのじょ", "romaji": "kanojo", "zh": "她"}, {"word": "私たち", "kana": "わたしたち", "romaji": "watashitachi", "zh": "我們"}], "times": [{"word": "今日", "kana": "きょう", "romaji": "kyou", "zh": "今天", "tense": "present", "defaultParticle": ""}, {"word": "明日", "kana": "あした", "romaji": "ashita", "zh": "明天", "tense": "future", "defaultParticle": ""}, {"word": "毎日", "kana": "まいにち", "romaji": "mainichi", "zh": "每天", "tense": "present", "defaultParticle": ""}, {"word": "今週", "kana": "こんしゅう", "romaji": "konshuu", "zh": "這週", "tense": "present", "defaultParticle": ""}, {"word": "来週", "kana": "らいしゅう", "romaji": "raishuu", "zh": "下週", "tense": "future", "defaultParticle": ""}, {"word": "昨日", "kana": "きのう", "romaji": "kinou", "zh": "昨天", "tense": "past", "defaultParticle": ""}, {"word": "先週", "kana": "せんしゅう", "romaji": "senshuu", "zh": "上週", "tense": "past", "defaultParticle": ""}, {"word": "さっき", "kana": "さっき", "romaji": "sakki", "zh": "剛剛", "tense": "past", "defaultParticle": ""}, {"word": "7時", "kana": "しちじ", "romaji": "shichiji", "zh": "七點", "tense": "future", "defaultParticle": "に"}, {"word": "月曜日", "kana": "げつようび", "romaji": "getsuyoubi", "zh": "星期一", "tense": "future", "defaultParticle": "に"}], "places": [{"word": "うち", "kana": "うち", "romaji": "uchi", "zh": "家裡"}, {"word": "家", "kana": "いえ", "romaji": "ie", "zh": "家、房子"}, {"word": "学校", "kana": "がっこう", "romaji": "gakkou", "zh": "學校"}, {"word": "会社", "kana": "かいしゃ", "romaji": "kaisha", "zh": "公司"}, {"word": "カフェ", "kana": "カフェ", "romaji": "kafe", "zh": "咖啡店"}, {"word": "コンビニ", "kana": "コンビニ", "romaji": "konbini", "zh": "便利商店"}, {"word": "公園", "kana": "こうえん", "romaji": "kouen", "zh": "公園"}, {"word": "図書館", "kana": "としょかん", "romaji": "toshokan", "zh": "圖書館"}, {"word": "日本", "kana": "にほん", "romaji": "nihon", "zh": "日本"}, {"word": "友だちの家", "kana": "ともだちの いえ", "romaji": "tomodachi no ie", "zh": "朋友家"}, {"word": "先生の家", "kana": "せんせいの いえ", "romaji": "sensei no ie", "zh": "老師家"}], "people": [{"word": "", "kana": "", "romaji": "", "zh": "不加人物"}, {"word": "友だち", "kana": "ともだち", "romaji": "tomodachi", "zh": "朋友"}, {"word": "家族", "kana": "かぞく", "romaji": "kazoku", "zh": "家人"}, {"word": "先生", "kana": "せんせい", "romaji": "sensei", "zh": "老師"}, {"word": "母", "kana": "はは", "romaji": "haha", "zh": "媽媽"}], "objects": [{"word": "すし", "kana": "すし", "romaji": "sushi", "zh": "壽司"}, {"word": "水", "kana": "みず", "romaji": "mizu", "zh": "水"}, {"word": "パン", "kana": "パン", "romaji": "pan", "zh": "麵包"}, {"word": "映画", "kana": "えいが", "romaji": "eiga", "zh": "電影"}, {"word": "本", "kana": "ほん", "romaji": "hon", "zh": "書"}, {"word": "音楽", "kana": "おんがく", "romaji": "ongaku", "zh": "音樂"}, {"word": "写真", "kana": "しゃしん", "romaji": "shashin", "zh": "照片"}, {"word": "日本語", "kana": "にほんご", "romaji": "nihongo", "zh": "日文"}], "verbs": [{"key": "eat", "zh": "吃", "jp": "食べます", "kana": "たべます", "romaji": "tabemasu", "past_jp": "食べました", "past_kana": "たべました", "past_romaji": "tabemashita", "naturalObjects": ["すし", "パン"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と"]}, {"key": "drink", "zh": "喝", "jp": "飲みます", "kana": "のみます", "romaji": "nomimasu", "past_jp": "飲みました", "past_kana": "のみました", "past_romaji": "nomimashita", "naturalObjects": ["水"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と"]}, {"key": "buy", "zh": "買", "jp": "買います", "kana": "かいます", "romaji": "kaimasu", "past_jp": "買いました", "past_kana": "かいました", "past_romaji": "kaimashita", "naturalObjects": ["パン", "本", "水"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と", "に"]}, {"key": "watch", "zh": "看", "jp": "見ます", "kana": "みます", "romaji": "mimasu", "past_jp": "見ました", "past_kana": "みました", "past_romaji": "mimashita", "naturalObjects": ["映画"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と"]}, {"key": "read", "zh": "讀", "jp": "読みます", "kana": "よみます", "romaji": "yomimasu", "past_jp": "読みました", "past_kana": "よみました", "past_romaji": "yomimashita", "naturalObjects": ["本"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と"]}, {"key": "listen", "zh": "聽", "jp": "聞きます", "kana": "ききます", "romaji": "kikimasu", "past_jp": "聞きました", "past_kana": "ききました", "past_romaji": "kikimashita", "naturalObjects": ["音楽"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と", "に"]}, {"key": "take_photo", "zh": "拍", "jp": "撮ります", "kana": "とります", "romaji": "torimasu", "past_jp": "撮りました", "past_kana": "とりました", "past_romaji": "torimashita", "naturalObjects": ["写真"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と"]}, {"key": "study", "zh": "學習", "jp": "勉強します", "kana": "べんきょうします", "romaji": "benkyou shimasu", "past_jp": "勉強しました", "past_kana": "べんきょうしました", "past_romaji": "benkyou shimashita", "naturalObjects": ["日本語"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と", "に"]}]}, "sentences": [{"subject": "私", "subjectParticle": "は", "time": "今日", "timeParticle": "", "place": "うち", "placeParticle": "で", "person": "", "personParticle": "", "object": "すし", "objectParticle": "を", "verb": "eat"}, {"subject": "私", "subjectParticle": "は", "time": "明日", "timeParticle": "", "place": "カフェ", "placeParticle": "で", "person": "友だち", "personParticle": "と", "object": "パン", "objectParticle": "を", "verb": "eat"}, {"subject": "彼", "subjectParticle": "は", "time": "毎日", "timeParticle": "", "place": "会社", "placeParticle": "で", "person": "", "personParticle": "", "object": "水", "objectParticle": "を", "verb": "drink"}, {"subject": "彼女", "subjectParticle": "は", "time": "昨日", "timeParticle": "", "place": "コンビニ", "placeParticle": "で", "person": "", "personParticle": "", "object": "パン", "objectParticle": "を", "verb": "buy"}, {"subject": "私たち", "subjectParticle": "は", "time": "今週", "timeParticle": "", "place": "うち", "placeParticle": "で", "person": "家族", "personParticle": "と", "object": "映画", "objectParticle": "を", "verb": "watch"}, {"subject": "あなた", "subjectParticle": "は", "time": "今日", "timeParticle": "", "place": "図書館", "placeParticle": "で", "person": "", "personParticle": "", "object": "本", "objectParticle": "を", "verb": "read"}, {"subject": "私", "subjectParticle": "は", "time": "さっき", "timeParticle": "", "place": "カフェ", "placeParticle": "で", "person": "友だち", "personParticle": "と", "object": "音楽", "objectParticle": "を", "verb": "listen"}, {"subject": "彼女", "subjectParticle": "は", "time": "先週", "timeParticle": "", "place": "公園", "placeParticle": "で", "person": "友だち", "personParticle": "と", "object": "写真", "objectParticle": "を", "verb": "take_photo"}, {"subject": "私", "subjectParticle": "は", "time": "来週", "timeParticle": "", "place": "学校", "placeParticle": "で", "person": "先生", "personParticle": "と", "object": "日本語", "objectParticle": "を", "verb": "study"}, {"subject": "私", "subjectParticle": "が", "time": "今日", "timeParticle": "", "place": "うち", "placeParticle": "で", "person": "", "personParticle": "", "object": "本", "objectParticle": "を", "verb": "read"}, {"subject": "私", "subjectParticle": "は", "time": "7時", "timeParticle": "に", "place": "学校", "placeParticle": "へ", "person": "", "personParticle": "", "object": "日本語", "objectParticle": "を", "verb": "study"}, {"subject": "あなた", "subjectParticle": "は", "time": "月曜日", "timeParticle": "に", "place": "図書館", "placeParticle": "で", "person": "先生", "personParticle": "に", "object": "日本語", "objectParticle": "を", "verb": "study"}, {"subject": "私", "subjectParticle": "は", "time": "今日", "timeParticle": "", "place": "家", "placeParticle": "で", "person": "", "personParticle": "", "object": "本", "objectParticle": "を", "verb": "read"}, {"subject": "彼", "subjectParticle": "は", "time": "毎日", "timeParticle": "", "place": "家", "placeParticle": "で", "person": "", "personParticle": "", "object": "水", "objectParticle": "を", "verb": "drink"}, {"subject": "彼女", "subjectParticle": "は", "time": "昨日", "timeParticle": "", "place": "家", "placeParticle": "で", "person": "", "personParticle": "", "object": "映画", "objectParticle": "を", "verb": "watch"}, {"subject": "私たち", "subjectParticle": "は", "time": "先週", "timeParticle": "", "place": "友だちの家", "placeParticle": "で", "person": "友だち", "personParticle": "と", "object": "映画", "objectParticle": "を", "verb": "watch"}, {"subject": "あなた", "subjectParticle": "は", "time": "来週", "timeParticle": "", "place": "先生の家", "placeParticle": "で", "person": "先生", "personParticle": "と", "object": "日本語", "objectParticle": "を", "verb": "study"}, {"subject": "私", "subjectParticle": "は", "time": "さっき", "timeParticle": "", "place": "家", "placeParticle": "で", "person": "", "personParticle": "", "object": "写真", "objectParticle": "を", "verb": "take_photo"}], "note": "v7：精簡手機版排版；句子區加橘框，點擊句子區即可朗讀。"}</script>
+<script id="embeddedLesson" type="application/json">{"title": "STPPOV 助詞替換句型積木練習 v8", "pattern": "主詞＋助詞 → 時間 → 地點＋助詞 → 人＋助詞 → 受詞＋助詞 → 動詞", "particles": {"subject": [{"jp": "は", "kana": "は", "romaji": "wa", "zh": "主題：我是／他是"}, {"jp": "が", "kana": "が", "romaji": "ga", "zh": "強調主詞：是我／是他"}], "time": [{"jp": "", "kana": "", "romaji": "", "zh": "今日、昨日、明日、毎日通常不加助詞"}, {"jp": "に", "kana": "に", "romaji": "ni", "zh": "明確時間點：7時に、月曜日に"}], "place": [{"jp": "で", "kana": "で", "romaji": "de", "zh": "動作發生地點：在～做"}, {"jp": "に", "kana": "に", "romaji": "ni", "zh": "存在／到達點：在～、到～"}, {"jp": "へ", "kana": "へ", "romaji": "e", "zh": "方向：往～去"}], "person": [{"jp": "", "kana": "", "romaji": "", "zh": "不加人物"}, {"jp": "と", "kana": "と", "romaji": "to", "zh": "和～一起"}, {"jp": "に", "kana": "に", "romaji": "ni", "zh": "向～、給～、對～"}], "object": [{"jp": "を", "kana": "を", "romaji": "o", "zh": "受詞：把～做某動作"}, {"jp": "が", "kana": "が", "romaji": "ga", "zh": "能力／喜好／存在的對象"}, {"jp": "に", "kana": "に", "romaji": "ni", "zh": "目標、結果、對象"}]}, "blocks": {"subjects": [{"word": "私", "kana": "わたし", "romaji": "watashi", "zh": "我"}, {"word": "あなた", "kana": "あなた", "romaji": "anata", "zh": "你"}, {"word": "彼", "kana": "かれ", "romaji": "kare", "zh": "他"}, {"word": "彼女", "kana": "かのじょ", "romaji": "kanojo", "zh": "她"}, {"word": "私たち", "kana": "わたしたち", "romaji": "watashitachi", "zh": "我們"}], "times": [{"word": "今日", "kana": "きょう", "romaji": "kyou", "zh": "今天", "tense": "present", "defaultParticle": ""}, {"word": "明日", "kana": "あした", "romaji": "ashita", "zh": "明天", "tense": "future", "defaultParticle": ""}, {"word": "毎日", "kana": "まいにち", "romaji": "mainichi", "zh": "每天", "tense": "present", "defaultParticle": ""}, {"word": "今週", "kana": "こんしゅう", "romaji": "konshuu", "zh": "這週", "tense": "present", "defaultParticle": ""}, {"word": "来週", "kana": "らいしゅう", "romaji": "raishuu", "zh": "下週", "tense": "future", "defaultParticle": ""}, {"word": "昨日", "kana": "きのう", "romaji": "kinou", "zh": "昨天", "tense": "past", "defaultParticle": ""}, {"word": "先週", "kana": "せんしゅう", "romaji": "senshuu", "zh": "上週", "tense": "past", "defaultParticle": ""}, {"word": "さっき", "kana": "さっき", "romaji": "sakki", "zh": "剛剛", "tense": "past", "defaultParticle": ""}, {"word": "7時", "kana": "しちじ", "romaji": "shichiji", "zh": "七點", "tense": "future", "defaultParticle": "に"}, {"word": "月曜日", "kana": "げつようび", "romaji": "getsuyoubi", "zh": "星期一", "tense": "future", "defaultParticle": "に"}], "places": [{"word": "うち", "kana": "うち", "romaji": "uchi", "zh": "家裡"}, {"word": "家", "kana": "いえ", "romaji": "ie", "zh": "家、房子"}, {"word": "学校", "kana": "がっこう", "romaji": "gakkou", "zh": "學校"}, {"word": "会社", "kana": "かいしゃ", "romaji": "kaisha", "zh": "公司"}, {"word": "カフェ", "kana": "カフェ", "romaji": "kafe", "zh": "咖啡店"}, {"word": "コンビニ", "kana": "コンビニ", "romaji": "konbini", "zh": "便利商店"}, {"word": "公園", "kana": "こうえん", "romaji": "kouen", "zh": "公園"}, {"word": "図書館", "kana": "としょかん", "romaji": "toshokan", "zh": "圖書館"}, {"word": "日本", "kana": "にほん", "romaji": "nihon", "zh": "日本"}, {"word": "友だちの家", "kana": "ともだちの いえ", "romaji": "tomodachi no ie", "zh": "朋友家"}, {"word": "先生の家", "kana": "せんせいの いえ", "romaji": "sensei no ie", "zh": "老師家"}], "people": [{"word": "", "kana": "", "romaji": "", "zh": "不加人物"}, {"word": "友だち", "kana": "ともだち", "romaji": "tomodachi", "zh": "朋友"}, {"word": "家族", "kana": "かぞく", "romaji": "kazoku", "zh": "家人"}, {"word": "先生", "kana": "せんせい", "romaji": "sensei", "zh": "老師"}, {"word": "母", "kana": "はは", "romaji": "haha", "zh": "媽媽"}], "objects": [{"word": "すし", "kana": "すし", "romaji": "sushi", "zh": "壽司"}, {"word": "水", "kana": "みず", "romaji": "mizu", "zh": "水"}, {"word": "パン", "kana": "パン", "romaji": "pan", "zh": "麵包"}, {"word": "映画", "kana": "えいが", "romaji": "eiga", "zh": "電影"}, {"word": "本", "kana": "ほん", "romaji": "hon", "zh": "書"}, {"word": "音楽", "kana": "おんがく", "romaji": "ongaku", "zh": "音樂"}, {"word": "写真", "kana": "しゃしん", "romaji": "shashin", "zh": "照片"}, {"word": "日本語", "kana": "にほんご", "romaji": "nihongo", "zh": "日文"}], "verbs": [{"key": "eat", "zh": "吃", "jp": "食べます", "kana": "たべます", "romaji": "tabemasu", "past_jp": "食べました", "past_kana": "たべました", "past_romaji": "tabemashita", "naturalObjects": ["すし", "パン"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と"]}, {"key": "drink", "zh": "喝", "jp": "飲みます", "kana": "のみます", "romaji": "nomimasu", "past_jp": "飲みました", "past_kana": "のみました", "past_romaji": "nomimashita", "naturalObjects": ["水"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と"]}, {"key": "buy", "zh": "買", "jp": "買います", "kana": "かいます", "romaji": "kaimasu", "past_jp": "買いました", "past_kana": "かいました", "past_romaji": "kaimashita", "naturalObjects": ["パン", "本", "水"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と", "に"]}, {"key": "watch", "zh": "看", "jp": "見ます", "kana": "みます", "romaji": "mimasu", "past_jp": "見ました", "past_kana": "みました", "past_romaji": "mimashita", "naturalObjects": ["映画"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と"]}, {"key": "read", "zh": "讀", "jp": "読みます", "kana": "よみます", "romaji": "yomimasu", "past_jp": "読みました", "past_kana": "よみました", "past_romaji": "yomimashita", "naturalObjects": ["本"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と"]}, {"key": "listen", "zh": "聽", "jp": "聞きます", "kana": "ききます", "romaji": "kikimasu", "past_jp": "聞きました", "past_kana": "ききました", "past_romaji": "kikimashita", "naturalObjects": ["音楽"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と", "に"]}, {"key": "take_photo", "zh": "拍", "jp": "撮ります", "kana": "とります", "romaji": "torimasu", "past_jp": "撮りました", "past_kana": "とりました", "past_romaji": "torimashita", "naturalObjects": ["写真"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と"]}, {"key": "study", "zh": "學習", "jp": "勉強します", "kana": "べんきょうします", "romaji": "benkyou shimasu", "past_jp": "勉強しました", "past_kana": "べんきょうしました", "past_romaji": "benkyou shimashita", "naturalObjects": ["日本語"], "defaultObjectParticle": "を", "naturalPlaceParticles": ["で"], "naturalPersonParticles": ["", "と", "に"]}]}, "sentences": [{"subject": "私", "subjectParticle": "は", "time": "今日", "timeParticle": "", "place": "うち", "placeParticle": "で", "person": "", "personParticle": "", "object": "すし", "objectParticle": "を", "verb": "eat"}, {"subject": "私", "subjectParticle": "は", "time": "明日", "timeParticle": "", "place": "カフェ", "placeParticle": "で", "person": "友だち", "personParticle": "と", "object": "パン", "objectParticle": "を", "verb": "eat"}, {"subject": "彼", "subjectParticle": "は", "time": "毎日", "timeParticle": "", "place": "会社", "placeParticle": "で", "person": "", "personParticle": "", "object": "水", "objectParticle": "を", "verb": "drink"}, {"subject": "彼女", "subjectParticle": "は", "time": "昨日", "timeParticle": "", "place": "コンビニ", "placeParticle": "で", "person": "", "personParticle": "", "object": "パン", "objectParticle": "を", "verb": "buy"}, {"subject": "私たち", "subjectParticle": "は", "time": "今週", "timeParticle": "", "place": "うち", "placeParticle": "で", "person": "家族", "personParticle": "と", "object": "映画", "objectParticle": "を", "verb": "watch"}, {"subject": "あなた", "subjectParticle": "は", "time": "今日", "timeParticle": "", "place": "図書館", "placeParticle": "で", "person": "", "personParticle": "", "object": "本", "objectParticle": "を", "verb": "read"}, {"subject": "私", "subjectParticle": "は", "time": "さっき", "timeParticle": "", "place": "カフェ", "placeParticle": "で", "person": "友だち", "personParticle": "と", "object": "音楽", "objectParticle": "を", "verb": "listen"}, {"subject": "彼女", "subjectParticle": "は", "time": "先週", "timeParticle": "", "place": "公園", "placeParticle": "で", "person": "友だち", "personParticle": "と", "object": "写真", "objectParticle": "を", "verb": "take_photo"}, {"subject": "私", "subjectParticle": "は", "time": "来週", "timeParticle": "", "place": "学校", "placeParticle": "で", "person": "先生", "personParticle": "と", "object": "日本語", "objectParticle": "を", "verb": "study"}, {"subject": "私", "subjectParticle": "が", "time": "今日", "timeParticle": "", "place": "うち", "placeParticle": "で", "person": "", "personParticle": "", "object": "本", "objectParticle": "を", "verb": "read"}, {"subject": "私", "subjectParticle": "は", "time": "7時", "timeParticle": "に", "place": "学校", "placeParticle": "へ", "person": "", "personParticle": "", "object": "日本語", "objectParticle": "を", "verb": "study"}, {"subject": "あなた", "subjectParticle": "は", "time": "月曜日", "timeParticle": "に", "place": "図書館", "placeParticle": "で", "person": "先生", "personParticle": "に", "object": "日本語", "objectParticle": "を", "verb": "study"}, {"subject": "私", "subjectParticle": "は", "time": "今日", "timeParticle": "", "place": "家", "placeParticle": "で", "person": "", "personParticle": "", "object": "本", "objectParticle": "を", "verb": "read"}, {"subject": "彼", "subjectParticle": "は", "time": "毎日", "timeParticle": "", "place": "家", "placeParticle": "で", "person": "", "personParticle": "", "object": "水", "objectParticle": "を", "verb": "drink"}, {"subject": "彼女", "subjectParticle": "は", "time": "昨日", "timeParticle": "", "place": "家", "placeParticle": "で", "person": "", "personParticle": "", "object": "映画", "objectParticle": "を", "verb": "watch"}, {"subject": "私たち", "subjectParticle": "は", "time": "先週", "timeParticle": "", "place": "友だちの家", "placeParticle": "で", "person": "友だち", "personParticle": "と", "object": "映画", "objectParticle": "を", "verb": "watch"}, {"subject": "あなた", "subjectParticle": "は", "time": "来週", "timeParticle": "", "place": "先生の家", "placeParticle": "で", "person": "先生", "personParticle": "と", "object": "日本語", "objectParticle": "を", "verb": "study"}, {"subject": "私", "subjectParticle": "は", "time": "さっき", "timeParticle": "", "place": "家", "placeParticle": "で", "person": "", "personParticle": "", "object": "写真", "objectParticle": "を", "verb": "take_photo"}], "note": "v8：Shadowing 練習改為從第01句到最後一句依序自動播放；刪除中文挑戰模式。"}</script>
 <script>
-let DATA=null,current=0,voices=[],autoSpeak=true;
+let DATA=null,current=0,voices=[],autoSpeak=true,shadowPlaying=false;
 const $=id=>document.getElementById(id);
 const clean=s=>(s||"").trim();
 
@@ -299,7 +305,7 @@ function renderSentence(){
 }
 function renderList(){
   $("sentenceList").innerHTML=DATA.sentences.map((s,i)=>{const b=buildSentence(s);return `<button class="item" data-idx="${i}"><b>${String(i+1).padStart(2,"0")}. ${renderMarkedSentence(b)}</b><div class="small">${b.kana}</div><div class="small">${b.zh}</div></button>`;}).join("");
-  document.querySelectorAll(".item").forEach(btn=>btn.onclick=()=>goSentence(Number(btn.dataset.idx), true));
+  document.querySelectorAll(".item").forEach(btn=>btn.onclick=()=>{stopShadowing();goSentence(Number(btn.dataset.idx), true);});
 }
 function optionWord(group){return DATA.blocks[group].map(x=>`<option value="${x.word}">${x.word||"—"}｜${x.kana||""}｜${x.zh}</option>`).join("");}
 function optionParticle(type){return DATA.particles[type].map(x=>`<option value="${x.jp}">${x.jp||"∅"}｜${x.zh}</option>`).join("");}
@@ -422,6 +428,137 @@ function speakSequence(items){
   };
   next();
 }
+
+function buildShadowItemsForSentence(b, mode){
+  if(mode==="listen_repeat"){
+    return [
+      {text:b.jp, rate:0.9},
+      {pause:450},
+      {text:b.jp, rate:0.9}
+    ];
+  }
+  if(mode==="block"){
+    const items=[];
+    getBlockSpeechParts(b).forEach(([label,text])=>{
+      items.push({text:text, rate:0.75});
+      items.push({pause:250});
+    });
+    items.push({text:b.jp, rate:0.9});
+    return items;
+  }
+  // speed mode
+  return [
+    {text:b.jp, rate:0.75},
+    {pause:350},
+    {text:b.jp, rate:0.9},
+    {pause:350},
+    {text:b.jp, rate:1.0}
+  ];
+}
+function speakSequenceAsync(items, done){
+  let i=0;
+  const next=()=>{
+    if(!shadowPlaying){ if(done) done(false); return; }
+    if(i>=items.length){ if(done) done(true); return; }
+    const item=items[i++];
+    if(item.pause){ setTimeout(next, item.pause); return; }
+    speakUtterance(item.text, item.rate || Number($("rateSelect").value||1), next);
+  };
+  next();
+}
+function shadowPractice(){
+  if(shadowPlaying){
+    stopShadowing();
+    return;
+  }
+  shadowPlaying=true;
+  speechSynthesis.cancel();
+  $("shadowBtn").textContent="播放中...";
+  const oldAuto=autoSpeak;
+  autoSpeak=false;
+  let idx=0;
+  const mode=$("shadowMode") ? $("shadowMode").value : "speed";
+  const playNext=()=>{
+    if(!shadowPlaying){
+      autoSpeak=oldAuto;
+      $("shadowBtn").textContent="Shadowing 順播";
+      return;
+    }
+    if(idx>=DATA.sentences.length){
+      shadowPlaying=false;
+      autoSpeak=oldAuto;
+      $("shadowBtn").textContent="Shadowing 順播";
+      return;
+    }
+    current=idx;
+    renderSentence();
+    const b=buildSentence(DATA.sentences[current]);
+    const items=buildShadowItemsForSentence(b, mode);
+    idx++;
+    speakSequenceAsync(items, ok=>{
+      if(ok) setTimeout(playNext, 700);
+      else {
+        autoSpeak=oldAuto;
+        $("shadowBtn").textContent="Shadowing 順播";
+      }
+    });
+  };
+  playNext();
+}
+function stopShadowing(){
+  shadowPlaying=false;
+  speechSynthesis.cancel();
+  if($("shadowBtn")) $("shadowBtn").textContent="Shadowing 順播";
+}
+
+function loadVoices(){
+  voices=speechSynthesis.getVoices();
+  const ja=voices.filter(v=>/ja|Japan|Japanese|日本/i.test(v.lang+v.name));
+  const list=ja.length?ja:voices;
+  $("voiceSelect").innerHTML=list.map(v=>`<option value="${voices.indexOf(v)}">${v.name} (${v.lang})</option>`).join("");
+}
+
+function getBlockSpeechParts(b){
+  const parts=[
+    ["S 主詞", b.units.su.word],
+    ["T 時間", b.units.tu.word],
+    ["P 地點", b.units.pu.word],
+    ["P 人物", b.units.hu.word],
+    ["O 受詞", b.units.ou.word],
+    ["V 動詞", b.verb.word]
+  ].filter(x=>clean(x[1]));
+  return parts;
+}
+function renderShadowGuide(b){
+  const parts=getBlockSpeechParts(b);
+  const blockLine=parts.map(x=>x[1]).join("｜");
+  if(!$("shadowGuide")) return;
+  $("shadowGuide").innerHTML=
+    "<b>Shadowing 建議：</b><br>" +
+    "1. 先聽完整句。<br>" +
+    "2. 再跟著積木節奏念：<b>"+blockLine+"</b><br>" +
+    "3. 最後不看羅馬拼音，只看日文念一次。";
+}
+function speakUtterance(text, rate=1, after=null){
+  const vi=Number($("voiceSelect").value);
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang="ja-JP";
+  u.rate=rate;
+  if(voices[vi])u.voice=voices[vi];
+  u.onend=()=>{ if(after) setTimeout(after, 450); };
+  speechSynthesis.speak(u);
+}
+function speakSequence(items){
+  speechSynthesis.cancel();
+  let i=0;
+  const next=()=>{
+    if(i>=items.length)return;
+    const item=items[i++];
+    if(item.pause){ setTimeout(next, item.pause); return; }
+    speakUtterance(item.text, item.rate || Number($("rateSelect").value||1), next);
+  };
+  next();
+}
 function shadowPractice(){
   const b=buildSentence(DATA.sentences[current]);
   const mode=$("shadowMode") ? $("shadowMode").value : "listen_repeat";
@@ -472,10 +609,11 @@ async function init(){
   DATA=await loadLesson();$("title").textContent=DATA.title;
   renderList();renderBuilder();renderParticleTable();renderCount();renderSentence();loadVoices();speechSynthesis.onvoiceschanged=loadVoices;
   if($("speakBtn")) $("speakBtn").onclick=()=>speak(buildSentence(DATA.sentences[current]).jp);
-  $("readArea").onclick=()=>speak(buildSentence(DATA.sentences[current]).jp);
+  $("readArea").onclick=()=>{stopShadowing();speak(buildSentence(DATA.sentences[current]).jp);};
   $("shadowBtn").onclick=shadowPractice;
-  $("prevBtn").onclick=()=>goSentence(current-1,true);
-  $("nextBtn").onclick=()=>goSentence(current+1,true);
+  $("stopShadowBtn").onclick=stopShadowing;
+  $("prevBtn").onclick=()=>{stopShadowing();goSentence(current-1,true);};
+  $("nextBtn").onclick=()=>{stopShadowing();goSentence(current+1,true);};
   $("randomBtn").onclick=()=>{randomNatural(); if(autoSpeak) setTimeout(()=>speak(buildSentence(DATA.sentences[current]).jp),180);};
   $("autoSpeakBtn").onclick=toggleAutoSpeak;
   document.querySelectorAll(".tab").forEach(tab=>tab.onclick=()=>{document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));tab.classList.add("active");$(tab.dataset.tab).classList.add("active");});
