@@ -769,5 +769,5 @@
       "verb": "take_photo"
     }
   ],
-  "note": "v11：上一句／下一句／點句子／點橘框一律強制朗讀，不受自動朗讀開關影響；修正 Android/Samsung Browser cancel 後不播放問題。"
+  "note": "v12：修正橘框句子區空白；改為每次 renderSentence 直接重建橘框內容，避免欄位未寫入。"
 }
