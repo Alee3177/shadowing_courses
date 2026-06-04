@@ -358,6 +358,7 @@
 </style>
 </head>
 <body>
+<audio id="audioPlayer" preload="auto" playsinline></audio>
 <div class="wrap">
   <header>
     <section class="main-card">
@@ -681,32 +682,42 @@ function status(text) {
 }
 
 
-let player = new Audio();
+const AUDIO_VERSION = "v9";
+const player = document.getElementById("audioPlayer");
 player.preload = "auto";
+player.setAttribute("playsinline", "");
 
 function speak(text, onend) {
   const s = SEGMENTS[index];
+
   player.pause();
   player.currentTime = 0;
-  player = new Audio(s.audio);
-  player.preload = "auto";
+  player.src = s.audio + "?v=" + AUDIO_VERSION;
   player.playbackRate = parseFloat($("rate").value);
+  player.load();
+
   player.onplay = () => {
     stage.classList.add("blink");
     status(`播放中：第 ${index + 1} 句，第 ${currentRepeat + 1} 次，速度 ${$("rate").value}x`);
   };
+
   player.onended = () => {
     stage.classList.remove("blink");
     if (typeof onend === "function") onend();
   };
+
   player.onerror = () => {
     stage.classList.remove("blink");
-    status(`找不到音檔：${s.audio}`);
+    status(`音檔讀取失敗：${s.audio}。請確認 audio 資料夾與檔名完全一致。`);
   };
-  player.play().catch(() => {
-    stage.classList.remove("blink");
-    status("瀏覽器阻擋播放，請先按「解鎖／開始」一次。");
-  });
+
+  const p = player.play();
+  if (p && typeof p.catch === "function") {
+    p.catch(() => {
+      stage.classList.remove("blink");
+      status("LINE 阻擋播放：請再按一次「開始播放」，或用 Chrome 開啟。");
+    });
+  }
 }
 
 function clearTimer() {
@@ -771,7 +782,10 @@ function pauseResume() {
     status(`已暫停：第 ${index + 1} 句，可按同一鍵繼續`);
   } else {
     paused = false;
-    player.play();
+    const p = player.play();
+    if (p && typeof p.catch === "function") {
+      p.catch(() => status("LINE 阻擋繼續播放，請再按一次「暫停／繼續」。"));
+    }
     stage.classList.add("blink");
     status(`繼續：第 ${index + 1} 句`);
   }
