@@ -1,97 +1,739 @@
 {
-  "meta": {
-    "name": "Japanese date parts for STPPOV training",
-    "version": "2026-06-05",
-    "range": { "yearStart": 2000, "yearEnd": 2030 },
-    "note": "weekday is calculated automatically by JavaScript Date, not manually fixed. Months in JavaScript Date are zero-based internally."
-  },
   "years": [
-    {"value":2000,"jp":"2000年","kana":"にせんねん","romaji":"nisen-nen","zh":"西元2000年","en":"year 2000"},
-    {"value":2001,"jp":"2001年","kana":"にせんいちねん","romaji":"nisen ichi-nen","zh":"西元2001年","en":"year 2001"},
-    {"value":2002,"jp":"2002年","kana":"にせんにねん","romaji":"nisen ni-nen","zh":"西元2002年","en":"year 2002"},
-    {"value":2003,"jp":"2003年","kana":"にせんさんねん","romaji":"nisen san-nen","zh":"西元2003年","en":"year 2003"},
-    {"value":2004,"jp":"2004年","kana":"にせんよねん","romaji":"nisen yo-nen","zh":"西元2004年","en":"year 2004"},
-    {"value":2005,"jp":"2005年","kana":"にせんごねん","romaji":"nisen go-nen","zh":"西元2005年","en":"year 2005"},
-    {"value":2006,"jp":"2006年","kana":"にせんろくねん","romaji":"nisen roku-nen","zh":"西元2006年","en":"year 2006"},
-    {"value":2007,"jp":"2007年","kana":"にせんななねん","romaji":"nisen nana-nen","zh":"西元2007年","en":"year 2007"},
-    {"value":2008,"jp":"2008年","kana":"にせんはちねん","romaji":"nisen hachi-nen","zh":"西元2008年","en":"year 2008"},
-    {"value":2009,"jp":"2009年","kana":"にせんきゅうねん","romaji":"nisen kyū-nen","zh":"西元2009年","en":"year 2009"},
-    {"value":2010,"jp":"2010年","kana":"にせんじゅうねん","romaji":"nisen jū-nen","zh":"西元2010年","en":"year 2010"},
-    {"value":2011,"jp":"2011年","kana":"にせんじゅういちねん","romaji":"nisen jūichi-nen","zh":"西元2011年","en":"year 2011"},
-    {"value":2012,"jp":"2012年","kana":"にせんじゅうにねん","romaji":"nisen jūni-nen","zh":"西元2012年","en":"year 2012"},
-    {"value":2013,"jp":"2013年","kana":"にせんじゅうさんねん","romaji":"nisen jūsan-nen","zh":"西元2013年","en":"year 2013"},
-    {"value":2014,"jp":"2014年","kana":"にせんじゅうよねん","romaji":"nisen jūyo-nen","zh":"西元2014年","en":"year 2014"},
-    {"value":2015,"jp":"2015年","kana":"にせんじゅうごねん","romaji":"nisen jūgo-nen","zh":"西元2015年","en":"year 2015"},
-    {"value":2016,"jp":"2016年","kana":"にせんじゅうろくねん","romaji":"nisen jūroku-nen","zh":"西元2016年","en":"year 2016"},
-    {"value":2017,"jp":"2017年","kana":"にせんじゅうななねん","romaji":"nisen jūnana-nen","zh":"西元2017年","en":"year 2017"},
-    {"value":2018,"jp":"2018年","kana":"にせんじゅうはちねん","romaji":"nisen jūhachi-nen","zh":"西元2018年","en":"year 2018"},
-    {"value":2019,"jp":"2019年","kana":"にせんじゅうきゅうねん","romaji":"nisen jūkyū-nen","zh":"西元2019年","en":"year 2019"},
-    {"value":2020,"jp":"2020年","kana":"にせんにじゅうねん","romaji":"nisen nijū-nen","zh":"西元2020年","en":"year 2020"},
-    {"value":2021,"jp":"2021年","kana":"にせんにじゅういちねん","romaji":"nisen nijūichi-nen","zh":"西元2021年","en":"year 2021"},
-    {"value":2022,"jp":"2022年","kana":"にせんにじゅうにねん","romaji":"nisen nijūni-nen","zh":"西元2022年","en":"year 2022"},
-    {"value":2023,"jp":"2023年","kana":"にせんにじゅうさんねん","romaji":"nisen nijūsan-nen","zh":"西元2023年","en":"year 2023"},
-    {"value":2024,"jp":"2024年","kana":"にせんにじゅうよねん","romaji":"nisen nijūyo-nen","zh":"西元2024年","en":"year 2024"},
-    {"value":2025,"jp":"2025年","kana":"にせんにじゅうごねん","romaji":"nisen nijūgo-nen","zh":"西元2025年","en":"year 2025"},
-    {"value":2026,"jp":"2026年","kana":"にせんにじゅうろくねん","romaji":"nisen nijūroku-nen","zh":"西元2026年","en":"year 2026"},
-    {"value":2027,"jp":"2027年","kana":"にせんにじゅうななねん","romaji":"nisen nijūnana-nen","zh":"西元2027年","en":"year 2027"},
-    {"value":2028,"jp":"2028年","kana":"にせんにじゅうはちねん","romaji":"nisen nijūhachi-nen","zh":"西元2028年","en":"year 2028"},
-    {"value":2029,"jp":"2029年","kana":"にせんにじゅうきゅうねん","romaji":"nisen nijūkyū-nen","zh":"西元2029年","en":"year 2029"},
-    {"value":2030,"jp":"2030年","kana":"にせんさんじゅうねん","romaji":"nisen sanjū-nen","zh":"西元2030年","en":"year 2030"}
+    {
+      "value": 2000,
+      "jp": "2000年",
+      "kana": "にせんねん",
+      "romaji": "nisen-nen",
+      "zh": "2000年",
+      "en": "2000",
+      "audio": "audio/date/year_2000.mp3"
+    },
+    {
+      "value": 2001,
+      "jp": "2001年",
+      "kana": "にせんいちねん",
+      "romaji": "nisen ichi-nen",
+      "zh": "2001年",
+      "en": "2001",
+      "audio": "audio/date/year_2001.mp3"
+    },
+    {
+      "value": 2002,
+      "jp": "2002年",
+      "kana": "にせんにねん",
+      "romaji": "nisen ni-nen",
+      "zh": "2002年",
+      "en": "2002",
+      "audio": "audio/date/year_2002.mp3"
+    },
+    {
+      "value": 2003,
+      "jp": "2003年",
+      "kana": "にせんさんねん",
+      "romaji": "nisen san-nen",
+      "zh": "2003年",
+      "en": "2003",
+      "audio": "audio/date/year_2003.mp3"
+    },
+    {
+      "value": 2004,
+      "jp": "2004年",
+      "kana": "にせんよねん",
+      "romaji": "nisen yo-nen",
+      "zh": "2004年",
+      "en": "2004",
+      "audio": "audio/date/year_2004.mp3"
+    },
+    {
+      "value": 2005,
+      "jp": "2005年",
+      "kana": "にせんごねん",
+      "romaji": "nisen go-nen",
+      "zh": "2005年",
+      "en": "2005",
+      "audio": "audio/date/year_2005.mp3"
+    },
+    {
+      "value": 2006,
+      "jp": "2006年",
+      "kana": "にせんろくねん",
+      "romaji": "nisen roku-nen",
+      "zh": "2006年",
+      "en": "2006",
+      "audio": "audio/date/year_2006.mp3"
+    },
+    {
+      "value": 2007,
+      "jp": "2007年",
+      "kana": "にせんななねん",
+      "romaji": "nisen nana-nen",
+      "zh": "2007年",
+      "en": "2007",
+      "audio": "audio/date/year_2007.mp3"
+    },
+    {
+      "value": 2008,
+      "jp": "2008年",
+      "kana": "にせんはちねん",
+      "romaji": "nisen hachi-nen",
+      "zh": "2008年",
+      "en": "2008",
+      "audio": "audio/date/year_2008.mp3"
+    },
+    {
+      "value": 2009,
+      "jp": "2009年",
+      "kana": "にせんきゅうねん",
+      "romaji": "nisen kyū-nen",
+      "zh": "2009年",
+      "en": "2009",
+      "audio": "audio/date/year_2009.mp3"
+    },
+    {
+      "value": 2010,
+      "jp": "2010年",
+      "kana": "にせんじゅうねん",
+      "romaji": "nisen jū-nen",
+      "zh": "2010年",
+      "en": "2010",
+      "audio": "audio/date/year_2010.mp3"
+    },
+    {
+      "value": 2011,
+      "jp": "2011年",
+      "kana": "にせんじゅういちねん",
+      "romaji": "nisen jūichi-nen",
+      "zh": "2011年",
+      "en": "2011",
+      "audio": "audio/date/year_2011.mp3"
+    },
+    {
+      "value": 2012,
+      "jp": "2012年",
+      "kana": "にせんじゅうにねん",
+      "romaji": "nisen jūni-nen",
+      "zh": "2012年",
+      "en": "2012",
+      "audio": "audio/date/year_2012.mp3"
+    },
+    {
+      "value": 2013,
+      "jp": "2013年",
+      "kana": "にせんじゅうさんねん",
+      "romaji": "nisen jūsan-nen",
+      "zh": "2013年",
+      "en": "2013",
+      "audio": "audio/date/year_2013.mp3"
+    },
+    {
+      "value": 2014,
+      "jp": "2014年",
+      "kana": "にせんじゅうよねん",
+      "romaji": "nisen jūyo-nen",
+      "zh": "2014年",
+      "en": "2014",
+      "audio": "audio/date/year_2014.mp3"
+    },
+    {
+      "value": 2015,
+      "jp": "2015年",
+      "kana": "にせんじゅうごねん",
+      "romaji": "nisen jūgo-nen",
+      "zh": "2015年",
+      "en": "2015",
+      "audio": "audio/date/year_2015.mp3"
+    },
+    {
+      "value": 2016,
+      "jp": "2016年",
+      "kana": "にせんじゅうろくねん",
+      "romaji": "nisen jūroku-nen",
+      "zh": "2016年",
+      "en": "2016",
+      "audio": "audio/date/year_2016.mp3"
+    },
+    {
+      "value": 2017,
+      "jp": "2017年",
+      "kana": "にせんじゅうななねん",
+      "romaji": "nisen jūnana-nen",
+      "zh": "2017年",
+      "en": "2017",
+      "audio": "audio/date/year_2017.mp3"
+    },
+    {
+      "value": 2018,
+      "jp": "2018年",
+      "kana": "にせんじゅうはちねん",
+      "romaji": "nisen jūhachi-nen",
+      "zh": "2018年",
+      "en": "2018",
+      "audio": "audio/date/year_2018.mp3"
+    },
+    {
+      "value": 2019,
+      "jp": "2019年",
+      "kana": "にせんじゅうきゅうねん",
+      "romaji": "nisen jūkyū-nen",
+      "zh": "2019年",
+      "en": "2019",
+      "audio": "audio/date/year_2019.mp3"
+    },
+    {
+      "value": 2020,
+      "jp": "2020年",
+      "kana": "にせんにじゅうねん",
+      "romaji": "nisen nijū-nen",
+      "zh": "2020年",
+      "en": "2020",
+      "audio": "audio/date/year_2020.mp3"
+    },
+    {
+      "value": 2021,
+      "jp": "2021年",
+      "kana": "にせんにじゅういちねん",
+      "romaji": "nisen nijūichi-nen",
+      "zh": "2021年",
+      "en": "2021",
+      "audio": "audio/date/year_2021.mp3"
+    },
+    {
+      "value": 2022,
+      "jp": "2022年",
+      "kana": "にせんにじゅうにねん",
+      "romaji": "nisen nijūni-nen",
+      "zh": "2022年",
+      "en": "2022",
+      "audio": "audio/date/year_2022.mp3"
+    },
+    {
+      "value": 2023,
+      "jp": "2023年",
+      "kana": "にせんにじゅうさんねん",
+      "romaji": "nisen nijūsan-nen",
+      "zh": "2023年",
+      "en": "2023",
+      "audio": "audio/date/year_2023.mp3"
+    },
+    {
+      "value": 2024,
+      "jp": "2024年",
+      "kana": "にせんにじゅうよねん",
+      "romaji": "nisen nijūyo-nen",
+      "zh": "2024年",
+      "en": "2024",
+      "audio": "audio/date/year_2024.mp3"
+    },
+    {
+      "value": 2025,
+      "jp": "2025年",
+      "kana": "にせんにじゅうごねん",
+      "romaji": "nisen nijūgo-nen",
+      "zh": "2025年",
+      "en": "2025",
+      "audio": "audio/date/year_2025.mp3"
+    },
+    {
+      "value": 2026,
+      "jp": "2026年",
+      "kana": "にせんにじゅうろくねん",
+      "romaji": "nisen nijūroku-nen",
+      "zh": "2026年",
+      "en": "2026",
+      "audio": "audio/date/year_2026.mp3"
+    },
+    {
+      "value": 2027,
+      "jp": "2027年",
+      "kana": "にせんにじゅうななねん",
+      "romaji": "nisen nijūnana-nen",
+      "zh": "2027年",
+      "en": "2027",
+      "audio": "audio/date/year_2027.mp3"
+    },
+    {
+      "value": 2028,
+      "jp": "2028年",
+      "kana": "にせんにじゅうはちねん",
+      "romaji": "nisen nijūhachi-nen",
+      "zh": "2028年",
+      "en": "2028",
+      "audio": "audio/date/year_2028.mp3"
+    },
+    {
+      "value": 2029,
+      "jp": "2029年",
+      "kana": "にせんにじゅうきゅうねん",
+      "romaji": "nisen nijūkyū-nen",
+      "zh": "2029年",
+      "en": "2029",
+      "audio": "audio/date/year_2029.mp3"
+    },
+    {
+      "value": 2030,
+      "jp": "2030年",
+      "kana": "にせんさんじゅうねん",
+      "romaji": "nisen sanjū-nen",
+      "zh": "2030年",
+      "en": "2030",
+      "audio": "audio/date/year_2030.mp3"
+    }
   ],
   "months": [
-    {"value":1,"jp":"1月","kana":"いちがつ","romaji":"ichigatsu","zh":"一月","en":"January"},
-    {"value":2,"jp":"2月","kana":"にがつ","romaji":"nigatsu","zh":"二月","en":"February"},
-    {"value":3,"jp":"3月","kana":"さんがつ","romaji":"sangatsu","zh":"三月","en":"March"},
-    {"value":4,"jp":"4月","kana":"しがつ","romaji":"shigatsu","zh":"四月","en":"April"},
-    {"value":5,"jp":"5月","kana":"ごがつ","romaji":"gogatsu","zh":"五月","en":"May"},
-    {"value":6,"jp":"6月","kana":"ろくがつ","romaji":"rokugatsu","zh":"六月","en":"June"},
-    {"value":7,"jp":"7月","kana":"しちがつ","romaji":"shichigatsu","zh":"七月","en":"July"},
-    {"value":8,"jp":"8月","kana":"はちがつ","romaji":"hachigatsu","zh":"八月","en":"August"},
-    {"value":9,"jp":"9月","kana":"くがつ","romaji":"kugatsu","zh":"九月","en":"September"},
-    {"value":10,"jp":"10月","kana":"じゅうがつ","romaji":"jūgatsu","zh":"十月","en":"October"},
-    {"value":11,"jp":"11月","kana":"じゅういちがつ","romaji":"jūichigatsu","zh":"十一月","en":"November"},
-    {"value":12,"jp":"12月","kana":"じゅうにがつ","romaji":"jūnigatsu","zh":"十二月","en":"December"}
+    {
+      "value": 1,
+      "jp": "1月",
+      "kana": "いちがつ",
+      "romaji": "ichigatsu",
+      "zh": "一月",
+      "en": "January",
+      "audio": "audio/date/month_01.mp3"
+    },
+    {
+      "value": 2,
+      "jp": "2月",
+      "kana": "にがつ",
+      "romaji": "nigatsu",
+      "zh": "二月",
+      "en": "February",
+      "audio": "audio/date/month_02.mp3"
+    },
+    {
+      "value": 3,
+      "jp": "3月",
+      "kana": "さんがつ",
+      "romaji": "sangatsu",
+      "zh": "三月",
+      "en": "March",
+      "audio": "audio/date/month_03.mp3"
+    },
+    {
+      "value": 4,
+      "jp": "4月",
+      "kana": "しがつ",
+      "romaji": "shigatsu",
+      "zh": "四月",
+      "en": "April",
+      "audio": "audio/date/month_04.mp3"
+    },
+    {
+      "value": 5,
+      "jp": "5月",
+      "kana": "ごがつ",
+      "romaji": "gogatsu",
+      "zh": "五月",
+      "en": "May",
+      "audio": "audio/date/month_05.mp3"
+    },
+    {
+      "value": 6,
+      "jp": "6月",
+      "kana": "ろくがつ",
+      "romaji": "rokugatsu",
+      "zh": "六月",
+      "en": "June",
+      "audio": "audio/date/month_06.mp3"
+    },
+    {
+      "value": 7,
+      "jp": "7月",
+      "kana": "しちがつ",
+      "romaji": "shichigatsu",
+      "zh": "七月",
+      "en": "July",
+      "audio": "audio/date/month_07.mp3"
+    },
+    {
+      "value": 8,
+      "jp": "8月",
+      "kana": "はちがつ",
+      "romaji": "hachigatsu",
+      "zh": "八月",
+      "en": "August",
+      "audio": "audio/date/month_08.mp3"
+    },
+    {
+      "value": 9,
+      "jp": "9月",
+      "kana": "くがつ",
+      "romaji": "kugatsu",
+      "zh": "九月",
+      "en": "September",
+      "audio": "audio/date/month_09.mp3"
+    },
+    {
+      "value": 10,
+      "jp": "10月",
+      "kana": "じゅうがつ",
+      "romaji": "jūgatsu",
+      "zh": "十月",
+      "en": "October",
+      "audio": "audio/date/month_10.mp3"
+    },
+    {
+      "value": 11,
+      "jp": "11月",
+      "kana": "じゅういちがつ",
+      "romaji": "jūichigatsu",
+      "zh": "十一月",
+      "en": "November",
+      "audio": "audio/date/month_11.mp3"
+    },
+    {
+      "value": 12,
+      "jp": "12月",
+      "kana": "じゅうにがつ",
+      "romaji": "jūnigatsu",
+      "zh": "十二月",
+      "en": "December",
+      "audio": "audio/date/month_12.mp3"
+    }
   ],
   "days": [
-    {"value":1,"jp":"1日","kana":"ついたち","romaji":"tsuitachi","zh":"1日","en":"1st"},
-    {"value":2,"jp":"2日","kana":"ふつか","romaji":"futsuka","zh":"2日","en":"2nd"},
-    {"value":3,"jp":"3日","kana":"みっか","romaji":"mikka","zh":"3日","en":"3rd"},
-    {"value":4,"jp":"4日","kana":"よっか","romaji":"yokka","zh":"4日","en":"4th"},
-    {"value":5,"jp":"5日","kana":"いつか","romaji":"itsuka","zh":"5日","en":"5th"},
-    {"value":6,"jp":"6日","kana":"むいか","romaji":"muika","zh":"6日","en":"6th"},
-    {"value":7,"jp":"7日","kana":"なのか","romaji":"nanoka","zh":"7日","en":"7th"},
-    {"value":8,"jp":"8日","kana":"ようか","romaji":"yōka","zh":"8日","en":"8th"},
-    {"value":9,"jp":"9日","kana":"ここのか","romaji":"kokonoka","zh":"9日","en":"9th"},
-    {"value":10,"jp":"10日","kana":"とおか","romaji":"tōka","zh":"10日","en":"10th"},
-    {"value":11,"jp":"11日","kana":"じゅういちにち","romaji":"jūichi-nichi","zh":"11日","en":"11th"},
-    {"value":12,"jp":"12日","kana":"じゅうににち","romaji":"jūni-nichi","zh":"12日","en":"12th"},
-    {"value":13,"jp":"13日","kana":"じゅうさんにち","romaji":"jūsan-nichi","zh":"13日","en":"13th"},
-    {"value":14,"jp":"14日","kana":"じゅうよっか","romaji":"jūyokka","zh":"14日","en":"14th"},
-    {"value":15,"jp":"15日","kana":"じゅうごにち","romaji":"jūgo-nichi","zh":"15日","en":"15th"},
-    {"value":16,"jp":"16日","kana":"じゅうろくにち","romaji":"jūroku-nichi","zh":"16日","en":"16th"},
-    {"value":17,"jp":"17日","kana":"じゅうしちにち","romaji":"jūshichi-nichi","zh":"17日","en":"17th"},
-    {"value":18,"jp":"18日","kana":"じゅうはちにち","romaji":"jūhachi-nichi","zh":"18日","en":"18th"},
-    {"value":19,"jp":"19日","kana":"じゅうくにち","romaji":"jūku-nichi","zh":"19日","en":"19th"},
-    {"value":20,"jp":"20日","kana":"はつか","romaji":"hatsuka","zh":"20日","en":"20th"},
-    {"value":21,"jp":"21日","kana":"にじゅういちにち","romaji":"nijūichi-nichi","zh":"21日","en":"21st"},
-    {"value":22,"jp":"22日","kana":"にじゅうににち","romaji":"nijūni-nichi","zh":"22日","en":"22nd"},
-    {"value":23,"jp":"23日","kana":"にじゅうさんにち","romaji":"nijūsan-nichi","zh":"23日","en":"23rd"},
-    {"value":24,"jp":"24日","kana":"にじゅうよっか","romaji":"nijūyokka","zh":"24日","en":"24th"},
-    {"value":25,"jp":"25日","kana":"にじゅうごにち","romaji":"nijūgo-nichi","zh":"25日","en":"25th"},
-    {"value":26,"jp":"26日","kana":"にじゅうろくにち","romaji":"nijūroku-nichi","zh":"26日","en":"26th"},
-    {"value":27,"jp":"27日","kana":"にじゅうしちにち","romaji":"nijūshichi-nichi","zh":"27日","en":"27th"},
-    {"value":28,"jp":"28日","kana":"にじゅうはちにち","romaji":"nijūhachi-nichi","zh":"28日","en":"28th"},
-    {"value":29,"jp":"29日","kana":"にじゅうくにち","romaji":"nijūku-nichi","zh":"29日","en":"29th"},
-    {"value":30,"jp":"30日","kana":"さんじゅうにち","romaji":"sanjū-nichi","zh":"30日","en":"30th"},
-    {"value":31,"jp":"31日","kana":"さんじゅういちにち","romaji":"sanjūichi-nichi","zh":"31日","en":"31st"}
+    {
+      "value": 1,
+      "jp": "1日",
+      "kana": "ついたち",
+      "romaji": "tsuitachi",
+      "zh": "1日",
+      "en": "1st",
+      "audio": "audio/date/day_01.mp3"
+    },
+    {
+      "value": 2,
+      "jp": "2日",
+      "kana": "ふつか",
+      "romaji": "futsuka",
+      "zh": "2日",
+      "en": "2nd",
+      "audio": "audio/date/day_02.mp3"
+    },
+    {
+      "value": 3,
+      "jp": "3日",
+      "kana": "みっか",
+      "romaji": "mikka",
+      "zh": "3日",
+      "en": "3rd",
+      "audio": "audio/date/day_03.mp3"
+    },
+    {
+      "value": 4,
+      "jp": "4日",
+      "kana": "よっか",
+      "romaji": "yokka",
+      "zh": "4日",
+      "en": "4th",
+      "audio": "audio/date/day_04.mp3"
+    },
+    {
+      "value": 5,
+      "jp": "5日",
+      "kana": "いつか",
+      "romaji": "itsuka",
+      "zh": "5日",
+      "en": "5th",
+      "audio": "audio/date/day_05.mp3"
+    },
+    {
+      "value": 6,
+      "jp": "6日",
+      "kana": "むいか",
+      "romaji": "muika",
+      "zh": "6日",
+      "en": "6th",
+      "audio": "audio/date/day_06.mp3"
+    },
+    {
+      "value": 7,
+      "jp": "7日",
+      "kana": "なのか",
+      "romaji": "nanoka",
+      "zh": "7日",
+      "en": "7th",
+      "audio": "audio/date/day_07.mp3"
+    },
+    {
+      "value": 8,
+      "jp": "8日",
+      "kana": "ようか",
+      "romaji": "yōka",
+      "zh": "8日",
+      "en": "8th",
+      "audio": "audio/date/day_08.mp3"
+    },
+    {
+      "value": 9,
+      "jp": "9日",
+      "kana": "ここのか",
+      "romaji": "kokonoka",
+      "zh": "9日",
+      "en": "9th",
+      "audio": "audio/date/day_09.mp3"
+    },
+    {
+      "value": 10,
+      "jp": "10日",
+      "kana": "とおか",
+      "romaji": "tōka",
+      "zh": "10日",
+      "en": "10th",
+      "audio": "audio/date/day_10.mp3"
+    },
+    {
+      "value": 11,
+      "jp": "11日",
+      "kana": "じゅういちにち",
+      "romaji": "jūichi-nichi",
+      "zh": "11日",
+      "en": "11th",
+      "audio": "audio/date/day_11.mp3"
+    },
+    {
+      "value": 12,
+      "jp": "12日",
+      "kana": "じゅうににち",
+      "romaji": "jūni-nichi",
+      "zh": "12日",
+      "en": "12th",
+      "audio": "audio/date/day_12.mp3"
+    },
+    {
+      "value": 13,
+      "jp": "13日",
+      "kana": "じゅうさんにち",
+      "romaji": "jūsan-nichi",
+      "zh": "13日",
+      "en": "13th",
+      "audio": "audio/date/day_13.mp3"
+    },
+    {
+      "value": 14,
+      "jp": "14日",
+      "kana": "じゅうよっか",
+      "romaji": "jūyokka",
+      "zh": "14日",
+      "en": "14th",
+      "audio": "audio/date/day_14.mp3"
+    },
+    {
+      "value": 15,
+      "jp": "15日",
+      "kana": "じゅうごにち",
+      "romaji": "jūgo-nichi",
+      "zh": "15日",
+      "en": "15th",
+      "audio": "audio/date/day_15.mp3"
+    },
+    {
+      "value": 16,
+      "jp": "16日",
+      "kana": "じゅうろくにち",
+      "romaji": "jūroku-nichi",
+      "zh": "16日",
+      "en": "16th",
+      "audio": "audio/date/day_16.mp3"
+    },
+    {
+      "value": 17,
+      "jp": "17日",
+      "kana": "じゅうしちにち",
+      "romaji": "jūshichi-nichi",
+      "zh": "17日",
+      "en": "17th",
+      "audio": "audio/date/day_17.mp3"
+    },
+    {
+      "value": 18,
+      "jp": "18日",
+      "kana": "じゅうはちにち",
+      "romaji": "jūhachi-nichi",
+      "zh": "18日",
+      "en": "18th",
+      "audio": "audio/date/day_18.mp3"
+    },
+    {
+      "value": 19,
+      "jp": "19日",
+      "kana": "じゅうくにち",
+      "romaji": "jūku-nichi",
+      "zh": "19日",
+      "en": "19th",
+      "audio": "audio/date/day_19.mp3"
+    },
+    {
+      "value": 20,
+      "jp": "20日",
+      "kana": "はつか",
+      "romaji": "hatsuka",
+      "zh": "20日",
+      "en": "20th",
+      "audio": "audio/date/day_20.mp3"
+    },
+    {
+      "value": 21,
+      "jp": "21日",
+      "kana": "にじゅういちにち",
+      "romaji": "nijūichi-nichi",
+      "zh": "21日",
+      "en": "21st",
+      "audio": "audio/date/day_21.mp3"
+    },
+    {
+      "value": 22,
+      "jp": "22日",
+      "kana": "にじゅうににち",
+      "romaji": "nijūni-nichi",
+      "zh": "22日",
+      "en": "22nd",
+      "audio": "audio/date/day_22.mp3"
+    },
+    {
+      "value": 23,
+      "jp": "23日",
+      "kana": "にじゅうさんにち",
+      "romaji": "nijūsan-nichi",
+      "zh": "23日",
+      "en": "23rd",
+      "audio": "audio/date/day_23.mp3"
+    },
+    {
+      "value": 24,
+      "jp": "24日",
+      "kana": "にじゅうよっか",
+      "romaji": "nijūyokka",
+      "zh": "24日",
+      "en": "24th",
+      "audio": "audio/date/day_24.mp3"
+    },
+    {
+      "value": 25,
+      "jp": "25日",
+      "kana": "にじゅうごにち",
+      "romaji": "nijūgo-nichi",
+      "zh": "25日",
+      "en": "25th",
+      "audio": "audio/date/day_25.mp3"
+    },
+    {
+      "value": 26,
+      "jp": "26日",
+      "kana": "にじゅうろくにち",
+      "romaji": "nijūroku-nichi",
+      "zh": "26日",
+      "en": "26th",
+      "audio": "audio/date/day_26.mp3"
+    },
+    {
+      "value": 27,
+      "jp": "27日",
+      "kana": "にじゅうしちにち",
+      "romaji": "nijūshichi-nichi",
+      "zh": "27日",
+      "en": "27th",
+      "audio": "audio/date/day_27.mp3"
+    },
+    {
+      "value": 28,
+      "jp": "28日",
+      "kana": "にじゅうはちにち",
+      "romaji": "nijūhachi-nichi",
+      "zh": "28日",
+      "en": "28th",
+      "audio": "audio/date/day_28.mp3"
+    },
+    {
+      "value": 29,
+      "jp": "29日",
+      "kana": "にじゅうくにち",
+      "romaji": "nijūku-nichi",
+      "zh": "29日",
+      "en": "29th",
+      "audio": "audio/date/day_29.mp3"
+    },
+    {
+      "value": 30,
+      "jp": "30日",
+      "kana": "さんじゅうにち",
+      "romaji": "sanjū-nichi",
+      "zh": "30日",
+      "en": "30th",
+      "audio": "audio/date/day_30.mp3"
+    },
+    {
+      "value": 31,
+      "jp": "31日",
+      "kana": "さんじゅういちにち",
+      "romaji": "sanjūichi-nichi",
+      "zh": "31日",
+      "en": "31st",
+      "audio": "audio/date/day_31.mp3"
+    }
   ],
   "weekdays": [
-    {"value":0,"jp":"日曜日","kana":"にちようび","romaji":"nichiyōbi","zh":"星期日","en":"Sunday"},
-    {"value":1,"jp":"月曜日","kana":"げつようび","romaji":"getsuyōbi","zh":"星期一","en":"Monday"},
-    {"value":2,"jp":"火曜日","kana":"かようび","romaji":"kayōbi","zh":"星期二","en":"Tuesday"},
-    {"value":3,"jp":"水曜日","kana":"すいようび","romaji":"suiyōbi","zh":"星期三","en":"Wednesday"},
-    {"value":4,"jp":"木曜日","kana":"もくようび","romaji":"mokuyōbi","zh":"星期四","en":"Thursday"},
-    {"value":5,"jp":"金曜日","kana":"きんようび","romaji":"kin’yōbi","zh":"星期五","en":"Friday"},
-    {"value":6,"jp":"土曜日","kana":"どようび","romaji":"doyōbi","zh":"星期六","en":"Saturday"}
+    {
+      "value": 0,
+      "jp": "日曜日",
+      "kana": "にちようび",
+      "romaji": "nichiyōbi",
+      "zh": "星期日",
+      "en": "Sunday",
+      "audio": "audio/date/weekday_sun.mp3"
+    },
+    {
+      "value": 1,
+      "jp": "月曜日",
+      "kana": "げつようび",
+      "romaji": "getsuyōbi",
+      "zh": "星期一",
+      "en": "Monday",
+      "audio": "audio/date/weekday_mon.mp3"
+    },
+    {
+      "value": 2,
+      "jp": "火曜日",
+      "kana": "かようび",
+      "romaji": "kayōbi",
+      "zh": "星期二",
+      "en": "Tuesday",
+      "audio": "audio/date/weekday_tue.mp3"
+    },
+    {
+      "value": 3,
+      "jp": "水曜日",
+      "kana": "すいようび",
+      "romaji": "suiyōbi",
+      "zh": "星期三",
+      "en": "Wednesday",
+      "audio": "audio/date/weekday_wed.mp3"
+    },
+    {
+      "value": 4,
+      "jp": "木曜日",
+      "kana": "もくようび",
+      "romaji": "mokuyōbi",
+      "zh": "星期四",
+      "en": "Thursday",
+      "audio": "audio/date/weekday_thu.mp3"
+    },
+    {
+      "value": 5,
+      "jp": "金曜日",
+      "kana": "きんようび",
+      "romaji": "kin’yōbi",
+      "zh": "星期五",
+      "en": "Friday",
+      "audio": "audio/date/weekday_fri.mp3"
+    },
+    {
+      "value": 6,
+      "jp": "土曜日",
+      "kana": "どようび",
+      "romaji": "doyōbi",
+      "zh": "星期六",
+      "en": "Saturday",
+      "audio": "audio/date/weekday_sat.mp3"
+    }
   ]
 }

@@ -1,8 +1,4 @@
 {
-  "meta": {
-    "name": "Japanese time parts for STPPOV training",
-    "version": "2026-06-05"
-  },
   "periods": [
     {
       "value": "auto",
@@ -10,7 +6,15 @@
       "kana": "じどう",
       "romaji": "jidō",
       "zh": "自動判斷上午/下午",
-      "en": "auto AM/PM"
+      "en": "auto"
+    },
+    {
+      "value": "24h",
+      "jp": "24時間制",
+      "kana": "にじゅうよじかんせい",
+      "romaji": "nijūyo-jikan sei",
+      "zh": "24小時制",
+      "en": "24-hour"
     },
     {
       "value": "gozen",
@@ -18,7 +22,8 @@
       "kana": "ごぜん",
       "romaji": "gozen",
       "zh": "上午",
-      "en": "a.m."
+      "en": "a.m.",
+      "audio": "audio/time/period_gozen.mp3"
     },
     {
       "value": "gogo",
@@ -26,15 +31,8 @@
       "kana": "ごご",
       "romaji": "gogo",
       "zh": "下午/晚上",
-      "en": "p.m."
-    },
-    {
-      "value": "24h",
-      "jp": "24時間制",
-      "kana": "にじゅうよじかんせい",
-      "romaji": "nijūyo-jikan-sei",
-      "zh": "24小時制",
-      "en": "24-hour format"
+      "en": "p.m.",
+      "audio": "audio/time/period_gogo.mp3"
     }
   ],
   "hours": [
@@ -44,7 +42,8 @@
       "kana": "れいじ",
       "romaji": "reiji",
       "zh": "0點",
-      "en": "0 o'clock"
+      "en": "0:00",
+      "audio": "audio/time/hour_00.mp3"
     },
     {
       "value": 1,
@@ -52,7 +51,8 @@
       "kana": "いちじ",
       "romaji": "ichiji",
       "zh": "1點",
-      "en": "1 o'clock"
+      "en": "1:00",
+      "audio": "audio/time/hour_01.mp3"
     },
     {
       "value": 2,
@@ -60,7 +60,8 @@
       "kana": "にじ",
       "romaji": "niji",
       "zh": "2點",
-      "en": "2 o'clock"
+      "en": "2:00",
+      "audio": "audio/time/hour_02.mp3"
     },
     {
       "value": 3,
@@ -68,7 +69,8 @@
       "kana": "さんじ",
       "romaji": "sanji",
       "zh": "3點",
-      "en": "3 o'clock"
+      "en": "3:00",
+      "audio": "audio/time/hour_03.mp3"
     },
     {
       "value": 4,
@@ -76,7 +78,8 @@
       "kana": "よじ",
       "romaji": "yoji",
       "zh": "4點",
-      "en": "4 o'clock"
+      "en": "4:00",
+      "audio": "audio/time/hour_04.mp3"
     },
     {
       "value": 5,
@@ -84,7 +87,8 @@
       "kana": "ごじ",
       "romaji": "goji",
       "zh": "5點",
-      "en": "5 o'clock"
+      "en": "5:00",
+      "audio": "audio/time/hour_05.mp3"
     },
     {
       "value": 6,
@@ -92,7 +96,8 @@
       "kana": "ろくじ",
       "romaji": "rokuji",
       "zh": "6點",
-      "en": "6 o'clock"
+      "en": "6:00",
+      "audio": "audio/time/hour_06.mp3"
     },
     {
       "value": 7,
@@ -100,7 +105,8 @@
       "kana": "しちじ",
       "romaji": "shichiji",
       "zh": "7點",
-      "en": "7 o'clock"
+      "en": "7:00",
+      "audio": "audio/time/hour_07.mp3"
     },
     {
       "value": 8,
@@ -108,7 +114,8 @@
       "kana": "はちじ",
       "romaji": "hachiji",
       "zh": "8點",
-      "en": "8 o'clock"
+      "en": "8:00",
+      "audio": "audio/time/hour_08.mp3"
     },
     {
       "value": 9,
@@ -116,7 +123,8 @@
       "kana": "くじ",
       "romaji": "kuji",
       "zh": "9點",
-      "en": "9 o'clock"
+      "en": "9:00",
+      "audio": "audio/time/hour_09.mp3"
     },
     {
       "value": 10,
@@ -124,7 +132,8 @@
       "kana": "じゅうじ",
       "romaji": "jūji",
       "zh": "10點",
-      "en": "10 o'clock"
+      "en": "10:00",
+      "audio": "audio/time/hour_10.mp3"
     },
     {
       "value": 11,
@@ -132,7 +141,8 @@
       "kana": "じゅういちじ",
       "romaji": "jūichiji",
       "zh": "11點",
-      "en": "11 o'clock"
+      "en": "11:00",
+      "audio": "audio/time/hour_11.mp3"
     },
     {
       "value": 12,
@@ -140,7 +150,8 @@
       "kana": "じゅうにじ",
       "romaji": "jūniji",
       "zh": "12點",
-      "en": "12 o'clock"
+      "en": "12:00",
+      "audio": "audio/time/hour_12.mp3"
     },
     {
       "value": 13,
@@ -148,7 +159,8 @@
       "kana": "じゅうさんじ",
       "romaji": "jūsanji",
       "zh": "13點",
-      "en": "13 o'clock"
+      "en": "13:00",
+      "audio": "audio/time/hour_13.mp3"
     },
     {
       "value": 14,
@@ -156,7 +168,8 @@
       "kana": "じゅうよじ",
       "romaji": "jūyoji",
       "zh": "14點",
-      "en": "14 o'clock"
+      "en": "14:00",
+      "audio": "audio/time/hour_14.mp3"
     },
     {
       "value": 15,
@@ -164,7 +177,8 @@
       "kana": "じゅうごじ",
       "romaji": "jūgoji",
       "zh": "15點",
-      "en": "15 o'clock"
+      "en": "15:00",
+      "audio": "audio/time/hour_15.mp3"
     },
     {
       "value": 16,
@@ -172,7 +186,8 @@
       "kana": "じゅうろくじ",
       "romaji": "jūrokuji",
       "zh": "16點",
-      "en": "16 o'clock"
+      "en": "16:00",
+      "audio": "audio/time/hour_16.mp3"
     },
     {
       "value": 17,
@@ -180,7 +195,8 @@
       "kana": "じゅうしちじ",
       "romaji": "jūshichiji",
       "zh": "17點",
-      "en": "17 o'clock"
+      "en": "17:00",
+      "audio": "audio/time/hour_17.mp3"
     },
     {
       "value": 18,
@@ -188,7 +204,8 @@
       "kana": "じゅうはちじ",
       "romaji": "jūhachiji",
       "zh": "18點",
-      "en": "18 o'clock"
+      "en": "18:00",
+      "audio": "audio/time/hour_18.mp3"
     },
     {
       "value": 19,
@@ -196,7 +213,8 @@
       "kana": "じゅうくじ",
       "romaji": "jūkuji",
       "zh": "19點",
-      "en": "19 o'clock"
+      "en": "19:00",
+      "audio": "audio/time/hour_19.mp3"
     },
     {
       "value": 20,
@@ -204,7 +222,8 @@
       "kana": "にじゅうじ",
       "romaji": "nijūji",
       "zh": "20點",
-      "en": "20 o'clock"
+      "en": "20:00",
+      "audio": "audio/time/hour_20.mp3"
     },
     {
       "value": 21,
@@ -212,7 +231,8 @@
       "kana": "にじゅういちじ",
       "romaji": "nijūichiji",
       "zh": "21點",
-      "en": "21 o'clock"
+      "en": "21:00",
+      "audio": "audio/time/hour_21.mp3"
     },
     {
       "value": 22,
@@ -220,7 +240,8 @@
       "kana": "にじゅうにじ",
       "romaji": "nijūniji",
       "zh": "22點",
-      "en": "22 o'clock"
+      "en": "22:00",
+      "audio": "audio/time/hour_22.mp3"
     },
     {
       "value": 23,
@@ -228,7 +249,8 @@
       "kana": "にじゅうさんじ",
       "romaji": "nijūsanji",
       "zh": "23點",
-      "en": "23 o'clock"
+      "en": "23:00",
+      "audio": "audio/time/hour_23.mp3"
     }
   ],
   "minutes": [
@@ -238,7 +260,8 @@
       "kana": "れいふん",
       "romaji": "reifun",
       "zh": "0分",
-      "en": "0 minutes"
+      "en": "0 minutes",
+      "audio": "audio/time/minute_00.mp3"
     },
     {
       "value": 1,
@@ -246,7 +269,8 @@
       "kana": "いっぷん",
       "romaji": "ippun",
       "zh": "1分",
-      "en": "1 minute"
+      "en": "1 minutes",
+      "audio": "audio/time/minute_01.mp3"
     },
     {
       "value": 2,
@@ -254,7 +278,8 @@
       "kana": "にふん",
       "romaji": "nifun",
       "zh": "2分",
-      "en": "2 minutes"
+      "en": "2 minutes",
+      "audio": "audio/time/minute_02.mp3"
     },
     {
       "value": 3,
@@ -262,7 +287,8 @@
       "kana": "さんぷん",
       "romaji": "sanpun",
       "zh": "3分",
-      "en": "3 minutes"
+      "en": "3 minutes",
+      "audio": "audio/time/minute_03.mp3"
     },
     {
       "value": 4,
@@ -270,7 +296,8 @@
       "kana": "よんぷん",
       "romaji": "yonpun",
       "zh": "4分",
-      "en": "4 minutes"
+      "en": "4 minutes",
+      "audio": "audio/time/minute_04.mp3"
     },
     {
       "value": 5,
@@ -278,7 +305,8 @@
       "kana": "ごふん",
       "romaji": "gofun",
       "zh": "5分",
-      "en": "5 minutes"
+      "en": "5 minutes",
+      "audio": "audio/time/minute_05.mp3"
     },
     {
       "value": 6,
@@ -286,7 +314,8 @@
       "kana": "ろっぷん",
       "romaji": "roppun",
       "zh": "6分",
-      "en": "6 minutes"
+      "en": "6 minutes",
+      "audio": "audio/time/minute_06.mp3"
     },
     {
       "value": 7,
@@ -294,7 +323,8 @@
       "kana": "ななふん",
       "romaji": "nanafun",
       "zh": "7分",
-      "en": "7 minutes"
+      "en": "7 minutes",
+      "audio": "audio/time/minute_07.mp3"
     },
     {
       "value": 8,
@@ -302,7 +332,8 @@
       "kana": "はっぷん",
       "romaji": "happun",
       "zh": "8分",
-      "en": "8 minutes"
+      "en": "8 minutes",
+      "audio": "audio/time/minute_08.mp3"
     },
     {
       "value": 9,
@@ -310,7 +341,8 @@
       "kana": "きゅうふん",
       "romaji": "kyūfun",
       "zh": "9分",
-      "en": "9 minutes"
+      "en": "9 minutes",
+      "audio": "audio/time/minute_09.mp3"
     },
     {
       "value": 10,
@@ -318,79 +350,89 @@
       "kana": "じゅっぷん",
       "romaji": "juppun",
       "zh": "10分",
-      "en": "10 minutes"
+      "en": "10 minutes",
+      "audio": "audio/time/minute_10.mp3"
     },
     {
       "value": 11,
       "jp": "11分",
       "kana": "じゅういっぷん",
-      "romaji": "jū ippun",
+      "romaji": "jūippun",
       "zh": "11分",
-      "en": "11 minutes"
+      "en": "11 minutes",
+      "audio": "audio/time/minute_11.mp3"
     },
     {
       "value": 12,
       "jp": "12分",
       "kana": "じゅうにふん",
-      "romaji": "jū nifun",
+      "romaji": "jūnifun",
       "zh": "12分",
-      "en": "12 minutes"
+      "en": "12 minutes",
+      "audio": "audio/time/minute_12.mp3"
     },
     {
       "value": 13,
       "jp": "13分",
       "kana": "じゅうさんぷん",
-      "romaji": "jū sanpun",
+      "romaji": "jūsanpun",
       "zh": "13分",
-      "en": "13 minutes"
+      "en": "13 minutes",
+      "audio": "audio/time/minute_13.mp3"
     },
     {
       "value": 14,
       "jp": "14分",
       "kana": "じゅうよんぷん",
-      "romaji": "jū yonpun",
+      "romaji": "jūyonpun",
       "zh": "14分",
-      "en": "14 minutes"
+      "en": "14 minutes",
+      "audio": "audio/time/minute_14.mp3"
     },
     {
       "value": 15,
       "jp": "15分",
       "kana": "じゅうごふん",
-      "romaji": "jū gofun",
+      "romaji": "jūgofun",
       "zh": "15分",
-      "en": "15 minutes"
+      "en": "15 minutes",
+      "audio": "audio/time/minute_15.mp3"
     },
     {
       "value": 16,
       "jp": "16分",
       "kana": "じゅうろっぷん",
-      "romaji": "jū roppun",
+      "romaji": "jūroppun",
       "zh": "16分",
-      "en": "16 minutes"
+      "en": "16 minutes",
+      "audio": "audio/time/minute_16.mp3"
     },
     {
       "value": 17,
       "jp": "17分",
       "kana": "じゅうななふん",
-      "romaji": "jū nanafun",
+      "romaji": "jūnanafun",
       "zh": "17分",
-      "en": "17 minutes"
+      "en": "17 minutes",
+      "audio": "audio/time/minute_17.mp3"
     },
     {
       "value": 18,
       "jp": "18分",
       "kana": "じゅうはっぷん",
-      "romaji": "jū happun",
+      "romaji": "jūhappun",
       "zh": "18分",
-      "en": "18 minutes"
+      "en": "18 minutes",
+      "audio": "audio/time/minute_18.mp3"
     },
     {
       "value": 19,
       "jp": "19分",
       "kana": "じゅうきゅうふん",
-      "romaji": "jū kyūfun",
+      "romaji": "jūkyūfun",
       "zh": "19分",
-      "en": "19 minutes"
+      "en": "19 minutes",
+      "audio": "audio/time/minute_19.mp3"
     },
     {
       "value": 20,
@@ -398,79 +440,89 @@
       "kana": "にじゅっぷん",
       "romaji": "nijuppun",
       "zh": "20分",
-      "en": "20 minutes"
+      "en": "20 minutes",
+      "audio": "audio/time/minute_20.mp3"
     },
     {
       "value": 21,
       "jp": "21分",
       "kana": "にじゅういっぷん",
-      "romaji": "nijū ippun",
+      "romaji": "nijūippun",
       "zh": "21分",
-      "en": "21 minutes"
+      "en": "21 minutes",
+      "audio": "audio/time/minute_21.mp3"
     },
     {
       "value": 22,
       "jp": "22分",
       "kana": "にじゅうにふん",
-      "romaji": "nijū nifun",
+      "romaji": "nijūnifun",
       "zh": "22分",
-      "en": "22 minutes"
+      "en": "22 minutes",
+      "audio": "audio/time/minute_22.mp3"
     },
     {
       "value": 23,
       "jp": "23分",
       "kana": "にじゅうさんぷん",
-      "romaji": "nijū sanpun",
+      "romaji": "nijūsanpun",
       "zh": "23分",
-      "en": "23 minutes"
+      "en": "23 minutes",
+      "audio": "audio/time/minute_23.mp3"
     },
     {
       "value": 24,
       "jp": "24分",
       "kana": "にじゅうよんぷん",
-      "romaji": "nijū yonpun",
+      "romaji": "nijūyonpun",
       "zh": "24分",
-      "en": "24 minutes"
+      "en": "24 minutes",
+      "audio": "audio/time/minute_24.mp3"
     },
     {
       "value": 25,
       "jp": "25分",
       "kana": "にじゅうごふん",
-      "romaji": "nijū gofun",
+      "romaji": "nijūgofun",
       "zh": "25分",
-      "en": "25 minutes"
+      "en": "25 minutes",
+      "audio": "audio/time/minute_25.mp3"
     },
     {
       "value": 26,
       "jp": "26分",
       "kana": "にじゅうろっぷん",
-      "romaji": "nijū roppun",
+      "romaji": "nijūroppun",
       "zh": "26分",
-      "en": "26 minutes"
+      "en": "26 minutes",
+      "audio": "audio/time/minute_26.mp3"
     },
     {
       "value": 27,
       "jp": "27分",
       "kana": "にじゅうななふん",
-      "romaji": "nijū nanafun",
+      "romaji": "nijūnanafun",
       "zh": "27分",
-      "en": "27 minutes"
+      "en": "27 minutes",
+      "audio": "audio/time/minute_27.mp3"
     },
     {
       "value": 28,
       "jp": "28分",
       "kana": "にじゅうはっぷん",
-      "romaji": "nijū happun",
+      "romaji": "nijūhappun",
       "zh": "28分",
-      "en": "28 minutes"
+      "en": "28 minutes",
+      "audio": "audio/time/minute_28.mp3"
     },
     {
       "value": 29,
       "jp": "29分",
       "kana": "にじゅうきゅうふん",
-      "romaji": "nijū kyūfun",
+      "romaji": "nijūkyūfun",
       "zh": "29分",
-      "en": "29 minutes"
+      "en": "29 minutes",
+      "audio": "audio/time/minute_29.mp3"
     },
     {
       "value": 30,
@@ -478,79 +530,89 @@
       "kana": "さんじゅっぷん",
       "romaji": "sanjuppun",
       "zh": "30分",
-      "en": "30 minutes"
+      "en": "30 minutes",
+      "audio": "audio/time/minute_30.mp3"
     },
     {
       "value": 31,
       "jp": "31分",
       "kana": "さんじゅういっぷん",
-      "romaji": "sanjū ippun",
+      "romaji": "sanjūippun",
       "zh": "31分",
-      "en": "31 minutes"
+      "en": "31 minutes",
+      "audio": "audio/time/minute_31.mp3"
     },
     {
       "value": 32,
       "jp": "32分",
       "kana": "さんじゅうにふん",
-      "romaji": "sanjū nifun",
+      "romaji": "sanjūnifun",
       "zh": "32分",
-      "en": "32 minutes"
+      "en": "32 minutes",
+      "audio": "audio/time/minute_32.mp3"
     },
     {
       "value": 33,
       "jp": "33分",
       "kana": "さんじゅうさんぷん",
-      "romaji": "sanjū sanpun",
+      "romaji": "sanjūsanpun",
       "zh": "33分",
-      "en": "33 minutes"
+      "en": "33 minutes",
+      "audio": "audio/time/minute_33.mp3"
     },
     {
       "value": 34,
       "jp": "34分",
       "kana": "さんじゅうよんぷん",
-      "romaji": "sanjū yonpun",
+      "romaji": "sanjūyonpun",
       "zh": "34分",
-      "en": "34 minutes"
+      "en": "34 minutes",
+      "audio": "audio/time/minute_34.mp3"
     },
     {
       "value": 35,
       "jp": "35分",
       "kana": "さんじゅうごふん",
-      "romaji": "sanjū gofun",
+      "romaji": "sanjūgofun",
       "zh": "35分",
-      "en": "35 minutes"
+      "en": "35 minutes",
+      "audio": "audio/time/minute_35.mp3"
     },
     {
       "value": 36,
       "jp": "36分",
       "kana": "さんじゅうろっぷん",
-      "romaji": "sanjū roppun",
+      "romaji": "sanjūroppun",
       "zh": "36分",
-      "en": "36 minutes"
+      "en": "36 minutes",
+      "audio": "audio/time/minute_36.mp3"
     },
     {
       "value": 37,
       "jp": "37分",
       "kana": "さんじゅうななふん",
-      "romaji": "sanjū nanafun",
+      "romaji": "sanjūnanafun",
       "zh": "37分",
-      "en": "37 minutes"
+      "en": "37 minutes",
+      "audio": "audio/time/minute_37.mp3"
     },
     {
       "value": 38,
       "jp": "38分",
       "kana": "さんじゅうはっぷん",
-      "romaji": "sanjū happun",
+      "romaji": "sanjūhappun",
       "zh": "38分",
-      "en": "38 minutes"
+      "en": "38 minutes",
+      "audio": "audio/time/minute_38.mp3"
     },
     {
       "value": 39,
       "jp": "39分",
       "kana": "さんじゅうきゅうふん",
-      "romaji": "sanjū kyūfun",
+      "romaji": "sanjūkyūfun",
       "zh": "39分",
-      "en": "39 minutes"
+      "en": "39 minutes",
+      "audio": "audio/time/minute_39.mp3"
     },
     {
       "value": 40,
@@ -558,79 +620,89 @@
       "kana": "よんじゅっぷん",
       "romaji": "yonjuppun",
       "zh": "40分",
-      "en": "40 minutes"
+      "en": "40 minutes",
+      "audio": "audio/time/minute_40.mp3"
     },
     {
       "value": 41,
       "jp": "41分",
       "kana": "よんじゅういっぷん",
-      "romaji": "yonjū ippun",
+      "romaji": "yonjūippun",
       "zh": "41分",
-      "en": "41 minutes"
+      "en": "41 minutes",
+      "audio": "audio/time/minute_41.mp3"
     },
     {
       "value": 42,
       "jp": "42分",
       "kana": "よんじゅうにふん",
-      "romaji": "yonjū nifun",
+      "romaji": "yonjūnifun",
       "zh": "42分",
-      "en": "42 minutes"
+      "en": "42 minutes",
+      "audio": "audio/time/minute_42.mp3"
     },
     {
       "value": 43,
       "jp": "43分",
       "kana": "よんじゅうさんぷん",
-      "romaji": "yonjū sanpun",
+      "romaji": "yonjūsanpun",
       "zh": "43分",
-      "en": "43 minutes"
+      "en": "43 minutes",
+      "audio": "audio/time/minute_43.mp3"
     },
     {
       "value": 44,
       "jp": "44分",
       "kana": "よんじゅうよんぷん",
-      "romaji": "yonjū yonpun",
+      "romaji": "yonjūyonpun",
       "zh": "44分",
-      "en": "44 minutes"
+      "en": "44 minutes",
+      "audio": "audio/time/minute_44.mp3"
     },
     {
       "value": 45,
       "jp": "45分",
       "kana": "よんじゅうごふん",
-      "romaji": "yonjū gofun",
+      "romaji": "yonjūgofun",
       "zh": "45分",
-      "en": "45 minutes"
+      "en": "45 minutes",
+      "audio": "audio/time/minute_45.mp3"
     },
     {
       "value": 46,
       "jp": "46分",
       "kana": "よんじゅうろっぷん",
-      "romaji": "yonjū roppun",
+      "romaji": "yonjūroppun",
       "zh": "46分",
-      "en": "46 minutes"
+      "en": "46 minutes",
+      "audio": "audio/time/minute_46.mp3"
     },
     {
       "value": 47,
       "jp": "47分",
       "kana": "よんじゅうななふん",
-      "romaji": "yonjū nanafun",
+      "romaji": "yonjūnanafun",
       "zh": "47分",
-      "en": "47 minutes"
+      "en": "47 minutes",
+      "audio": "audio/time/minute_47.mp3"
     },
     {
       "value": 48,
       "jp": "48分",
       "kana": "よんじゅうはっぷん",
-      "romaji": "yonjū happun",
+      "romaji": "yonjūhappun",
       "zh": "48分",
-      "en": "48 minutes"
+      "en": "48 minutes",
+      "audio": "audio/time/minute_48.mp3"
     },
     {
       "value": 49,
       "jp": "49分",
       "kana": "よんじゅうきゅうふん",
-      "romaji": "yonjū kyūfun",
+      "romaji": "yonjūkyūfun",
       "zh": "49分",
-      "en": "49 minutes"
+      "en": "49 minutes",
+      "audio": "audio/time/minute_49.mp3"
     },
     {
       "value": 50,
@@ -638,79 +710,89 @@
       "kana": "ごじゅっぷん",
       "romaji": "gojuppun",
       "zh": "50分",
-      "en": "50 minutes"
+      "en": "50 minutes",
+      "audio": "audio/time/minute_50.mp3"
     },
     {
       "value": 51,
       "jp": "51分",
       "kana": "ごじゅういっぷん",
-      "romaji": "gojū ippun",
+      "romaji": "gojūippun",
       "zh": "51分",
-      "en": "51 minutes"
+      "en": "51 minutes",
+      "audio": "audio/time/minute_51.mp3"
     },
     {
       "value": 52,
       "jp": "52分",
       "kana": "ごじゅうにふん",
-      "romaji": "gojū nifun",
+      "romaji": "gojūnifun",
       "zh": "52分",
-      "en": "52 minutes"
+      "en": "52 minutes",
+      "audio": "audio/time/minute_52.mp3"
     },
     {
       "value": 53,
       "jp": "53分",
       "kana": "ごじゅうさんぷん",
-      "romaji": "gojū sanpun",
+      "romaji": "gojūsanpun",
       "zh": "53分",
-      "en": "53 minutes"
+      "en": "53 minutes",
+      "audio": "audio/time/minute_53.mp3"
     },
     {
       "value": 54,
       "jp": "54分",
       "kana": "ごじゅうよんぷん",
-      "romaji": "gojū yonpun",
+      "romaji": "gojūyonpun",
       "zh": "54分",
-      "en": "54 minutes"
+      "en": "54 minutes",
+      "audio": "audio/time/minute_54.mp3"
     },
     {
       "value": 55,
       "jp": "55分",
       "kana": "ごじゅうごふん",
-      "romaji": "gojū gofun",
+      "romaji": "gojūgofun",
       "zh": "55分",
-      "en": "55 minutes"
+      "en": "55 minutes",
+      "audio": "audio/time/minute_55.mp3"
     },
     {
       "value": 56,
       "jp": "56分",
       "kana": "ごじゅうろっぷん",
-      "romaji": "gojū roppun",
+      "romaji": "gojūroppun",
       "zh": "56分",
-      "en": "56 minutes"
+      "en": "56 minutes",
+      "audio": "audio/time/minute_56.mp3"
     },
     {
       "value": 57,
       "jp": "57分",
       "kana": "ごじゅうななふん",
-      "romaji": "gojū nanafun",
+      "romaji": "gojūnanafun",
       "zh": "57分",
-      "en": "57 minutes"
+      "en": "57 minutes",
+      "audio": "audio/time/minute_57.mp3"
     },
     {
       "value": 58,
       "jp": "58分",
       "kana": "ごじゅうはっぷん",
-      "romaji": "gojū happun",
+      "romaji": "gojūhappun",
       "zh": "58分",
-      "en": "58 minutes"
+      "en": "58 minutes",
+      "audio": "audio/time/minute_58.mp3"
     },
     {
       "value": 59,
       "jp": "59分",
       "kana": "ごじゅうきゅうふん",
-      "romaji": "gojū kyūfun",
+      "romaji": "gojūkyūfun",
       "zh": "59分",
-      "en": "59 minutes"
+      "en": "59 minutes",
+      "audio": "audio/time/minute_59.mp3"
     }
   ],
   "seconds": [
@@ -720,7 +802,8 @@
       "kana": "れいびょう",
       "romaji": "reibyō",
       "zh": "0秒",
-      "en": "0 seconds"
+      "en": "0 seconds",
+      "audio": "audio/time/second_00.mp3"
     },
     {
       "value": 1,
@@ -728,7 +811,8 @@
       "kana": "いちびょう",
       "romaji": "ichibyō",
       "zh": "1秒",
-      "en": "1 second"
+      "en": "1 seconds",
+      "audio": "audio/time/second_01.mp3"
     },
     {
       "value": 2,
@@ -736,7 +820,8 @@
       "kana": "にびょう",
       "romaji": "nibyō",
       "zh": "2秒",
-      "en": "2 seconds"
+      "en": "2 seconds",
+      "audio": "audio/time/second_02.mp3"
     },
     {
       "value": 3,
@@ -744,7 +829,8 @@
       "kana": "さんびょう",
       "romaji": "sanbyō",
       "zh": "3秒",
-      "en": "3 seconds"
+      "en": "3 seconds",
+      "audio": "audio/time/second_03.mp3"
     },
     {
       "value": 4,
@@ -752,7 +838,8 @@
       "kana": "よんびょう",
       "romaji": "yonbyō",
       "zh": "4秒",
-      "en": "4 seconds"
+      "en": "4 seconds",
+      "audio": "audio/time/second_04.mp3"
     },
     {
       "value": 5,
@@ -760,7 +847,8 @@
       "kana": "ごびょう",
       "romaji": "gobyō",
       "zh": "5秒",
-      "en": "5 seconds"
+      "en": "5 seconds",
+      "audio": "audio/time/second_05.mp3"
     },
     {
       "value": 6,
@@ -768,7 +856,8 @@
       "kana": "ろくびょう",
       "romaji": "rokubyō",
       "zh": "6秒",
-      "en": "6 seconds"
+      "en": "6 seconds",
+      "audio": "audio/time/second_06.mp3"
     },
     {
       "value": 7,
@@ -776,7 +865,8 @@
       "kana": "ななびょう",
       "romaji": "nanabyō",
       "zh": "7秒",
-      "en": "7 seconds"
+      "en": "7 seconds",
+      "audio": "audio/time/second_07.mp3"
     },
     {
       "value": 8,
@@ -784,7 +874,8 @@
       "kana": "はちびょう",
       "romaji": "hachibyō",
       "zh": "8秒",
-      "en": "8 seconds"
+      "en": "8 seconds",
+      "audio": "audio/time/second_08.mp3"
     },
     {
       "value": 9,
@@ -792,7 +883,8 @@
       "kana": "きゅうびょう",
       "romaji": "kyūbyō",
       "zh": "9秒",
-      "en": "9 seconds"
+      "en": "9 seconds",
+      "audio": "audio/time/second_09.mp3"
     },
     {
       "value": 10,
@@ -800,79 +892,89 @@
       "kana": "じゅうびょう",
       "romaji": "jūbyō",
       "zh": "10秒",
-      "en": "10 seconds"
+      "en": "10 seconds",
+      "audio": "audio/time/second_10.mp3"
     },
     {
       "value": 11,
       "jp": "11秒",
       "kana": "じゅういちびょう",
-      "romaji": "jū ichibyō",
+      "romaji": "jūichibyō",
       "zh": "11秒",
-      "en": "11 seconds"
+      "en": "11 seconds",
+      "audio": "audio/time/second_11.mp3"
     },
     {
       "value": 12,
       "jp": "12秒",
       "kana": "じゅうにびょう",
-      "romaji": "jū nibyō",
+      "romaji": "jūnibyō",
       "zh": "12秒",
-      "en": "12 seconds"
+      "en": "12 seconds",
+      "audio": "audio/time/second_12.mp3"
     },
     {
       "value": 13,
       "jp": "13秒",
       "kana": "じゅうさんびょう",
-      "romaji": "jū sanbyō",
+      "romaji": "jūsanbyō",
       "zh": "13秒",
-      "en": "13 seconds"
+      "en": "13 seconds",
+      "audio": "audio/time/second_13.mp3"
     },
     {
       "value": 14,
       "jp": "14秒",
       "kana": "じゅうよんびょう",
-      "romaji": "jū yonbyō",
+      "romaji": "jūyonbyō",
       "zh": "14秒",
-      "en": "14 seconds"
+      "en": "14 seconds",
+      "audio": "audio/time/second_14.mp3"
     },
     {
       "value": 15,
       "jp": "15秒",
       "kana": "じゅうごびょう",
-      "romaji": "jū gobyō",
+      "romaji": "jūgobyō",
       "zh": "15秒",
-      "en": "15 seconds"
+      "en": "15 seconds",
+      "audio": "audio/time/second_15.mp3"
     },
     {
       "value": 16,
       "jp": "16秒",
       "kana": "じゅうろくびょう",
-      "romaji": "jū rokubyō",
+      "romaji": "jūrokubyō",
       "zh": "16秒",
-      "en": "16 seconds"
+      "en": "16 seconds",
+      "audio": "audio/time/second_16.mp3"
     },
     {
       "value": 17,
       "jp": "17秒",
       "kana": "じゅうななびょう",
-      "romaji": "jū nanabyō",
+      "romaji": "jūnanabyō",
       "zh": "17秒",
-      "en": "17 seconds"
+      "en": "17 seconds",
+      "audio": "audio/time/second_17.mp3"
     },
     {
       "value": 18,
       "jp": "18秒",
       "kana": "じゅうはちびょう",
-      "romaji": "jū hachibyō",
+      "romaji": "jūhachibyō",
       "zh": "18秒",
-      "en": "18 seconds"
+      "en": "18 seconds",
+      "audio": "audio/time/second_18.mp3"
     },
     {
       "value": 19,
       "jp": "19秒",
       "kana": "じゅうきゅうびょう",
-      "romaji": "jū kyūbyō",
+      "romaji": "jūkyūbyō",
       "zh": "19秒",
-      "en": "19 seconds"
+      "en": "19 seconds",
+      "audio": "audio/time/second_19.mp3"
     },
     {
       "value": 20,
@@ -880,79 +982,89 @@
       "kana": "にじゅうびょう",
       "romaji": "nijūbyō",
       "zh": "20秒",
-      "en": "20 seconds"
+      "en": "20 seconds",
+      "audio": "audio/time/second_20.mp3"
     },
     {
       "value": 21,
       "jp": "21秒",
       "kana": "にじゅういちびょう",
-      "romaji": "nijū ichibyō",
+      "romaji": "nijūichibyō",
       "zh": "21秒",
-      "en": "21 seconds"
+      "en": "21 seconds",
+      "audio": "audio/time/second_21.mp3"
     },
     {
       "value": 22,
       "jp": "22秒",
       "kana": "にじゅうにびょう",
-      "romaji": "nijū nibyō",
+      "romaji": "nijūnibyō",
       "zh": "22秒",
-      "en": "22 seconds"
+      "en": "22 seconds",
+      "audio": "audio/time/second_22.mp3"
     },
     {
       "value": 23,
       "jp": "23秒",
       "kana": "にじゅうさんびょう",
-      "romaji": "nijū sanbyō",
+      "romaji": "nijūsanbyō",
       "zh": "23秒",
-      "en": "23 seconds"
+      "en": "23 seconds",
+      "audio": "audio/time/second_23.mp3"
     },
     {
       "value": 24,
       "jp": "24秒",
       "kana": "にじゅうよんびょう",
-      "romaji": "nijū yonbyō",
+      "romaji": "nijūyonbyō",
       "zh": "24秒",
-      "en": "24 seconds"
+      "en": "24 seconds",
+      "audio": "audio/time/second_24.mp3"
     },
     {
       "value": 25,
       "jp": "25秒",
       "kana": "にじゅうごびょう",
-      "romaji": "nijū gobyō",
+      "romaji": "nijūgobyō",
       "zh": "25秒",
-      "en": "25 seconds"
+      "en": "25 seconds",
+      "audio": "audio/time/second_25.mp3"
     },
     {
       "value": 26,
       "jp": "26秒",
       "kana": "にじゅうろくびょう",
-      "romaji": "nijū rokubyō",
+      "romaji": "nijūrokubyō",
       "zh": "26秒",
-      "en": "26 seconds"
+      "en": "26 seconds",
+      "audio": "audio/time/second_26.mp3"
     },
     {
       "value": 27,
       "jp": "27秒",
       "kana": "にじゅうななびょう",
-      "romaji": "nijū nanabyō",
+      "romaji": "nijūnanabyō",
       "zh": "27秒",
-      "en": "27 seconds"
+      "en": "27 seconds",
+      "audio": "audio/time/second_27.mp3"
     },
     {
       "value": 28,
       "jp": "28秒",
       "kana": "にじゅうはちびょう",
-      "romaji": "nijū hachibyō",
+      "romaji": "nijūhachibyō",
       "zh": "28秒",
-      "en": "28 seconds"
+      "en": "28 seconds",
+      "audio": "audio/time/second_28.mp3"
     },
     {
       "value": 29,
       "jp": "29秒",
       "kana": "にじゅうきゅうびょう",
-      "romaji": "nijū kyūbyō",
+      "romaji": "nijūkyūbyō",
       "zh": "29秒",
-      "en": "29 seconds"
+      "en": "29 seconds",
+      "audio": "audio/time/second_29.mp3"
     },
     {
       "value": 30,
@@ -960,79 +1072,89 @@
       "kana": "さんじゅうびょう",
       "romaji": "sanjūbyō",
       "zh": "30秒",
-      "en": "30 seconds"
+      "en": "30 seconds",
+      "audio": "audio/time/second_30.mp3"
     },
     {
       "value": 31,
       "jp": "31秒",
       "kana": "さんじゅういちびょう",
-      "romaji": "sanjū ichibyō",
+      "romaji": "sanjūichibyō",
       "zh": "31秒",
-      "en": "31 seconds"
+      "en": "31 seconds",
+      "audio": "audio/time/second_31.mp3"
     },
     {
       "value": 32,
       "jp": "32秒",
       "kana": "さんじゅうにびょう",
-      "romaji": "sanjū nibyō",
+      "romaji": "sanjūnibyō",
       "zh": "32秒",
-      "en": "32 seconds"
+      "en": "32 seconds",
+      "audio": "audio/time/second_32.mp3"
     },
     {
       "value": 33,
       "jp": "33秒",
       "kana": "さんじゅうさんびょう",
-      "romaji": "sanjū sanbyō",
+      "romaji": "sanjūsanbyō",
       "zh": "33秒",
-      "en": "33 seconds"
+      "en": "33 seconds",
+      "audio": "audio/time/second_33.mp3"
     },
     {
       "value": 34,
       "jp": "34秒",
       "kana": "さんじゅうよんびょう",
-      "romaji": "sanjū yonbyō",
+      "romaji": "sanjūyonbyō",
       "zh": "34秒",
-      "en": "34 seconds"
+      "en": "34 seconds",
+      "audio": "audio/time/second_34.mp3"
     },
     {
       "value": 35,
       "jp": "35秒",
       "kana": "さんじゅうごびょう",
-      "romaji": "sanjū gobyō",
+      "romaji": "sanjūgobyō",
       "zh": "35秒",
-      "en": "35 seconds"
+      "en": "35 seconds",
+      "audio": "audio/time/second_35.mp3"
     },
     {
       "value": 36,
       "jp": "36秒",
       "kana": "さんじゅうろくびょう",
-      "romaji": "sanjū rokubyō",
+      "romaji": "sanjūrokubyō",
       "zh": "36秒",
-      "en": "36 seconds"
+      "en": "36 seconds",
+      "audio": "audio/time/second_36.mp3"
     },
     {
       "value": 37,
       "jp": "37秒",
       "kana": "さんじゅうななびょう",
-      "romaji": "sanjū nanabyō",
+      "romaji": "sanjūnanabyō",
       "zh": "37秒",
-      "en": "37 seconds"
+      "en": "37 seconds",
+      "audio": "audio/time/second_37.mp3"
     },
     {
       "value": 38,
       "jp": "38秒",
       "kana": "さんじゅうはちびょう",
-      "romaji": "sanjū hachibyō",
+      "romaji": "sanjūhachibyō",
       "zh": "38秒",
-      "en": "38 seconds"
+      "en": "38 seconds",
+      "audio": "audio/time/second_38.mp3"
     },
     {
       "value": 39,
       "jp": "39秒",
       "kana": "さんじゅうきゅうびょう",
-      "romaji": "sanjū kyūbyō",
+      "romaji": "sanjūkyūbyō",
       "zh": "39秒",
-      "en": "39 seconds"
+      "en": "39 seconds",
+      "audio": "audio/time/second_39.mp3"
     },
     {
       "value": 40,
@@ -1040,79 +1162,89 @@
       "kana": "よんじゅうびょう",
       "romaji": "yonjūbyō",
       "zh": "40秒",
-      "en": "40 seconds"
+      "en": "40 seconds",
+      "audio": "audio/time/second_40.mp3"
     },
     {
       "value": 41,
       "jp": "41秒",
       "kana": "よんじゅういちびょう",
-      "romaji": "yonjū ichibyō",
+      "romaji": "yonjūichibyō",
       "zh": "41秒",
-      "en": "41 seconds"
+      "en": "41 seconds",
+      "audio": "audio/time/second_41.mp3"
     },
     {
       "value": 42,
       "jp": "42秒",
       "kana": "よんじゅうにびょう",
-      "romaji": "yonjū nibyō",
+      "romaji": "yonjūnibyō",
       "zh": "42秒",
-      "en": "42 seconds"
+      "en": "42 seconds",
+      "audio": "audio/time/second_42.mp3"
     },
     {
       "value": 43,
       "jp": "43秒",
       "kana": "よんじゅうさんびょう",
-      "romaji": "yonjū sanbyō",
+      "romaji": "yonjūsanbyō",
       "zh": "43秒",
-      "en": "43 seconds"
+      "en": "43 seconds",
+      "audio": "audio/time/second_43.mp3"
     },
     {
       "value": 44,
       "jp": "44秒",
       "kana": "よんじゅうよんびょう",
-      "romaji": "yonjū yonbyō",
+      "romaji": "yonjūyonbyō",
       "zh": "44秒",
-      "en": "44 seconds"
+      "en": "44 seconds",
+      "audio": "audio/time/second_44.mp3"
     },
     {
       "value": 45,
       "jp": "45秒",
       "kana": "よんじゅうごびょう",
-      "romaji": "yonjū gobyō",
+      "romaji": "yonjūgobyō",
       "zh": "45秒",
-      "en": "45 seconds"
+      "en": "45 seconds",
+      "audio": "audio/time/second_45.mp3"
     },
     {
       "value": 46,
       "jp": "46秒",
       "kana": "よんじゅうろくびょう",
-      "romaji": "yonjū rokubyō",
+      "romaji": "yonjūrokubyō",
       "zh": "46秒",
-      "en": "46 seconds"
+      "en": "46 seconds",
+      "audio": "audio/time/second_46.mp3"
     },
     {
       "value": 47,
       "jp": "47秒",
       "kana": "よんじゅうななびょう",
-      "romaji": "yonjū nanabyō",
+      "romaji": "yonjūnanabyō",
       "zh": "47秒",
-      "en": "47 seconds"
+      "en": "47 seconds",
+      "audio": "audio/time/second_47.mp3"
     },
     {
       "value": 48,
       "jp": "48秒",
       "kana": "よんじゅうはちびょう",
-      "romaji": "yonjū hachibyō",
+      "romaji": "yonjūhachibyō",
       "zh": "48秒",
-      "en": "48 seconds"
+      "en": "48 seconds",
+      "audio": "audio/time/second_48.mp3"
     },
     {
       "value": 49,
       "jp": "49秒",
       "kana": "よんじゅうきゅうびょう",
-      "romaji": "yonjū kyūbyō",
+      "romaji": "yonjūkyūbyō",
       "zh": "49秒",
-      "en": "49 seconds"
+      "en": "49 seconds",
+      "audio": "audio/time/second_49.mp3"
     },
     {
       "value": 50,
@@ -1120,79 +1252,99 @@
       "kana": "ごじゅうびょう",
       "romaji": "gojūbyō",
       "zh": "50秒",
-      "en": "50 seconds"
+      "en": "50 seconds",
+      "audio": "audio/time/second_50.mp3"
     },
     {
       "value": 51,
       "jp": "51秒",
       "kana": "ごじゅういちびょう",
-      "romaji": "gojū ichibyō",
+      "romaji": "gojūichibyō",
       "zh": "51秒",
-      "en": "51 seconds"
+      "en": "51 seconds",
+      "audio": "audio/time/second_51.mp3"
     },
     {
       "value": 52,
       "jp": "52秒",
       "kana": "ごじゅうにびょう",
-      "romaji": "gojū nibyō",
+      "romaji": "gojūnibyō",
       "zh": "52秒",
-      "en": "52 seconds"
+      "en": "52 seconds",
+      "audio": "audio/time/second_52.mp3"
     },
     {
       "value": 53,
       "jp": "53秒",
       "kana": "ごじゅうさんびょう",
-      "romaji": "gojū sanbyō",
+      "romaji": "gojūsanbyō",
       "zh": "53秒",
-      "en": "53 seconds"
+      "en": "53 seconds",
+      "audio": "audio/time/second_53.mp3"
     },
     {
       "value": 54,
       "jp": "54秒",
       "kana": "ごじゅうよんびょう",
-      "romaji": "gojū yonbyō",
+      "romaji": "gojūyonbyō",
       "zh": "54秒",
-      "en": "54 seconds"
+      "en": "54 seconds",
+      "audio": "audio/time/second_54.mp3"
     },
     {
       "value": 55,
       "jp": "55秒",
       "kana": "ごじゅうごびょう",
-      "romaji": "gojū gobyō",
+      "romaji": "gojūgobyō",
       "zh": "55秒",
-      "en": "55 seconds"
+      "en": "55 seconds",
+      "audio": "audio/time/second_55.mp3"
     },
     {
       "value": 56,
       "jp": "56秒",
       "kana": "ごじゅうろくびょう",
-      "romaji": "gojū rokubyō",
+      "romaji": "gojūrokubyō",
       "zh": "56秒",
-      "en": "56 seconds"
+      "en": "56 seconds",
+      "audio": "audio/time/second_56.mp3"
     },
     {
       "value": 57,
       "jp": "57秒",
       "kana": "ごじゅうななびょう",
-      "romaji": "gojū nanabyō",
+      "romaji": "gojūnanabyō",
       "zh": "57秒",
-      "en": "57 seconds"
+      "en": "57 seconds",
+      "audio": "audio/time/second_57.mp3"
     },
     {
       "value": 58,
       "jp": "58秒",
       "kana": "ごじゅうはちびょう",
-      "romaji": "gojū hachibyō",
+      "romaji": "gojūhachibyō",
       "zh": "58秒",
-      "en": "58 seconds"
+      "en": "58 seconds",
+      "audio": "audio/time/second_58.mp3"
     },
     {
       "value": 59,
       "jp": "59秒",
       "kana": "ごじゅうきゅうびょう",
-      "romaji": "gojū kyūbyō",
+      "romaji": "gojūkyūbyō",
       "zh": "59秒",
-      "en": "59 seconds"
+      "en": "59 seconds",
+      "audio": "audio/time/second_59.mp3"
     }
-  ]
+  ],
+  "particles": {
+    "ni": {
+      "jp": "に",
+      "kana": "に",
+      "romaji": "ni",
+      "zh": "在/於",
+      "en": "at/on",
+      "audio": "audio/sentence/particle_ni.mp3"
+    }
+  }
 }

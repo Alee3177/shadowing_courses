@@ -1,275 +1,264 @@
 {
-  "meta": {
-    "name": "Reusable STPMPPOV travel sentence parts",
-    "version": "2026-06-05",
-    "pattern": "S + T + FromPlaceから + Means + Personと + Destinationへ/に + Objectを + Verb-stemに行きます"
-  },
   "subjects": [
     {
+      "id": "watashiwa",
       "jp": "わたしは",
       "kana": "わたし は",
       "romaji": "watashi wa",
       "zh": "我",
-      "en": "I"
+      "en": "I",
+      "audio": "audio/sentence/subject_watashiwa.mp3"
     },
     {
+      "id": "tomodachiwa",
       "jp": "友だちは",
       "kana": "ともだち は",
       "romaji": "tomodachi wa",
       "zh": "朋友",
-      "en": "my friend"
-    },
-    {
-      "jp": "先生は",
-      "kana": "せんせい は",
-      "romaji": "sensei wa",
-      "zh": "老師",
-      "en": "the teacher"
+      "en": "My friend",
+      "audio": "audio/sentence/subject_tomodachiwa.mp3"
     }
   ],
   "origins": [
     {
+      "id": "uchi_kara",
       "jp": "うちから",
       "kana": "うち から",
       "romaji": "uchi kara",
       "zh": "從家裡出發",
-      "en": "from home"
+      "en": "from home",
+      "audio": "audio/sentence/origin_uchi_kara.mp3"
     },
     {
+      "id": "gakkou_kara",
       "jp": "学校から",
       "kana": "がっこう から",
       "romaji": "gakkō kara",
       "zh": "從學校出發",
-      "en": "from school"
+      "en": "from school",
+      "audio": "audio/sentence/origin_gakkou_kara.mp3"
     },
     {
+      "id": "cafe_kara",
       "jp": "カフェから",
       "kana": "カフェ から",
       "romaji": "kafe kara",
       "zh": "從咖啡店出發",
-      "en": "from a café"
+      "en": "from a café",
+      "audio": "audio/sentence/origin_cafe_kara.mp3"
     }
   ],
   "means": [
     {
+      "id": "densha_de",
       "jp": "電車で",
       "kana": "でんしゃ で",
       "romaji": "densha de",
       "zh": "搭電車",
-      "en": "by train"
+      "en": "by train",
+      "audio": "audio/sentence/means_densha_de.mp3"
     },
     {
+      "id": "bus_de",
       "jp": "バスで",
       "kana": "バス で",
       "romaji": "basu de",
       "zh": "搭公車",
-      "en": "by bus"
+      "en": "by bus",
+      "audio": "audio/sentence/means_bus_de.mp3"
     },
     {
+      "id": "kuruma_de",
       "jp": "車で",
       "kana": "くるま で",
       "romaji": "kuruma de",
-      "zh": "開車／坐車",
-      "en": "by car"
+      "zh": "開車/坐車",
+      "en": "by car",
+      "audio": "audio/sentence/means_kuruma_de.mp3"
     },
     {
+      "id": "taxi_de",
       "jp": "タクシーで",
       "kana": "タクシー で",
       "romaji": "takushī de",
       "zh": "搭計程車",
-      "en": "by taxi"
+      "en": "by taxi",
+      "audio": "audio/sentence/means_taxi_de.mp3"
     },
     {
+      "id": "jitensha_de",
       "jp": "自転車で",
       "kana": "じてんしゃ で",
       "romaji": "jitensha de",
       "zh": "騎腳踏車",
-      "en": "by bicycle"
+      "en": "by bicycle",
+      "audio": "audio/sentence/means_jitensha_de.mp3"
     },
     {
+      "id": "hikouki_de",
       "jp": "飛行機で",
       "kana": "ひこうき で",
       "romaji": "hikōki de",
       "zh": "搭飛機",
-      "en": "by airplane"
+      "en": "by airplane",
+      "audio": "audio/sentence/means_hikouki_de.mp3"
     },
     {
+      "id": "aruite",
       "jp": "歩いて",
       "kana": "あるいて",
       "romaji": "aruite",
-      "zh": "走路／步行",
-      "en": "on foot"
+      "zh": "走路",
+      "en": "on foot",
+      "audio": "audio/sentence/means_aruite.mp3"
     }
   ],
   "persons": [
     {
+      "id": "tomodachi_to",
       "jp": "友だちと",
       "kana": "ともだち と",
       "romaji": "tomodachi to",
       "zh": "跟朋友",
-      "en": "with a friend"
+      "en": "with a friend",
+      "audio": "audio/sentence/person_tomodachi_to.mp3"
     },
     {
-      "jp": "友だちと一緒に",
-      "kana": "ともだち と いっしょ に",
-      "romaji": "tomodachi to issho ni",
-      "zh": "跟朋友一起",
-      "en": "together with a friend"
-    },
-    {
+      "id": "kazoku_to",
       "jp": "家族と",
       "kana": "かぞく と",
       "romaji": "kazoku to",
       "zh": "跟家人",
-      "en": "with family"
+      "en": "with family",
+      "audio": "audio/sentence/person_kazoku_to.mp3"
     },
     {
-      "jp": "一人で",
-      "kana": "ひとり で",
-      "romaji": "hitori de",
-      "zh": "一個人",
-      "en": "alone"
+      "id": "sensei_to",
+      "jp": "先生と",
+      "kana": "せんせい と",
+      "romaji": "sensei to",
+      "zh": "跟老師",
+      "en": "with the teacher",
+      "audio": "audio/sentence/person_sensei_to.mp3"
     }
   ],
   "destinations": [
     {
+      "id": "gakkou_e",
       "jp": "学校へ",
       "kana": "がっこう へ",
       "romaji": "gakkō e",
       "zh": "到學校",
-      "en": "to school"
+      "en": "to school",
+      "audio": "audio/sentence/destination_gakkou_e.mp3"
     },
     {
-      "jp": "学校に",
-      "kana": "がっこう に",
-      "romaji": "gakkō ni",
-      "zh": "到學校",
-      "en": "to school"
-    },
-    {
+      "id": "cafe_e",
       "jp": "カフェへ",
       "kana": "カフェ へ",
       "romaji": "kafe e",
       "zh": "到咖啡店",
-      "en": "to a café"
+      "en": "to a café",
+      "audio": "audio/sentence/destination_cafe_e.mp3"
     },
     {
-      "jp": "カフェに",
-      "kana": "カフェ に",
-      "romaji": "kafe ni",
-      "zh": "到咖啡店",
-      "en": "to a café"
-    },
-    {
+      "id": "eki_e",
       "jp": "駅へ",
       "kana": "えき へ",
       "romaji": "eki e",
       "zh": "到車站",
-      "en": "to the station"
+      "en": "to the station",
+      "audio": "audio/sentence/destination_eki_e.mp3"
     },
     {
-      "jp": "空港へ",
-      "kana": "くうこう へ",
-      "romaji": "kūkō e",
-      "zh": "到機場",
-      "en": "to the airport"
+      "id": "kouen_e",
+      "jp": "公園へ",
+      "kana": "こうえん へ",
+      "romaji": "kōen e",
+      "zh": "到公園",
+      "en": "to the park",
+      "audio": "audio/sentence/destination_kouen_e.mp3"
     }
   ],
   "actions": [
     {
+      "id": "tabeni_iku",
       "name": "吃",
       "object": {
         "jp": "ご飯を",
         "kana": "ごはん を",
         "romaji": "gohan o",
         "zh": "飯",
-        "en": "a meal"
+        "en": "a meal",
+        "audio": "audio/sentence/object_gohan_o.mp3"
       },
       "purposeVerb": {
         "jp": "食べに行きます",
         "kana": "たべ に いきます",
         "romaji": "tabe ni ikimasu",
         "zh": "去吃",
-        "en": "go to eat"
-      },
-      "plainVerb": {
-        "jp": "食べます",
-        "kana": "たべます",
-        "romaji": "tabemasu",
-        "zh": "吃",
-        "en": "eat"
+        "en": "go to eat",
+        "audio": "audio/sentence/verb_tabeni_ikimasu.mp3"
       }
     },
     {
+      "id": "nomini_iku",
       "name": "喝",
       "object": {
         "jp": "コーヒーを",
         "kana": "コーヒー を",
         "romaji": "kōhī o",
         "zh": "咖啡",
-        "en": "coffee"
+        "en": "coffee",
+        "audio": "audio/sentence/object_coffee_o.mp3"
       },
       "purposeVerb": {
         "jp": "飲みに行きます",
         "kana": "のみ に いきます",
         "romaji": "nomi ni ikimasu",
         "zh": "去喝",
-        "en": "go to drink"
-      },
-      "plainVerb": {
-        "jp": "飲みます",
-        "kana": "のみます",
-        "romaji": "nomimasu",
-        "zh": "喝",
-        "en": "drink"
+        "en": "go to drink",
+        "audio": "audio/sentence/verb_nomini_ikimasu.mp3"
       }
     },
     {
+      "id": "yomini_iku",
       "name": "讀",
       "object": {
         "jp": "本を",
         "kana": "ほん を",
         "romaji": "hon o",
         "zh": "書",
-        "en": "a book"
+        "en": "a book",
+        "audio": "audio/sentence/object_hon_o.mp3"
       },
       "purposeVerb": {
         "jp": "読みに行きます",
         "kana": "よみ に いきます",
         "romaji": "yomi ni ikimasu",
         "zh": "去讀",
-        "en": "go to read"
-      },
-      "plainVerb": {
-        "jp": "読みます",
-        "kana": "よみます",
-        "romaji": "yomimasu",
-        "zh": "讀",
-        "en": "read"
+        "en": "go to read",
+        "audio": "audio/sentence/verb_yomini_ikimasu.mp3"
       }
     },
     {
+      "id": "benkyou_shini_iku",
       "name": "學習",
       "object": {
         "jp": "日本語を",
         "kana": "にほんご を",
         "romaji": "nihongo o",
         "zh": "日文",
-        "en": "Japanese"
+        "en": "Japanese",
+        "audio": "audio/sentence/object_nihongo_o.mp3"
       },
       "purposeVerb": {
         "jp": "勉強しに行きます",
         "kana": "べんきょう し に いきます",
         "romaji": "benkyō shi ni ikimasu",
         "zh": "去學習",
-        "en": "go to study"
-      },
-      "plainVerb": {
-        "jp": "勉強します",
-        "kana": "べんきょうします",
-        "romaji": "benkyō shimasu",
-        "zh": "學習",
-        "en": "study"
+        "en": "go to study",
+        "audio": "audio/sentence/verb_benkyou_shini_ikimasu.mp3"
       }
     }
   ]

@@ -1,0 +1,1022 @@
+[
+  {
+    "path": "audio/date/year_2000.mp3",
+    "text": "2000年"
+  },
+  {
+    "path": "audio/date/year_2001.mp3",
+    "text": "2001年"
+  },
+  {
+    "path": "audio/date/year_2002.mp3",
+    "text": "2002年"
+  },
+  {
+    "path": "audio/date/year_2003.mp3",
+    "text": "2003年"
+  },
+  {
+    "path": "audio/date/year_2004.mp3",
+    "text": "2004年"
+  },
+  {
+    "path": "audio/date/year_2005.mp3",
+    "text": "2005年"
+  },
+  {
+    "path": "audio/date/year_2006.mp3",
+    "text": "2006年"
+  },
+  {
+    "path": "audio/date/year_2007.mp3",
+    "text": "2007年"
+  },
+  {
+    "path": "audio/date/year_2008.mp3",
+    "text": "2008年"
+  },
+  {
+    "path": "audio/date/year_2009.mp3",
+    "text": "2009年"
+  },
+  {
+    "path": "audio/date/year_2010.mp3",
+    "text": "2010年"
+  },
+  {
+    "path": "audio/date/year_2011.mp3",
+    "text": "2011年"
+  },
+  {
+    "path": "audio/date/year_2012.mp3",
+    "text": "2012年"
+  },
+  {
+    "path": "audio/date/year_2013.mp3",
+    "text": "2013年"
+  },
+  {
+    "path": "audio/date/year_2014.mp3",
+    "text": "2014年"
+  },
+  {
+    "path": "audio/date/year_2015.mp3",
+    "text": "2015年"
+  },
+  {
+    "path": "audio/date/year_2016.mp3",
+    "text": "2016年"
+  },
+  {
+    "path": "audio/date/year_2017.mp3",
+    "text": "2017年"
+  },
+  {
+    "path": "audio/date/year_2018.mp3",
+    "text": "2018年"
+  },
+  {
+    "path": "audio/date/year_2019.mp3",
+    "text": "2019年"
+  },
+  {
+    "path": "audio/date/year_2020.mp3",
+    "text": "2020年"
+  },
+  {
+    "path": "audio/date/year_2021.mp3",
+    "text": "2021年"
+  },
+  {
+    "path": "audio/date/year_2022.mp3",
+    "text": "2022年"
+  },
+  {
+    "path": "audio/date/year_2023.mp3",
+    "text": "2023年"
+  },
+  {
+    "path": "audio/date/year_2024.mp3",
+    "text": "2024年"
+  },
+  {
+    "path": "audio/date/year_2025.mp3",
+    "text": "2025年"
+  },
+  {
+    "path": "audio/date/year_2026.mp3",
+    "text": "2026年"
+  },
+  {
+    "path": "audio/date/year_2027.mp3",
+    "text": "2027年"
+  },
+  {
+    "path": "audio/date/year_2028.mp3",
+    "text": "2028年"
+  },
+  {
+    "path": "audio/date/year_2029.mp3",
+    "text": "2029年"
+  },
+  {
+    "path": "audio/date/year_2030.mp3",
+    "text": "2030年"
+  },
+  {
+    "path": "audio/date/month_01.mp3",
+    "text": "1月"
+  },
+  {
+    "path": "audio/date/month_02.mp3",
+    "text": "2月"
+  },
+  {
+    "path": "audio/date/month_03.mp3",
+    "text": "3月"
+  },
+  {
+    "path": "audio/date/month_04.mp3",
+    "text": "4月"
+  },
+  {
+    "path": "audio/date/month_05.mp3",
+    "text": "5月"
+  },
+  {
+    "path": "audio/date/month_06.mp3",
+    "text": "6月"
+  },
+  {
+    "path": "audio/date/month_07.mp3",
+    "text": "7月"
+  },
+  {
+    "path": "audio/date/month_08.mp3",
+    "text": "8月"
+  },
+  {
+    "path": "audio/date/month_09.mp3",
+    "text": "9月"
+  },
+  {
+    "path": "audio/date/month_10.mp3",
+    "text": "10月"
+  },
+  {
+    "path": "audio/date/month_11.mp3",
+    "text": "11月"
+  },
+  {
+    "path": "audio/date/month_12.mp3",
+    "text": "12月"
+  },
+  {
+    "path": "audio/date/day_01.mp3",
+    "text": "1日"
+  },
+  {
+    "path": "audio/date/day_02.mp3",
+    "text": "2日"
+  },
+  {
+    "path": "audio/date/day_03.mp3",
+    "text": "3日"
+  },
+  {
+    "path": "audio/date/day_04.mp3",
+    "text": "4日"
+  },
+  {
+    "path": "audio/date/day_05.mp3",
+    "text": "5日"
+  },
+  {
+    "path": "audio/date/day_06.mp3",
+    "text": "6日"
+  },
+  {
+    "path": "audio/date/day_07.mp3",
+    "text": "7日"
+  },
+  {
+    "path": "audio/date/day_08.mp3",
+    "text": "8日"
+  },
+  {
+    "path": "audio/date/day_09.mp3",
+    "text": "9日"
+  },
+  {
+    "path": "audio/date/day_10.mp3",
+    "text": "10日"
+  },
+  {
+    "path": "audio/date/day_11.mp3",
+    "text": "11日"
+  },
+  {
+    "path": "audio/date/day_12.mp3",
+    "text": "12日"
+  },
+  {
+    "path": "audio/date/day_13.mp3",
+    "text": "13日"
+  },
+  {
+    "path": "audio/date/day_14.mp3",
+    "text": "14日"
+  },
+  {
+    "path": "audio/date/day_15.mp3",
+    "text": "15日"
+  },
+  {
+    "path": "audio/date/day_16.mp3",
+    "text": "16日"
+  },
+  {
+    "path": "audio/date/day_17.mp3",
+    "text": "17日"
+  },
+  {
+    "path": "audio/date/day_18.mp3",
+    "text": "18日"
+  },
+  {
+    "path": "audio/date/day_19.mp3",
+    "text": "19日"
+  },
+  {
+    "path": "audio/date/day_20.mp3",
+    "text": "20日"
+  },
+  {
+    "path": "audio/date/day_21.mp3",
+    "text": "21日"
+  },
+  {
+    "path": "audio/date/day_22.mp3",
+    "text": "22日"
+  },
+  {
+    "path": "audio/date/day_23.mp3",
+    "text": "23日"
+  },
+  {
+    "path": "audio/date/day_24.mp3",
+    "text": "24日"
+  },
+  {
+    "path": "audio/date/day_25.mp3",
+    "text": "25日"
+  },
+  {
+    "path": "audio/date/day_26.mp3",
+    "text": "26日"
+  },
+  {
+    "path": "audio/date/day_27.mp3",
+    "text": "27日"
+  },
+  {
+    "path": "audio/date/day_28.mp3",
+    "text": "28日"
+  },
+  {
+    "path": "audio/date/day_29.mp3",
+    "text": "29日"
+  },
+  {
+    "path": "audio/date/day_30.mp3",
+    "text": "30日"
+  },
+  {
+    "path": "audio/date/day_31.mp3",
+    "text": "31日"
+  },
+  {
+    "path": "audio/date/weekday_sun.mp3",
+    "text": "日曜日"
+  },
+  {
+    "path": "audio/date/weekday_mon.mp3",
+    "text": "月曜日"
+  },
+  {
+    "path": "audio/date/weekday_tue.mp3",
+    "text": "火曜日"
+  },
+  {
+    "path": "audio/date/weekday_wed.mp3",
+    "text": "水曜日"
+  },
+  {
+    "path": "audio/date/weekday_thu.mp3",
+    "text": "木曜日"
+  },
+  {
+    "path": "audio/date/weekday_fri.mp3",
+    "text": "金曜日"
+  },
+  {
+    "path": "audio/date/weekday_sat.mp3",
+    "text": "土曜日"
+  },
+  {
+    "path": "audio/time/period_gozen.mp3",
+    "text": "午前"
+  },
+  {
+    "path": "audio/time/period_gogo.mp3",
+    "text": "午後"
+  },
+  {
+    "path": "audio/time/hour_00.mp3",
+    "text": "0時"
+  },
+  {
+    "path": "audio/time/hour_01.mp3",
+    "text": "1時"
+  },
+  {
+    "path": "audio/time/hour_02.mp3",
+    "text": "2時"
+  },
+  {
+    "path": "audio/time/hour_03.mp3",
+    "text": "3時"
+  },
+  {
+    "path": "audio/time/hour_04.mp3",
+    "text": "4時"
+  },
+  {
+    "path": "audio/time/hour_05.mp3",
+    "text": "5時"
+  },
+  {
+    "path": "audio/time/hour_06.mp3",
+    "text": "6時"
+  },
+  {
+    "path": "audio/time/hour_07.mp3",
+    "text": "7時"
+  },
+  {
+    "path": "audio/time/hour_08.mp3",
+    "text": "8時"
+  },
+  {
+    "path": "audio/time/hour_09.mp3",
+    "text": "9時"
+  },
+  {
+    "path": "audio/time/hour_10.mp3",
+    "text": "10時"
+  },
+  {
+    "path": "audio/time/hour_11.mp3",
+    "text": "11時"
+  },
+  {
+    "path": "audio/time/hour_12.mp3",
+    "text": "12時"
+  },
+  {
+    "path": "audio/time/hour_13.mp3",
+    "text": "13時"
+  },
+  {
+    "path": "audio/time/hour_14.mp3",
+    "text": "14時"
+  },
+  {
+    "path": "audio/time/hour_15.mp3",
+    "text": "15時"
+  },
+  {
+    "path": "audio/time/hour_16.mp3",
+    "text": "16時"
+  },
+  {
+    "path": "audio/time/hour_17.mp3",
+    "text": "17時"
+  },
+  {
+    "path": "audio/time/hour_18.mp3",
+    "text": "18時"
+  },
+  {
+    "path": "audio/time/hour_19.mp3",
+    "text": "19時"
+  },
+  {
+    "path": "audio/time/hour_20.mp3",
+    "text": "20時"
+  },
+  {
+    "path": "audio/time/hour_21.mp3",
+    "text": "21時"
+  },
+  {
+    "path": "audio/time/hour_22.mp3",
+    "text": "22時"
+  },
+  {
+    "path": "audio/time/hour_23.mp3",
+    "text": "23時"
+  },
+  {
+    "path": "audio/time/minute_00.mp3",
+    "text": "0分"
+  },
+  {
+    "path": "audio/time/minute_01.mp3",
+    "text": "1分"
+  },
+  {
+    "path": "audio/time/minute_02.mp3",
+    "text": "2分"
+  },
+  {
+    "path": "audio/time/minute_03.mp3",
+    "text": "3分"
+  },
+  {
+    "path": "audio/time/minute_04.mp3",
+    "text": "4分"
+  },
+  {
+    "path": "audio/time/minute_05.mp3",
+    "text": "5分"
+  },
+  {
+    "path": "audio/time/minute_06.mp3",
+    "text": "6分"
+  },
+  {
+    "path": "audio/time/minute_07.mp3",
+    "text": "7分"
+  },
+  {
+    "path": "audio/time/minute_08.mp3",
+    "text": "8分"
+  },
+  {
+    "path": "audio/time/minute_09.mp3",
+    "text": "9分"
+  },
+  {
+    "path": "audio/time/minute_10.mp3",
+    "text": "10分"
+  },
+  {
+    "path": "audio/time/minute_11.mp3",
+    "text": "11分"
+  },
+  {
+    "path": "audio/time/minute_12.mp3",
+    "text": "12分"
+  },
+  {
+    "path": "audio/time/minute_13.mp3",
+    "text": "13分"
+  },
+  {
+    "path": "audio/time/minute_14.mp3",
+    "text": "14分"
+  },
+  {
+    "path": "audio/time/minute_15.mp3",
+    "text": "15分"
+  },
+  {
+    "path": "audio/time/minute_16.mp3",
+    "text": "16分"
+  },
+  {
+    "path": "audio/time/minute_17.mp3",
+    "text": "17分"
+  },
+  {
+    "path": "audio/time/minute_18.mp3",
+    "text": "18分"
+  },
+  {
+    "path": "audio/time/minute_19.mp3",
+    "text": "19分"
+  },
+  {
+    "path": "audio/time/minute_20.mp3",
+    "text": "20分"
+  },
+  {
+    "path": "audio/time/minute_21.mp3",
+    "text": "21分"
+  },
+  {
+    "path": "audio/time/minute_22.mp3",
+    "text": "22分"
+  },
+  {
+    "path": "audio/time/minute_23.mp3",
+    "text": "23分"
+  },
+  {
+    "path": "audio/time/minute_24.mp3",
+    "text": "24分"
+  },
+  {
+    "path": "audio/time/minute_25.mp3",
+    "text": "25分"
+  },
+  {
+    "path": "audio/time/minute_26.mp3",
+    "text": "26分"
+  },
+  {
+    "path": "audio/time/minute_27.mp3",
+    "text": "27分"
+  },
+  {
+    "path": "audio/time/minute_28.mp3",
+    "text": "28分"
+  },
+  {
+    "path": "audio/time/minute_29.mp3",
+    "text": "29分"
+  },
+  {
+    "path": "audio/time/minute_30.mp3",
+    "text": "30分"
+  },
+  {
+    "path": "audio/time/minute_31.mp3",
+    "text": "31分"
+  },
+  {
+    "path": "audio/time/minute_32.mp3",
+    "text": "32分"
+  },
+  {
+    "path": "audio/time/minute_33.mp3",
+    "text": "33分"
+  },
+  {
+    "path": "audio/time/minute_34.mp3",
+    "text": "34分"
+  },
+  {
+    "path": "audio/time/minute_35.mp3",
+    "text": "35分"
+  },
+  {
+    "path": "audio/time/minute_36.mp3",
+    "text": "36分"
+  },
+  {
+    "path": "audio/time/minute_37.mp3",
+    "text": "37分"
+  },
+  {
+    "path": "audio/time/minute_38.mp3",
+    "text": "38分"
+  },
+  {
+    "path": "audio/time/minute_39.mp3",
+    "text": "39分"
+  },
+  {
+    "path": "audio/time/minute_40.mp3",
+    "text": "40分"
+  },
+  {
+    "path": "audio/time/minute_41.mp3",
+    "text": "41分"
+  },
+  {
+    "path": "audio/time/minute_42.mp3",
+    "text": "42分"
+  },
+  {
+    "path": "audio/time/minute_43.mp3",
+    "text": "43分"
+  },
+  {
+    "path": "audio/time/minute_44.mp3",
+    "text": "44分"
+  },
+  {
+    "path": "audio/time/minute_45.mp3",
+    "text": "45分"
+  },
+  {
+    "path": "audio/time/minute_46.mp3",
+    "text": "46分"
+  },
+  {
+    "path": "audio/time/minute_47.mp3",
+    "text": "47分"
+  },
+  {
+    "path": "audio/time/minute_48.mp3",
+    "text": "48分"
+  },
+  {
+    "path": "audio/time/minute_49.mp3",
+    "text": "49分"
+  },
+  {
+    "path": "audio/time/minute_50.mp3",
+    "text": "50分"
+  },
+  {
+    "path": "audio/time/minute_51.mp3",
+    "text": "51分"
+  },
+  {
+    "path": "audio/time/minute_52.mp3",
+    "text": "52分"
+  },
+  {
+    "path": "audio/time/minute_53.mp3",
+    "text": "53分"
+  },
+  {
+    "path": "audio/time/minute_54.mp3",
+    "text": "54分"
+  },
+  {
+    "path": "audio/time/minute_55.mp3",
+    "text": "55分"
+  },
+  {
+    "path": "audio/time/minute_56.mp3",
+    "text": "56分"
+  },
+  {
+    "path": "audio/time/minute_57.mp3",
+    "text": "57分"
+  },
+  {
+    "path": "audio/time/minute_58.mp3",
+    "text": "58分"
+  },
+  {
+    "path": "audio/time/minute_59.mp3",
+    "text": "59分"
+  },
+  {
+    "path": "audio/time/second_00.mp3",
+    "text": "0秒"
+  },
+  {
+    "path": "audio/time/second_01.mp3",
+    "text": "1秒"
+  },
+  {
+    "path": "audio/time/second_02.mp3",
+    "text": "2秒"
+  },
+  {
+    "path": "audio/time/second_03.mp3",
+    "text": "3秒"
+  },
+  {
+    "path": "audio/time/second_04.mp3",
+    "text": "4秒"
+  },
+  {
+    "path": "audio/time/second_05.mp3",
+    "text": "5秒"
+  },
+  {
+    "path": "audio/time/second_06.mp3",
+    "text": "6秒"
+  },
+  {
+    "path": "audio/time/second_07.mp3",
+    "text": "7秒"
+  },
+  {
+    "path": "audio/time/second_08.mp3",
+    "text": "8秒"
+  },
+  {
+    "path": "audio/time/second_09.mp3",
+    "text": "9秒"
+  },
+  {
+    "path": "audio/time/second_10.mp3",
+    "text": "10秒"
+  },
+  {
+    "path": "audio/time/second_11.mp3",
+    "text": "11秒"
+  },
+  {
+    "path": "audio/time/second_12.mp3",
+    "text": "12秒"
+  },
+  {
+    "path": "audio/time/second_13.mp3",
+    "text": "13秒"
+  },
+  {
+    "path": "audio/time/second_14.mp3",
+    "text": "14秒"
+  },
+  {
+    "path": "audio/time/second_15.mp3",
+    "text": "15秒"
+  },
+  {
+    "path": "audio/time/second_16.mp3",
+    "text": "16秒"
+  },
+  {
+    "path": "audio/time/second_17.mp3",
+    "text": "17秒"
+  },
+  {
+    "path": "audio/time/second_18.mp3",
+    "text": "18秒"
+  },
+  {
+    "path": "audio/time/second_19.mp3",
+    "text": "19秒"
+  },
+  {
+    "path": "audio/time/second_20.mp3",
+    "text": "20秒"
+  },
+  {
+    "path": "audio/time/second_21.mp3",
+    "text": "21秒"
+  },
+  {
+    "path": "audio/time/second_22.mp3",
+    "text": "22秒"
+  },
+  {
+    "path": "audio/time/second_23.mp3",
+    "text": "23秒"
+  },
+  {
+    "path": "audio/time/second_24.mp3",
+    "text": "24秒"
+  },
+  {
+    "path": "audio/time/second_25.mp3",
+    "text": "25秒"
+  },
+  {
+    "path": "audio/time/second_26.mp3",
+    "text": "26秒"
+  },
+  {
+    "path": "audio/time/second_27.mp3",
+    "text": "27秒"
+  },
+  {
+    "path": "audio/time/second_28.mp3",
+    "text": "28秒"
+  },
+  {
+    "path": "audio/time/second_29.mp3",
+    "text": "29秒"
+  },
+  {
+    "path": "audio/time/second_30.mp3",
+    "text": "30秒"
+  },
+  {
+    "path": "audio/time/second_31.mp3",
+    "text": "31秒"
+  },
+  {
+    "path": "audio/time/second_32.mp3",
+    "text": "32秒"
+  },
+  {
+    "path": "audio/time/second_33.mp3",
+    "text": "33秒"
+  },
+  {
+    "path": "audio/time/second_34.mp3",
+    "text": "34秒"
+  },
+  {
+    "path": "audio/time/second_35.mp3",
+    "text": "35秒"
+  },
+  {
+    "path": "audio/time/second_36.mp3",
+    "text": "36秒"
+  },
+  {
+    "path": "audio/time/second_37.mp3",
+    "text": "37秒"
+  },
+  {
+    "path": "audio/time/second_38.mp3",
+    "text": "38秒"
+  },
+  {
+    "path": "audio/time/second_39.mp3",
+    "text": "39秒"
+  },
+  {
+    "path": "audio/time/second_40.mp3",
+    "text": "40秒"
+  },
+  {
+    "path": "audio/time/second_41.mp3",
+    "text": "41秒"
+  },
+  {
+    "path": "audio/time/second_42.mp3",
+    "text": "42秒"
+  },
+  {
+    "path": "audio/time/second_43.mp3",
+    "text": "43秒"
+  },
+  {
+    "path": "audio/time/second_44.mp3",
+    "text": "44秒"
+  },
+  {
+    "path": "audio/time/second_45.mp3",
+    "text": "45秒"
+  },
+  {
+    "path": "audio/time/second_46.mp3",
+    "text": "46秒"
+  },
+  {
+    "path": "audio/time/second_47.mp3",
+    "text": "47秒"
+  },
+  {
+    "path": "audio/time/second_48.mp3",
+    "text": "48秒"
+  },
+  {
+    "path": "audio/time/second_49.mp3",
+    "text": "49秒"
+  },
+  {
+    "path": "audio/time/second_50.mp3",
+    "text": "50秒"
+  },
+  {
+    "path": "audio/time/second_51.mp3",
+    "text": "51秒"
+  },
+  {
+    "path": "audio/time/second_52.mp3",
+    "text": "52秒"
+  },
+  {
+    "path": "audio/time/second_53.mp3",
+    "text": "53秒"
+  },
+  {
+    "path": "audio/time/second_54.mp3",
+    "text": "54秒"
+  },
+  {
+    "path": "audio/time/second_55.mp3",
+    "text": "55秒"
+  },
+  {
+    "path": "audio/time/second_56.mp3",
+    "text": "56秒"
+  },
+  {
+    "path": "audio/time/second_57.mp3",
+    "text": "57秒"
+  },
+  {
+    "path": "audio/time/second_58.mp3",
+    "text": "58秒"
+  },
+  {
+    "path": "audio/time/second_59.mp3",
+    "text": "59秒"
+  },
+  {
+    "path": "audio/sentence/particle_ni.mp3",
+    "text": "に"
+  },
+  {
+    "path": "audio/sentence/subject_watashiwa.mp3",
+    "text": "わたしは"
+  },
+  {
+    "path": "audio/sentence/subject_tomodachiwa.mp3",
+    "text": "友だちは"
+  },
+  {
+    "path": "audio/sentence/origin_uchi_kara.mp3",
+    "text": "うちから"
+  },
+  {
+    "path": "audio/sentence/origin_gakkou_kara.mp3",
+    "text": "学校から"
+  },
+  {
+    "path": "audio/sentence/origin_cafe_kara.mp3",
+    "text": "カフェから"
+  },
+  {
+    "path": "audio/sentence/means_densha_de.mp3",
+    "text": "電車で"
+  },
+  {
+    "path": "audio/sentence/means_bus_de.mp3",
+    "text": "バスで"
+  },
+  {
+    "path": "audio/sentence/means_kuruma_de.mp3",
+    "text": "車で"
+  },
+  {
+    "path": "audio/sentence/means_taxi_de.mp3",
+    "text": "タクシーで"
+  },
+  {
+    "path": "audio/sentence/means_jitensha_de.mp3",
+    "text": "自転車で"
+  },
+  {
+    "path": "audio/sentence/means_hikouki_de.mp3",
+    "text": "飛行機で"
+  },
+  {
+    "path": "audio/sentence/means_aruite.mp3",
+    "text": "歩いて"
+  },
+  {
+    "path": "audio/sentence/person_tomodachi_to.mp3",
+    "text": "友だちと"
+  },
+  {
+    "path": "audio/sentence/person_kazoku_to.mp3",
+    "text": "家族と"
+  },
+  {
+    "path": "audio/sentence/person_sensei_to.mp3",
+    "text": "先生と"
+  },
+  {
+    "path": "audio/sentence/destination_gakkou_e.mp3",
+    "text": "学校へ"
+  },
+  {
+    "path": "audio/sentence/destination_cafe_e.mp3",
+    "text": "カフェへ"
+  },
+  {
+    "path": "audio/sentence/destination_eki_e.mp3",
+    "text": "駅へ"
+  },
+  {
+    "path": "audio/sentence/destination_kouen_e.mp3",
+    "text": "公園へ"
+  },
+  {
+    "path": "audio/sentence/object_gohan_o.mp3",
+    "text": "ご飯を"
+  },
+  {
+    "path": "audio/sentence/verb_tabeni_ikimasu.mp3",
+    "text": "食べに行きます"
+  },
+  {
+    "path": "audio/sentence/object_coffee_o.mp3",
+    "text": "コーヒーを"
+  },
+  {
+    "path": "audio/sentence/verb_nomini_ikimasu.mp3",
+    "text": "飲みに行きます"
+  },
+  {
+    "path": "audio/sentence/object_hon_o.mp3",
+    "text": "本を"
+  },
+  {
+    "path": "audio/sentence/verb_yomini_ikimasu.mp3",
+    "text": "読みに行きます"
+  },
+  {
+    "path": "audio/sentence/object_nihongo_o.mp3",
+    "text": "日本語を"
+  },
+  {
+    "path": "audio/sentence/verb_benkyou_shini_ikimasu.mp3",
+    "text": "勉強しに行きます"
+  }
+]
