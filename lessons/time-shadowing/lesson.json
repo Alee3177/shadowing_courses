@@ -1,18 +1,48 @@
 {
   "title": "日文時間表達 Shadowing 跟讀練習",
-  "version": "time-shadowing-json-separated-20260606",
-  "description": "整合：天、週、月、年、上午下午、Future/Present/Past、星期幾。",
+  "version": "time-shadowing-json-separated-20260607-common-verbs",
+  "description": "整合：天、週、月、年、上午下午、Future/Present/Past、星期幾。 追加：常見易錯動詞句子練習。",
   "categories": [
     {
       "id": "day",
       "name_zh": "天：前後時間",
       "name_ja": "日",
       "items": [
-        {"jp":"一昨日","kana":"おととい","romaji":"ototoi","zh":"前天","en":"the day before yesterday"},
-        {"jp":"昨日","kana":"きのう","romaji":"kinō","zh":"昨天","en":"yesterday"},
-        {"jp":"今日","kana":"きょう","romaji":"kyō","zh":"今天","en":"today"},
-        {"jp":"明日","kana":"あした","romaji":"ashita","zh":"明天","en":"tomorrow"},
-        {"jp":"明後日","kana":"あさって","romaji":"asatte","zh":"後天","en":"the day after tomorrow"}
+        {
+          "jp": "一昨日",
+          "kana": "おととい",
+          "romaji": "ototoi",
+          "zh": "前天",
+          "en": "the day before yesterday"
+        },
+        {
+          "jp": "昨日",
+          "kana": "きのう",
+          "romaji": "kinō",
+          "zh": "昨天",
+          "en": "yesterday"
+        },
+        {
+          "jp": "今日",
+          "kana": "きょう",
+          "romaji": "kyō",
+          "zh": "今天",
+          "en": "today"
+        },
+        {
+          "jp": "明日",
+          "kana": "あした",
+          "romaji": "ashita",
+          "zh": "明天",
+          "en": "tomorrow"
+        },
+        {
+          "jp": "明後日",
+          "kana": "あさって",
+          "romaji": "asatte",
+          "zh": "後天",
+          "en": "the day after tomorrow"
+        }
       ]
     },
     {
@@ -20,9 +50,27 @@
       "name_zh": "時間點：剛剛／現在／稍後",
       "name_ja": "時点",
       "items": [
-        {"jp":"さっき","kana":"さっき","romaji":"sakki","zh":"剛剛","en":"just now"},
-        {"jp":"今","kana":"いま","romaji":"ima","zh":"現在","en":"now"},
-        {"jp":"後で","kana":"あとで","romaji":"atode","zh":"等一下、稍後","en":"later"}
+        {
+          "jp": "さっき",
+          "kana": "さっき",
+          "romaji": "sakki",
+          "zh": "剛剛",
+          "en": "just now"
+        },
+        {
+          "jp": "今",
+          "kana": "いま",
+          "romaji": "ima",
+          "zh": "現在",
+          "en": "now"
+        },
+        {
+          "jp": "後で",
+          "kana": "あとで",
+          "romaji": "atode",
+          "zh": "等一下、稍後",
+          "en": "later"
+        }
       ]
     },
     {
@@ -30,9 +78,27 @@
       "name_zh": "週：上週／本週／下週",
       "name_ja": "週",
       "items": [
-        {"jp":"先週","kana":"せんしゅう","romaji":"senshū","zh":"上週","en":"last week"},
-        {"jp":"今週","kana":"こんしゅう","romaji":"konshū","zh":"這週、本週","en":"this week"},
-        {"jp":"来週","kana":"らいしゅう","romaji":"raishū","zh":"下週","en":"next week"}
+        {
+          "jp": "先週",
+          "kana": "せんしゅう",
+          "romaji": "senshū",
+          "zh": "上週",
+          "en": "last week"
+        },
+        {
+          "jp": "今週",
+          "kana": "こんしゅう",
+          "romaji": "konshū",
+          "zh": "這週、本週",
+          "en": "this week"
+        },
+        {
+          "jp": "来週",
+          "kana": "らいしゅう",
+          "romaji": "raishū",
+          "zh": "下週",
+          "en": "next week"
+        }
       ]
     },
     {
@@ -40,9 +106,27 @@
       "name_zh": "月：上個月／本月／下個月",
       "name_ja": "月",
       "items": [
-        {"jp":"先月","kana":"せんげつ","romaji":"sengetsu","zh":"上個月","en":"last month"},
-        {"jp":"今月","kana":"こんげつ","romaji":"kongetsu","zh":"這個月、本月","en":"this month"},
-        {"jp":"来月","kana":"らいげつ","romaji":"raigetsu","zh":"下個月","en":"next month"}
+        {
+          "jp": "先月",
+          "kana": "せんげつ",
+          "romaji": "sengetsu",
+          "zh": "上個月",
+          "en": "last month"
+        },
+        {
+          "jp": "今月",
+          "kana": "こんげつ",
+          "romaji": "kongetsu",
+          "zh": "這個月、本月",
+          "en": "this month"
+        },
+        {
+          "jp": "来月",
+          "kana": "らいげつ",
+          "romaji": "raigetsu",
+          "zh": "下個月",
+          "en": "next month"
+        }
       ]
     },
     {
@@ -50,11 +134,41 @@
       "name_zh": "年：前年／去年／今年／明年／後年",
       "name_ja": "年",
       "items": [
-        {"jp":"一昨年","kana":"おととし","romaji":"ototoshi","zh":"前年","en":"the year before last"},
-        {"jp":"去年","kana":"きょねん","romaji":"kyonen","zh":"去年","en":"last year"},
-        {"jp":"今年","kana":"ことし","romaji":"kotoshi","zh":"今年","en":"this year"},
-        {"jp":"来年","kana":"らいねん","romaji":"rainen","zh":"明年","en":"next year"},
-        {"jp":"再来年","kana":"さらいねん","romaji":"sarainen","zh":"後年、後一年","en":"the year after next"}
+        {
+          "jp": "一昨年",
+          "kana": "おととし",
+          "romaji": "ototoshi",
+          "zh": "前年",
+          "en": "the year before last"
+        },
+        {
+          "jp": "去年",
+          "kana": "きょねん",
+          "romaji": "kyonen",
+          "zh": "去年",
+          "en": "last year"
+        },
+        {
+          "jp": "今年",
+          "kana": "ことし",
+          "romaji": "kotoshi",
+          "zh": "今年",
+          "en": "this year"
+        },
+        {
+          "jp": "来年",
+          "kana": "らいねん",
+          "romaji": "rainen",
+          "zh": "明年",
+          "en": "next year"
+        },
+        {
+          "jp": "再来年",
+          "kana": "さらいねん",
+          "romaji": "sarainen",
+          "zh": "後年、後一年",
+          "en": "the year after next"
+        }
       ]
     },
     {
@@ -62,8 +176,20 @@
       "name_zh": "上午／下午",
       "name_ja": "午前・午後",
       "items": [
-        {"jp":"午前","kana":"ごぜん","romaji":"gozen","zh":"上午","en":"a.m. / morning"},
-        {"jp":"午後","kana":"ごご","romaji":"gogo","zh":"下午","en":"p.m. / afternoon"}
+        {
+          "jp": "午前",
+          "kana": "ごぜん",
+          "romaji": "gozen",
+          "zh": "上午",
+          "en": "a.m. / morning"
+        },
+        {
+          "jp": "午後",
+          "kana": "ごご",
+          "romaji": "gogo",
+          "zh": "下午",
+          "en": "p.m. / afternoon"
+        }
       ]
     },
     {
@@ -71,46 +197,317 @@
       "name_zh": "星期幾",
       "name_ja": "曜日",
       "items": [
-        {"jp":"月曜日","kana":"げつようび","romaji":"getsuyōbi","zh":"星期一","en":"Monday"},
-        {"jp":"火曜日","kana":"かようび","romaji":"kayōbi","zh":"星期二","en":"Tuesday"},
-        {"jp":"水曜日","kana":"すいようび","romaji":"suiyōbi","zh":"星期三","en":"Wednesday"},
-        {"jp":"木曜日","kana":"もくようび","romaji":"mokuyōbi","zh":"星期四","en":"Thursday"},
-        {"jp":"金曜日","kana":"きんようび","romaji":"kin'yōbi","zh":"星期五","en":"Friday"},
-        {"jp":"土曜日","kana":"どようび","romaji":"doyōbi","zh":"星期六","en":"Saturday"},
-        {"jp":"日曜日","kana":"にちようび","romaji":"nichiyōbi","zh":"星期日、星期天","en":"Sunday"},
-        {"jp":"何曜日","kana":"なんようび","romaji":"nan'yōbi","zh":"星期幾？","en":"what day of the week?"}
+        {
+          "jp": "月曜日",
+          "kana": "げつようび",
+          "romaji": "getsuyōbi",
+          "zh": "星期一",
+          "en": "Monday"
+        },
+        {
+          "jp": "火曜日",
+          "kana": "かようび",
+          "romaji": "kayōbi",
+          "zh": "星期二",
+          "en": "Tuesday"
+        },
+        {
+          "jp": "水曜日",
+          "kana": "すいようび",
+          "romaji": "suiyōbi",
+          "zh": "星期三",
+          "en": "Wednesday"
+        },
+        {
+          "jp": "木曜日",
+          "kana": "もくようび",
+          "romaji": "mokuyōbi",
+          "zh": "星期四",
+          "en": "Thursday"
+        },
+        {
+          "jp": "金曜日",
+          "kana": "きんようび",
+          "romaji": "kin'yōbi",
+          "zh": "星期五",
+          "en": "Friday"
+        },
+        {
+          "jp": "土曜日",
+          "kana": "どようび",
+          "romaji": "doyōbi",
+          "zh": "星期六",
+          "en": "Saturday"
+        },
+        {
+          "jp": "日曜日",
+          "kana": "にちようび",
+          "romaji": "nichiyōbi",
+          "zh": "星期日、星期天",
+          "en": "Sunday"
+        },
+        {
+          "jp": "何曜日",
+          "kana": "なんようび",
+          "romaji": "nan'yōbi",
+          "zh": "星期幾？",
+          "en": "what day of the week?"
+        }
       ]
     }
   ],
   "sentences": [
-    {"jp":"一昨日、友だちと映画を見ました。","kana":"おととい、ともだちと えいがを みました。","romaji":"ototoi, tomodachi to eiga o mimashita.","zh":"前天和朋友看了電影。","en":"I watched a movie with my friend the day before yesterday."},
-    {"jp":"昨日、ラーメンを食べました。","kana":"きのう、ラーメンを たべました。","romaji":"kinō, rāmen o tabemashita.","zh":"昨天吃了拉麵。","en":"I ate ramen yesterday."},
-    {"jp":"今日、新しい服を着ます。","kana":"きょう、あたらしい ふくを きます。","romaji":"kyō, atarashii fuku o kimasu.","zh":"今天穿新衣服。","en":"I will wear new clothes today."},
-    {"jp":"明日、東京へ行きます。","kana":"あした、とうきょうへ いきます。","romaji":"ashita, Tōkyō e ikimasu.","zh":"明天要去東京。","en":"I will go to Tokyo tomorrow."},
-    {"jp":"明後日、家族と旅行します。","kana":"あさって、かぞくと りょこうします。","romaji":"asatte, kazoku to ryokō shimasu.","zh":"後天和家人去旅行。","en":"I will travel with my family the day after tomorrow."},
-    {"jp":"さっき、先生と話しました。","kana":"さっき、せんせいと はなしました。","romaji":"sakki, sensei to hanashimashita.","zh":"剛剛和老師說話了。","en":"I talked with the teacher just now."},
-    {"jp":"今、日本語を勉強しています。","kana":"いま、にほんごを べんきょうしています。","romaji":"ima, nihongo o benkyō shite imasu.","zh":"現在正在學日文。","en":"I am studying Japanese now."},
-    {"jp":"後で、コーヒーを飲みます。","kana":"あとで、コーヒーを のみます。","romaji":"atode, kōhī o nomimasu.","zh":"等一下喝咖啡。","en":"I will drink coffee later."},
-    {"jp":"先週、病院へ行きました。","kana":"せんしゅう、びょういんへ いきました。","romaji":"senshū, byōin e ikimashita.","zh":"上週去了醫院。","en":"I went to the hospital last week."},
-    {"jp":"今週、毎日日本語を練習します。","kana":"こんしゅう、まいにち にほんごを れんしゅうします。","romaji":"konshū, mainichi nihongo o renshū shimasu.","zh":"這週每天練習日文。","en":"I will practice Japanese every day this week."},
-    {"jp":"来週、友だちに会います。","kana":"らいしゅう、ともだちに あいます。","romaji":"raishū, tomodachi ni aimasu.","zh":"下週要見朋友。","en":"I will meet my friend next week."},
-    {"jp":"先月、新しい靴を買いました。","kana":"せんげつ、あたらしい くつを かいました。","romaji":"sengetsu, atarashii kutsu o kaimashita.","zh":"上個月買了新鞋。","en":"I bought new shoes last month."},
-    {"jp":"今月、台北に住んでいます。","kana":"こんげつ、たいぺいに すんでいます。","romaji":"kongetsu, Taipei ni sunde imasu.","zh":"這個月住在台北。","en":"I am living in Taipei this month."},
-    {"jp":"来月、日本へ行きたいです。","kana":"らいげつ、にほんへ いきたいです。","romaji":"raigetsu, Nihon e ikitai desu.","zh":"下個月想去日本。","en":"I want to go to Japan next month."},
-    {"jp":"一昨年、日本語を勉強し始めました。","kana":"おととし、にほんごを べんきょうしはじめました。","romaji":"ototoshi, nihongo o benkyō shi-hajimemashita.","zh":"前年開始學日文。","en":"I started studying Japanese the year before last."},
-    {"jp":"去年、大阪でたこ焼きを食べました。","kana":"きょねん、おおさかで たこやきを たべました。","romaji":"kyonen, Ōsaka de takoyaki o tabemashita.","zh":"去年在大阪吃了章魚燒。","en":"I ate takoyaki in Osaka last year."},
-    {"jp":"今年、日本語をもっと勉強します。","kana":"ことし、にほんごを もっと べんきょうします。","romaji":"kotoshi, nihongo o motto benkyō shimasu.","zh":"今年要更努力學日文。","en":"I will study Japanese more this year."},
-    {"jp":"来年、日本に住みたいです。","kana":"らいねん、にほんに すみたいです。","romaji":"rainen, Nihon ni sumitai desu.","zh":"明年想住在日本。","en":"I want to live in Japan next year."},
-    {"jp":"再来年、新しい車を買いたいです。","kana":"さらいねん、あたらしい くるまを かいたいです。","romaji":"sarainen, atarashii kuruma o kaitai desu.","zh":"後年想買新車。","en":"I want to buy a new car the year after next."},
-    {"jp":"午前、会議があります。","kana":"ごぜん、かいぎが あります。","romaji":"gozen, kaigi ga arimasu.","zh":"上午有會議。","en":"There is a meeting in the morning."},
-    {"jp":"午後、コンビニで飲み物を買います。","kana":"ごご、コンビニで のみものを かいます。","romaji":"gogo, konbini de nomimono o kaimasu.","zh":"下午在便利商店買飲料。","en":"I will buy a drink at a convenience store in the afternoon."},
-    {"jp":"月曜日に学校へ行きます。","kana":"げつようびに がっこうへ いきます。","romaji":"getsuyōbi ni gakkō e ikimasu.","zh":"星期一去學校。","en":"I go to school on Monday."},
-    {"jp":"火曜日に日本語を勉強します。","kana":"かようびに にほんごを べんきょうします。","romaji":"kayōbi ni nihongo o benkyō shimasu.","zh":"星期二學日文。","en":"I study Japanese on Tuesday."},
-    {"jp":"水曜日に友だちと会います。","kana":"すいようびに ともだちと あいます。","romaji":"suiyōbi ni tomodachi to aimasu.","zh":"星期三和朋友見面。","en":"I meet my friend on Wednesday."},
-    {"jp":"木曜日に家でご飯を食べます。","kana":"もくようびに いえで ごはんを たべます。","romaji":"mokuyōbi ni ie de gohan o tabemasu.","zh":"星期四在家吃飯。","en":"I eat at home on Thursday."},
-    {"jp":"金曜日に新しい服を買います。","kana":"きんようびに あたらしい ふくを かいます。","romaji":"kin'yōbi ni atarashii fuku o kaimasu.","zh":"星期五買新衣服。","en":"I buy new clothes on Friday."},
-    {"jp":"土曜日に公園を歩きます。","kana":"どようびに こうえんを あるきます。","romaji":"doyōbi ni kōen o arukimasu.","zh":"星期六在公園散步。","en":"I walk in the park on Saturday."},
-    {"jp":"日曜日に家族と休みます。","kana":"にちようびに かぞくと やすみます。","romaji":"nichiyōbi ni kazoku to yasumimasu.","zh":"星期日和家人休息。","en":"I rest with my family on Sunday."},
-    {"jp":"今日は何曜日ですか。","kana":"きょうは なんようびですか。","romaji":"kyō wa nan'yōbi desu ka.","zh":"今天星期幾？","en":"What day of the week is today?"}
+    {
+      "jp": "一昨日、友だちと映画を見ました。",
+      "kana": "おととい、ともだちと えいがを みました。",
+      "romaji": "ototoi, tomodachi to eiga o mimashita.",
+      "zh": "前天和朋友看了電影。",
+      "en": "I watched a movie with my friend the day before yesterday."
+    },
+    {
+      "jp": "昨日、ラーメンを食べました。",
+      "kana": "きのう、ラーメンを たべました。",
+      "romaji": "kinō, rāmen o tabemashita.",
+      "zh": "昨天吃了拉麵。",
+      "en": "I ate ramen yesterday."
+    },
+    {
+      "jp": "今日、新しい服を着ます。",
+      "kana": "きょう、あたらしい ふくを きます。",
+      "romaji": "kyō, atarashii fuku o kimasu.",
+      "zh": "今天穿新衣服。",
+      "en": "I will wear new clothes today."
+    },
+    {
+      "jp": "明日、東京へ行きます。",
+      "kana": "あした、とうきょうへ いきます。",
+      "romaji": "ashita, Tōkyō e ikimasu.",
+      "zh": "明天要去東京。",
+      "en": "I will go to Tokyo tomorrow."
+    },
+    {
+      "jp": "明後日、家族と旅行します。",
+      "kana": "あさって、かぞくと りょこうします。",
+      "romaji": "asatte, kazoku to ryokō shimasu.",
+      "zh": "後天和家人去旅行。",
+      "en": "I will travel with my family the day after tomorrow."
+    },
+    {
+      "jp": "さっき、先生と話しました。",
+      "kana": "さっき、せんせいと はなしました。",
+      "romaji": "sakki, sensei to hanashimashita.",
+      "zh": "剛剛和老師說話了。",
+      "en": "I talked with the teacher just now."
+    },
+    {
+      "jp": "今、日本語を勉強しています。",
+      "kana": "いま、にほんごを べんきょうしています。",
+      "romaji": "ima, nihongo o benkyō shite imasu.",
+      "zh": "現在正在學日文。",
+      "en": "I am studying Japanese now."
+    },
+    {
+      "jp": "後で、コーヒーを飲みます。",
+      "kana": "あとで、コーヒーを のみます。",
+      "romaji": "atode, kōhī o nomimasu.",
+      "zh": "等一下喝咖啡。",
+      "en": "I will drink coffee later."
+    },
+    {
+      "jp": "先週、病院へ行きました。",
+      "kana": "せんしゅう、びょういんへ いきました。",
+      "romaji": "senshū, byōin e ikimashita.",
+      "zh": "上週去了醫院。",
+      "en": "I went to the hospital last week."
+    },
+    {
+      "jp": "今週、毎日日本語を練習します。",
+      "kana": "こんしゅう、まいにち にほんごを れんしゅうします。",
+      "romaji": "konshū, mainichi nihongo o renshū shimasu.",
+      "zh": "這週每天練習日文。",
+      "en": "I will practice Japanese every day this week."
+    },
+    {
+      "jp": "来週、友だちに会います。",
+      "kana": "らいしゅう、ともだちに あいます。",
+      "romaji": "raishū, tomodachi ni aimasu.",
+      "zh": "下週要見朋友。",
+      "en": "I will meet my friend next week."
+    },
+    {
+      "jp": "先月、新しい靴を買いました。",
+      "kana": "せんげつ、あたらしい くつを かいました。",
+      "romaji": "sengetsu, atarashii kutsu o kaimashita.",
+      "zh": "上個月買了新鞋。",
+      "en": "I bought new shoes last month."
+    },
+    {
+      "jp": "今月、台北に住んでいます。",
+      "kana": "こんげつ、たいぺいに すんでいます。",
+      "romaji": "kongetsu, Taipei ni sunde imasu.",
+      "zh": "這個月住在台北。",
+      "en": "I am living in Taipei this month."
+    },
+    {
+      "jp": "来月、日本へ行きたいです。",
+      "kana": "らいげつ、にほんへ いきたいです。",
+      "romaji": "raigetsu, Nihon e ikitai desu.",
+      "zh": "下個月想去日本。",
+      "en": "I want to go to Japan next month."
+    },
+    {
+      "jp": "一昨年、日本語を勉強し始めました。",
+      "kana": "おととし、にほんごを べんきょうしはじめました。",
+      "romaji": "ototoshi, nihongo o benkyō shi-hajimemashita.",
+      "zh": "前年開始學日文。",
+      "en": "I started studying Japanese the year before last."
+    },
+    {
+      "jp": "去年、大阪でたこ焼きを食べました。",
+      "kana": "きょねん、おおさかで たこやきを たべました。",
+      "romaji": "kyonen, Ōsaka de takoyaki o tabemashita.",
+      "zh": "去年在大阪吃了章魚燒。",
+      "en": "I ate takoyaki in Osaka last year."
+    },
+    {
+      "jp": "今年、日本語をもっと勉強します。",
+      "kana": "ことし、にほんごを もっと べんきょうします。",
+      "romaji": "kotoshi, nihongo o motto benkyō shimasu.",
+      "zh": "今年要更努力學日文。",
+      "en": "I will study Japanese more this year."
+    },
+    {
+      "jp": "来年、日本に住みたいです。",
+      "kana": "らいねん、にほんに すみたいです。",
+      "romaji": "rainen, Nihon ni sumitai desu.",
+      "zh": "明年想住在日本。",
+      "en": "I want to live in Japan next year."
+    },
+    {
+      "jp": "再来年、新しい車を買いたいです。",
+      "kana": "さらいねん、あたらしい くるまを かいたいです。",
+      "romaji": "sarainen, atarashii kuruma o kaitai desu.",
+      "zh": "後年想買新車。",
+      "en": "I want to buy a new car the year after next."
+    },
+    {
+      "jp": "午前、会議があります。",
+      "kana": "ごぜん、かいぎが あります。",
+      "romaji": "gozen, kaigi ga arimasu.",
+      "zh": "上午有會議。",
+      "en": "There is a meeting in the morning."
+    },
+    {
+      "jp": "午後、コンビニで飲み物を買います。",
+      "kana": "ごご、コンビニで のみものを かいます。",
+      "romaji": "gogo, konbini de nomimono o kaimasu.",
+      "zh": "下午在便利商店買飲料。",
+      "en": "I will buy a drink at a convenience store in the afternoon."
+    },
+    {
+      "jp": "月曜日に学校へ行きます。",
+      "kana": "げつようびに がっこうへ いきます。",
+      "romaji": "getsuyōbi ni gakkō e ikimasu.",
+      "zh": "星期一去學校。",
+      "en": "I go to school on Monday."
+    },
+    {
+      "jp": "火曜日に日本語を勉強します。",
+      "kana": "かようびに にほんごを べんきょうします。",
+      "romaji": "kayōbi ni nihongo o benkyō shimasu.",
+      "zh": "星期二學日文。",
+      "en": "I study Japanese on Tuesday."
+    },
+    {
+      "jp": "水曜日に友だちと会います。",
+      "kana": "すいようびに ともだちと あいます。",
+      "romaji": "suiyōbi ni tomodachi to aimasu.",
+      "zh": "星期三和朋友見面。",
+      "en": "I meet my friend on Wednesday."
+    },
+    {
+      "jp": "木曜日に家でご飯を食べます。",
+      "kana": "もくようびに いえで ごはんを たべます。",
+      "romaji": "mokuyōbi ni ie de gohan o tabemasu.",
+      "zh": "星期四在家吃飯。",
+      "en": "I eat at home on Thursday."
+    },
+    {
+      "jp": "金曜日に新しい服を買います。",
+      "kana": "きんようびに あたらしい ふくを かいます。",
+      "romaji": "kin'yōbi ni atarashii fuku o kaimasu.",
+      "zh": "星期五買新衣服。",
+      "en": "I buy new clothes on Friday."
+    },
+    {
+      "jp": "土曜日に公園を歩きます。",
+      "kana": "どようびに こうえんを あるきます。",
+      "romaji": "doyōbi ni kōen o arukimasu.",
+      "zh": "星期六在公園散步。",
+      "en": "I walk in the park on Saturday."
+    },
+    {
+      "jp": "日曜日に家族と休みます。",
+      "kana": "にちようびに かぞくと やすみます。",
+      "romaji": "nichiyōbi ni kazoku to yasumimasu.",
+      "zh": "星期日和家人休息。",
+      "en": "I rest with my family on Sunday."
+    },
+    {
+      "jp": "今日は何曜日ですか。",
+      "kana": "きょうは なんようびですか。",
+      "romaji": "kyō wa nan'yōbi desu ka.",
+      "zh": "今天星期幾？",
+      "en": "What day of the week is today?"
+    },
+    {
+      "jp": "薬を飲みます。",
+      "kana": "くすりを のみます。",
+      "romaji": "kusuri o nomimasu.",
+      "zh": "吃藥／服藥。",
+      "en": "I take medicine."
+    },
+    {
+      "jp": "宿題をします。",
+      "kana": "しゅくだいを します。",
+      "romaji": "shukudai o shimasu.",
+      "zh": "做作業／做功課。",
+      "en": "I do homework."
+    },
+    {
+      "jp": "本を読みます。",
+      "kana": "ほんを よみます。",
+      "romaji": "hon o yomimasu.",
+      "zh": "讀書／看書。",
+      "en": "I read a book."
+    },
+    {
+      "jp": "ゲームをします。",
+      "kana": "ゲームを します。",
+      "romaji": "gēmu o shimasu.",
+      "zh": "玩遊戲。",
+      "en": "I play a game."
+    },
+    {
+      "jp": "友達に会います。",
+      "kana": "ともだちに あいます。",
+      "romaji": "tomodachi ni aimasu.",
+      "zh": "見朋友。",
+      "en": "I meet a friend."
+    },
+    {
+      "jp": "靴下をはきます。",
+      "kana": "くつしたを はきます。",
+      "romaji": "kutsushita o hakimasu.",
+      "zh": "穿襪子。",
+      "en": "I put on socks."
+    },
+    {
+      "jp": "夢を見ます。",
+      "kana": "ゆめを みます。",
+      "romaji": "yume o mimasu.",
+      "zh": "做夢。",
+      "en": "I have a dream."
+    }
   ]
 }
