@@ -8,15 +8,6 @@
       "zh": "我",
       "en": "I",
       "audio": "audio/sentence/subject_watashiwa.mp3"
-    },
-    {
-      "id": "tomodachiwa",
-      "jp": "友だちは",
-      "kana": "ともだち は",
-      "romaji": "tomodachi wa",
-      "zh": "朋友",
-      "en": "My friend",
-      "audio": "audio/sentence/subject_tomodachiwa.mp3"
     }
   ],
   "origins": [
@@ -27,25 +18,7 @@
       "romaji": "uchi kara",
       "zh": "從家裡出發",
       "en": "from home",
-      "audio": "audio/sentence/origin_uchi_kara.mp3"
-    },
-    {
-      "id": "gakkou_kara",
-      "jp": "学校から",
-      "kana": "がっこう から",
-      "romaji": "gakkō kara",
-      "zh": "從學校出發",
-      "en": "from school",
-      "audio": "audio/sentence/origin_gakkou_kara.mp3"
-    },
-    {
-      "id": "cafe_kara",
-      "jp": "カフェから",
-      "kana": "カフェ から",
-      "romaji": "kafe kara",
-      "zh": "從咖啡店出發",
-      "en": "from a café",
-      "audio": "audio/sentence/origin_cafe_kara.mp3"
+      "audio": "audio/sentence/from_uchi_kara.mp3"
     }
   ],
   "means": [
@@ -122,24 +95,6 @@
       "zh": "跟朋友",
       "en": "with a friend",
       "audio": "audio/sentence/person_tomodachi_to.mp3"
-    },
-    {
-      "id": "kazoku_to",
-      "jp": "家族と",
-      "kana": "かぞく と",
-      "romaji": "kazoku to",
-      "zh": "跟家人",
-      "en": "with family",
-      "audio": "audio/sentence/person_kazoku_to.mp3"
-    },
-    {
-      "id": "sensei_to",
-      "jp": "先生と",
-      "kana": "せんせい と",
-      "romaji": "sensei to",
-      "zh": "跟老師",
-      "en": "with the teacher",
-      "audio": "audio/sentence/person_sensei_to.mp3"
     }
   ],
   "destinations": [
@@ -169,15 +124,6 @@
       "zh": "到車站",
       "en": "to the station",
       "audio": "audio/sentence/destination_eki_e.mp3"
-    },
-    {
-      "id": "kouen_e",
-      "jp": "公園へ",
-      "kana": "こうえん へ",
-      "romaji": "kōen e",
-      "zh": "到公園",
-      "en": "to the park",
-      "audio": "audio/sentence/destination_kouen_e.mp3"
     }
   ],
   "actions": [
@@ -205,12 +151,12 @@
       "id": "nomini_iku",
       "name": "喝",
       "object": {
-        "jp": "コーヒーを",
-        "kana": "コーヒー を",
-        "romaji": "kōhī o",
-        "zh": "咖啡",
-        "en": "coffee",
-        "audio": "audio/sentence/object_coffee_o.mp3"
+        "jp": "水を",
+        "kana": "みず を",
+        "romaji": "mizu o",
+        "zh": "水",
+        "en": "water",
+        "audio": "audio/sentence/object_mizu_o.mp3"
       },
       "purposeVerb": {
         "jp": "飲みに行きます",
