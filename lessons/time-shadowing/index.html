@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>日文時間表達 Shadowing 跟讀練習</title>
+<title>日文時間表達 Shadowing 跟讀練習｜MP3版</title>
 <style>
   :root{--bg:#fff8ef;--card:#fff;--ink:#1f2937;--muted:#6b7280;--brand:#f59e0b;--brand2:#16a34a;--red:#ef4444;--line:#e5e7eb;--blue:#2563eb;}
   *{box-sizing:border-box} body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Noto Sans JP",Arial,sans-serif;color:var(--ink)}
@@ -18,7 +18,7 @@
 </style>
 </head>
 <body>
-<header><h1>日文時間表達 Shadowing 跟讀練習</h1><p>JSON 分離版：天・週・月・年・星期幾｜日文／平假名＋羅馬拼音／中文英文</p></header>
+<header><h1>日文時間表達 Shadowing 跟讀練習</h1><p>JSON 分離版 MP3：天・週・月・年・星期幾｜只播 MP3，不使用瀏覽器語音</p></header>
 <main>
   <section class="panel"><div class="tabs" id="tabs"></div></section>
   <section class="panel hero">
@@ -47,28 +47,225 @@
 </main>
 <div class="footerbar"><button id="footPrev">← 上一句</button><button class="primary" id="footSpeak">朗讀</button><button id="footNext">下一句 →</button></div>
 <script>
-let lesson=null, mode='words', activeCategory=0, activeIndex=0, isPlaying=false, voices=[];
+let lesson=null, mode='words', activeCategory=0, activeIndex=0;
+let isPlaying=false, currentAudio=null, playToken=0;
 const $=id=>document.getElementById(id);
-function flatWords(){ return lesson.categories[activeCategory].items.map((x,i)=>({...x,_cat:lesson.categories[activeCategory].name_zh,_idx:i})); }
-function currentList(){ return mode==='sentences' ? lesson.sentences.map((x,i)=>({...x,_cat:'句子練習',_idx:i})) : flatWords(); }
+
+function flatWords(){
+  return lesson.categories[activeCategory].items.map((x,i)=>({...x,_cat:lesson.categories[activeCategory].name_zh,_idx:i}));
+}
+function currentList(){
+  return mode==='sentences'
+    ? lesson.sentences.map((x,i)=>({...x,_cat:'句子練習',_idx:i}))
+    : flatWords();
+}
 function current(){ return currentList()[activeIndex] || currentList()[0]; }
-function loadVoices(){ voices=speechSynthesis.getVoices(); }
-if('speechSynthesis' in window){ speechSynthesis.onvoiceschanged=loadVoices; loadVoices(); }
-function pickJaVoice(){ return voices.find(v=>/ja|Japan|日本/i.test(v.lang+' '+v.name)) || voices[0] || null; }
-function renderTabs(){ const tabs=$('tabs'); tabs.innerHTML=''; lesson.categories.forEach((c,i)=>{ const b=document.createElement('button'); b.className='tab'+(i===activeCategory && mode==='words'?' active':''); b.textContent=c.name_zh; b.onclick=()=>{mode='words';activeCategory=i;activeIndex=0;stopSpeak();render();}; tabs.appendChild(b); }); const sb=document.createElement('button'); sb.className='tab'+(mode==='sentences'?' active':''); sb.textContent='句子練習'; sb.onclick=()=>{mode='sentences';activeIndex=0;stopSpeak();render();}; tabs.appendChild(sb); }
-function renderHero(){ const it=current(); $('catBadge').textContent=it._cat || ''; $('jp').textContent=it.jp; $('kana').textContent=it.kana; $('romaji').textContent=it.romaji; $('zh').textContent=it.zh; $('en').textContent=it.en||''; $('count').textContent=(activeIndex+1)+' / '+currentList().length; }
-function renderCards(){ const box=$('cards'); box.className='grid '+(mode==='sentences'?'sentences':''); box.innerHTML=''; currentList().forEach((it,i)=>{ const d=document.createElement('div'); d.className='card'+(i===activeIndex?' active':''); d.onclick=()=>{activeIndex=i;render();speakCurrent();}; d.innerHTML=mode==='sentences' ? `<div class="sentencejp">${it.jp}</div><div class="sentencekana">${it.kana}</div><div class="cromaji">${it.romaji}</div><div class="sentencezh">${it.zh}</div>` : `<div class="cjp">${it.jp}</div><div class="ckana">${it.kana}</div><div class="cromaji">${it.romaji}</div><div class="czh">${it.zh}</div>`; box.appendChild(d); }); }
-function renderTable(){ const t=$('table'); const rows=currentList().map(it=>`<tr><td>${it.jp}</td><td>${it.kana}<br><b>${it.romaji}</b></td><td>${it.zh}<br><span style="color:#6b7280">${it.en||''}</span></td></tr>`).join(''); t.innerHTML=`<thead><tr><th>日文</th><th>平假名 / 羅馬拼音</th><th>中文 / 英文</th></tr></thead><tbody>${rows}</tbody>`; }
-function render(){ renderTabs(); if(activeIndex>=currentList().length) activeIndex=0; renderHero(); renderCards(); renderTable(); }
-function stopSpeak(){ isPlaying=false; if('speechSynthesis' in window) speechSynthesis.cancel(); $('status').textContent='已停止。'; }
+
+function renderTabs(){
+  const tabs=$('tabs'); tabs.innerHTML='';
+  lesson.categories.forEach((c,i)=>{
+    const b=document.createElement('button');
+    b.className='tab'+(i===activeCategory && mode==='words'?' active':'');
+    b.textContent=c.name_zh;
+    b.onclick=()=>{mode='words';activeCategory=i;activeIndex=0;stopAudio('已切換分類。');render();};
+    tabs.appendChild(b);
+  });
+  const sb=document.createElement('button');
+  sb.className='tab'+(mode==='sentences'?' active':'');
+  sb.textContent='句子練習';
+  sb.onclick=()=>{mode='sentences';activeIndex=0;stopAudio('已切換到句子練習。');render();};
+  tabs.appendChild(sb);
+}
+
+function renderHero(){
+  const it=current();
+  $('catBadge').textContent=it._cat || '';
+  $('jp').textContent=it.jp || '';
+  $('kana').textContent=it.kana || '';
+  $('romaji').textContent=it.romaji || '';
+  $('zh').textContent=it.zh || '';
+  $('en').textContent=it.en || '';
+  $('count').textContent=(activeIndex+1)+' / '+currentList().length;
+}
+
+function renderCards(){
+  const box=$('cards');
+  box.className='grid '+(mode==='sentences'?'sentences':'');
+  box.innerHTML='';
+  currentList().forEach((it,i)=>{
+    const d=document.createElement('div');
+    d.className='card'+(i===activeIndex?' active':'');
+    d.onclick=()=>{stopAudio('');activeIndex=i;render();playCurrent();};
+    d.innerHTML=mode==='sentences'
+      ? `<div class="sentencejp">${it.jp||''}</div><div class="sentencekana">${it.kana||''}</div><div class="cromaji">${it.romaji||''}</div><div class="sentencezh">${it.zh||''}</div>`
+      : `<div class="cjp">${it.jp||''}</div><div class="ckana">${it.kana||''}</div><div class="cromaji">${it.romaji||''}</div><div class="czh">${it.zh||''}</div>`;
+    box.appendChild(d);
+  });
+}
+
+function renderTable(){
+  const t=$('table');
+  const rows=currentList().map(it=>
+    `<tr><td>${it.jp||''}</td><td>${it.kana||''}<br><b>${it.romaji||''}</b></td><td>${it.zh||''}<br><span style="color:#6b7280">${it.en||''}</span></td></tr>`
+  ).join('');
+  t.innerHTML=`<thead><tr><th>日文</th><th>平假名 / 羅馬拼音</th><th>中文 / 英文</th></tr></thead><tbody>${rows}</tbody>`;
+}
+
+function render(){
+  renderTabs();
+  if(activeIndex>=currentList().length) activeIndex=0;
+  renderHero();
+  renderCards();
+  renderTable();
+}
+
 function sleep(ms){ return new Promise(r=>setTimeout(r,ms)); }
-function speakText(text){ return new Promise(resolve=>{ if(!('speechSynthesis' in window)){ $('status').textContent='此瀏覽器不支援語音朗讀。'; return resolve(); } speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(text); u.lang='ja-JP'; u.rate=parseFloat($('rateSel').value); u.pitch=1; const v=pickJaVoice(); if(v) u.voice=v; u.onend=resolve; u.onerror=resolve; speechSynthesis.speak(u); }); }
-async function speakCurrent(){ isPlaying=true; const it=current(); const repeat=parseInt($('repeatSel').value,10); const pause=parseFloat($('pauseInput').value||'1')*1000; $('status').textContent='朗讀中：'+it.jp; const speakTarget = it.kana || it.jp; for(let r=0;r<repeat && isPlaying;r++){ await speakText(speakTarget); if(r<repeat-1 && isPlaying) await sleep(pause); } isPlaying=false; $('status').textContent='完成：'+it.jp; }
-async function playAll(){ isPlaying=true; const list=currentList(); const repeat=parseInt($('repeatSel').value,10); const pause=parseFloat($('pauseInput').value||'1')*1000; for(let i=activeIndex;i<list.length && isPlaying;i++){ activeIndex=i; render(); const it=current(); $('status').textContent='播放一輪：'+(i+1)+' / '+list.length+'　'+it.jp; const speakTarget = it.kana || it.jp; for(let r=0;r<repeat && isPlaying;r++){ await speakText(speakTarget); if(isPlaying) await sleep(pause); } } isPlaying=false; $('status').textContent='播放一輪完成。'; }
-function prev(){ stopSpeak(); activeIndex=(activeIndex-1+currentList().length)%currentList().length; render(); speakCurrent(); }
-function next(){ stopSpeak(); activeIndex=(activeIndex+1)%currentList().length; render(); speakCurrent(); }
-$('prevBtn').onclick=prev; $('nextBtn').onclick=next; $('footPrev').onclick=prev; $('footNext').onclick=next; $('speakBtn').onclick=speakCurrent; $('footSpeak').onclick=speakCurrent; $('playAllBtn').onclick=playAll; $('stopBtn').onclick=stopSpeak; $('resetBtn').onclick=()=>{stopSpeak();activeIndex=0;render();}; $('sentenceModeBtn').onclick=()=>{stopSpeak();mode='sentences';activeIndex=0;render();}; $('wordModeBtn').onclick=()=>{stopSpeak();mode='words';activeIndex=0;render();};
-async function init(){ try{ const res=await fetch('lesson.json',{cache:'no-store'}); if(!res.ok) throw new Error('lesson.json not found'); lesson=await res.json(); }catch(e){ const res=await fetch('time_shadowing_lesson.json',{cache:'no-store'}); lesson=await res.json(); } render(); }
+
+function stopAudio(message='已停止。'){
+  isPlaying=false;
+  playToken++;
+  if(currentAudio){
+    currentAudio.pause();
+    currentAudio.currentTime=0;
+    currentAudio.src='';
+    currentAudio=null;
+  }
+  if(message) $('status').textContent=message;
+}
+
+function audioSrcFor(item){
+  // lesson.json 建議使用 audio 欄位，例如 "audio/vocab_001.mp3"
+  // 若未來分成 word_audio / sentence_audio，也可相容。
+  return item.audio || item.mp3 || item.word_audio || item.sentence_audio || '';
+}
+
+function playOneMp3(src, speed, token){
+  return new Promise(resolve=>{
+    if(!src){
+      $('status').textContent='這一句沒有 MP3 音檔，請先在 lesson.json 補上 audio 欄位。';
+      return resolve(false);
+    }
+
+    if(currentAudio){
+      currentAudio.pause();
+      currentAudio.currentTime=0;
+      currentAudio.src='';
+    }
+
+    const audio=new Audio(src);
+    currentAudio=audio;
+    audio.preload='auto';
+    audio.playbackRate=speed;
+
+    audio.onended=()=>resolve(true);
+    audio.onerror=()=>{
+      if(token===playToken){
+        $('status').textContent='MP3 載入失敗：'+src+'。請確認 audio 資料夾與檔名是否正確。';
+      }
+      resolve(false);
+    };
+
+    audio.play().catch(err=>{
+      if(token===playToken){
+        $('status').textContent='瀏覽器阻擋播放，請先按一次「朗讀」。若仍失敗，請確認 MP3 路徑：'+src;
+      }
+      resolve(false);
+    });
+  });
+}
+
+async function playCurrent(){
+  stopAudio('');
+  isPlaying=true;
+  const token=playToken;
+  const it=current();
+  const src=audioSrcFor(it);
+  const repeat=parseInt($('repeatSel').value,10);
+  const pause=parseFloat($('pauseInput').value||'1')*1000;
+  const speed=parseFloat($('rateSel').value||'1');
+
+  $('status').textContent='MP3 朗讀中：'+(it.jp||'');
+  for(let r=0;r<repeat && isPlaying && token===playToken;r++){
+    const ok=await playOneMp3(src, speed, token);
+    if(!ok) break;
+    if(r<repeat-1 && isPlaying && token===playToken) await sleep(pause);
+  }
+  if(token===playToken){
+    isPlaying=false;
+    $('status').textContent='完成：'+(it.jp||'');
+  }
+}
+
+async function playAll(){
+  stopAudio('');
+  isPlaying=true;
+  const token=playToken;
+  const list=currentList();
+  const repeat=parseInt($('repeatSel').value,10);
+  const pause=parseFloat($('pauseInput').value||'1')*1000;
+  const speed=parseFloat($('rateSel').value||'1');
+
+  for(let i=activeIndex;i<list.length && isPlaying && token===playToken;i++){
+    activeIndex=i;
+    render();
+    const it=current();
+    const src=audioSrcFor(it);
+    $('status').textContent='播放一輪：'+(i+1)+' / '+list.length+'　'+(it.jp||'');
+
+    for(let r=0;r<repeat && isPlaying && token===playToken;r++){
+      const ok=await playOneMp3(src, speed, token);
+      if(!ok){
+        isPlaying=false;
+        break;
+      }
+      if(isPlaying && token===playToken) await sleep(pause);
+    }
+  }
+
+  if(token===playToken){
+    isPlaying=false;
+    $('status').textContent='播放一輪完成。';
+  }
+}
+
+function prev(){
+  stopAudio('');
+  activeIndex=(activeIndex-1+currentList().length)%currentList().length;
+  render();
+  playCurrent();
+}
+
+function next(){
+  stopAudio('');
+  activeIndex=(activeIndex+1)%currentList().length;
+  render();
+  playCurrent();
+}
+
+$('prevBtn').onclick=prev;
+$('nextBtn').onclick=next;
+$('footPrev').onclick=prev;
+$('footNext').onclick=next;
+$('speakBtn').onclick=playCurrent;
+$('footSpeak').onclick=playCurrent;
+$('playAllBtn').onclick=playAll;
+$('stopBtn').onclick=()=>stopAudio('已停止。');
+$('resetBtn').onclick=()=>{stopAudio('已回到第1句。');activeIndex=0;render();};
+$('sentenceModeBtn').onclick=()=>{stopAudio('已切換到句子練習。');mode='sentences';activeIndex=0;render();};
+$('wordModeBtn').onclick=()=>{stopAudio('已切換到單字練習。');mode='words';activeIndex=0;render();};
+
+async function init(){
+  try{
+    const res=await fetch('lesson.json',{cache:'no-store'});
+    if(!res.ok) throw new Error('lesson.json not found');
+    lesson=await res.json();
+  }catch(e){
+    const res=await fetch('time_shadowing_lesson.json',{cache:'no-store'});
+    lesson=await res.json();
+  }
+  render();
+  $('status').textContent='MP3 模式：只播放 lesson.json 內 audio 欄位，不使用瀏覽器 TTS。';
+}
 init();
 </script>
 </body>

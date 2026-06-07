@@ -13,35 +13,45 @@
           "kana": "おととい",
           "romaji": "ototoi",
           "zh": "前天",
-          "en": "the day before yesterday"
+          "en": "the day before yesterday",
+          "audio": "audio/vocab_001.mp3",
+          "speak": "おととい"
         },
         {
           "jp": "昨日",
           "kana": "きのう",
           "romaji": "kinō",
           "zh": "昨天",
-          "en": "yesterday"
+          "en": "yesterday",
+          "audio": "audio/vocab_002.mp3",
+          "speak": "きのう"
         },
         {
           "jp": "今日",
           "kana": "きょう",
           "romaji": "kyō",
           "zh": "今天",
-          "en": "today"
+          "en": "today",
+          "audio": "audio/vocab_003.mp3",
+          "speak": "きょう"
         },
         {
           "jp": "明日",
           "kana": "あした",
           "romaji": "ashita",
           "zh": "明天",
-          "en": "tomorrow"
+          "en": "tomorrow",
+          "audio": "audio/vocab_004.mp3",
+          "speak": "あした"
         },
         {
           "jp": "明後日",
           "kana": "あさって",
           "romaji": "asatte",
           "zh": "後天",
-          "en": "the day after tomorrow"
+          "en": "the day after tomorrow",
+          "audio": "audio/vocab_005.mp3",
+          "speak": "あさって"
         }
       ]
     },
@@ -55,21 +65,27 @@
           "kana": "さっき",
           "romaji": "sakki",
           "zh": "剛剛",
-          "en": "just now"
+          "en": "just now",
+          "audio": "audio/vocab_006.mp3",
+          "speak": "さっき"
         },
         {
           "jp": "今",
           "kana": "いま",
           "romaji": "ima",
           "zh": "現在",
-          "en": "now"
+          "en": "now",
+          "audio": "audio/vocab_007.mp3",
+          "speak": "いま"
         },
         {
           "jp": "後で",
           "kana": "あとで",
           "romaji": "atode",
           "zh": "等一下、稍後",
-          "en": "later"
+          "en": "later",
+          "audio": "audio/vocab_008.mp3",
+          "speak": "あとで"
         }
       ]
     },
@@ -83,21 +99,27 @@
           "kana": "せんしゅう",
           "romaji": "senshū",
           "zh": "上週",
-          "en": "last week"
+          "en": "last week",
+          "audio": "audio/vocab_009.mp3",
+          "speak": "せんしゅう"
         },
         {
           "jp": "今週",
           "kana": "こんしゅう",
           "romaji": "konshū",
           "zh": "這週、本週",
-          "en": "this week"
+          "en": "this week",
+          "audio": "audio/vocab_010.mp3",
+          "speak": "こんしゅう"
         },
         {
           "jp": "来週",
           "kana": "らいしゅう",
           "romaji": "raishū",
           "zh": "下週",
-          "en": "next week"
+          "en": "next week",
+          "audio": "audio/vocab_011.mp3",
+          "speak": "らいしゅう"
         }
       ]
     },
@@ -111,21 +133,27 @@
           "kana": "せんげつ",
           "romaji": "sengetsu",
           "zh": "上個月",
-          "en": "last month"
+          "en": "last month",
+          "audio": "audio/vocab_012.mp3",
+          "speak": "せんげつ"
         },
         {
           "jp": "今月",
           "kana": "こんげつ",
           "romaji": "kongetsu",
           "zh": "這個月、本月",
-          "en": "this month"
+          "en": "this month",
+          "audio": "audio/vocab_013.mp3",
+          "speak": "こんげつ"
         },
         {
           "jp": "来月",
           "kana": "らいげつ",
           "romaji": "raigetsu",
           "zh": "下個月",
-          "en": "next month"
+          "en": "next month",
+          "audio": "audio/vocab_014.mp3",
+          "speak": "らいげつ"
         }
       ]
     },
@@ -139,35 +167,45 @@
           "kana": "おととし",
           "romaji": "ototoshi",
           "zh": "前年",
-          "en": "the year before last"
+          "en": "the year before last",
+          "audio": "audio/vocab_015.mp3",
+          "speak": "おととし"
         },
         {
           "jp": "去年",
           "kana": "きょねん",
           "romaji": "kyonen",
           "zh": "去年",
-          "en": "last year"
+          "en": "last year",
+          "audio": "audio/vocab_016.mp3",
+          "speak": "きょねん"
         },
         {
           "jp": "今年",
           "kana": "ことし",
           "romaji": "kotoshi",
           "zh": "今年",
-          "en": "this year"
+          "en": "this year",
+          "audio": "audio/vocab_017.mp3",
+          "speak": "ことし"
         },
         {
           "jp": "来年",
           "kana": "らいねん",
           "romaji": "rainen",
           "zh": "明年",
-          "en": "next year"
+          "en": "next year",
+          "audio": "audio/vocab_018.mp3",
+          "speak": "らいねん"
         },
         {
           "jp": "再来年",
           "kana": "さらいねん",
           "romaji": "sarainen",
           "zh": "後年、後一年",
-          "en": "the year after next"
+          "en": "the year after next",
+          "audio": "audio/vocab_019.mp3",
+          "speak": "さらいねん"
         }
       ]
     },
@@ -181,14 +219,18 @@
           "kana": "ごぜん",
           "romaji": "gozen",
           "zh": "上午",
-          "en": "a.m. / morning"
+          "en": "a.m. / morning",
+          "audio": "audio/vocab_020.mp3",
+          "speak": "ごぜん"
         },
         {
           "jp": "午後",
           "kana": "ごご",
           "romaji": "gogo",
           "zh": "下午",
-          "en": "p.m. / afternoon"
+          "en": "p.m. / afternoon",
+          "audio": "audio/vocab_021.mp3",
+          "speak": "ごご"
         }
       ]
     },
@@ -202,56 +244,72 @@
           "kana": "げつようび",
           "romaji": "getsuyōbi",
           "zh": "星期一",
-          "en": "Monday"
+          "en": "Monday",
+          "audio": "audio/vocab_022.mp3",
+          "speak": "げつようび"
         },
         {
           "jp": "火曜日",
           "kana": "かようび",
           "romaji": "kayōbi",
           "zh": "星期二",
-          "en": "Tuesday"
+          "en": "Tuesday",
+          "audio": "audio/vocab_023.mp3",
+          "speak": "かようび"
         },
         {
           "jp": "水曜日",
           "kana": "すいようび",
           "romaji": "suiyōbi",
           "zh": "星期三",
-          "en": "Wednesday"
+          "en": "Wednesday",
+          "audio": "audio/vocab_024.mp3",
+          "speak": "すいようび"
         },
         {
           "jp": "木曜日",
           "kana": "もくようび",
           "romaji": "mokuyōbi",
           "zh": "星期四",
-          "en": "Thursday"
+          "en": "Thursday",
+          "audio": "audio/vocab_025.mp3",
+          "speak": "もくようび"
         },
         {
           "jp": "金曜日",
           "kana": "きんようび",
           "romaji": "kin'yōbi",
           "zh": "星期五",
-          "en": "Friday"
+          "en": "Friday",
+          "audio": "audio/vocab_026.mp3",
+          "speak": "きんようび"
         },
         {
           "jp": "土曜日",
           "kana": "どようび",
           "romaji": "doyōbi",
           "zh": "星期六",
-          "en": "Saturday"
+          "en": "Saturday",
+          "audio": "audio/vocab_027.mp3",
+          "speak": "どようび"
         },
         {
           "jp": "日曜日",
           "kana": "にちようび",
           "romaji": "nichiyōbi",
           "zh": "星期日、星期天",
-          "en": "Sunday"
+          "en": "Sunday",
+          "audio": "audio/vocab_028.mp3",
+          "speak": "にちようび"
         },
         {
           "jp": "何曜日",
           "kana": "なんようび",
           "romaji": "nan'yōbi",
           "zh": "星期幾？",
-          "en": "what day of the week?"
+          "en": "what day of the week?",
+          "audio": "audio/vocab_029.mp3",
+          "speak": "なんようび"
         }
       ]
     }
@@ -262,252 +320,324 @@
       "kana": "おととい、ともだちと えいがを みました。",
       "romaji": "ototoi, tomodachi to eiga o mimashita.",
       "zh": "前天和朋友看了電影。",
-      "en": "I watched a movie with my friend the day before yesterday."
+      "en": "I watched a movie with my friend the day before yesterday.",
+      "audio": "audio/vocab_030.mp3",
+      "speak": "おととい、ともだちと えいがを みました。"
     },
     {
       "jp": "昨日、ラーメンを食べました。",
       "kana": "きのう、ラーメンを たべました。",
       "romaji": "kinō, rāmen o tabemashita.",
       "zh": "昨天吃了拉麵。",
-      "en": "I ate ramen yesterday."
+      "en": "I ate ramen yesterday.",
+      "audio": "audio/vocab_031.mp3",
+      "speak": "きのう、ラーメンを たべました。"
     },
     {
       "jp": "今日、新しい服を着ます。",
       "kana": "きょう、あたらしい ふくを きます。",
       "romaji": "kyō, atarashii fuku o kimasu.",
       "zh": "今天穿新衣服。",
-      "en": "I will wear new clothes today."
+      "en": "I will wear new clothes today.",
+      "audio": "audio/vocab_032.mp3",
+      "speak": "きょう、あたらしい ふくを きます。"
     },
     {
       "jp": "明日、東京へ行きます。",
       "kana": "あした、とうきょうへ いきます。",
       "romaji": "ashita, Tōkyō e ikimasu.",
       "zh": "明天要去東京。",
-      "en": "I will go to Tokyo tomorrow."
+      "en": "I will go to Tokyo tomorrow.",
+      "audio": "audio/vocab_033.mp3",
+      "speak": "あした、とうきょうへ いきます。"
     },
     {
       "jp": "明後日、家族と旅行します。",
       "kana": "あさって、かぞくと りょこうします。",
       "romaji": "asatte, kazoku to ryokō shimasu.",
       "zh": "後天和家人去旅行。",
-      "en": "I will travel with my family the day after tomorrow."
+      "en": "I will travel with my family the day after tomorrow.",
+      "audio": "audio/vocab_034.mp3",
+      "speak": "あさって、かぞくと りょこうします。"
     },
     {
       "jp": "さっき、先生と話しました。",
       "kana": "さっき、せんせいと はなしました。",
       "romaji": "sakki, sensei to hanashimashita.",
       "zh": "剛剛和老師說話了。",
-      "en": "I talked with the teacher just now."
+      "en": "I talked with the teacher just now.",
+      "audio": "audio/vocab_035.mp3",
+      "speak": "さっき、せんせいと はなしました。"
     },
     {
       "jp": "今、日本語を勉強しています。",
       "kana": "いま、にほんごを べんきょうしています。",
       "romaji": "ima, nihongo o benkyō shite imasu.",
       "zh": "現在正在學日文。",
-      "en": "I am studying Japanese now."
+      "en": "I am studying Japanese now.",
+      "audio": "audio/vocab_036.mp3",
+      "speak": "いま、にほんごを べんきょうしています。"
     },
     {
       "jp": "後で、コーヒーを飲みます。",
       "kana": "あとで、コーヒーを のみます。",
       "romaji": "atode, kōhī o nomimasu.",
       "zh": "等一下喝咖啡。",
-      "en": "I will drink coffee later."
+      "en": "I will drink coffee later.",
+      "audio": "audio/vocab_037.mp3",
+      "speak": "あとで、コーヒーを のみます。"
     },
     {
       "jp": "先週、病院へ行きました。",
       "kana": "せんしゅう、びょういんへ いきました。",
       "romaji": "senshū, byōin e ikimashita.",
       "zh": "上週去了醫院。",
-      "en": "I went to the hospital last week."
+      "en": "I went to the hospital last week.",
+      "audio": "audio/vocab_038.mp3",
+      "speak": "せんしゅう、びょういんへ いきました。"
     },
     {
       "jp": "今週、毎日日本語を練習します。",
       "kana": "こんしゅう、まいにち にほんごを れんしゅうします。",
       "romaji": "konshū, mainichi nihongo o renshū shimasu.",
       "zh": "這週每天練習日文。",
-      "en": "I will practice Japanese every day this week."
+      "en": "I will practice Japanese every day this week.",
+      "audio": "audio/vocab_039.mp3",
+      "speak": "こんしゅう、まいにち にほんごを れんしゅうします。"
     },
     {
       "jp": "来週、友だちに会います。",
       "kana": "らいしゅう、ともだちに あいます。",
       "romaji": "raishū, tomodachi ni aimasu.",
       "zh": "下週要見朋友。",
-      "en": "I will meet my friend next week."
+      "en": "I will meet my friend next week.",
+      "audio": "audio/vocab_040.mp3",
+      "speak": "らいしゅう、ともだちに あいます。"
     },
     {
       "jp": "先月、新しい靴を買いました。",
       "kana": "せんげつ、あたらしい くつを かいました。",
       "romaji": "sengetsu, atarashii kutsu o kaimashita.",
       "zh": "上個月買了新鞋。",
-      "en": "I bought new shoes last month."
+      "en": "I bought new shoes last month.",
+      "audio": "audio/vocab_041.mp3",
+      "speak": "せんげつ、あたらしい くつを かいました。"
     },
     {
       "jp": "今月、台北に住んでいます。",
       "kana": "こんげつ、たいぺいに すんでいます。",
       "romaji": "kongetsu, Taipei ni sunde imasu.",
       "zh": "這個月住在台北。",
-      "en": "I am living in Taipei this month."
+      "en": "I am living in Taipei this month.",
+      "audio": "audio/vocab_042.mp3",
+      "speak": "こんげつ、たいぺいに すんでいます。"
     },
     {
       "jp": "来月、日本へ行きたいです。",
       "kana": "らいげつ、にほんへ いきたいです。",
       "romaji": "raigetsu, Nihon e ikitai desu.",
       "zh": "下個月想去日本。",
-      "en": "I want to go to Japan next month."
+      "en": "I want to go to Japan next month.",
+      "audio": "audio/vocab_043.mp3",
+      "speak": "らいげつ、にほんへ いきたいです。"
     },
     {
       "jp": "一昨年、日本語を勉強し始めました。",
       "kana": "おととし、にほんごを べんきょうしはじめました。",
       "romaji": "ototoshi, nihongo o benkyō shi-hajimemashita.",
       "zh": "前年開始學日文。",
-      "en": "I started studying Japanese the year before last."
+      "en": "I started studying Japanese the year before last.",
+      "audio": "audio/vocab_044.mp3",
+      "speak": "おととし、にほんごを べんきょうしはじめました。"
     },
     {
       "jp": "去年、大阪でたこ焼きを食べました。",
       "kana": "きょねん、おおさかで たこやきを たべました。",
       "romaji": "kyonen, Ōsaka de takoyaki o tabemashita.",
       "zh": "去年在大阪吃了章魚燒。",
-      "en": "I ate takoyaki in Osaka last year."
+      "en": "I ate takoyaki in Osaka last year.",
+      "audio": "audio/vocab_045.mp3",
+      "speak": "きょねん、おおさかで たこやきを たべました。"
     },
     {
       "jp": "今年、日本語をもっと勉強します。",
       "kana": "ことし、にほんごを もっと べんきょうします。",
       "romaji": "kotoshi, nihongo o motto benkyō shimasu.",
       "zh": "今年要更努力學日文。",
-      "en": "I will study Japanese more this year."
+      "en": "I will study Japanese more this year.",
+      "audio": "audio/vocab_046.mp3",
+      "speak": "ことし、にほんごを もっと べんきょうします。"
     },
     {
       "jp": "来年、日本に住みたいです。",
       "kana": "らいねん、にほんに すみたいです。",
       "romaji": "rainen, Nihon ni sumitai desu.",
       "zh": "明年想住在日本。",
-      "en": "I want to live in Japan next year."
+      "en": "I want to live in Japan next year.",
+      "audio": "audio/vocab_047.mp3",
+      "speak": "らいねん、にほんに すみたいです。"
     },
     {
       "jp": "再来年、新しい車を買いたいです。",
       "kana": "さらいねん、あたらしい くるまを かいたいです。",
       "romaji": "sarainen, atarashii kuruma o kaitai desu.",
       "zh": "後年想買新車。",
-      "en": "I want to buy a new car the year after next."
+      "en": "I want to buy a new car the year after next.",
+      "audio": "audio/vocab_048.mp3",
+      "speak": "さらいねん、あたらしい くるまを かいたいです。"
     },
     {
       "jp": "午前、会議があります。",
       "kana": "ごぜん、かいぎが あります。",
       "romaji": "gozen, kaigi ga arimasu.",
       "zh": "上午有會議。",
-      "en": "There is a meeting in the morning."
+      "en": "There is a meeting in the morning.",
+      "audio": "audio/vocab_049.mp3",
+      "speak": "ごぜん、かいぎが あります。"
     },
     {
       "jp": "午後、コンビニで飲み物を買います。",
       "kana": "ごご、コンビニで のみものを かいます。",
       "romaji": "gogo, konbini de nomimono o kaimasu.",
       "zh": "下午在便利商店買飲料。",
-      "en": "I will buy a drink at a convenience store in the afternoon."
+      "en": "I will buy a drink at a convenience store in the afternoon.",
+      "audio": "audio/vocab_050.mp3",
+      "speak": "ごご、コンビニで のみものを かいます。"
     },
     {
       "jp": "月曜日に学校へ行きます。",
       "kana": "げつようびに がっこうへ いきます。",
       "romaji": "getsuyōbi ni gakkō e ikimasu.",
       "zh": "星期一去學校。",
-      "en": "I go to school on Monday."
+      "en": "I go to school on Monday.",
+      "audio": "audio/vocab_051.mp3",
+      "speak": "げつようびに がっこうへ いきます。"
     },
     {
       "jp": "火曜日に日本語を勉強します。",
       "kana": "かようびに にほんごを べんきょうします。",
       "romaji": "kayōbi ni nihongo o benkyō shimasu.",
       "zh": "星期二學日文。",
-      "en": "I study Japanese on Tuesday."
+      "en": "I study Japanese on Tuesday.",
+      "audio": "audio/vocab_052.mp3",
+      "speak": "かようびに にほんごを べんきょうします。"
     },
     {
       "jp": "水曜日に友だちと会います。",
       "kana": "すいようびに ともだちと あいます。",
       "romaji": "suiyōbi ni tomodachi to aimasu.",
       "zh": "星期三和朋友見面。",
-      "en": "I meet my friend on Wednesday."
+      "en": "I meet my friend on Wednesday.",
+      "audio": "audio/vocab_053.mp3",
+      "speak": "すいようびに ともだちと あいます。"
     },
     {
       "jp": "木曜日に家でご飯を食べます。",
       "kana": "もくようびに いえで ごはんを たべます。",
       "romaji": "mokuyōbi ni ie de gohan o tabemasu.",
       "zh": "星期四在家吃飯。",
-      "en": "I eat at home on Thursday."
+      "en": "I eat at home on Thursday.",
+      "audio": "audio/vocab_054.mp3",
+      "speak": "もくようびに いえで ごはんを たべます。"
     },
     {
       "jp": "金曜日に新しい服を買います。",
       "kana": "きんようびに あたらしい ふくを かいます。",
       "romaji": "kin'yōbi ni atarashii fuku o kaimasu.",
       "zh": "星期五買新衣服。",
-      "en": "I buy new clothes on Friday."
+      "en": "I buy new clothes on Friday.",
+      "audio": "audio/vocab_055.mp3",
+      "speak": "きんようびに あたらしい ふくを かいます。"
     },
     {
       "jp": "土曜日に公園を歩きます。",
       "kana": "どようびに こうえんを あるきます。",
       "romaji": "doyōbi ni kōen o arukimasu.",
       "zh": "星期六在公園散步。",
-      "en": "I walk in the park on Saturday."
+      "en": "I walk in the park on Saturday.",
+      "audio": "audio/vocab_056.mp3",
+      "speak": "どようびに こうえんを あるきます。"
     },
     {
       "jp": "日曜日に家族と休みます。",
       "kana": "にちようびに かぞくと やすみます。",
       "romaji": "nichiyōbi ni kazoku to yasumimasu.",
       "zh": "星期日和家人休息。",
-      "en": "I rest with my family on Sunday."
+      "en": "I rest with my family on Sunday.",
+      "audio": "audio/vocab_057.mp3",
+      "speak": "にちようびに かぞくと やすみます。"
     },
     {
       "jp": "今日は何曜日ですか。",
       "kana": "きょうは なんようびですか。",
       "romaji": "kyō wa nan'yōbi desu ka.",
       "zh": "今天星期幾？",
-      "en": "What day of the week is today?"
+      "en": "What day of the week is today?",
+      "audio": "audio/vocab_058.mp3",
+      "speak": "きょうは なんようびですか。"
     },
     {
       "jp": "薬を飲みます。",
       "kana": "くすりを のみます。",
       "romaji": "kusuri o nomimasu.",
       "zh": "吃藥／服藥。",
-      "en": "I take medicine."
+      "en": "I take medicine.",
+      "audio": "audio/vocab_059.mp3",
+      "speak": "くすりを のみます。"
     },
     {
       "jp": "宿題をします。",
       "kana": "しゅくだいを します。",
       "romaji": "shukudai o shimasu.",
       "zh": "做作業／做功課。",
-      "en": "I do homework."
+      "en": "I do homework.",
+      "audio": "audio/vocab_060.mp3",
+      "speak": "しゅくだいを します。"
     },
     {
       "jp": "本を読みます。",
       "kana": "ほんを よみます。",
       "romaji": "hon o yomimasu.",
       "zh": "讀書／看書。",
-      "en": "I read a book."
+      "en": "I read a book.",
+      "audio": "audio/vocab_061.mp3",
+      "speak": "ほんを よみます。"
     },
     {
       "jp": "ゲームをします。",
       "kana": "ゲームを します。",
       "romaji": "gēmu o shimasu.",
       "zh": "玩遊戲。",
-      "en": "I play a game."
+      "en": "I play a game.",
+      "audio": "audio/vocab_062.mp3",
+      "speak": "ゲームを します。"
     },
     {
       "jp": "友達に会います。",
       "kana": "ともだちに あいます。",
       "romaji": "tomodachi ni aimasu.",
       "zh": "見朋友。",
-      "en": "I meet a friend."
+      "en": "I meet a friend.",
+      "audio": "audio/vocab_063.mp3",
+      "speak": "ともだちに あいます。"
     },
     {
       "jp": "靴下をはきます。",
       "kana": "くつしたを はきます。",
       "romaji": "kutsushita o hakimasu.",
       "zh": "穿襪子。",
-      "en": "I put on socks."
+      "en": "I put on socks.",
+      "audio": "audio/vocab_064.mp3",
+      "speak": "くつしたを はきます。"
     },
     {
       "jp": "夢を見ます。",
       "kana": "ゆめを みます。",
       "romaji": "yume o mimasu.",
       "zh": "做夢。",
-      "en": "I have a dream."
+      "en": "I have a dream.",
+      "audio": "audio/vocab_065.mp3",
+      "speak": "ゆめを みます。"
     }
   ]
 }
