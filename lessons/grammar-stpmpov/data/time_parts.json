@@ -1,0 +1,1198 @@
+{
+  "meta": {
+    "name": "Japanese time parts for STPPOV training",
+    "version": "2026-06-05"
+  },
+  "periods": [
+    {
+      "value": "auto",
+      "jp": "自動",
+      "kana": "じどう",
+      "romaji": "jidō",
+      "zh": "自動判斷上午/下午",
+      "en": "auto AM/PM"
+    },
+    {
+      "value": "gozen",
+      "jp": "午前",
+      "kana": "ごぜん",
+      "romaji": "gozen",
+      "zh": "上午",
+      "en": "a.m."
+    },
+    {
+      "value": "gogo",
+      "jp": "午後",
+      "kana": "ごご",
+      "romaji": "gogo",
+      "zh": "下午/晚上",
+      "en": "p.m."
+    },
+    {
+      "value": "24h",
+      "jp": "24時間制",
+      "kana": "にじゅうよじかんせい",
+      "romaji": "nijūyo-jikan-sei",
+      "zh": "24小時制",
+      "en": "24-hour format"
+    }
+  ],
+  "hours": [
+    {
+      "value": 0,
+      "jp": "0時",
+      "kana": "れいじ",
+      "romaji": "reiji",
+      "zh": "0點",
+      "en": "0 o'clock"
+    },
+    {
+      "value": 1,
+      "jp": "1時",
+      "kana": "いちじ",
+      "romaji": "ichiji",
+      "zh": "1點",
+      "en": "1 o'clock"
+    },
+    {
+      "value": 2,
+      "jp": "2時",
+      "kana": "にじ",
+      "romaji": "niji",
+      "zh": "2點",
+      "en": "2 o'clock"
+    },
+    {
+      "value": 3,
+      "jp": "3時",
+      "kana": "さんじ",
+      "romaji": "sanji",
+      "zh": "3點",
+      "en": "3 o'clock"
+    },
+    {
+      "value": 4,
+      "jp": "4時",
+      "kana": "よじ",
+      "romaji": "yoji",
+      "zh": "4點",
+      "en": "4 o'clock"
+    },
+    {
+      "value": 5,
+      "jp": "5時",
+      "kana": "ごじ",
+      "romaji": "goji",
+      "zh": "5點",
+      "en": "5 o'clock"
+    },
+    {
+      "value": 6,
+      "jp": "6時",
+      "kana": "ろくじ",
+      "romaji": "rokuji",
+      "zh": "6點",
+      "en": "6 o'clock"
+    },
+    {
+      "value": 7,
+      "jp": "7時",
+      "kana": "しちじ",
+      "romaji": "shichiji",
+      "zh": "7點",
+      "en": "7 o'clock"
+    },
+    {
+      "value": 8,
+      "jp": "8時",
+      "kana": "はちじ",
+      "romaji": "hachiji",
+      "zh": "8點",
+      "en": "8 o'clock"
+    },
+    {
+      "value": 9,
+      "jp": "9時",
+      "kana": "くじ",
+      "romaji": "kuji",
+      "zh": "9點",
+      "en": "9 o'clock"
+    },
+    {
+      "value": 10,
+      "jp": "10時",
+      "kana": "じゅうじ",
+      "romaji": "jūji",
+      "zh": "10點",
+      "en": "10 o'clock"
+    },
+    {
+      "value": 11,
+      "jp": "11時",
+      "kana": "じゅういちじ",
+      "romaji": "jūichiji",
+      "zh": "11點",
+      "en": "11 o'clock"
+    },
+    {
+      "value": 12,
+      "jp": "12時",
+      "kana": "じゅうにじ",
+      "romaji": "jūniji",
+      "zh": "12點",
+      "en": "12 o'clock"
+    },
+    {
+      "value": 13,
+      "jp": "13時",
+      "kana": "じゅうさんじ",
+      "romaji": "jūsanji",
+      "zh": "13點",
+      "en": "13 o'clock"
+    },
+    {
+      "value": 14,
+      "jp": "14時",
+      "kana": "じゅうよじ",
+      "romaji": "jūyoji",
+      "zh": "14點",
+      "en": "14 o'clock"
+    },
+    {
+      "value": 15,
+      "jp": "15時",
+      "kana": "じゅうごじ",
+      "romaji": "jūgoji",
+      "zh": "15點",
+      "en": "15 o'clock"
+    },
+    {
+      "value": 16,
+      "jp": "16時",
+      "kana": "じゅうろくじ",
+      "romaji": "jūrokuji",
+      "zh": "16點",
+      "en": "16 o'clock"
+    },
+    {
+      "value": 17,
+      "jp": "17時",
+      "kana": "じゅうしちじ",
+      "romaji": "jūshichiji",
+      "zh": "17點",
+      "en": "17 o'clock"
+    },
+    {
+      "value": 18,
+      "jp": "18時",
+      "kana": "じゅうはちじ",
+      "romaji": "jūhachiji",
+      "zh": "18點",
+      "en": "18 o'clock"
+    },
+    {
+      "value": 19,
+      "jp": "19時",
+      "kana": "じゅうくじ",
+      "romaji": "jūkuji",
+      "zh": "19點",
+      "en": "19 o'clock"
+    },
+    {
+      "value": 20,
+      "jp": "20時",
+      "kana": "にじゅうじ",
+      "romaji": "nijūji",
+      "zh": "20點",
+      "en": "20 o'clock"
+    },
+    {
+      "value": 21,
+      "jp": "21時",
+      "kana": "にじゅういちじ",
+      "romaji": "nijūichiji",
+      "zh": "21點",
+      "en": "21 o'clock"
+    },
+    {
+      "value": 22,
+      "jp": "22時",
+      "kana": "にじゅうにじ",
+      "romaji": "nijūniji",
+      "zh": "22點",
+      "en": "22 o'clock"
+    },
+    {
+      "value": 23,
+      "jp": "23時",
+      "kana": "にじゅうさんじ",
+      "romaji": "nijūsanji",
+      "zh": "23點",
+      "en": "23 o'clock"
+    }
+  ],
+  "minutes": [
+    {
+      "value": 0,
+      "jp": "0分",
+      "kana": "れいふん",
+      "romaji": "reifun",
+      "zh": "0分",
+      "en": "0 minutes"
+    },
+    {
+      "value": 1,
+      "jp": "1分",
+      "kana": "いっぷん",
+      "romaji": "ippun",
+      "zh": "1分",
+      "en": "1 minute"
+    },
+    {
+      "value": 2,
+      "jp": "2分",
+      "kana": "にふん",
+      "romaji": "nifun",
+      "zh": "2分",
+      "en": "2 minutes"
+    },
+    {
+      "value": 3,
+      "jp": "3分",
+      "kana": "さんぷん",
+      "romaji": "sanpun",
+      "zh": "3分",
+      "en": "3 minutes"
+    },
+    {
+      "value": 4,
+      "jp": "4分",
+      "kana": "よんぷん",
+      "romaji": "yonpun",
+      "zh": "4分",
+      "en": "4 minutes"
+    },
+    {
+      "value": 5,
+      "jp": "5分",
+      "kana": "ごふん",
+      "romaji": "gofun",
+      "zh": "5分",
+      "en": "5 minutes"
+    },
+    {
+      "value": 6,
+      "jp": "6分",
+      "kana": "ろっぷん",
+      "romaji": "roppun",
+      "zh": "6分",
+      "en": "6 minutes"
+    },
+    {
+      "value": 7,
+      "jp": "7分",
+      "kana": "ななふん",
+      "romaji": "nanafun",
+      "zh": "7分",
+      "en": "7 minutes"
+    },
+    {
+      "value": 8,
+      "jp": "8分",
+      "kana": "はっぷん",
+      "romaji": "happun",
+      "zh": "8分",
+      "en": "8 minutes"
+    },
+    {
+      "value": 9,
+      "jp": "9分",
+      "kana": "きゅうふん",
+      "romaji": "kyūfun",
+      "zh": "9分",
+      "en": "9 minutes"
+    },
+    {
+      "value": 10,
+      "jp": "10分",
+      "kana": "じゅっぷん",
+      "romaji": "juppun",
+      "zh": "10分",
+      "en": "10 minutes"
+    },
+    {
+      "value": 11,
+      "jp": "11分",
+      "kana": "じゅういっぷん",
+      "romaji": "jū ippun",
+      "zh": "11分",
+      "en": "11 minutes"
+    },
+    {
+      "value": 12,
+      "jp": "12分",
+      "kana": "じゅうにふん",
+      "romaji": "jū nifun",
+      "zh": "12分",
+      "en": "12 minutes"
+    },
+    {
+      "value": 13,
+      "jp": "13分",
+      "kana": "じゅうさんぷん",
+      "romaji": "jū sanpun",
+      "zh": "13分",
+      "en": "13 minutes"
+    },
+    {
+      "value": 14,
+      "jp": "14分",
+      "kana": "じゅうよんぷん",
+      "romaji": "jū yonpun",
+      "zh": "14分",
+      "en": "14 minutes"
+    },
+    {
+      "value": 15,
+      "jp": "15分",
+      "kana": "じゅうごふん",
+      "romaji": "jū gofun",
+      "zh": "15分",
+      "en": "15 minutes"
+    },
+    {
+      "value": 16,
+      "jp": "16分",
+      "kana": "じゅうろっぷん",
+      "romaji": "jū roppun",
+      "zh": "16分",
+      "en": "16 minutes"
+    },
+    {
+      "value": 17,
+      "jp": "17分",
+      "kana": "じゅうななふん",
+      "romaji": "jū nanafun",
+      "zh": "17分",
+      "en": "17 minutes"
+    },
+    {
+      "value": 18,
+      "jp": "18分",
+      "kana": "じゅうはっぷん",
+      "romaji": "jū happun",
+      "zh": "18分",
+      "en": "18 minutes"
+    },
+    {
+      "value": 19,
+      "jp": "19分",
+      "kana": "じゅうきゅうふん",
+      "romaji": "jū kyūfun",
+      "zh": "19分",
+      "en": "19 minutes"
+    },
+    {
+      "value": 20,
+      "jp": "20分",
+      "kana": "にじゅっぷん",
+      "romaji": "nijuppun",
+      "zh": "20分",
+      "en": "20 minutes"
+    },
+    {
+      "value": 21,
+      "jp": "21分",
+      "kana": "にじゅういっぷん",
+      "romaji": "nijū ippun",
+      "zh": "21分",
+      "en": "21 minutes"
+    },
+    {
+      "value": 22,
+      "jp": "22分",
+      "kana": "にじゅうにふん",
+      "romaji": "nijū nifun",
+      "zh": "22分",
+      "en": "22 minutes"
+    },
+    {
+      "value": 23,
+      "jp": "23分",
+      "kana": "にじゅうさんぷん",
+      "romaji": "nijū sanpun",
+      "zh": "23分",
+      "en": "23 minutes"
+    },
+    {
+      "value": 24,
+      "jp": "24分",
+      "kana": "にじゅうよんぷん",
+      "romaji": "nijū yonpun",
+      "zh": "24分",
+      "en": "24 minutes"
+    },
+    {
+      "value": 25,
+      "jp": "25分",
+      "kana": "にじゅうごふん",
+      "romaji": "nijū gofun",
+      "zh": "25分",
+      "en": "25 minutes"
+    },
+    {
+      "value": 26,
+      "jp": "26分",
+      "kana": "にじゅうろっぷん",
+      "romaji": "nijū roppun",
+      "zh": "26分",
+      "en": "26 minutes"
+    },
+    {
+      "value": 27,
+      "jp": "27分",
+      "kana": "にじゅうななふん",
+      "romaji": "nijū nanafun",
+      "zh": "27分",
+      "en": "27 minutes"
+    },
+    {
+      "value": 28,
+      "jp": "28分",
+      "kana": "にじゅうはっぷん",
+      "romaji": "nijū happun",
+      "zh": "28分",
+      "en": "28 minutes"
+    },
+    {
+      "value": 29,
+      "jp": "29分",
+      "kana": "にじゅうきゅうふん",
+      "romaji": "nijū kyūfun",
+      "zh": "29分",
+      "en": "29 minutes"
+    },
+    {
+      "value": 30,
+      "jp": "30分",
+      "kana": "さんじゅっぷん",
+      "romaji": "sanjuppun",
+      "zh": "30分",
+      "en": "30 minutes"
+    },
+    {
+      "value": 31,
+      "jp": "31分",
+      "kana": "さんじゅういっぷん",
+      "romaji": "sanjū ippun",
+      "zh": "31分",
+      "en": "31 minutes"
+    },
+    {
+      "value": 32,
+      "jp": "32分",
+      "kana": "さんじゅうにふん",
+      "romaji": "sanjū nifun",
+      "zh": "32分",
+      "en": "32 minutes"
+    },
+    {
+      "value": 33,
+      "jp": "33分",
+      "kana": "さんじゅうさんぷん",
+      "romaji": "sanjū sanpun",
+      "zh": "33分",
+      "en": "33 minutes"
+    },
+    {
+      "value": 34,
+      "jp": "34分",
+      "kana": "さんじゅうよんぷん",
+      "romaji": "sanjū yonpun",
+      "zh": "34分",
+      "en": "34 minutes"
+    },
+    {
+      "value": 35,
+      "jp": "35分",
+      "kana": "さんじゅうごふん",
+      "romaji": "sanjū gofun",
+      "zh": "35分",
+      "en": "35 minutes"
+    },
+    {
+      "value": 36,
+      "jp": "36分",
+      "kana": "さんじゅうろっぷん",
+      "romaji": "sanjū roppun",
+      "zh": "36分",
+      "en": "36 minutes"
+    },
+    {
+      "value": 37,
+      "jp": "37分",
+      "kana": "さんじゅうななふん",
+      "romaji": "sanjū nanafun",
+      "zh": "37分",
+      "en": "37 minutes"
+    },
+    {
+      "value": 38,
+      "jp": "38分",
+      "kana": "さんじゅうはっぷん",
+      "romaji": "sanjū happun",
+      "zh": "38分",
+      "en": "38 minutes"
+    },
+    {
+      "value": 39,
+      "jp": "39分",
+      "kana": "さんじゅうきゅうふん",
+      "romaji": "sanjū kyūfun",
+      "zh": "39分",
+      "en": "39 minutes"
+    },
+    {
+      "value": 40,
+      "jp": "40分",
+      "kana": "よんじゅっぷん",
+      "romaji": "yonjuppun",
+      "zh": "40分",
+      "en": "40 minutes"
+    },
+    {
+      "value": 41,
+      "jp": "41分",
+      "kana": "よんじゅういっぷん",
+      "romaji": "yonjū ippun",
+      "zh": "41分",
+      "en": "41 minutes"
+    },
+    {
+      "value": 42,
+      "jp": "42分",
+      "kana": "よんじゅうにふん",
+      "romaji": "yonjū nifun",
+      "zh": "42分",
+      "en": "42 minutes"
+    },
+    {
+      "value": 43,
+      "jp": "43分",
+      "kana": "よんじゅうさんぷん",
+      "romaji": "yonjū sanpun",
+      "zh": "43分",
+      "en": "43 minutes"
+    },
+    {
+      "value": 44,
+      "jp": "44分",
+      "kana": "よんじゅうよんぷん",
+      "romaji": "yonjū yonpun",
+      "zh": "44分",
+      "en": "44 minutes"
+    },
+    {
+      "value": 45,
+      "jp": "45分",
+      "kana": "よんじゅうごふん",
+      "romaji": "yonjū gofun",
+      "zh": "45分",
+      "en": "45 minutes"
+    },
+    {
+      "value": 46,
+      "jp": "46分",
+      "kana": "よんじゅうろっぷん",
+      "romaji": "yonjū roppun",
+      "zh": "46分",
+      "en": "46 minutes"
+    },
+    {
+      "value": 47,
+      "jp": "47分",
+      "kana": "よんじゅうななふん",
+      "romaji": "yonjū nanafun",
+      "zh": "47分",
+      "en": "47 minutes"
+    },
+    {
+      "value": 48,
+      "jp": "48分",
+      "kana": "よんじゅうはっぷん",
+      "romaji": "yonjū happun",
+      "zh": "48分",
+      "en": "48 minutes"
+    },
+    {
+      "value": 49,
+      "jp": "49分",
+      "kana": "よんじゅうきゅうふん",
+      "romaji": "yonjū kyūfun",
+      "zh": "49分",
+      "en": "49 minutes"
+    },
+    {
+      "value": 50,
+      "jp": "50分",
+      "kana": "ごじゅっぷん",
+      "romaji": "gojuppun",
+      "zh": "50分",
+      "en": "50 minutes"
+    },
+    {
+      "value": 51,
+      "jp": "51分",
+      "kana": "ごじゅういっぷん",
+      "romaji": "gojū ippun",
+      "zh": "51分",
+      "en": "51 minutes"
+    },
+    {
+      "value": 52,
+      "jp": "52分",
+      "kana": "ごじゅうにふん",
+      "romaji": "gojū nifun",
+      "zh": "52分",
+      "en": "52 minutes"
+    },
+    {
+      "value": 53,
+      "jp": "53分",
+      "kana": "ごじゅうさんぷん",
+      "romaji": "gojū sanpun",
+      "zh": "53分",
+      "en": "53 minutes"
+    },
+    {
+      "value": 54,
+      "jp": "54分",
+      "kana": "ごじゅうよんぷん",
+      "romaji": "gojū yonpun",
+      "zh": "54分",
+      "en": "54 minutes"
+    },
+    {
+      "value": 55,
+      "jp": "55分",
+      "kana": "ごじゅうごふん",
+      "romaji": "gojū gofun",
+      "zh": "55分",
+      "en": "55 minutes"
+    },
+    {
+      "value": 56,
+      "jp": "56分",
+      "kana": "ごじゅうろっぷん",
+      "romaji": "gojū roppun",
+      "zh": "56分",
+      "en": "56 minutes"
+    },
+    {
+      "value": 57,
+      "jp": "57分",
+      "kana": "ごじゅうななふん",
+      "romaji": "gojū nanafun",
+      "zh": "57分",
+      "en": "57 minutes"
+    },
+    {
+      "value": 58,
+      "jp": "58分",
+      "kana": "ごじゅうはっぷん",
+      "romaji": "gojū happun",
+      "zh": "58分",
+      "en": "58 minutes"
+    },
+    {
+      "value": 59,
+      "jp": "59分",
+      "kana": "ごじゅうきゅうふん",
+      "romaji": "gojū kyūfun",
+      "zh": "59分",
+      "en": "59 minutes"
+    }
+  ],
+  "seconds": [
+    {
+      "value": 0,
+      "jp": "0秒",
+      "kana": "れいびょう",
+      "romaji": "reibyō",
+      "zh": "0秒",
+      "en": "0 seconds"
+    },
+    {
+      "value": 1,
+      "jp": "1秒",
+      "kana": "いちびょう",
+      "romaji": "ichibyō",
+      "zh": "1秒",
+      "en": "1 second"
+    },
+    {
+      "value": 2,
+      "jp": "2秒",
+      "kana": "にびょう",
+      "romaji": "nibyō",
+      "zh": "2秒",
+      "en": "2 seconds"
+    },
+    {
+      "value": 3,
+      "jp": "3秒",
+      "kana": "さんびょう",
+      "romaji": "sanbyō",
+      "zh": "3秒",
+      "en": "3 seconds"
+    },
+    {
+      "value": 4,
+      "jp": "4秒",
+      "kana": "よんびょう",
+      "romaji": "yonbyō",
+      "zh": "4秒",
+      "en": "4 seconds"
+    },
+    {
+      "value": 5,
+      "jp": "5秒",
+      "kana": "ごびょう",
+      "romaji": "gobyō",
+      "zh": "5秒",
+      "en": "5 seconds"
+    },
+    {
+      "value": 6,
+      "jp": "6秒",
+      "kana": "ろくびょう",
+      "romaji": "rokubyō",
+      "zh": "6秒",
+      "en": "6 seconds"
+    },
+    {
+      "value": 7,
+      "jp": "7秒",
+      "kana": "ななびょう",
+      "romaji": "nanabyō",
+      "zh": "7秒",
+      "en": "7 seconds"
+    },
+    {
+      "value": 8,
+      "jp": "8秒",
+      "kana": "はちびょう",
+      "romaji": "hachibyō",
+      "zh": "8秒",
+      "en": "8 seconds"
+    },
+    {
+      "value": 9,
+      "jp": "9秒",
+      "kana": "きゅうびょう",
+      "romaji": "kyūbyō",
+      "zh": "9秒",
+      "en": "9 seconds"
+    },
+    {
+      "value": 10,
+      "jp": "10秒",
+      "kana": "じゅうびょう",
+      "romaji": "jūbyō",
+      "zh": "10秒",
+      "en": "10 seconds"
+    },
+    {
+      "value": 11,
+      "jp": "11秒",
+      "kana": "じゅういちびょう",
+      "romaji": "jū ichibyō",
+      "zh": "11秒",
+      "en": "11 seconds"
+    },
+    {
+      "value": 12,
+      "jp": "12秒",
+      "kana": "じゅうにびょう",
+      "romaji": "jū nibyō",
+      "zh": "12秒",
+      "en": "12 seconds"
+    },
+    {
+      "value": 13,
+      "jp": "13秒",
+      "kana": "じゅうさんびょう",
+      "romaji": "jū sanbyō",
+      "zh": "13秒",
+      "en": "13 seconds"
+    },
+    {
+      "value": 14,
+      "jp": "14秒",
+      "kana": "じゅうよんびょう",
+      "romaji": "jū yonbyō",
+      "zh": "14秒",
+      "en": "14 seconds"
+    },
+    {
+      "value": 15,
+      "jp": "15秒",
+      "kana": "じゅうごびょう",
+      "romaji": "jū gobyō",
+      "zh": "15秒",
+      "en": "15 seconds"
+    },
+    {
+      "value": 16,
+      "jp": "16秒",
+      "kana": "じゅうろくびょう",
+      "romaji": "jū rokubyō",
+      "zh": "16秒",
+      "en": "16 seconds"
+    },
+    {
+      "value": 17,
+      "jp": "17秒",
+      "kana": "じゅうななびょう",
+      "romaji": "jū nanabyō",
+      "zh": "17秒",
+      "en": "17 seconds"
+    },
+    {
+      "value": 18,
+      "jp": "18秒",
+      "kana": "じゅうはちびょう",
+      "romaji": "jū hachibyō",
+      "zh": "18秒",
+      "en": "18 seconds"
+    },
+    {
+      "value": 19,
+      "jp": "19秒",
+      "kana": "じゅうきゅうびょう",
+      "romaji": "jū kyūbyō",
+      "zh": "19秒",
+      "en": "19 seconds"
+    },
+    {
+      "value": 20,
+      "jp": "20秒",
+      "kana": "にじゅうびょう",
+      "romaji": "nijūbyō",
+      "zh": "20秒",
+      "en": "20 seconds"
+    },
+    {
+      "value": 21,
+      "jp": "21秒",
+      "kana": "にじゅういちびょう",
+      "romaji": "nijū ichibyō",
+      "zh": "21秒",
+      "en": "21 seconds"
+    },
+    {
+      "value": 22,
+      "jp": "22秒",
+      "kana": "にじゅうにびょう",
+      "romaji": "nijū nibyō",
+      "zh": "22秒",
+      "en": "22 seconds"
+    },
+    {
+      "value": 23,
+      "jp": "23秒",
+      "kana": "にじゅうさんびょう",
+      "romaji": "nijū sanbyō",
+      "zh": "23秒",
+      "en": "23 seconds"
+    },
+    {
+      "value": 24,
+      "jp": "24秒",
+      "kana": "にじゅうよんびょう",
+      "romaji": "nijū yonbyō",
+      "zh": "24秒",
+      "en": "24 seconds"
+    },
+    {
+      "value": 25,
+      "jp": "25秒",
+      "kana": "にじゅうごびょう",
+      "romaji": "nijū gobyō",
+      "zh": "25秒",
+      "en": "25 seconds"
+    },
+    {
+      "value": 26,
+      "jp": "26秒",
+      "kana": "にじゅうろくびょう",
+      "romaji": "nijū rokubyō",
+      "zh": "26秒",
+      "en": "26 seconds"
+    },
+    {
+      "value": 27,
+      "jp": "27秒",
+      "kana": "にじゅうななびょう",
+      "romaji": "nijū nanabyō",
+      "zh": "27秒",
+      "en": "27 seconds"
+    },
+    {
+      "value": 28,
+      "jp": "28秒",
+      "kana": "にじゅうはちびょう",
+      "romaji": "nijū hachibyō",
+      "zh": "28秒",
+      "en": "28 seconds"
+    },
+    {
+      "value": 29,
+      "jp": "29秒",
+      "kana": "にじゅうきゅうびょう",
+      "romaji": "nijū kyūbyō",
+      "zh": "29秒",
+      "en": "29 seconds"
+    },
+    {
+      "value": 30,
+      "jp": "30秒",
+      "kana": "さんじゅうびょう",
+      "romaji": "sanjūbyō",
+      "zh": "30秒",
+      "en": "30 seconds"
+    },
+    {
+      "value": 31,
+      "jp": "31秒",
+      "kana": "さんじゅういちびょう",
+      "romaji": "sanjū ichibyō",
+      "zh": "31秒",
+      "en": "31 seconds"
+    },
+    {
+      "value": 32,
+      "jp": "32秒",
+      "kana": "さんじゅうにびょう",
+      "romaji": "sanjū nibyō",
+      "zh": "32秒",
+      "en": "32 seconds"
+    },
+    {
+      "value": 33,
+      "jp": "33秒",
+      "kana": "さんじゅうさんびょう",
+      "romaji": "sanjū sanbyō",
+      "zh": "33秒",
+      "en": "33 seconds"
+    },
+    {
+      "value": 34,
+      "jp": "34秒",
+      "kana": "さんじゅうよんびょう",
+      "romaji": "sanjū yonbyō",
+      "zh": "34秒",
+      "en": "34 seconds"
+    },
+    {
+      "value": 35,
+      "jp": "35秒",
+      "kana": "さんじゅうごびょう",
+      "romaji": "sanjū gobyō",
+      "zh": "35秒",
+      "en": "35 seconds"
+    },
+    {
+      "value": 36,
+      "jp": "36秒",
+      "kana": "さんじゅうろくびょう",
+      "romaji": "sanjū rokubyō",
+      "zh": "36秒",
+      "en": "36 seconds"
+    },
+    {
+      "value": 37,
+      "jp": "37秒",
+      "kana": "さんじゅうななびょう",
+      "romaji": "sanjū nanabyō",
+      "zh": "37秒",
+      "en": "37 seconds"
+    },
+    {
+      "value": 38,
+      "jp": "38秒",
+      "kana": "さんじゅうはちびょう",
+      "romaji": "sanjū hachibyō",
+      "zh": "38秒",
+      "en": "38 seconds"
+    },
+    {
+      "value": 39,
+      "jp": "39秒",
+      "kana": "さんじゅうきゅうびょう",
+      "romaji": "sanjū kyūbyō",
+      "zh": "39秒",
+      "en": "39 seconds"
+    },
+    {
+      "value": 40,
+      "jp": "40秒",
+      "kana": "よんじゅうびょう",
+      "romaji": "yonjūbyō",
+      "zh": "40秒",
+      "en": "40 seconds"
+    },
+    {
+      "value": 41,
+      "jp": "41秒",
+      "kana": "よんじゅういちびょう",
+      "romaji": "yonjū ichibyō",
+      "zh": "41秒",
+      "en": "41 seconds"
+    },
+    {
+      "value": 42,
+      "jp": "42秒",
+      "kana": "よんじゅうにびょう",
+      "romaji": "yonjū nibyō",
+      "zh": "42秒",
+      "en": "42 seconds"
+    },
+    {
+      "value": 43,
+      "jp": "43秒",
+      "kana": "よんじゅうさんびょう",
+      "romaji": "yonjū sanbyō",
+      "zh": "43秒",
+      "en": "43 seconds"
+    },
+    {
+      "value": 44,
+      "jp": "44秒",
+      "kana": "よんじゅうよんびょう",
+      "romaji": "yonjū yonbyō",
+      "zh": "44秒",
+      "en": "44 seconds"
+    },
+    {
+      "value": 45,
+      "jp": "45秒",
+      "kana": "よんじゅうごびょう",
+      "romaji": "yonjū gobyō",
+      "zh": "45秒",
+      "en": "45 seconds"
+    },
+    {
+      "value": 46,
+      "jp": "46秒",
+      "kana": "よんじゅうろくびょう",
+      "romaji": "yonjū rokubyō",
+      "zh": "46秒",
+      "en": "46 seconds"
+    },
+    {
+      "value": 47,
+      "jp": "47秒",
+      "kana": "よんじゅうななびょう",
+      "romaji": "yonjū nanabyō",
+      "zh": "47秒",
+      "en": "47 seconds"
+    },
+    {
+      "value": 48,
+      "jp": "48秒",
+      "kana": "よんじゅうはちびょう",
+      "romaji": "yonjū hachibyō",
+      "zh": "48秒",
+      "en": "48 seconds"
+    },
+    {
+      "value": 49,
+      "jp": "49秒",
+      "kana": "よんじゅうきゅうびょう",
+      "romaji": "yonjū kyūbyō",
+      "zh": "49秒",
+      "en": "49 seconds"
+    },
+    {
+      "value": 50,
+      "jp": "50秒",
+      "kana": "ごじゅうびょう",
+      "romaji": "gojūbyō",
+      "zh": "50秒",
+      "en": "50 seconds"
+    },
+    {
+      "value": 51,
+      "jp": "51秒",
+      "kana": "ごじゅういちびょう",
+      "romaji": "gojū ichibyō",
+      "zh": "51秒",
+      "en": "51 seconds"
+    },
+    {
+      "value": 52,
+      "jp": "52秒",
+      "kana": "ごじゅうにびょう",
+      "romaji": "gojū nibyō",
+      "zh": "52秒",
+      "en": "52 seconds"
+    },
+    {
+      "value": 53,
+      "jp": "53秒",
+      "kana": "ごじゅうさんびょう",
+      "romaji": "gojū sanbyō",
+      "zh": "53秒",
+      "en": "53 seconds"
+    },
+    {
+      "value": 54,
+      "jp": "54秒",
+      "kana": "ごじゅうよんびょう",
+      "romaji": "gojū yonbyō",
+      "zh": "54秒",
+      "en": "54 seconds"
+    },
+    {
+      "value": 55,
+      "jp": "55秒",
+      "kana": "ごじゅうごびょう",
+      "romaji": "gojū gobyō",
+      "zh": "55秒",
+      "en": "55 seconds"
+    },
+    {
+      "value": 56,
+      "jp": "56秒",
+      "kana": "ごじゅうろくびょう",
+      "romaji": "gojū rokubyō",
+      "zh": "56秒",
+      "en": "56 seconds"
+    },
+    {
+      "value": 57,
+      "jp": "57秒",
+      "kana": "ごじゅうななびょう",
+      "romaji": "gojū nanabyō",
+      "zh": "57秒",
+      "en": "57 seconds"
+    },
+    {
+      "value": 58,
+      "jp": "58秒",
+      "kana": "ごじゅうはちびょう",
+      "romaji": "gojū hachibyō",
+      "zh": "58秒",
+      "en": "58 seconds"
+    },
+    {
+      "value": 59,
+      "jp": "59秒",
+      "kana": "ごじゅうきゅうびょう",
+      "romaji": "gojū kyūbyō",
+      "zh": "59秒",
+      "en": "59 seconds"
+    }
+  ]
+}
