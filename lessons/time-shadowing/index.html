@@ -1,1 +1,75 @@
-
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>日文時間表達 Shadowing 跟讀練習</title>
+<style>
+  :root{--bg:#fff8ef;--card:#fff;--ink:#1f2937;--muted:#6b7280;--brand:#f59e0b;--brand2:#16a34a;--red:#ef4444;--line:#e5e7eb;--blue:#2563eb;}
+  *{box-sizing:border-box} body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Noto Sans JP",Arial,sans-serif;color:var(--ink)}
+  header{position:sticky;top:0;z-index:20;background:linear-gradient(135deg,#f59e0b,#ef4444);color:white;padding:14px 16px 12px;box-shadow:0 2px 12px #0002}
+  header h1{font-size:20px;margin:0 0 4px;font-weight:900} header p{margin:0;font-size:13px;opacity:.95}
+  main{max-width:1100px;margin:0 auto;padding:14px 12px 84px}.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 4px 16px #00000012;margin-bottom:12px;overflow:hidden}
+  .tabs{display:flex;gap:8px;overflow:auto;padding:10px}.tab{border:1px solid #fcd34d;background:#fff7ed;color:#92400e;border-radius:999px;padding:8px 12px;font-weight:800;white-space:nowrap;cursor:pointer}.tab.active{background:#f59e0b;color:#fff;border-color:#f59e0b}
+  .hero{padding:16px;text-align:center}.badge{display:inline-block;background:#ecfdf5;color:#166534;padding:5px 10px;border-radius:999px;font-weight:800;font-size:13px;margin-bottom:8px}.jp{font-size:44px;font-weight:900;line-height:1.15;letter-spacing:.03em}.kana{font-size:22px;font-weight:800;color:#374151;margin-top:6px}.romaji{font-size:20px;color:#2563eb;font-weight:800;margin-top:4px}.zh{font-size:22px;color:#111827;margin-top:10px;font-weight:900}.en{font-size:15px;color:var(--muted);margin-top:4px}.count{font-size:13px;color:var(--muted);margin-top:8px}
+  .controls{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:12px;border-top:1px solid var(--line)}button{border:0;border-radius:14px;padding:12px 10px;font-weight:900;font-size:15px;cursor:pointer;background:#f3f4f6;color:#111827}button.primary{background:#16a34a;color:white}button.warn{background:#f59e0b;color:white}button.stop{background:#ef4444;color:white}.minirow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:0 12px 12px}.minirow label{background:#f9fafb;border:1px solid var(--line);padding:8px;border-radius:12px;font-size:13px;font-weight:800}.minirow select,.minirow input{width:100%;margin-top:4px;padding:7px;border:1px solid var(--line);border-radius:8px;background:white}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;padding:12px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;cursor:pointer;min-height:128px}.card.active{border:3px solid var(--brand);box-shadow:0 0 0 4px #f59e0b22}.card .cjp{font-size:26px;font-weight:900}.card .ckana{font-weight:800;color:#374151;margin-top:4px}.card .cromaji{font-weight:800;color:#2563eb}.card .czh{font-weight:900;margin-top:6px;color:#111827}.tablewrap{overflow:auto;padding:10px 12px 14px}table{width:100%;border-collapse:collapse;background:white}th,td{border:1px solid var(--line);padding:9px;vertical-align:top}th{background:#fff7ed;color:#92400e}.sentences .card{min-height:168px}.sentencejp{font-size:22px;font-weight:900}.sentencekana{margin-top:6px;color:#374151;font-weight:800}.sentencezh{margin-top:6px;font-weight:900}.footerbar{position:fixed;left:0;right:0;bottom:0;background:#111827;color:white;padding:9px 12px;display:flex;gap:8px;justify-content:center;box-shadow:0 -2px 12px #0003}.footerbar button{padding:10px 14px}.status{font-size:13px;color:#065f46;font-weight:800;text-align:center;padding:0 12px 12px}
+  @media(max-width:640px){header h1{font-size:17px}.jp{font-size:38px}.kana{font-size:20px}.romaji{font-size:18px}.zh{font-size:20px}.controls{grid-template-columns:repeat(2,1fr)}.minirow{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr);gap:8px}.card{padding:10px}.card .cjp{font-size:23px}.footerbar{justify-content:space-between}.footerbar button{font-size:13px;padding:9px 10px}}
+</style>
+</head>
+<body>
+<header><h1>日文時間表達 Shadowing 跟讀練習</h1><p>JSON 分離版：天・週・月・年・星期幾｜日文／平假名＋羅馬拼音／中文英文</p></header>
+<main>
+  <section class="panel"><div class="tabs" id="tabs"></div></section>
+  <section class="panel hero">
+    <div class="badge" id="catBadge">載入中</div>
+    <div class="jp" id="jp">読み込み中</div>
+    <div class="kana" id="kana">よみこみちゅう</div>
+    <div class="romaji" id="romaji">loading</div>
+    <div class="zh" id="zh">載入中</div>
+    <div class="en" id="en">loading</div>
+    <div class="count" id="count">0 / 0</div>
+  </section>
+  <section class="panel">
+    <div class="controls">
+      <button id="prevBtn">上一句</button><button class="primary" id="speakBtn">朗讀</button><button class="warn" id="playAllBtn">播放一輪</button><button class="stop" id="stopBtn">停止</button>
+      <button id="nextBtn">下一句</button><button id="sentenceModeBtn">句子練習</button><button id="wordModeBtn">單字練習</button><button id="resetBtn">回到第1句</button>
+    </div>
+    <div class="minirow">
+      <label>每句重複次數<select id="repeatSel"><option value="1">1 次</option><option value="2" selected>2 次</option><option value="3">3 次</option></select></label>
+      <label>語速<select id="rateSel"><option value="0.7">慢速 0.7</option><option value="0.85" selected>適中 0.85</option><option value="1">正常 1.0</option></select></label>
+      <label>停頓秒數<input id="pauseInput" type="number" min="0" max="5" step="0.5" value="1"></label>
+    </div>
+    <div class="status" id="status">請先按「朗讀」或「播放一輪」。手機瀏覽器需先點一次按鈕才會出聲。</div>
+  </section>
+  <section class="panel"><div class="grid" id="cards"></div></section>
+  <section class="panel"><div class="tablewrap"><table id="table"></table></div></section>
+</main>
+<div class="footerbar"><button id="footPrev">← 上一句</button><button class="primary" id="footSpeak">朗讀</button><button id="footNext">下一句 →</button></div>
+<script>
+let lesson=null, mode='words', activeCategory=0, activeIndex=0, isPlaying=false, voices=[];
+const $=id=>document.getElementById(id);
+function flatWords(){ return lesson.categories[activeCategory].items.map((x,i)=>({...x,_cat:lesson.categories[activeCategory].name_zh,_idx:i})); }
+function currentList(){ return mode==='sentences' ? lesson.sentences.map((x,i)=>({...x,_cat:'句子練習',_idx:i})) : flatWords(); }
+function current(){ return currentList()[activeIndex] || currentList()[0]; }
+function loadVoices(){ voices=speechSynthesis.getVoices(); }
+if('speechSynthesis' in window){ speechSynthesis.onvoiceschanged=loadVoices; loadVoices(); }
+function pickJaVoice(){ return voices.find(v=>/ja|Japan|日本/i.test(v.lang+' '+v.name)) || voices[0] || null; }
+function renderTabs(){ const tabs=$('tabs'); tabs.innerHTML=''; lesson.categories.forEach((c,i)=>{ const b=document.createElement('button'); b.className='tab'+(i===activeCategory && mode==='words'?' active':''); b.textContent=c.name_zh; b.onclick=()=>{mode='words';activeCategory=i;activeIndex=0;stopSpeak();render();}; tabs.appendChild(b); }); const sb=document.createElement('button'); sb.className='tab'+(mode==='sentences'?' active':''); sb.textContent='句子練習'; sb.onclick=()=>{mode='sentences';activeIndex=0;stopSpeak();render();}; tabs.appendChild(sb); }
+function renderHero(){ const it=current(); $('catBadge').textContent=it._cat || ''; $('jp').textContent=it.jp; $('kana').textContent=it.kana; $('romaji').textContent=it.romaji; $('zh').textContent=it.zh; $('en').textContent=it.en||''; $('count').textContent=(activeIndex+1)+' / '+currentList().length; }
+function renderCards(){ const box=$('cards'); box.className='grid '+(mode==='sentences'?'sentences':''); box.innerHTML=''; currentList().forEach((it,i)=>{ const d=document.createElement('div'); d.className='card'+(i===activeIndex?' active':''); d.onclick=()=>{activeIndex=i;render();speakCurrent();}; d.innerHTML=mode==='sentences' ? `<div class="sentencejp">${it.jp}</div><div class="sentencekana">${it.kana}</div><div class="cromaji">${it.romaji}</div><div class="sentencezh">${it.zh}</div>` : `<div class="cjp">${it.jp}</div><div class="ckana">${it.kana}</div><div class="cromaji">${it.romaji}</div><div class="czh">${it.zh}</div>`; box.appendChild(d); }); }
+function renderTable(){ const t=$('table'); const rows=currentList().map(it=>`<tr><td>${it.jp}</td><td>${it.kana}<br><b>${it.romaji}</b></td><td>${it.zh}<br><span style="color:#6b7280">${it.en||''}</span></td></tr>`).join(''); t.innerHTML=`<thead><tr><th>日文</th><th>平假名 / 羅馬拼音</th><th>中文 / 英文</th></tr></thead><tbody>${rows}</tbody>`; }
+function render(){ renderTabs(); if(activeIndex>=currentList().length) activeIndex=0; renderHero(); renderCards(); renderTable(); }
+function stopSpeak(){ isPlaying=false; if('speechSynthesis' in window) speechSynthesis.cancel(); $('status').textContent='已停止。'; }
+function sleep(ms){ return new Promise(r=>setTimeout(r,ms)); }
+function speakText(text){ return new Promise(resolve=>{ if(!('speechSynthesis' in window)){ $('status').textContent='此瀏覽器不支援語音朗讀。'; return resolve(); } speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(text); u.lang='ja-JP'; u.rate=parseFloat($('rateSel').value); u.pitch=1; const v=pickJaVoice(); if(v) u.voice=v; u.onend=resolve; u.onerror=resolve; speechSynthesis.speak(u); }); }
+async function speakCurrent(){ isPlaying=true; const it=current(); const repeat=parseInt($('repeatSel').value,10); const pause=parseFloat($('pauseInput').value||'1')*1000; $('status').textContent='朗讀中：'+it.jp; for(let r=0;r<repeat && isPlaying;r++){ await speakText(it.jp); if(r<repeat-1 && isPlaying) await sleep(pause); } isPlaying=false; $('status').textContent='完成：'+it.jp; }
+async function playAll(){ isPlaying=true; const list=currentList(); const repeat=parseInt($('repeatSel').value,10); const pause=parseFloat($('pauseInput').value||'1')*1000; for(let i=activeIndex;i<list.length && isPlaying;i++){ activeIndex=i; render(); const it=current(); $('status').textContent='播放一輪：'+(i+1)+' / '+list.length+'　'+it.jp; for(let r=0;r<repeat && isPlaying;r++){ await speakText(it.jp); if(isPlaying) await sleep(pause); } } isPlaying=false; $('status').textContent='播放一輪完成。'; }
+function prev(){ stopSpeak(); activeIndex=(activeIndex-1+currentList().length)%currentList().length; render(); speakCurrent(); }
+function next(){ stopSpeak(); activeIndex=(activeIndex+1)%currentList().length; render(); speakCurrent(); }
+$('prevBtn').onclick=prev; $('nextBtn').onclick=next; $('footPrev').onclick=prev; $('footNext').onclick=next; $('speakBtn').onclick=speakCurrent; $('footSpeak').onclick=speakCurrent; $('playAllBtn').onclick=playAll; $('stopBtn').onclick=stopSpeak; $('resetBtn').onclick=()=>{stopSpeak();activeIndex=0;render();}; $('sentenceModeBtn').onclick=()=>{stopSpeak();mode='sentences';activeIndex=0;render();}; $('wordModeBtn').onclick=()=>{stopSpeak();mode='words';activeIndex=0;render();};
+async function init(){ try{ const res=await fetch('lesson.json',{cache:'no-store'}); if(!res.ok) throw new Error('lesson.json not found'); lesson=await res.json(); }catch(e){ const res=await fetch('time_shadowing_lesson.json',{cache:'no-store'}); lesson=await res.json(); } render(); }
+init();
+</script>
+</body>
+</html>
