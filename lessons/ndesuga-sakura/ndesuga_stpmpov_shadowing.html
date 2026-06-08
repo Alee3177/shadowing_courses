@@ -15,7 +15,7 @@
 <section class="hero">
 <div class="eyebrow">SAKURA SHADOWING｜STPMPOV</div>
 <h1>「〜んですが」溫馨求助句型練習</h1>
-<p>先說情境，再用「〜んですが……」柔和開口。紅色字就是可替換的 ◯◯ 重點。</p>
+<p>先說情境，再用「〜んですが……」柔和開口。紅色字就是可替換的 ◯◯ 重點；日文、平假名／羅馬拼音、中文／英文會同步標紅。</p>
 <div class="links">
 <a class="linkcard" href="https://alee3177.github.io/shadowing_courses/lessons/grammar-stpmpov/stpmpov_travel_datetime_trainer.html"><b>① STPMPOV 旅遊時間練習</b><span>travel datetime trainer</span></a>
 <a class="linkcard" href="https://alee3177.github.io/shadowing_courses/lessons/time-shadowing/index.html"><b>② 時間 Shadowing</b><span>time-shadowing</span></a>
@@ -39,7 +39,7 @@
 </div>
 <aside class="card side"><h3>句子清單</h3><p class="hint">點句子會自動切換並朗讀。手機 LINE 內建瀏覽器請先按「解鎖／開始」。</p><div class="list" id="list"></div></aside>
 </section>
-<div class="footer">Version 20260608_sakura_v1｜JSON: data/ndesuga_stpmpov_shadowing.json｜Audio: audio/*.mp3</div>
+<div class="footer">Version 20260608_sakura_v2_highlight_all｜JSON: data/ndesuga_stpmpov_shadowing.json｜Audio: audio/*.mp3</div>
 </main>
 <script>
 let allItems=[], items=[], idx=0, audio=null, auto=false, unlocked=false;
@@ -58,8 +58,8 @@ function renderList(){
 function render(){
  const it=items[idx]; if(!it)return;
  $('catTag').textContent=it.cat; $('numTag').textContent=pad(idx)+' / '+String(items.length).padStart(2,'0');
- $('jpText').innerHTML=it.jp_html; $('kanaText').textContent=it.kana+' / '+it.romaji; $('meaningText').textContent=it.zh+' / '+it.en;
- $('bar').style.width=((idx+1)/items.length*100)+'%'; $('jpPlain').innerHTML=it.jp_html; $('krPlain').textContent=it.kana+' / '+it.romaji; $('zePlain').textContent=it.zh+' / '+it.en;
+ $('jpText').innerHTML=it.jp_html; $('kanaText').innerHTML=(it.kana_html||it.kana)+' / '+(it.romaji_html||it.romaji); $('meaningText').innerHTML=(it.zh_html||it.zh)+' / '+(it.en_html||it.en);
+ $('bar').style.width=((idx+1)/items.length*100)+'%'; $('jpPlain').innerHTML=it.jp_html; $('krPlain').innerHTML=(it.kana_html||it.kana)+' / '+(it.romaji_html||it.romaji); $('zePlain').innerHTML=(it.zh_html||it.zh)+' / '+(it.en_html||it.en);
  const labels=[['S 主詞',it.S],['T 時間',it.T],['P 地點',it.P1],['M 方法/工具',it.M],['P 對象',it.P2],['O 受詞',it.O],['V 動詞',it.V]];
  $('stpGrid').innerHTML=labels.map(x=>`<div class="slot"><small>${x[0]}</small><span>${x[1]}</span></div>`).join(''); renderList();
 }

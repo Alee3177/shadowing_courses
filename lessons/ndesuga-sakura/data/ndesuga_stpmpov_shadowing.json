@@ -1,6 +1,6 @@
 {
   "title": "〜んですが STPMPOV Shadowing",
-  "version": "20260608_sakura_v1",
+  "version": "20260608_sakura_v2_highlight_all",
   "items": [
     {
       "id": "n001",
@@ -20,7 +20,11 @@
       "zh": "不好意思，我想去雷門，但是……",
       "en": "Excuse me, I’d like to go to Kaminarimon…",
       "speak": "sumimasen kaminarimon ni ikitai n desu ga",
-      "audio": "audio/n001.mp3"
+      "audio": "audio/n001.mp3",
+      "kana_html": "すみません、<span class=\"red\">かみなりもん</span>にいきたいんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">Kaminarimon</span> ni ikitai n desu ga",
+      "zh_html": "不好意思，我想去<span class=\"red\">雷門</span>，但是……",
+      "en_html": "Excuse me, I’d like to go to <span class=\"red\">Kaminarimon</span>…"
     },
     {
       "id": "n002",
@@ -40,7 +44,11 @@
       "zh": "不好意思，我想買票，但是……",
       "en": "Excuse me, I’d like to buy a ticket…",
       "speak": "sumimasen chiketto o kaitai n desu ga",
-      "audio": "audio/n002.mp3"
+      "audio": "audio/n002.mp3",
+      "kana_html": "すみません、<span class=\"red\">チケット</span>をかいたいんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">chiketto</span> o kaitai n desu ga",
+      "zh_html": "不好意思，我想買<span class=\"red\">票</span>，但是……",
+      "en_html": "Excuse me, I’d like to buy a <span class=\"red\">ticket</span>…"
     },
     {
       "id": "n003",
@@ -60,7 +68,11 @@
       "zh": "不好意思，我不太清楚路，但是……",
       "en": "Excuse me, I’m not sure about the way…",
       "speak": "sumimasen michi ga yoku wakaranai n desu ga",
-      "audio": "audio/n003.mp3"
+      "audio": "audio/n003.mp3",
+      "kana_html": "すみません、<span class=\"red\">みち</span>がよくわからないんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">michi</span> ga yoku wakaranai n desu ga",
+      "zh_html": "不好意思，我不太清楚<span class=\"red\">路</span>，但是……",
+      "en_html": "Excuse me, I’m not sure about the <span class=\"red\">way</span>…"
     },
     {
       "id": "n004",
@@ -80,7 +92,11 @@
       "zh": "不好意思，我想去這裡，但是……",
       "en": "Excuse me, I’d like to go here…",
       "speak": "sumimasen koko e ikitai n desu ga",
-      "audio": "audio/n004.mp3"
+      "audio": "audio/n004.mp3",
+      "kana_html": "すみません、<span class=\"red\">ここ</span>へいきたいんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">koko</span> e ikitai n desu ga",
+      "zh_html": "不好意思，我想去<span class=\"red\">這裡</span>，但是……",
+      "en_html": "Excuse me, I’d like to go <span class=\"red\">here</span>…"
     },
     {
       "id": "n005",
@@ -100,7 +116,11 @@
       "zh": "不好意思，我在找黑色包包，但是……",
       "en": "Excuse me, I’m looking for a black bag…",
       "speak": "sumimasen kuroi baggu o sagashite iru n desu ga",
-      "audio": "audio/n005.mp3"
+      "audio": "audio/n005.mp3",
+      "kana_html": "すみません、<span class=\"red\">くろいバッグ</span>をさがしているんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">kuroi baggu</span> o sagashite iru n desu ga",
+      "zh_html": "不好意思，我在找<span class=\"red\">黑色包包</span>，但是……",
+      "en_html": "Excuse me, I’m looking for a <span class=\"red\">black bag</span>…"
     },
     {
       "id": "n006",
@@ -120,7 +140,11 @@
       "zh": "不好意思，我想要再大一點的尺寸，但是……",
       "en": "Excuse me, I’d prefer a slightly larger size…",
       "speak": "sumimasen mou sukoshi ookii saizu ga ii n desu ga",
-      "audio": "audio/n006.mp3"
+      "audio": "audio/n006.mp3",
+      "kana_html": "すみません、<span class=\"red\">もうすこしおおきいサイズ</span>がいいんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">mou sukoshi ookii saizu</span> ga ii n desu ga",
+      "zh_html": "不好意思，我想要<span class=\"red\">再大一點的尺寸</span>，但是……",
+      "en_html": "Excuse me, I’d prefer a <span class=\"red\">slightly larger size</span>…"
     },
     {
       "id": "n007",
@@ -140,7 +164,11 @@
       "zh": "不好意思，我想要再小一點的尺寸，但是……",
       "en": "Excuse me, I’d prefer a slightly smaller size…",
       "speak": "sumimasen mou sukoshi chiisai saizu ga ii n desu ga",
-      "audio": "audio/n007.mp3"
+      "audio": "audio/n007.mp3",
+      "kana_html": "すみません、<span class=\"red\">もうすこしちいさいサイズ</span>がいいんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">mou sukoshi chiisai saizu</span> ga ii n desu ga",
+      "zh_html": "不好意思，我想要<span class=\"red\">再小一點的尺寸</span>，但是……",
+      "en_html": "Excuse me, I’d prefer a <span class=\"red\">slightly smaller size</span>…"
     },
     {
       "id": "n008",
@@ -160,7 +188,11 @@
       "zh": "不好意思，我想用信用卡付款，但是……",
       "en": "Excuse me, I’d like to pay by card…",
       "speak": "sumimasen kaado de haraitai n desu ga",
-      "audio": "audio/n008.mp3"
+      "audio": "audio/n008.mp3",
+      "kana_html": "すみません、<span class=\"red\">カード</span>ではらいたいんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">kaado</span> de haraitai n desu ga",
+      "zh_html": "不好意思，我想用<span class=\"red\">信用卡</span>付款，但是……",
+      "en_html": "Excuse me, I’d like to pay by <span class=\"red\">card</span>…"
     },
     {
       "id": "n009",
@@ -180,7 +212,11 @@
       "zh": "不好意思，這個還沒來，但是……",
       "en": "Excuse me, this hasn’t arrived yet…",
       "speak": "sumimasen kore mada konai n desu ga",
-      "audio": "audio/n009.mp3"
+      "audio": "audio/n009.mp3",
+      "kana_html": "すみません、<span class=\"red\">これ</span>、まだこないんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">kore</span>, mada konai n desu ga",
+      "zh_html": "不好意思，<span class=\"red\">這個</span>還沒來，但是……",
+      "en_html": "Excuse me, <span class=\"red\">this</span> hasn’t arrived yet…"
     },
     {
       "id": "n010",
@@ -200,7 +236,11 @@
       "zh": "不好意思，我不能吃肉，但是……",
       "en": "Excuse me, I can’t eat meat…",
       "speak": "sumimasen watashi niku ga taberarenai n desu ga",
-      "audio": "audio/n010.mp3"
+      "audio": "audio/n010.mp3",
+      "kana_html": "すみません、わたし、<span class=\"red\">にく</span>がたべられないんですが……",
+      "romaji_html": "sumimasen, watashi, <span class=\"red\">niku</span> ga taberarenai n desu ga",
+      "zh_html": "不好意思，我不能吃<span class=\"red\">肉</span>，但是……",
+      "en_html": "Excuse me, I can’t eat <span class=\"red\">meat</span>…"
     },
     {
       "id": "n011",
@@ -220,7 +260,11 @@
       "zh": "不好意思，Wi-Fi 連不上，但是……",
       "en": "Excuse me, the Wi-Fi won’t connect…",
       "speak": "sumimasen waifai ga tsunagaranai n desu ga",
-      "audio": "audio/n011.mp3"
+      "audio": "audio/n011.mp3",
+      "kana_html": "すみません、<span class=\"red\">ワイファイ</span>がつながらないんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">waifai</span> ga tsunagaranai n desu ga",
+      "zh_html": "不好意思，<span class=\"red\">Wi-Fi</span> 連不上，但是……",
+      "en_html": "Excuse me, the <span class=\"red\">Wi-Fi</span> won’t connect…"
     },
     {
       "id": "n012",
@@ -240,7 +284,11 @@
       "zh": "不好意思，冷氣有點問題，但是……",
       "en": "Excuse me, the air conditioner isn’t working well…",
       "speak": "sumimasen eakon no choushi ga warui n desu ga",
-      "audio": "audio/n012.mp3"
+      "audio": "audio/n012.mp3",
+      "kana_html": "すみません、<span class=\"red\">エアコン</span>のちょうしがわるいんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">eakon</span> no choushi ga warui n desu ga",
+      "zh_html": "不好意思，<span class=\"red\">冷氣</span>有點問題，但是……",
+      "en_html": "Excuse me, the <span class=\"red\">air conditioner</span> isn’t working well…"
     },
     {
       "id": "n013",
@@ -260,7 +308,11 @@
       "zh": "不好意思，沒有熱水，但是……",
       "en": "Excuse me, there’s no hot water…",
       "speak": "sumimasen oyu ga denai n desu ga",
-      "audio": "audio/n013.mp3"
+      "audio": "audio/n013.mp3",
+      "kana_html": "すみません、<span class=\"red\">おゆ</span>がでないんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">oyu</span> ga denai n desu ga",
+      "zh_html": "不好意思，沒有<span class=\"red\">熱水</span>，但是……",
+      "en_html": "Excuse me, there’s no <span class=\"red\">hot water</span>…"
     },
     {
       "id": "n014",
@@ -280,7 +332,11 @@
       "zh": "不好意思，沒有毛巾，但是……",
       "en": "Excuse me, there are no towels…",
       "speak": "sumimasen taoru ga nai n desu ga",
-      "audio": "audio/n014.mp3"
+      "audio": "audio/n014.mp3",
+      "kana_html": "すみません、<span class=\"red\">タオル</span>がないんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">taoru</span> ga nai n desu ga",
+      "zh_html": "不好意思，沒有<span class=\"red\">毛巾</span>，但是……",
+      "en_html": "Excuse me, there are no <span class=\"red\">towels</span>…"
     },
     {
       "id": "n015",
@@ -300,7 +356,11 @@
       "zh": "不好意思，我想借轉接頭，但是……",
       "en": "Excuse me, I’d like to borrow an adapter…",
       "speak": "sumimasen henkan puragu o karitai n desu ga",
-      "audio": "audio/n015.mp3"
+      "audio": "audio/n015.mp3",
+      "kana_html": "すみません、<span class=\"red\">へんかんプラグ</span>をかりたいんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">henkan puragu</span> o karitai n desu ga",
+      "zh_html": "不好意思，我想借<span class=\"red\">轉接頭</span>，但是……",
+      "en_html": "Excuse me, I’d like to borrow an <span class=\"red\">adapter</span>…"
     },
     {
       "id": "n016",
@@ -320,7 +380,11 @@
       "zh": "不好意思，房間鑰匙打不開，但是……",
       "en": "Excuse me, my room key won’t open the door…",
       "speak": "sumimasen heya no kagi ga akanai n desu ga",
-      "audio": "audio/n016.mp3"
+      "audio": "audio/n016.mp3",
+      "kana_html": "すみません、<span class=\"red\">へやのかぎ</span>があかないんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">heya no kagi</span> ga akanai n desu ga",
+      "zh_html": "不好意思，<span class=\"red\">房間鑰匙</span>打不開，但是……",
+      "en_html": "Excuse me, my <span class=\"red\">room key</span> won’t open the door…"
     },
     {
       "id": "n017",
@@ -340,7 +404,11 @@
       "zh": "不好意思，我想去◯◯，但是……",
       "en": "Excuse me, I’d like to go to ◯◯…",
       "speak": "sumimasen maru maru ni ikitai n desu ga",
-      "audio": "audio/n017.mp3"
+      "audio": "audio/n017.mp3",
+      "kana_html": "すみません、<span class=\"red\">◯◯</span>にいきたいんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">maru maru</span> ni ikitai n desu ga",
+      "zh_html": "不好意思，我想去<span class=\"red\">◯◯</span>，但是……",
+      "en_html": "Excuse me, I’d like to go to <span class=\"red\">◯◯</span>…"
     },
     {
       "id": "n018",
@@ -360,7 +428,11 @@
       "zh": "不好意思，我想買◯◯，但是……",
       "en": "Excuse me, I’d like to buy ◯◯…",
       "speak": "sumimasen maru maru o kaitai n desu ga",
-      "audio": "audio/n018.mp3"
+      "audio": "audio/n018.mp3",
+      "kana_html": "すみません、<span class=\"red\">◯◯</span>をかいたいんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">maru maru</span> o kaitai n desu ga",
+      "zh_html": "不好意思，我想買<span class=\"red\">◯◯</span>，但是……",
+      "en_html": "Excuse me, I’d like to buy <span class=\"red\">◯◯</span>…"
     },
     {
       "id": "n019",
@@ -380,7 +452,11 @@
       "zh": "不好意思，我在找◯◯，但是……",
       "en": "Excuse me, I’m looking for ◯◯…",
       "speak": "sumimasen maru maru o sagashite iru n desu ga",
-      "audio": "audio/n019.mp3"
+      "audio": "audio/n019.mp3",
+      "kana_html": "すみません、<span class=\"red\">◯◯</span>をさがしているんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">maru maru</span> o sagashite iru n desu ga",
+      "zh_html": "不好意思，我在找<span class=\"red\">◯◯</span>，但是……",
+      "en_html": "Excuse me, I’m looking for <span class=\"red\">◯◯</span>…"
     },
     {
       "id": "n020",
@@ -400,7 +476,11 @@
       "zh": "不好意思，沒有◯◯，但是……",
       "en": "Excuse me, there is no ◯◯…",
       "speak": "sumimasen maru maru ga nai n desu ga",
-      "audio": "audio/n020.mp3"
+      "audio": "audio/n020.mp3",
+      "kana_html": "すみません、<span class=\"red\">◯◯</span>がないんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">maru maru</span> ga nai n desu ga",
+      "zh_html": "不好意思，沒有<span class=\"red\">◯◯</span>，但是……",
+      "en_html": "Excuse me, there is no <span class=\"red\">◯◯</span>…"
     },
     {
       "id": "n021",
@@ -420,7 +500,11 @@
       "zh": "不好意思，◯◯不能用，但是……",
       "en": "Excuse me, I can’t use ◯◯…",
       "speak": "sumimasen maru maru ga tsukaenai n desu ga",
-      "audio": "audio/n021.mp3"
+      "audio": "audio/n021.mp3",
+      "kana_html": "すみません、<span class=\"red\">◯◯</span>がつかえないんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">maru maru</span> ga tsukaenai n desu ga",
+      "zh_html": "不好意思，<span class=\"red\">◯◯</span>不能用，但是……",
+      "en_html": "Excuse me, I can’t use <span class=\"red\">◯◯</span>…"
     },
     {
       "id": "n022",
@@ -440,7 +524,11 @@
       "zh": "不好意思，◯◯有點問題，但是……",
       "en": "Excuse me, ◯◯ isn’t working well…",
       "speak": "sumimasen maru maru no choushi ga warui n desu ga",
-      "audio": "audio/n022.mp3"
+      "audio": "audio/n022.mp3",
+      "kana_html": "すみません、<span class=\"red\">◯◯</span>のちょうしがわるいんですが……",
+      "romaji_html": "sumimasen, <span class=\"red\">maru maru</span> no choushi ga warui n desu ga",
+      "zh_html": "不好意思，<span class=\"red\">◯◯</span>有點問題，但是……",
+      "en_html": "Excuse me, <span class=\"red\">◯◯</span> isn’t working well…"
     }
   ]
 }
