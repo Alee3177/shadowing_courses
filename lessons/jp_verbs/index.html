@@ -1,1 +1,50 @@
-
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>動詞 Shadowing：どうし＋穿戴脫下</title>
+<style>
+:root{--red:#d92828;--bg:#fff7f8;--card:#fff;--ink:#2b2b2b;--muted:#777;--line:#f0d7dc;--accent:#f8c6d0;}
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Noto Sans JP",Arial,sans-serif;background:linear-gradient(180deg,#fff7f8,#fff);color:var(--ink)}
+header{padding:18px 16px 8px;text-align:center} h1{font-size:22px;margin:0 0 6px} .sub{font-size:13px;color:#666}.wrap{max-width:920px;margin:0 auto;padding:10px 14px 100px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 8px 24px rgba(215,40,70,.08);padding:18px;margin:12px 0}.badge{display:inline-block;background:#fff0f2;border:1px solid #ffd8df;border-radius:99px;padding:5px 10px;font-size:13px;color:#a33;margin-bottom:10px}.jp{font-size:34px;font-weight:800;line-height:1.25;margin:8px 0}.kana{font-size:18px;line-height:1.55}.meaning{font-size:18px;line-height:1.55}.red{color:var(--red);font-weight:800}.muted{color:var(--muted)}
+.controls{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);border-top:1px solid var(--line);padding:10px 12px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;backdrop-filter:blur(10px)}button,select{border:1px solid #e8c0c8;background:white;border-radius:14px;padding:10px 12px;font-size:15px}button.primary{background:#d92828;color:#fff;border-color:#d92828}.list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px}.row{border:1px solid var(--line);border-radius:14px;background:#fff;padding:10px;cursor:pointer}.row.active{outline:3px solid var(--accent)}.small{font-size:12px;color:#777}.progress{font-weight:700;color:#a33}.search{width:100%;margin:8px 0 12px;padding:12px;border-radius:14px;border:1px solid var(--line);font-size:16px}
+</style>
+</head>
+<body>
+<header><h1>動詞 Shadowing：どうし＋穿戴／脫下</h1><div class="sub">日文・平假名/羅馬拼音・中文/英文的「動詞」皆以紅色標示。優先播放 MP3；若缺檔，會改用瀏覽器日文語音。</div></header>
+<div class="wrap">
+  <div class="card">
+    <div class="badge" id="cat">讀取中</div>
+    <div class="progress" id="progress"></div>
+    <div class="jp" id="jp"></div>
+    <div class="kana" id="kana"></div>
+    <div class="meaning" id="meaning"></div>
+    <div class="small" id="audioStatus"></div>
+  </div>
+  <div class="card"><input id="q" class="search" placeholder="搜尋：日文／平假名／romaji／中文／英文" /><div class="list" id="list"></div></div>
+</div>
+<div class="controls">
+  <button id="unlock" class="primary">解鎖／播放</button>
+  <button id="prev">上一句</button><button id="next">下一句</button>
+  <button id="repeat">重播</button>
+  <select id="catSelect"><option value="">全部分類</option></select>
+  <label><input type="checkbox" id="auto" checked> 連續播放</label>
+</div>
+<script>
+let lesson=[], idx=0, filtered=[], currentAudio=null;
+const $=id=>document.getElementById(id);
+function esc(s){return (s||'').replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));}
+function hi(text, target){ text=esc(text); if(!target)return text; const t=esc(target); return text.replace(t,`<span class="red">${t}</span>`); }
+async function init(){ const res=await fetch('lesson.json'); const data=await res.json(); lesson=data.items; filtered=[...lesson]; [...new Set(lesson.map(x=>x.category))].forEach(c=>{let o=document.createElement('option');o.value=c;o.textContent=c;$('catSelect').appendChild(o)}); renderList(); show(0); }
+function show(i){ if(!filtered.length)return; idx=(i+filtered.length)%filtered.length; const it=filtered[idx]; $('cat').textContent=it.category; $('progress').textContent=`${idx+1} / ${filtered.length}　${it.id}`; $('jp').innerHTML=hi(it.example_jp,it.verb_masu_jp); $('kana').innerHTML=hi(it.example_kana,it.verb_masu_kana)+'<br><span class="muted">'+hi(it.example_romaji,it.verb_masu_romaji)+'</span>'; $('meaning').innerHTML=hi(it.example_zh,it.zh)+'<br><span class="muted">'+hi(it.example_en,it.en)+'</span>'; document.querySelectorAll('.row').forEach((r,n)=>r.classList.toggle('active',n===idx)); $('audioStatus').textContent='MP3：'+it.audio; }
+function renderList(){ const box=$('list'); box.innerHTML=''; filtered.forEach((it,i)=>{const d=document.createElement('div');d.className='row';d.innerHTML=`<b class="red">${esc(it.jp)}</b><div>${esc(it.kana)} / ${esc(it.romaji)}</div><div class="small">${esc(it.zh)} / ${esc(it.en)}</div>`;d.onclick=()=>{show(i);playCurrent();}; box.appendChild(d);}); }
+function speakFallback(text){ return new Promise(resolve=>{ if(!('speechSynthesis' in window)){resolve();return;} speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(text); u.lang='ja-JP'; u.rate=.82; u.onend=resolve; u.onerror=resolve; speechSynthesis.speak(u); }); }
+function playMp3(src){ return new Promise((resolve,reject)=>{ if(currentAudio){currentAudio.pause();currentAudio=null;} const a=new Audio(src); currentAudio=a; a.onended=resolve; a.onerror=()=>reject(new Error('mp3 missing')); a.play().catch(reject); }); }
+async function playCurrent(){ const it=filtered[idx]; show(idx); try{ $('audioStatus').textContent='播放 MP3：'+it.audio; await playMp3(it.audio); }catch(e){ $('audioStatus').textContent='找不到 MP3，改用瀏覽器日文語音：'+it.example_jp; await speakFallback(it.example_jp); } if($('auto').checked){ setTimeout(()=>{show(idx+1);playCurrent();},450); } }
+function applyFilter(){ const q=$('q').value.trim().toLowerCase(); const c=$('catSelect').value; filtered=lesson.filter(it=>(!c||it.category===c) && (!q || JSON.stringify(it).toLowerCase().includes(q))); idx=0; renderList(); show(0); }
+$('unlock').onclick=playCurrent; $('repeat').onclick=playCurrent; $('prev').onclick=()=>{show(idx-1);playCurrent();}; $('next').onclick=()=>{show(idx+1);playCurrent();}; $('q').oninput=applyFilter; $('catSelect').onchange=applyFilter;
+init();
+</script>
+</body></html>
