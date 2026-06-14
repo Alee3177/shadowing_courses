@@ -13,7 +13,7 @@ header{padding:18px 16px 8px;text-align:center} h1{font-size:22px;margin:0 0 6px
 </style>
 </head>
 <body>
-<header><h1>動詞 Shadowing：どうし＋穿戴／脫下</h1><div class="sub">日文・平假名/羅馬拼音・中文/英文的「動詞」皆以紅色標示。優先播放 MP3；若缺檔，會改用瀏覽器日文語音。</div></header>
+<header><h1>動詞 Shadowing：どうし＋穿戴／脫下（原形版）</h1><div class="sub">全部例句使用動詞原形／辞書形，例如：ほどく，不使用 ほどきます。日文・平假名/羅馬拼音・中文/英文的「動詞」皆以紅色標示。優先播放 MP3；若缺檔，會改用瀏覽器日文語音。</div></header>
 <div class="wrap">
   <div class="card">
     <div class="badge" id="cat">讀取中</div>
@@ -38,7 +38,7 @@ const $=id=>document.getElementById(id);
 function esc(s){return (s||'').replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));}
 function hi(text, target){ text=esc(text); if(!target)return text; const t=esc(target); return text.replace(t,`<span class="red">${t}</span>`); }
 async function init(){ const res=await fetch('lesson.json'); const data=await res.json(); lesson=data.items; filtered=[...lesson]; [...new Set(lesson.map(x=>x.category))].forEach(c=>{let o=document.createElement('option');o.value=c;o.textContent=c;$('catSelect').appendChild(o)}); renderList(); show(0); }
-function show(i){ if(!filtered.length)return; idx=(i+filtered.length)%filtered.length; const it=filtered[idx]; $('cat').textContent=it.category; $('progress').textContent=`${idx+1} / ${filtered.length}　${it.id}`; $('jp').innerHTML=hi(it.example_jp,it.verb_masu_jp); $('kana').innerHTML=hi(it.example_kana,it.verb_masu_kana)+'<br><span class="muted">'+hi(it.example_romaji,it.verb_masu_romaji)+'</span>'; $('meaning').innerHTML=hi(it.example_zh,it.zh)+'<br><span class="muted">'+hi(it.example_en,it.en)+'</span>'; document.querySelectorAll('.row').forEach((r,n)=>r.classList.toggle('active',n===idx)); $('audioStatus').textContent='MP3：'+it.audio; }
+function show(i){ if(!filtered.length)return; idx=(i+filtered.length)%filtered.length; const it=filtered[idx]; $('cat').textContent=it.category; $('progress').textContent=`${idx+1} / ${filtered.length}　${it.id}`; $('jp').innerHTML=hi(it.example_jp,it.jp); $('kana').innerHTML=hi(it.example_kana,it.kana)+'<br><span class="muted">'+hi(it.example_romaji,it.romaji)+'</span>'; $('meaning').innerHTML=hi(it.example_zh,it.zh)+'<br><span class="muted">'+hi(it.example_en,it.en)+'</span>'; document.querySelectorAll('.row').forEach((r,n)=>r.classList.toggle('active',n===idx)); $('audioStatus').textContent='MP3：'+it.audio; }
 function renderList(){ const box=$('list'); box.innerHTML=''; filtered.forEach((it,i)=>{const d=document.createElement('div');d.className='row';d.innerHTML=`<b class="red">${esc(it.jp)}</b><div>${esc(it.kana)} / ${esc(it.romaji)}</div><div class="small">${esc(it.zh)} / ${esc(it.en)}</div>`;d.onclick=()=>{show(i);playCurrent();}; box.appendChild(d);}); }
 function speakFallback(text){ return new Promise(resolve=>{ if(!('speechSynthesis' in window)){resolve();return;} speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(text); u.lang='ja-JP'; u.rate=.82; u.onend=resolve; u.onerror=resolve; speechSynthesis.speak(u); }); }
 function playMp3(src){ return new Promise((resolve,reject)=>{ if(currentAudio){currentAudio.pause();currentAudio=null;} const a=new Audio(src); currentAudio=a; a.onended=resolve; a.onerror=()=>reject(new Error('mp3 missing')); a.play().catch(reject); }); }
