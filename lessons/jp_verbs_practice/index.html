@@ -1,1 +1,93 @@
-
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>日語動詞跟讀練習｜搭配「私の趣味」</title>
+<style>
+body{font-family:"Noto Sans TC","Noto Sans JP",system-ui,sans-serif;background:#f5f7fb;color:#172033;margin:0}
+main{max-width:900px;margin:auto;padding:22px}.hero{background:#fff;border-radius:20px;padding:22px;box-shadow:0 6px 25px #0001}
+h1{margin:0 0 8px}.controls{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+button,select{font-size:16px;padding:10px 14px;border:1px solid #ccd3df;border-radius:12px;background:white}
+.card{background:#fff;border-radius:18px;padding:20px;margin:14px 0;box-shadow:0 4px 18px #0001}
+.tag{font-weight:700}.jp{font-size:30px;font-weight:800;margin:10px 0}.kana{font-size:20px}.romaji,.zh{color:#586174;margin-top:7px}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.primary{font-weight:700}.hidden{display:none} button.playing,button.action-ok{background:#198754!important;color:#fff!important;border-color:#198754!important;box-shadow:0 0 0 3px rgba(25,135,84,.15)!important} button{transition:.12s}.quiz-help{background:#f2f7ff;border-left:4px solid #4f7fd7;padding:10px 12px;border-radius:8px;margin:8px 0 12px}.hint{color:#8a5a00;font-weight:700}
+.quiz input{font-size:20px;padding:10px;width:min(90%,330px);border-radius:10px;border:1px solid #bbb}
+.ok{color:#167a3e;font-weight:700}.bad{color:#b3261e;font-weight:700}
+small{color:#687386}
+button:disabled,select:disabled,input:disabled{opacity:.48;cursor:not-allowed}
+button.active-control,select.active-control{background:#198754!important;color:#fff!important;border-color:#198754!important;box-shadow:0 0 0 3px rgba(25,135,84,.15)!important}
+button.sentence-shadow{background:white;color:#172033;border-color:#ccd3df;font-weight:800}
+button.sentence-shadow.active-control{background:#f6ad2f!important;color:#4a2a00!important;border-color:#e39a1b!important;box-shadow:0 0 0 3px rgba(246,173,47,.22)!important}
+</style></head><body><main>
+<section class="hero"><h1>🇯🇵 日語動詞跟讀練習｜搭配「私の趣味」</h1><div>ます形 → 辭書形 → こと</div>
+<div class="controls"><select id="group"><option value="ALL">全部</option><option value="I">I 類</option><option value="II">II 類</option><option value="III">III 類</option></select>
+<button onclick="prev(this)">← 上一個</button><button onclick="next(this)">下一個 →</button><button onclick="randomVerb(this)">🔀 隨機</button></div>
+<small>🔊 使用瀏覽器日文語音。可調整速度後重複跟讀。</small></section>
+<section id="card" class="card"></section>
+<section class="card quiz"><h2>✍️ 辭書形小測驗</h2><div id="q"></div></section>
+<section class="card"><h2>🎧 完整句跟讀</h2><div id="sentences"></div></section>
+</main>
+<script>
+const DATA = {"title": "日語動詞跟讀練習｜ます形 → 辭書形 → こと", "verbs": [{"group": "I", "masu": "行きます", "dict": "行く", "kana_masu": "いきます", "kana_dict": "いく", "romaji": "ikimasu → iku", "zh": "去"}, {"group": "I", "masu": "書きます", "dict": "書く", "kana_masu": "かきます", "kana_dict": "かく", "romaji": "kakimasu → kaku", "zh": "寫"}, {"group": "I", "masu": "描きます", "dict": "描く", "kana_masu": "かきます", "kana_dict": "かく", "romaji": "kakimasu → kaku", "zh": "畫"}, {"group": "I", "masu": "聞きます", "dict": "聞く", "kana_masu": "ききます", "kana_dict": "きく", "romaji": "kikimasu → kiku", "zh": "聽／問"}, {"group": "I", "masu": "泳ぎます", "dict": "泳ぐ", "kana_masu": "およぎます", "kana_dict": "およぐ", "romaji": "oyogimasu → oyogu", "zh": "游泳"}, {"group": "I", "masu": "読みます", "dict": "読む", "kana_masu": "よみます", "kana_dict": "よむ", "romaji": "yomimasu → yomu", "zh": "閱讀"}, {"group": "I", "masu": "遊びます", "dict": "遊ぶ", "kana_masu": "あそびます", "kana_dict": "あそぶ", "romaji": "asobimasu → asobu", "zh": "玩"}, {"group": "I", "masu": "待ちます", "dict": "待つ", "kana_masu": "まちます", "kana_dict": "まつ", "romaji": "machimasu → matsu", "zh": "等待"}, {"group": "I", "masu": "買います", "dict": "買う", "kana_masu": "かいます", "kana_dict": "かう", "romaji": "kaimasu → kau", "zh": "買"}, {"group": "I", "masu": "習います", "dict": "習う", "kana_masu": "ならいます", "kana_dict": "ならう", "romaji": "naraimasu → narau", "zh": "學習"}, {"group": "I", "masu": "作ります", "dict": "作る", "kana_masu": "つくります", "kana_dict": "つくる", "romaji": "tsukurimasu → tsukuru", "zh": "製作"}, {"group": "I", "masu": "帰ります", "dict": "帰る", "kana_masu": "かえります", "kana_dict": "かえる", "romaji": "kaerimasu → kaeru", "zh": "回去"}, {"group": "I", "masu": "死にます", "dict": "死ぬ", "kana_masu": "しにます", "kana_dict": "しぬ", "romaji": "shinimasu → shinu", "zh": "死"}, {"group": "I", "masu": "過ごします", "dict": "過ごす", "kana_masu": "すごします", "kana_dict": "すごす", "romaji": "sugoshimasu → sugosu", "zh": "度過"}, {"group": "II", "masu": "食べます", "dict": "食べる", "kana_masu": "たべます", "kana_dict": "たべる", "romaji": "tabemasu → taberu", "zh": "吃"}, {"group": "II", "masu": "集めます", "dict": "集める", "kana_masu": "あつめます", "kana_dict": "あつめる", "romaji": "atsumemasu → atsumeru", "zh": "收集"}, {"group": "II", "masu": "寝ます", "dict": "寝る", "kana_masu": "ねます", "kana_dict": "ねる", "romaji": "nemasu → neru", "zh": "睡覺"}, {"group": "II", "masu": "見ます", "dict": "見る", "kana_masu": "みます", "kana_dict": "みる", "romaji": "mimasu → miru", "zh": "看"}, {"group": "II", "masu": "借ります", "dict": "借りる", "kana_masu": "かります", "kana_dict": "かりる", "romaji": "karimasu → kariru", "zh": "借"}, {"group": "II", "masu": "起きます", "dict": "起きる", "kana_masu": "おきます", "kana_dict": "おきる", "romaji": "okimasu → okiru", "zh": "起床"}, {"group": "II", "masu": "あげます", "dict": "あげる", "kana_masu": "あげます", "kana_dict": "あげる", "romaji": "agemasu → ageru", "zh": "給"}, {"group": "II", "masu": "助けます", "dict": "助ける", "kana_masu": "たすけます", "kana_dict": "たすける", "romaji": "tasukemasu → tasukeru", "zh": "幫助"}, {"group": "III", "masu": "します", "dict": "する", "kana_masu": "します", "kana_dict": "する", "romaji": "shimasu → suru", "zh": "做"}, {"group": "III", "masu": "来ます", "dict": "来る", "kana_masu": "きます", "kana_dict": "くる", "romaji": "kimasu → kuru", "zh": "來"}, {"group": "III", "masu": "勉強します", "dict": "勉強する", "kana_masu": "べんきょうします", "kana_dict": "べんきょうする", "romaji": "benkyō shimasu → benkyō suru", "zh": "學習"}, {"group": "III", "masu": "運動します", "dict": "運動する", "kana_masu": "うんどうします", "kana_dict": "うんどうする", "romaji": "undō shimasu → undō suru", "zh": "運動"}, {"group": "III", "masu": "ドライブします", "dict": "ドライブする", "kana_masu": "どらいぶします", "kana_dict": "どらいぶする", "romaji": "doraibu shimasu → doraibu suru", "zh": "開車兜風"}, {"group": "III", "masu": "ヨガをします", "dict": "ヨガをする", "kana_masu": "よがをします", "kana_dict": "よがをする", "romaji": "yoga o shimasu → yoga o suru", "zh": "做瑜珈"}], "sentences": [{"ja": "私の趣味は泳ぐことです。", "kana": "わたしの しゅみは およぐことです。", "romaji": "Watashi no shumi wa oyogu koto desu.", "zh": "我的興趣是游泳。"}, {"ja": "彼女の趣味はヨガをすることです。", "kana": "かのじょの しゅみは よがを することです。", "romaji": "Kanojo no shumi wa yoga o suru koto desu.", "zh": "她的興趣是做瑜珈。"}, {"ja": "私の趣味は人を助けることです。", "kana": "わたしの しゅみは ひとを たすけることです。", "romaji": "Watashi no shumi wa hito o tasukeru koto desu.", "zh": "我的興趣是幫助別人。"}]};
+const SENTENCE_MAP={
+"行きます":{ja:"休みの日に旅行に行くことが好きです。",kana:"やすみの ひに りょこうに いくことが すきです。",romaji:"Yasumi no hi ni ryokō ni iku koto ga suki desu.",zh:"我喜歡在休假日去旅行。"},
+"書きます":{ja:"私の趣味は日記を書くことです。",kana:"わたしの しゅみは にっきを かくことです。",romaji:"Watashi no shumi wa nikki o kaku koto desu.",zh:"我的興趣是寫日記。"},
+"描きます":{ja:"私の趣味は絵を描くことです。",kana:"わたしの しゅみは えを かくことです。",romaji:"Watashi no shumi wa e o kaku koto desu.",zh:"我的興趣是畫畫。"},
+"聞きます":{ja:"私の趣味は音楽を聞くことです。",kana:"わたしの しゅみは おんがくを きくことです。",romaji:"Watashi no shumi wa ongaku o kiku koto desu.",zh:"我的興趣是聽音樂。"},
+"泳ぎます":{ja:"私の趣味は泳ぐことです。",kana:"わたしの しゅみは およぐことです。",romaji:"Watashi no shumi wa oyogu koto desu.",zh:"我的興趣是游泳。"},
+"読みます":{ja:"私の趣味は本を読むことです。",kana:"わたしの しゅみは ほんを よむことです。",romaji:"Watashi no shumi wa hon o yomu koto desu.",zh:"我的興趣是看書。"},
+"遊びます":{ja:"休みの日に友達と遊ぶことが好きです。",kana:"やすみの ひに ともだちと あそぶことが すきです。",romaji:"Yasumi no hi ni tomodachi to asobu koto ga suki desu.",zh:"我喜歡休假日和朋友一起玩。"},
+"待ちます":{ja:"駅で友達を待つことがあります。",kana:"えきで ともだちを まつことが あります。",romaji:"Eki de tomodachi o matsu koto ga arimasu.",zh:"有時候會在車站等朋友。"},
+"買います":{ja:"休みの日に買い物をすることが好きです。",kana:"やすみの ひに かいものを することが すきです。",romaji:"Yasumi no hi ni kaimono o suru koto ga suki desu.",zh:"我喜歡休假日去購物。"},
+"習います":{ja:"新しいことを習うことが好きです。",kana:"あたらしい ことを ならうことが すきです。",romaji:"Atarashii koto o narau koto ga suki desu.",zh:"我喜歡學習新事物。"},
+"作ります":{ja:"私の趣味は料理を作ることです。",kana:"わたしの しゅみは りょうりを つくることです。",romaji:"Watashi no shumi wa ryōri o tsukuru koto desu.",zh:"我的興趣是做料理。"},
+"帰ります":{ja:"仕事のあと、家に帰ることが楽しみです。",kana:"しごとの あと、いえに かえることが たのしみです。",romaji:"Shigoto no ato, ie ni kaeru koto ga tanoshimi desu.",zh:"工作後，我很期待回家。"},
+"死にます":{ja:"「死にます」の辞書形は「死ぬ」です。",kana:"「しにます」の じしょけいは「しぬ」です。",romaji:"“Shinimasu” no jishokei wa “shinu” desu.",zh:"「死にます」的辭書形是「死ぬ」。"},
+"過ごします":{ja:"休みの日は家族と過ごすことが好きです。",kana:"やすみの ひは かぞくと すごすことが すきです。",romaji:"Yasumi no hi wa kazoku to sugosu koto ga suki desu.",zh:"休假日我喜歡和家人一起度過。"},
+"食べます":{ja:"私の趣味はおいしい物を食べることです。",kana:"わたしの しゅみは おいしい ものを たべることです。",romaji:"Watashi no shumi wa oishii mono o taberu koto desu.",zh:"我的興趣是吃美食。"},
+"集めます":{ja:"私の趣味は切手を集めることです。",kana:"わたしの しゅみは きってを あつめることです。",romaji:"Watashi no shumi wa kitte o atsumeru koto desu.",zh:"我的興趣是集郵。"},
+"寝ます":{ja:"早く寝ることは大切です。",kana:"はやく ねることは たいせつです。",romaji:"Hayaku neru koto wa taisetsu desu.",zh:"早點睡覺很重要。"},
+"見ます":{ja:"私の趣味は映画を見ることです。",kana:"わたしの しゅみは えいがを みることです。",romaji:"Watashi no shumi wa eiga o miru koto desu.",zh:"我的興趣是看電影。"},
+"借ります":{ja:"図書館で本を借りることがあります。",kana:"としょかんで ほんを かりることが あります。",romaji:"Toshokan de hon o kariru koto ga arimasu.",zh:"有時候會在圖書館借書。"},
+"起きます":{ja:"毎朝六時に起きることにしています。",kana:"まいあさ ろくじに おきることに しています。",romaji:"Maiasa rokuji ni okiru koto ni shiteimasu.",zh:"我固定每天早上六點起床。"},
+"あげます":{ja:"友達にプレゼントをあげることがあります。",kana:"ともだちに ぷれぜんとを あげることが あります。",romaji:"Tomodachi ni purezento o ageru koto ga arimasu.",zh:"有時候會送朋友禮物。"},
+"助けます":{ja:"私の趣味は人を助けることです。",kana:"わたしの しゅみは ひとを たすけることです。",romaji:"Watashi no shumi wa hito o tasukeru koto desu.",zh:"我的興趣是幫助別人。"},
+"します":{ja:"休みの日に好きなことをすることができます。",kana:"やすみの ひに すきな ことを することが できます。",romaji:"Yasumi no hi ni sukina koto o suru koto ga dekimasu.",zh:"休假日可以做自己喜歡的事。"},
+"来ます":{ja:"友達が家に来ることがあります。",kana:"ともだちが いえに くることが あります。",romaji:"Tomodachi ga ie ni kuru koto ga arimasu.",zh:"有時候朋友會來我家。"},
+"勉強します":{ja:"私の趣味は日本語を勉強することです。",kana:"わたしの しゅみは にほんごを べんきょうすることです。",romaji:"Watashi no shumi wa Nihongo o benkyō suru koto desu.",zh:"我的興趣是學日文。"},
+"運動します":{ja:"私の趣味は運動することです。",kana:"わたしの しゅみは うんどうすることです。",romaji:"Watashi no shumi wa undō suru koto desu.",zh:"我的興趣是運動。"},
+"ドライブします":{ja:"私の趣味はドライブすることです。",kana:"わたしの しゅみは どらいぶすることです。",romaji:"Watashi no shumi wa doraibu suru koto desu.",zh:"我的興趣是開車兜風。"},
+"ヨガをします":{ja:"私の趣味はヨガをすることです。",kana:"わたしの しゅみは よがを することです。",romaji:"Watashi no shumi wa yoga o suru koto desu.",zh:"我的興趣是做瑜珈。"}
+};
+let idx=0;
+const $=s=>document.querySelector(s);
+function list(){let g=$("#group").value;return DATA.verbs.filter(v=>g==="ALL"||v.group===g)}
+let uiLocked=false;
+function lockUI(active){uiLocked=true;document.querySelectorAll('button,select,input').forEach(el=>{if(el!==active)el.disabled=true});if(active){active.disabled=false;active.classList.add('active-control')}}
+function unlockUI(active){if(active)active.classList.remove('active-control');document.querySelectorAll('button,select,input').forEach(el=>el.disabled=false);uiLocked=false}
+function flashControl(el,action){if(uiLocked)return;lockUI(el);setTimeout(()=>{try{action()}finally{unlockUI(el)}},180)}
+function speak(t,rate=.8,btn=null){if(uiLocked)return;lockUI(btn);speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=rate;u.onend=u.onerror=()=>unlockUI(btn);speechSynthesis.speak(u)}
+function render(){
+ let a=list(); if(!a.length)return; idx=(idx+a.length)%a.length; let v=a[idx];
+ $("#card").innerHTML=`<div class="tag">${v.group} 類動詞｜${v.zh}</div>
+ <div class="jp">${v.masu} → ${v.dict}</div><div class="kana">${v.kana_masu} → ${v.kana_dict}</div>
+ <div class="romaji">${v.romaji}</div>
+ <div class="row"><button class="primary" onclick="speak('${v.masu}',.8,this)">🔊 ます形</button>
+ <button onclick="speak('${v.dict}',.8,this)">🔊 辭書形</button>
+ <button onclick="speak('${v.dict}こと',.8,this)">🔊 ＋こと</button>
+ <button onclick="repeatCurrent(this)">🔁 跟讀 3 次</button></div>`;
+ makeQuiz(v);
+ renderSentence(v);
+}
+function repeatCurrent(btn){if(uiLocked)return;let v=list()[idx],seq=[v.masu,v.dict,v.dict+"こと"],i=0;lockUI(btn);speechSynthesis.cancel();function go(){if(i>=seq.length*3){unlockUI(btn);return}let u=new SpeechSynthesisUtterance(seq[i%3]);u.lang="ja-JP";u.rate=.72;u.onend=()=>setTimeout(go,450);u.onerror=()=>unlockUI(btn);speechSynthesis.speak(u);i++}go()}
+function next(btn){flashControl(btn,()=>{idx++;render()})} function prev(btn){flashControl(btn,()=>{idx--;render()})}
+function randomVerb(btn){flashControl(btn,()=>{let a=list();idx=Math.floor(Math.random()*a.length);render()})}
+$("#group").onchange=function(){let el=this;if(uiLocked)return;lockUI(el);setTimeout(()=>{idx=0;render();unlockUI(el)},180)};
+function makeQuiz(v){$("#q").innerHTML=`<p><b>${v.masu}</b> 的辭書形是？</p><div class="quiz-help">請輸入 <b>辭書形</b>（日文漢字／平假名皆可）。例如：<b>書く</b> 或 <b>かく</b>；本測驗不使用羅馬拼音作答。</div><input id="ans" autocomplete="off" placeholder="請輸入日文辭書形"><button onclick="flashCheck(this);checkCurrent()">檢查</button><p id="result"></p>`}
+function flashCheck(btn){if(uiLocked)return;lockUI(btn);setTimeout(()=>unlockUI(btn),500)}
+function checkCurrent(){let v=list()[idx],x=$("#ans").value.trim(),answers=[v.dict,v.kana_dict];if(!x){$("#result").innerHTML=`<span class="hint">請先輸入答案（日文漢字或平假名）。</span>`;return}if(/^[A-Za-zāīūēōĀĪŪĒŌ\s-]+$/.test(x)){$("#result").innerHTML=`<span class="hint">這題請用日文作答，不使用羅馬拼音。</span>`;return}$("#result").innerHTML=answers.includes(x)?`<span class="ok">✓ 正確！ ${v.dict}（${v.kana_dict}）</span>`:`<span class="bad">✗ 答案尚未正確。</span> <span class="hint">提示：請把「ます形」改成「辭書形」，可用漢字或平假名再試一次。</span>`}
+function renderSentence(v){
+ let s=SENTENCE_MAP[v.masu];
+ $("#sentences").innerHTML=`<div style="padding:6px 0"><div class="tag">目前動詞：${v.dict}（${v.kana_dict}）</div><div class="jp" style="font-size:22px">${s.ja}</div><div>${s.kana}</div><div class="romaji">${s.romaji}</div><div class="zh">${s.zh}</div><div class="row"><button class="sentence-shadow" onclick="speakSentence(this)">🔊 跟讀</button><label style="display:flex;align-items:center;gap:7px;font-weight:700">語速：<select id="sentenceSpeed" aria-label="完整句跟讀語速"><option value="1" selected>1.0x 正常</option><option value="0.7">0.7x 慢速</option></select></label></div></div>`;
+}
+function speakSentence(btn){if(uiLocked)return;let v=list()[idx],s=SENTENCE_MAP[v.masu];let speed=parseFloat($("#sentenceSpeed")?.value||"1");lockUI(btn);speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(s.ja);u.lang="ja-JP";u.rate=speed;u.onend=u.onerror=()=>unlockUI(btn);speechSynthesis.speak(u)}
+render();
+</script></body></html>
