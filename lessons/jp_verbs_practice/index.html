@@ -64,7 +64,14 @@ let uiLocked=false;
 function lockUI(active){uiLocked=true;document.querySelectorAll('button,select,input').forEach(el=>{if(el!==active)el.disabled=true});if(active){active.disabled=false;active.classList.add('active-control')}}
 function unlockUI(active){if(active)active.classList.remove('active-control');document.querySelectorAll('button,select,input').forEach(el=>el.disabled=false);uiLocked=false}
 function flashControl(el,action){if(uiLocked)return;lockUI(el);setTimeout(()=>{try{action()}finally{unlockUI(el)}},180)}
-function speak(t,rate=.8,btn=null){if(uiLocked)return;lockUI(btn);speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=rate;u.onend=u.onerror=()=>unlockUI(btn);speechSynthesis.speak(u)}
+const IS_LINE=/\bLine\//i.test(navigator.userAgent)||/\bLIFF\b/i.test(navigator.userAgent);
+let jaVoice=null,voiceReady=false,speechWatchdog=null,speechToken=0;
+function refreshVoices(){if(!("speechSynthesis" in window))return;let vs=speechSynthesis.getVoices()||[];jaVoice=vs.find(v=>/^ja-JP$/i.test(v.lang))||vs.find(v=>/^ja/i.test(v.lang))||null;voiceReady=vs.length>0}
+refreshVoices();if("speechSynthesis" in window)speechSynthesis.onvoiceschanged=refreshVoices;
+function finishSpeech(btn,token){if(token!==speechToken)return;if(speechWatchdog){clearTimeout(speechWatchdog);speechWatchdog=null}unlockUI(btn)}
+function armSpeechWatchdog(btn,token,ms){if(speechWatchdog)clearTimeout(speechWatchdog);speechWatchdog=setTimeout(()=>{try{speechSynthesis.cancel()}catch(e){}finishSpeech(btn,token)},ms)}
+function lineSpeechUnlock(){if(!("speechSynthesis" in window))return false;refreshVoices();try{speechSynthesis.resume();let warm=new SpeechSynthesisUtterance(" ");warm.volume=0;warm.lang="ja-JP";if(jaVoice)warm.voice=jaVoice;speechSynthesis.speak(warm);return true}catch(e){return false}}
+function speak(t,rate=.8,btn=null){if(uiLocked)return;if(!("speechSynthesis" in window)){alert("此瀏覽器不支援語音播放，請改用 Chrome 開啟。");return}lockUI(btn);const token=++speechToken;lineSpeechUnlock();armSpeechWatchdog(btn,token,Math.max(6000,t.length*650+3500));const start=()=>{if(token!==speechToken)return;try{refreshVoices();speechSynthesis.cancel();speechSynthesis.resume();let u=new SpeechSynthesisUtterance(t);u.lang="ja-JP";u.rate=rate;if(jaVoice)u.voice=jaVoice;u.onend=()=>finishSpeech(btn,token);u.onerror=()=>finishSpeech(btn,token);speechSynthesis.speak(u)}catch(e){finishSpeech(btn,token)}};setTimeout(start,IS_LINE?320:60)}
 function render(){
  let a=list(); if(!a.length)return; idx=(idx+a.length)%a.length; let v=a[idx];
  $("#card").innerHTML=`<div class="tag">${v.group} 類動詞｜${v.zh}</div>
@@ -77,7 +84,7 @@ function render(){
  makeQuiz(v);
  renderSentence(v);
 }
-function repeatCurrent(btn){if(uiLocked)return;let v=list()[idx],seq=[v.masu,v.dict,v.dict+"こと"],i=0;lockUI(btn);speechSynthesis.cancel();function go(){if(i>=seq.length*3){unlockUI(btn);return}let u=new SpeechSynthesisUtterance(seq[i%3]);u.lang="ja-JP";u.rate=.72;u.onend=()=>setTimeout(go,450);u.onerror=()=>unlockUI(btn);speechSynthesis.speak(u);i++}go()}
+function repeatCurrent(btn){if(uiLocked)return;if(!("speechSynthesis" in window)){alert("此瀏覽器不支援語音播放，請改用 Chrome 開啟。");return}let v=list()[idx],seq=[v.masu,v.dict,v.dict+"こと"],i=0;lockUI(btn);const token=++speechToken;lineSpeechUnlock();armSpeechWatchdog(btn,token,42000);function go(){if(token!==speechToken)return;if(i>=seq.length*3){finishSpeech(btn,token);return}try{refreshVoices();speechSynthesis.cancel();speechSynthesis.resume();let u=new SpeechSynthesisUtterance(seq[i%3]);u.lang="ja-JP";u.rate=.72;if(jaVoice)u.voice=jaVoice;u.onend=()=>{i++;setTimeout(go,450)};u.onerror=()=>finishSpeech(btn,token);speechSynthesis.speak(u)}catch(e){finishSpeech(btn,token)}}setTimeout(go,IS_LINE?320:60)}
 function next(btn){flashControl(btn,()=>{idx++;render()})} function prev(btn){flashControl(btn,()=>{idx--;render()})}
 function randomVerb(btn){flashControl(btn,()=>{let a=list();idx=Math.floor(Math.random()*a.length);render()})}
 $("#group").onchange=function(){let el=this;if(uiLocked)return;lockUI(el);setTimeout(()=>{idx=0;render();unlockUI(el)},180)};
@@ -88,6 +95,6 @@ function renderSentence(v){
  let s=SENTENCE_MAP[v.masu];
  $("#sentences").innerHTML=`<div style="padding:6px 0"><div class="tag">目前動詞：${v.dict}（${v.kana_dict}）</div><div class="jp" style="font-size:22px">${s.ja}</div><div>${s.kana}</div><div class="romaji">${s.romaji}</div><div class="zh">${s.zh}</div><div class="row"><button class="sentence-shadow" onclick="speakSentence(this)">🔊 跟讀</button><label style="display:flex;align-items:center;gap:7px;font-weight:700">語速：<select id="sentenceSpeed" aria-label="完整句跟讀語速"><option value="1" selected>1.0x 正常</option><option value="0.7">0.7x 慢速</option></select></label></div></div>`;
 }
-function speakSentence(btn){if(uiLocked)return;let v=list()[idx],s=SENTENCE_MAP[v.masu];let speed=parseFloat($("#sentenceSpeed")?.value||"1");lockUI(btn);speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(s.ja);u.lang="ja-JP";u.rate=speed;u.onend=u.onerror=()=>unlockUI(btn);speechSynthesis.speak(u)}
+function speakSentence(btn){if(uiLocked)return;let v=list()[idx],s=SENTENCE_MAP[v.masu],speed=parseFloat($("#sentenceSpeed")?.value||"1");speak(s.ja,speed,btn)}
 render();
 </script></body></html>
