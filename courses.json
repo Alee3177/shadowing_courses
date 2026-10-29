@@ -45,5 +45,17 @@
   "icon": "🔰",
   "href": "lessons/particles_wo_de_ni/",
   "desc": "練習 を＝動作對象、で＝動作發生地、に＝時間／目的地／接受者。"
+},
+{
+  "title": "20｜北海道旅行",
+  "subtitle": "みんなで 北海道旅行！",
+  "level": "N5",
+  "topic": "travel",
+  "topicLabel": "旅遊會話 / MP4",
+  "duration": "約 9 分 57 秒",
+  "sentences": 101,
+  "icon": "🏔️",
+  "href": "lessons/20_hokkaido_travel/",
+  "desc": "五幕旅遊情境影片：新千歲機場、螃蟹料理店、小樽運河拍照、溫泉旅館、伴手禮店。"
 }
 ]
