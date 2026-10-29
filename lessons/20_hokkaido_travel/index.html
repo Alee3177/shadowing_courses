@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>みんなで 北海道旅行！｜日語影子跟讀 MP4</title>
+<style>
+  :root {
+    --bg: #f7f7fb;
+    --card: #ffffff;
+    --ink: #1f2937;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    --line: #e5e7eb;
+    --active: #eaf2ff;
+    --shadow: 0 10px 30px rgba(15, 23, 42, .09);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Noto Sans JP", sans-serif;
+    color: var(--ink);
+    background: linear-gradient(180deg, #eef4ff 0, var(--bg) 220px);
+  }
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: max(14px, env(safe-area-inset-top)) 14px 60px;
+  }
+  .main-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+    padding: 16px;
+    overflow: hidden;
+  }
+  h1 { font-size: 20px; margin: 0 0 4px; letter-spacing: .02em; }
+  .sub { color: var(--muted); font-size: 13px; margin-bottom: 12px; }
+  .player {
+    border-radius: 16px;
+    overflow: hidden;
+    background: #000;
+    aspect-ratio: 16 / 9;
+  }
+  video { display: block; width: 100%; height: 100%; background: #000; }
+  .hint { color: var(--muted); font-size: 13px; margin: 10px 2px 0; line-height: 1.5; }
+  .chapters { margin-top: 14px; display: grid; gap: 8px; }
+  .chapter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    text-align: left;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--ink);
+    border-radius: 14px;
+    padding: 12px 14px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .chapter small { color: var(--muted); font-weight: 600; font-size: 13px; white-space: nowrap; }
+  .chapter.active { background: var(--active); border-color: #93c5fd; box-shadow: 0 0 0 3px rgba(37,99,235,.12); }
+  .links { margin-top: 14px; font-size: 13px; color: var(--muted); }
+  .links a { color: var(--accent); font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="main-card">
+    <h1>🗾 みんなで 北海道旅行！</h1>
+    <div class="sub">全五幕・日語影子跟讀（日文／假名／羅馬拼音／中文）｜約 9 分 57 秒</div>
+    <div class="player">
+      <video id="v" controls playsinline webkit-playsinline preload="metadata" src="Hokkaido_Travel_Scene01-05_Release.mp4">
+        你的瀏覽器不支援 HTML5 影片，請改用下方連結下載後播放。
+      </video>
+    </div>
+    <p class="hint">點下方任一幕即可跳到該幕開頭；也可以直接拖曳播放列。</p>
+    <div class="chapters" id="chapters"></div>
+    <div class="links">
+      <a href="Hokkaido_Travel_Scene01-05_Release.mp4">直接開啟 / 下載 MP4</a>
+      ｜ <a href="../../">回課程首頁</a>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var SCENES = [
+    { t: 0.0,    name: "第1幕｜新千歲機場" },
+    { t: 92.44,  name: "第2幕｜螃蟹料理店" },
+    { t: 222.92, name: "第3幕｜小樽運河拍照" },
+    { t: 320.64, name: "第4幕｜溫泉旅館" },
+    { t: 445.04, name: "第5幕｜伴手禮店" }
+  ];
+  var v = document.getElementById("v");
+  var box = document.getElementById("chapters");
+  var btns = [];
+  function fmt(s) { var m = Math.floor(s / 60), r = Math.floor(s % 60); return m + ":" + (r < 10 ? "0" : "") + r; }
+  SCENES.forEach(function (s, i) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "chapter";
+    var n = document.createElement("span"); n.textContent = s.name;
+    var t = document.createElement("small"); t.textContent = fmt(s.t);
+    b.appendChild(n); b.appendChild(t);
+    b.addEventListener("click", function () {
+      try { v.currentTime = s.t; } catch (e) {}
+      var p = v.play(); if (p && p.catch) p.catch(function () {});
+    });
+    box.appendChild(b); btns.push(b);
+  });
+  function mark() {
+    var cur = 0;
+    for (var i = 0; i < SCENES.length; i++) { if (v.currentTime >= SCENES[i].t - 0.05) cur = i; }
+    btns.forEach(function (b, i) { b.classList.toggle("active", i === cur); });
+  }
+  v.addEventListener("timeupdate", mark);
+  v.addEventListener("seeked", mark);
+  mark();
+})();
+</script>
+</body>
+</html>
